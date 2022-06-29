@@ -1,0 +1,84 @@
+% Some entries inspired from a preamble by Adrian Price-Whelan, https://github.com/adrn/PhaseSpiralAsteroseismology/blob/main/tex/preamble.tex
+
+% Latex imports
+\let\tablenum\relax             % necessary for AASTeX
+\usepackage{siunitx}
+\sisetup{range-phrase=-, range-units=single, separate-uncertainty=true}
+\sisetup{separate-uncertainty=true}
+\usepackage{blindtext}          % Filler text
+\usepackage{xcolor}
+
+% paper comments
+\usepackage{comment}						 % comments that can be switched visible/invisible
+\includecomment{comment}
+%\specialcomment{outtake}{\begingroup\sffamily\color{gray}}{\endgroup}
+\specialcomment{note}{\begingroup\sffamily\color{red!40!green!70!blue!90}}{\endgroup}
+%\excludecomment{note}                       % switch notes off
+
+%% switch TODO notes on/off
+%\usepackage{todonotes}
+\usepackage[backgroundcolor=red!20!green!40!blue!10, textsize=tiny]{todonotes}
+%\usepackage[disable]{todonotes}			% switches all todo notes to invisible
+
+
+% SIunitx definitions
+\DeclareSIUnit\mSun{M_\odot}
+\DeclareSIUnit\Msun{M_\odot}
+\DeclareSIUnit\mStar{M_\star}
+\DeclareSIUnit\Mstar{M_\star}
+\DeclareSIUnit\mEarth{M_\oplus}
+\DeclareSIUnit\Mearth{M_\oplus}
+\DeclareSIUnit\rEarth{R_\oplus}
+\DeclareSIUnit\Rearth{R_\oplus}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\au{au}
+\DeclareSIUnit\dex{dex}
+\DeclareSIUnit\ppm{ppm}
+\DeclareSIUnit\eV{eV}
+
+% Missions/Projects/Packages
+\newcommand{\project}[1]{\textsl{#1}}
+\newcommand{\rst}{\project{Nancy Grace Roman Space Telescope}}
+\newcommand{\plato}{\project{PLATO}}
+\newcommand{\kepler}{\project{Kepler}}
+\newcommand{\emcee}{\project{emcee}}
+
+% Stats / probability
+\newcommand{\given}{\,|\,}
+\newcommand{\norm}{\mathcal{N}}
+\newcommand{\pdf}{\textsl{pdf}}
+
+% Maths
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\transpose}[1]{{#1}^{\mathsf{T}}}
+\newcommand{\inverse}[1]{{#1}^{-1}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\mean}[1]{\left< #1 \right>}
+
+% Non-scalar variables
+\renewcommand{\vec}[1]{\ensuremath{\bs{#1}}}
+\newcommand{\mat}[1]{\ensuremath{\mathbf{#1}}}
+
+% Unit shortcuts
+\newcommand{\msun}{\ensuremath{\mathrm{M}_\odot}}
+\newcommand{\mjup}{\ensuremath{\mathrm{M}_{\mathrm{J}}}}
+\newcommand{\kms}{\ensuremath{\mathrm{km}~\mathrm{s}^{-1}}}
+\newcommand{\mps}{\ensuremath{\mathrm{m}~\mathrm{s}^{-1}}}
+\newcommand{\pc}{\ensuremath{\mathrm{pc}}}
+\newcommand{\kpc}{\ensuremath{\mathrm{kpc}}}
+\newcommand{\kmskpc}{\ensuremath{\mathrm{km}~\mathrm{s}^{-1}~\mathrm{kpc}^{-1}}}
+\newcommand{\dayd}{\ensuremath{\mathrm{d}}}
+\newcommand{\yr}{\ensuremath{\mathrm{yr}}}
+\newcommand{\AU}{\ensuremath{\mathrm{AU}}}
+\newcommand{\Kel}{\ensuremath{\mathrm{K}}}
+
+% Misc.
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+
+% Astronomy
+\newcommand{\feh}{\ensuremath{{[{\rm Fe}/{\rm H}]}}}
+\newcommand{\mh}{\ensuremath{{[{\rm M}/{\rm H}]}}}
+\newcommand{\logg}{\ensuremath{\log g}}
+\newcommand{\Teff}{\ensuremath{T_{\textrm{eff}}}}
+\newcommand{\vsini}{\ensuremath{v\,\sin i}}
+\newcommand{\gaia}{\textsl{Gaia}}
