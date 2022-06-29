@@ -1,0 +1,4 @@
+pdflatex -synctex=1 -interaction=nonstopmode -output-directory out ms.tex
+bibtex out/ms.aux
+pdflatex -synctex=1 -interaction=nonstopmode -output-directory out ms.tex
+pdflatex -synctex=1 -interaction=nonstopmode -output-directory out ms.tex
