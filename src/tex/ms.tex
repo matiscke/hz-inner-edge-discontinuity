@@ -99,6 +99,20 @@ The power from the host star per unit area at the position of a planet or stella
 We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same insolation as a Solar System planet at an orbital distance $a$.
 \end{note}
 
+\subsubsection{Definition of the magma ocean hypothesis and null hypothesis}
+\todo{Define the null and alternative hypotheses}
+...
+
+For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
+\begin{equation}
+\mathcal{L}(R_\mathrm{P} \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{R_\mathrm{P}, i}^{2}}} \exp \left(-\frac{\left(R_{\mathrm{P}, i}-h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)\right)^{2}}{2 \sigma_{R_\mathrm{P}, i}^{2}}\right).
+\end{equation}
+Here, $h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)$ corresponds to the functional form of the magma ocean hypothesis\todo{link to eqn defining the hypothesis} .
+We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, R_\mathrm{P}) = \theta$, which states that there is no relationship between the measured planet radii and (scaled) semi-major axes.
+
+
+
+
 \subsection{Synthetic planet populations with and without magma oceans}
 \todo{describe the way we inject magma oceans into the synthetic planet population with Bioverse}
 \begin{figure*}
