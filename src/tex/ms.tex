@@ -33,7 +33,7 @@
 
 \begin{figure*}
     \begin{centering}
-        \includegraphics[width=\hsize]{figures/flowchart.pdf}
+        \includegraphics[width=\hsize]{figures/flowchart}
         \caption{Workflow of our hypothesis testing with Bioverse. In the first block, a stellar sample is generated based on XXX. The stars are then populated with planetary systems from XXX, to which a population-level trend can be applied. The planets' respective transit probabilities are computed. The second block simulates the exoplanet survey whereby selection effects and detection biases are introduced. Finally, the third block deals with testing a hypothesis based on the data from the simulated survey. By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
         \label{fig:flowchart}
     \end{centering}
@@ -104,11 +104,25 @@ We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\
 
 \section{Survey simulation}
 
-\subsection{Testing the XXX hypothesis with the Nancy Grace Roman Telescope}
-
-
+\subsection{Testing the magma ocean hypothesis with current and planned exoplanet missions}
+\todo{PLATO, Ariel, LIFE?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.
+ }
 
 \section{Discussion}
+
+\subsection{False positive scenarios}
+\todo{what other processes could be confused with a magma ocean signal?}
+\begin{note}
+Global magma oceans are not the only physical mechanism that may cause a decrease in transit radii for a subset of planets.
+Other causes of shrinking planet sizes have been put forward, the most widely discussed ones being atmospheric loss due to either photoevaporation through high-energy radiation by the host star~\citep[e.g.,][]{Owen2013,Jin2014,Mordasini2020a} or due to residual heat from the planet's interior shortly after formation~\citep{Ginzburg2016b,Ginzburg2018,Gupta2019}.
+    Both processes are being traded as potentially sculpting the observed radius bimodality of small, close-in exoplanets from the \textit{Kepler} mission~\citep{Fulton2017,VanEylen2018}.
+    Like the magma ocean effect discussed here, these processes reduce the radii of some planets, leading to a decrease in average measured planet radii in a specific region of the planetary parameter space.
+    This region is distinct from the one affected by global magma oceans, since... \todo{...elaborate why they cannot be confused}
+
+    Another potential false positive contribution comes from the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
+    The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the insolation dependency of the magma ocean probability.
+    \todo{explore if this can cause confusion}
+\end{note}
 
 \subsection{Mission design trades}\label{sec:mission-design-trades}
 \citet{Penny2019} mention that a significant increase in planet yield could be achieved if the telescope's slew speed was increased.
