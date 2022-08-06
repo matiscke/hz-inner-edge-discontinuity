@@ -39,49 +39,21 @@
     \end{centering}
 \end{figure*}
 
-%\begin{deluxetable*}{cc}
-%\tablecaption{Confirmed and suggested trends in the exoplanet population}
-%%\tablewidth{\pagewidth}
-%\tablehead{\colhead{Trend} & \colhead{Reference}}
-%\startdata
-%missing sub-Saturn mass valley in M-dwarf planetary systems &  Schlecker et al., subm. \\
-%$\cdots$ & $\cdots$
-%\enddata
-%\tablecomments{We show a list of population-level trends that have been reported in demographic studies or predicted from planet formation theories.}
-%\end{deluxetable*}
-%
-%\begin{deluxetable*}{cccccc}
-%\tablecaption{Confirmed and suggested trends in the exoplanet population}
-%%\tablewidth{\pagewidth}
-%\tablehead{\colhead{No.} & \colhead{Trend} & \colhead{Reference} & \colhead{Terrestrials}&\colhead{Roman}&\colhead{Plato}}
-%\startdata
-%%\hline
-%%Theoretically predicted&&&&&
-%%\\
-%%\hline
-%%1&High occurrence of low-mass planets at a few au&\citep{Penny2019}&FALSE&TRUE&FALSE \\
-%%2&(super-)Earth occurrence drops again for very low-mass stars&Mulders2021, (Schlecker2021a)&TRUE&TRUE&TRUE
-%%\\
-%%3&Hot Jupiter - cold Jupiter relation&Schlaufman \& Winn (2016)&FALSE&TRUE&FALSE
-%%\\
-%%4&super-Earth composition-architecture link&Schlecker+2021a&TRUE&FALSE&FALSE
-%%\\
-%
-%\enddata
-%\tablecomments{We show a list of population-level trends that have been reported in demographic studies or predicted from planet formation theories.}
-%\end{deluxetable*}
 
-
-
-Several patterns in the planetary parameter space have been reported in demographic studies or predicted from planet formation theories.
-
-
-\section{Synthetic star and planet sample}
-
-\section{The magma ocean hypothesis}
-
+\section{Global magma oceans and their imprint on exoplanet demographics}
+\todo[inline]{"Methods Section" for the geophysical models.}
 \subsection{Global magma oceans}
-\todo[inline]{introduce magma oceans and their influence on planetary radii~\citep{Dorn2021}.\\ Might also be already fully covered in the Introduction section}
+\todo[inline]{introduce geophysical model.\\ Introduce its parametrization either here or further down when modeling demographic imprint.\\ Figure~\ref{fig:magmaocean_model} goes here.}
+
+%\begin{figure}
+\begin{figure}[!ht]
+    \begin{centering}
+        \includegraphics[width=\hsize]{figures/magmaocean_model.jpg}
+        \caption{Schematics of the geophysical model framework.}
+        \label{fig:magmaocean_model}
+    \end{centering}
+\end{figure}
+
 
 \subsection{Demographic imprint of magma oceans}
 \todo{describe the expected imprint on the exoplanet population. \\Provide parametrizations from \citet{Dorn2021}'s models.}
@@ -90,18 +62,19 @@ Several patterns in the planetary parameter space have been reported in demograp
 \label{sec:mo_model}
 \todo{specific parametrization, dependency on bulk planet/orbit params (doesn't have to be its own subsubsection)}
 
+\Blindtext[1]
+
+
 \begin{note}
-The power from the host star per unit area at the position of a planet or stellar insolation $S$ in units of Earth's insolation is given by
+    The power from the host star per unit area at the position of a planet or stellar insolation $S$ in units of Earth's insolation is given by
     \begin{equation}
         \frac{S}{S_\oplus} = \left(\frac{L_\star}{L_\odot}\right) \left(\frac{au}{a}\right)^2 .
     \end{equation}
 
-We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same insolation as a Solar System planet at an orbital distance $a$.
+    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same insolation as a Solar System planet at an orbital distance $a$.
 \end{note}
 
-\subsubsection{Definition of the magma ocean hypothesis and null hypothesis}
-\todo{Define the null and alternative hypotheses}
-...
+
 
 For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
 \begin{equation}
@@ -112,8 +85,7 @@ We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, 
 
 
 
-
-\subsection{Synthetic planet populations with and without magma oceans}
+\subsubsection{Synthetic planet populations with and without magma oceans}
 \todo{describe the way we inject magma oceans into the synthetic planet population with Bioverse}
 \begin{figure*}
     \begin{centering}
@@ -123,11 +95,22 @@ We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, 
     \end{centering}
 \end{figure*}
 
-\section{Survey simulation}
+
 
 \subsection{Testing the magma ocean hypothesis with current and planned exoplanet missions}
-\todo{PLATO, Ariel, LIFE?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.
- }
+\todo{Introduce survey simulation(s). PLATO, Ariel, LIFE?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
+
+\subsubsection{Definition of the magma ocean hypothesis and null hypothesis}
+\todo{Define the null and alternative hypotheses}
+...
+
+For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
+\begin{equation}
+    \mathcal{L}(R_\mathrm{P} \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{R_\mathrm{P}, i}^{2}}} \exp \left(-\frac{\left(R_{\mathrm{P}, i}-h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)\right)^{2}}{2 \sigma_{R_\mathrm{P}, i}^{2}}\right).
+\end{equation}
+Here, $h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)$ corresponds to the functional form of the magma ocean hypothesis\todo{link to eqn defining the hypothesis} .
+We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, R_\mathrm{P}) = \theta$, which states that there is no relationship between the measured planet radii and (scaled) semi-major axes.
+
 
 \section{Discussion}
 
@@ -150,6 +133,11 @@ Other causes of shrinking planet sizes have been put forward, the most widely di
 
 \section{Conclusions}
 
+\begin{note}
+    \textit{Here or in the introduction:} For observations of rocky exoplents, the currently best-probed regime is hot, close-in planets.
+    These bodies experience climatic conditions that are similar to the environment of the inner Solar System bodies at early stages of their formation.
+    Studies of the geophysical state and evolution of hot exoplanets can thus contribute to our understanding of the early formation stages of Earth and other habitable worlds.
+\end{note}
 
 \bibliographystyle{aasjournal}
 \bibliography{bib,PhD}
