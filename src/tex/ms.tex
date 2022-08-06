@@ -1,5 +1,6 @@
 % Define document class
-\documentclass[twocolumn]{aastex631}
+%\documentclass[twocolumn]{aastex631}
+\documentclass[modern]{aastex631}
 
 \input{preamble.tex}
 
@@ -29,7 +30,13 @@
 
 % Main body
 \section{Introduction}
-\Blindtext[4]
+Several patterns in the planetary parameter space have been reported in demographic studies or predicted from planet formation theories.
+\begin{note}
+    ...long-term goal/overarching objective: derive the geophysical history of rocky extrasolar planets.
+   ...
+\todo[inline]{introduce magma oceans and their influence on planetary radii~\citep{Dorn2021}.}
+    ...current/future observations of planets that are currently in the runaway greenhouse phase may constrain properties of their planetary mantles... make connection between interior and atmospheres.
+\end{note}
 
 \begin{figure*}
     \begin{centering}
@@ -76,13 +83,25 @@
 
 
 
-For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
-\begin{equation}
-\mathcal{L}(R_\mathrm{P} \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{R_\mathrm{P}, i}^{2}}} \exp \left(-\frac{\left(R_{\mathrm{P}, i}-h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)\right)^{2}}{2 \sigma_{R_\mathrm{P}, i}^{2}}\right).
-\end{equation}
-Here, $h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)$ corresponds to the functional form of the magma ocean hypothesis\todo{link to eqn defining the hypothesis} .
-We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, R_\mathrm{P}) = \theta$, which states that there is no relationship between the measured planet radii and (scaled) semi-major axes.
 
+
+\section{Testing the magma ocean hypothesis}
+\todo[inline]{"Methods Section" of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.}
+
+\subsection{Synthetic star and planet sample}
+\subsubsection{Stellar sample from Gaia DR3}
+\todo{Which star sample was actually used?}
+
+\subsubsection{Planetary sample from SAG~13}
+\todo[inline]{What is the source of our occurrence rate density from which we draw? We could also use a generative model that directly approximates an observed or theoretical density \citep[e.g.,][]{Schlecker2021b}.}
+\begin{note}
+    The NASA Exoplanet Program Analysis Group chartered Science Analysis Group 13 (SAG 13)...
+    The inferred occurrence rate density can be expressed as a power law in planet radius and period
+    \begin{equation}
+        \frac{\partial^2n}{\partial \log R \, \partial \log P} = \Gamma R^{\alpha} P^{\beta}
+    \end{equation}
+that is broken in planet radius, resulting in the free parameters $\Gamma$, $\alpha$, $\beta$, and a breakpoint radius $R_\mathrm{break}$.
+\end{note}
 
 
 \subsubsection{Synthetic planet populations with and without magma oceans}
