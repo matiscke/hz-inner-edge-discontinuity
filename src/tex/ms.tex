@@ -78,7 +78,7 @@ Several patterns in the planetary parameter space have been reported in demograp
         \frac{S}{S_\oplus} = \left(\frac{L_\star}{L_\odot}\right) \left(\frac{au}{a}\right)^2 .
     \end{equation}
 
-    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same insolation as a Solar System planet at an orbital distance $a$.
+    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same insolation as a Solar System planet at an orbital distance~$a$.
 \end{note}
 
 
@@ -89,10 +89,16 @@ Several patterns in the planetary parameter space have been reported in demograp
 \todo[inline]{"Methods Section" of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.}
 
 \subsection{Synthetic star and planet sample}
+\begin{note}
+    The first step in our analysis is to generate a synthetic sample of stars and planets.
+    First, we create a stellar population based on the observed population in the solar neighborhood, to which we then assign planetary systems based on occurrence rates derived from the \kepler mission.
+    In our fiducial model setup, we consider stars with a maximum distance to the solar system of \dmax.
+\end{note}
+
 \subsubsection{Stellar sample from Gaia DR3}
 \todo{Which star sample was actually used?}
 
-\subsubsection{Planetary sample from SAG~13}
+\subsubsection{Planetary ocurrence rates in orbital period and radius}
 \todo[inline]{What is the source of our occurrence rate density from which we draw? We could also use a generative model that directly approximates an observed or theoretical density \citep[e.g.,][]{Schlecker2021b}.}
 \begin{note}
     The NASA Exoplanet Program Analysis Group chartered Science Analysis Group 13 (SAG 13)...
@@ -102,6 +108,26 @@ Several patterns in the planetary parameter space have been reported in demograp
     \end{equation}
 that is broken in planet radius, resulting in the free parameters $\Gamma$, $\alpha$, $\beta$, and a breakpoint radius $R_\mathrm{break}$.
 \end{note}
+
+\subsubsection{Transit probability}
+\todo[inline]{describe how we model inclinations and transits of synthetic planets}
+\begin{note}
+    Not all planets are transiting from our point of view.
+    We model the occurrence of transits by assuming random, isotropic orientations of planetary orbits and calculating the transit impact parameter $b = \cos(i)/R_\star$ for each planet.
+    Only planets with $|b| < 1$ are transiting and further considered.
+    For these cases we calculate the transit depth
+    \begin{equation}\label{eq:transitdepth}
+        \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2
+    \end{equation}\todo[inline]{check if transit depth or duration are actually used further down}
+    and transit duration
+    \begin{equation}\label{eq:transitduration}
+        t_{\mathrm{T}} = \frac{R_\star P}{\pi a} \sqrt{1 - b^2},
+    \end{equation}
+    which are relevant for the detection probability of the respective planet~(see Sect.~\ref{sec:sensitivity}).
+    After excluding all non-transiting planets, the size of our nominal sample of potentially observable planets drops to $N = \Nplanets$.
+\end{note}
+
+
 
 
 \subsubsection{Synthetic planet populations with and without magma oceans}
@@ -115,6 +141,12 @@ that is broken in planet radius, resulting in the free parameters $\Gamma$, $\al
 \end{figure*}
 
 
+
+\begin{note}
+\todo[inline]{Transition to tests of the trend:}
+Figure~\ref{fig:has_magmaocean} shows that the subpopulation of planets with magma oceans is apparent in the synthetic dataset.
+    In the following, we test if and under what conditions this effect is large enough to be detected with high significance.
+\end{note}
 
 \subsection{Testing the magma ocean hypothesis with current and planned exoplanet missions}
 \todo{Introduce survey simulation(s). PLATO, Ariel, LIFE?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
