@@ -27,5 +27,6 @@ Click [**here**](https://github.com/matiscke/magmaocean/raw/main-pdf/ms.pdf) to 
 
 ## Related Literature
 The following ADS libraries are non-exhaustive collections of literature relevant to the project. 
+- [Water content and global magma oceans](https://ui.adsabs.harvard.edu/public-libraries/sLyk1uAZTpisPRyj6ZGuyQ)
 - [PLATO mission papers](https://ui.adsabs.harvard.edu/user/libraries/Qh2RtVhKSFucyRMqKBAQSg)
 - [Roman Space Telescope papers](https://ui.adsabs.harvard.edu/user/libraries/Wl9mTrggRqelrqr62vsUIQ)
