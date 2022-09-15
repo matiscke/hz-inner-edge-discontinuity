@@ -1,7 +1,7 @@
 version: 0.3.0
 
 dependencies:
-  scr/scripts/plot_luminosity_tracks.py:
+  src/scripts/plot_luminosity_tracks.py:
     - src/data/luminosity_tracks/Lum_m0.1.txt
     - src/data/luminosity_tracks/Lum_m0.2.txt
     - src/data/luminosity_tracks/Lum_m0.4.txt
