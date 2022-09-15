@@ -58,6 +58,7 @@ for lum_track in reversed(lum_tracks):
 
 # DEBUG
 
+plt.text(0.1, 0.7, 'DEBUGGING', fontsize='small')
 plt.text(0.1, 0.5, lum_tracks, fontsize='xx-small')
 
 
