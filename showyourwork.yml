@@ -1,22 +1,22 @@
 version: 0.3.0
 dependencies:
   src/scripts/plot_luminosity_tracks.py:
-    - src/data/luminosity_tracks/Lum_m0.1.txt
-    - src/data/luminosity_tracks/Lum_m0.2.txt
-    - src/data/luminosity_tracks/Lum_m0.4.txt
-    - src/data/luminosity_tracks/Lum_m0.6.txt
-    - src/data/luminosity_tracks/Lum_m0.8.txt
-    - src/data/luminosity_tracks/Lum_m1.0.txt
-    - src/data/luminosity_tracks/Lum_m1.2.txt
-    - src/data/luminosity_tracks/Lum_m1.4.txt
+    - src/data/Lum_m0.1.txt
+    - src/data/Lum_m0.2.txt
+    - src/data/Lum_m0.4.txt
+    - src/data/Lum_m0.6.txt
+    - src/data/Lum_m0.8.txt
+    - src/data/Lum_m1.0.txt
+    - src/data/Lum_m1.2.txt
+    - src/data/Lum_m1.4.txt
 datasets:
   10.5281/zenodo.7080391:
     contents:
-      Lum_m0.1.txt: src/data/luminosity_tracks/Lum_m0.1.txt
-      Lum_m0.2.txt: src/data/luminosity_tracks/Lum_m0.2.txt
-      Lum_m0.4.txt: src/data/luminosity_tracks/Lum_m0.4.txt
-      Lum_m0.6.txt: src/data/luminosity_tracks/Lum_m0.6.txt
-      Lum_m0.8.txt: src/data/luminosity_tracks/Lum_m0.8.txt
-      Lum_m1.0.txt: src/data/luminosity_tracks/Lum_m1.0.txt
-      Lum_m1.2.txt: src/data/luminosity_tracks/Lum_m1.2.txt
-      Lum_m1.4.txt: src/data/luminosity_tracks/Lum_m1.4.txt
+      Lum_m0.1.txt: src/data/Lum_m0.1.txt
+      Lum_m0.2.txt: src/data/Lum_m0.2.txt
+      Lum_m0.4.txt: src/data/Lum_m0.4.txt
+      Lum_m0.6.txt: src/data/Lum_m0.6.txt
+      Lum_m0.8.txt: src/data/Lum_m0.8.txt
+      Lum_m1.0.txt: src/data/Lum_m1.0.txt
+      Lum_m1.2.txt: src/data/Lum_m1.2.txt
+      Lum_m1.4.txt: src/data/Lum_m1.4.txt

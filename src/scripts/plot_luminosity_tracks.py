@@ -16,7 +16,7 @@ import paths
 from cycler import cycler
 plt.rcParams['axes.prop_cycle'] = cycler(color=reversed(sns.cubehelix_palette(8)))
 
-lum_tracks = natsorted(glob.glob(str(paths.data) + "/luminosity_tracks/Lum_m*.txt"))
+lum_tracks = natsorted(glob.glob(str(paths.data) + "/Lum_m*.txt"))
 print(lum_tracks)
 
 
