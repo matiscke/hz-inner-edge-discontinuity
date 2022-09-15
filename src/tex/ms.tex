@@ -31,9 +31,13 @@
 
 % Main body
 \section{Introduction}
+\todo[inline]{papers: \citet{Hamano2013,Barth2021,Downey2022}. \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, }
+
+
+
 Several patterns in the planetary parameter space have been reported in demographic studies or predicted from planet formation theories.
 \begin{note}
-    ...long-term goal/overarching objective: derive the geophysical history of rocky extrasolar planets.
+    ...long-term goal/overarching objective: derive the geophysical history of rocky extrasolar planets. More concrete: Constrain the limits of runaway greenhouse transitions, and thus the inner edges of the habitable zone. Also: How close is Earth from this runaway greenhouse limit?
    ...
 \todo[inline]{introduce magma oceans and their influence on planetary radii~\citep{Dorn2021}.}
     ...current/future observations of planets that are currently in the runaway greenhouse phase may constrain properties of their planetary mantles... make connection between interior and atmospheres.
@@ -49,7 +53,14 @@ Several patterns in the planetary parameter space have been reported in demograp
 
 
 \section{Global magma oceans and their imprint on exoplanet demographics}
-\todo[inline]{"Methods Section" for the geophysical models.}
+\todo[inline]{"Methods Section" for the geophysical models.\\
+~\\
+\textbf{Main assumptions:}\\
+- Assume that every planet has \textit{some} water. Enough for runaway GH under the right conditions. Baseline water content: 20\% \\
+- Limitation to small planets without significant atmospheric envelopes.\\
+- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
+- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
+}
 \subsection{Global magma oceans}
 \todo[inline]{introduce geophysical model.\\ Introduce its parametrization either here or further down when modeling demographic imprint.\\ Figure~\ref{fig:magmaocean_model} goes here.}
 
@@ -179,7 +190,7 @@ Figure~\ref{fig:has_magmaocean} shows that the subpopulation of planets with mag
 \end{note}
 
 \subsection{Testing the magma ocean hypothesis with current and planned exoplanet missions}
-\todo{Introduce survey simulation(s). PLATO, Ariel, LIFE?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
+\todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 \begin{note}
     In previous steps, we generated a population of synthetic planets that orbit synthetic stars, and we have injected the statistical trend expected from the presence of magma oceans on a fraction of the planets.
     Only a subset of these planets would be detectable by a transit survey, and their properties can be probed only with a finite precision.
@@ -275,6 +286,7 @@ Other causes of shrinking planet sizes have been put forward, the most widely di
     Another potential false positive contribution comes from the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
     The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the insolation dependency of the magma ocean probability.
     \todo{explore if this can cause confusion}
+    \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022b}?}
 \end{note}
 
 \subsection{Mission design trades}\label{sec:mission-design-trades}
@@ -309,7 +321,8 @@ Other causes of shrinking planet sizes have been put forward, the most widely di
 
 
 %\begin{acknowledgments}
-%The authors thank Terry-Ann Suer for insightful discussions.
+%The authors thank Paul Molliere, Arnaud Salavdor, and Terry-Ann Suer for insightful discussions.
+%We are grateful to Martin Turbet for providing the mass-radius relationship data.
 %\end{acknowledgements}
 
 \begin{large}\textit{Author contributions:}\end{large}
