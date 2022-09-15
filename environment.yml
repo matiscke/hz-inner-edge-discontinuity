@@ -2,8 +2,11 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - numpy=1.19.2
+  - numpy>=1.19.2
   - pip=21.0.1
   - python=3.9
-  - pip:
-      - matplotlib==3.4.3
+  - natsort>=8.2.0
+  - pandas>=1.4
+  - matplotlib>=3.5
+  - scipy>=1.8
+  - seaborn>=0.12
