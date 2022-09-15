@@ -1,5 +1,16 @@
 version: 0.3.0
 
+dependencies:
+  scr/scripts/plot_luminosity_tracks.py:
+    - src/data/luminosity_tracks/Lum_m0.1.txt
+    - src/data/luminosity_tracks/Lum_m0.2.txt
+    - src/data/luminosity_tracks/Lum_m0.4.txt
+    - src/data/luminosity_tracks/Lum_m0.6.txt
+    - src/data/luminosity_tracks/Lum_m0.8.txt
+    - src/data/luminosity_tracks/Lum_m1.0.txt
+    - src/data/luminosity_tracks/Lum_m1.2.txt
+    - src/data/luminosity_tracks/Lum_m1.4.txt
+
 datasets:
   10.5281/zenodo.7080391:
     destination: src/data/luminosity_tracks
@@ -13,13 +24,4 @@ datasets:
       Lum_m1.2.txt: src/data/luminosity_tracks/Lum_m1.2.txt
       Lum_m1.4.txt: src/data/luminosity_tracks/Lum_m1.4.txt
 
-dependencies:
-  scr/scripts/plot_luminosity_tracks.py:
-    - src/data/luminosity_tracks/Lum_m0.1.txt
-    - src/data/luminosity_tracks/Lum_m0.2.txt
-    - src/data/luminosity_tracks/Lum_m0.4.txt
-    - src/data/luminosity_tracks/Lum_m0.6.txt
-    - src/data/luminosity_tracks/Lum_m0.8.txt
-    - src/data/luminosity_tracks/Lum_m1.0.txt
-    - src/data/luminosity_tracks/Lum_m1.2.txt
-    - src/data/luminosity_tracks/Lum_m1.4.txt
+
