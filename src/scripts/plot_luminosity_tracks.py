@@ -11,7 +11,6 @@ import paths
 
 # sns.set(style="ticks")
 
-
 # Change color cycle: https://matplotlib.org/3.1.1/users/dflt_style_changes.html#colors-in-default-property-cycle
 # https://seaborn.pydata.org/tutorial/color_palettes.html
 from cycler import cycler
@@ -19,6 +18,16 @@ plt.rcParams['axes.prop_cycle'] = cycler(color=reversed(sns.cubehelix_palette(8)
 
 lum_tracks = natsorted(glob.glob(str(paths.data) + "/luminosity_tracks/Lum_m*.txt"))
 print(lum_tracks)
+
+
+
+# DEBUG
+plt.text(0.1, 0.7, 'DEBUGGING', fontsize='small')
+plt.text(0.1, 0.5, lum_tracks, fontsize='xx-small')
+
+
+
+
 
 for lum_track in reversed(lum_tracks):
 
@@ -53,16 +62,6 @@ for lum_track in reversed(lum_tracks):
         # Moon-forming impact
         # plt.annotate('', xy=(30, 0.55), xycoords='data', xytext=(100, 0.55), textcoords='data', arrowprops=dict(arrowstyle="|-|, widthA=0.2, widthB=0.2", fc=c, ec=c, linewidth=1.2), horizontalalignment='center', verticalalignment='center')
         # plt.annotate('Moon-forming giant impact', xy=(65, 0.54), xycoords='data', xytext=(0, -5), textcoords='offset pixels', horizontalalignment='center', verticalalignment='top', color=c, fontsize=8)
-
-
-
-# DEBUG
-
-plt.text(0.1, 0.7, 'DEBUGGING', fontsize='small')
-plt.text(0.1, 0.5, lum_tracks, fontsize='xx-small')
-
-
-
 
 
 
