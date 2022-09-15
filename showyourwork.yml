@@ -2,6 +2,7 @@ version: 0.3.0
 
 datasets:
   10.5281/zenodo.7080391:
+    destination: src/data/luminosity_tracks
     contents:
       Lum_m0.1.txt: src/data/luminosity_tracks/Lum_m0.1.txt
       Lum_m0.2.txt: src/data/luminosity_tracks/Lum_m0.2.txt
