@@ -122,6 +122,14 @@ that is broken in planet radius, resulting in the free parameters $\Gamma$, $\al
 
 \subsubsection{Stellar luminosity tracks}
 \todo[inline]{if implemented, describe the luminosity evolution of stars}
+\begin{note}
+    Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
+    Since the emergence of a runaway greenhouse phase on a planet is highly dependent on the level of radiation it receives, and thus on the luminosity of the host star, we assigned age-dependent luminosities to our synthetic stars.
+    Stellar ages are notoriously poor-constrained (CITE); we thus drew random ages from a uniform distribution from \SI{0}{\giga\year} to \SI{10}{\giga\year}.
+    We then assigned each star a luminosity from the mass-dependent evolutionary models in \citet{Baraffe1998}.
+    Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution as a function of stellar mass and age.
+
+\end{note}
 
 \begin{figure}[ht!]
     \script{plot_luminosity_tracks.py}
@@ -266,7 +274,8 @@ We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, 
     \end{centering}
 \end{figure}
 
-\section{Discussion}
+\section{Discussion}\label{sec:discussion}
+\todo[inline]{\textbf{Potential discussion points: } what is the fraction of Kepler planets w/ runaway GH.}
 
 \subsection{Implications for planetary habitability}\label{sec:habitability}
 \todo[inline]{Magma oceans influence the amount of water available at the surface and atmosphere, which is 1. commonly used as environmental marker to assess habitability, and 2. influences the planet's climate (greenhouse effect).}
@@ -326,6 +335,11 @@ Other causes of shrinking planet sizes have been put forward, the most widely di
 %\end{acknowledgements}
 
 \begin{large}\textit{Author contributions:}\end{large}
+
+\section*{Data Availability}
+All data sets and software required to reproduce our results and this article are available through GitHub and Zenodo.
+The code to reproduce the figures can be accessed via the icon links associated with the respective figure caption.
+
 
 \software{
 Bioverse~\citep{Bixel2021},

@@ -30,3 +30,7 @@ The following ADS libraries are non-exhaustive collections of literature relevan
 - [Water content and global magma oceans](https://ui.adsabs.harvard.edu/public-libraries/sLyk1uAZTpisPRyj6ZGuyQ)
 - [PLATO mission papers](https://ui.adsabs.harvard.edu/user/libraries/Qh2RtVhKSFucyRMqKBAQSg)
 - [Roman Space Telescope papers](https://ui.adsabs.harvard.edu/user/libraries/Wl9mTrggRqelrqr62vsUIQ)
+
+
+
+[//]: # (Once paper is out: Explain usage, dependencies, data sets similar to https://github.com/katiebreivik/hush)
