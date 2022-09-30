@@ -108,21 +108,9 @@ Several patterns in the planetary parameter space have been reported in demograp
 \end{note}
 
 \subsubsection{Stellar sample from Gaia DR3}
-\todo{Which star sample was actually used?}
-
-\subsubsection{Planetary ocurrence rates in orbital period and radius}
-\todo[inline]{What is the source of our occurrence rate density from which we draw? We could also use a generative model that directly approximates an observed or theoretical density \citep[e.g.,][]{Schlecker2021b}.}
-\begin{note}
-    The NASA Exoplanet Program Analysis Group chartered Science Analysis Group 13 (SAG 13)...
-    The inferred occurrence rate density can be expressed as a power law in planet radius and period
-    \begin{equation}
-        \frac{\partial^2n}{\partial \log R \, \partial \log P} = \Gamma R^{\alpha} P^{\beta}
-    \end{equation}
-that is broken in planet radius, resulting in the free parameters $\Gamma$, $\alpha$, $\beta$, and a breakpoint radius $R_\mathrm{break}$.
-\end{note}
+\todo[inline]{KEVIN: describe stellar population}
 
 \subsubsection{Stellar luminosity tracks}
-\todo[inline]{if implemented, describe the luminosity evolution of stars}
 \begin{note}
     Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
     Since the emergence of a runaway greenhouse phase on a planet is highly dependent on the level of radiation it receives, and thus on the luminosity of the host star, we assigned age-dependent luminosities to our synthetic stars.
@@ -143,6 +131,30 @@ that is broken in planet radius, resulting in the free parameters $\Gamma$, $\al
     \end{centering}
 \end{figure}
 
+
+\subsubsection{Orbital and bulk properties of the planet sample}
+
+\todo[inline]{GALEN: Describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions. Probably replace SAG13-based content below.}
+\begin{note}
+    The NASA Exoplanet Program Analysis Group chartered Science Analysis Group 13 (SAG 13)...
+    The inferred occurrence rate density can be expressed as a power law in planet radius and period
+    \begin{equation}
+        \frac{\partial^2n}{\partial \log R \, \partial \log P} = \Gamma R^{\alpha} P^{\beta}
+    \end{equation}
+that is broken in planet radius, resulting in the free parameters $\Gamma$, $\alpha$, $\beta$, and a breakpoint radius $R_\mathrm{break}$.
+\end{note}
+
+
+\begin{note}
+    ...
+    In this study, we consider only rocky planets with a maximum mass of \SI{2}{\Mearth}. % (Turbet+2020 goes only up to 2 Mearth)
+
+    ...
+    To assign masses to our planets, we use the theoretical mass-radius relationship derived in \citet{Zeng2016}.
+    The default relation our planets follow is one assuming a pure $\mathrm{MgSiO_3}$ composition. 
+    \todo[inline]{JUSTIFY this choice}
+    This represents the baseline bulk density before any magma ocean-related effects are applied.
+\end{note}
 
 
 \subsubsection{Transit probability}
