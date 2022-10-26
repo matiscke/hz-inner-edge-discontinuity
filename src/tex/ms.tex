@@ -237,6 +237,44 @@ Figure~\ref{fig:has_magmaocean} shows that the subpopulation of planets with mag
 
 \subsubsection{Definition of the magma ocean hypothesis and null hypothesis}
 \todo{Define the null and alternative hypotheses}
+\begin{note}
+    As a null hypothesis, we consider the case where the planetary radius distribution is independent of the instellation,
+    \begin{equation}
+        h_{\mathrm{null}}(\theta, S) = \theta,
+    \end{equation}
+    where $\theta$ is the set of parameters defining the radius distribution.
+    We further define an alternative hypothesis that describes radius changes due to steam atmospheres and water in the melt.
+    As motivated above, this hypothesis takes the form of a step function in instellation $S$, where the step occurs at the outer edge of the runaway greenhouse region.
+    Our main observable shall be the average planet radius in the planet population inside and outside this threshold.
+    The magma ocean hypothesis is then defined as
+\begin{equation}
+    h_{\mathrm{MO}}(\theta, S) =
+%        \begin{cases}
+%        1 & \text{if } x \in \mathbb{Q}\\
+%        0 & \text{if } x \in \mathbb{R}\setminus\mathbb{Q}
+%    \end{cases}
+        \begin{cases}
+        h_{\mathrm{null}} & \text{for } S \leq S_\mathrm{thresh}\\
+        <R_\mathrm{P}> (f_\mathrm{steam}, f_\mathrm{water}) & \text{for } S > S_\mathrm{thresh}.
+    \end{cases}
+\end{equation}
+    Here, $f_\mathrm{steam}$ and $f_\mathrm{water}$ are predictions from the steam atmosphere and water incorporation models, respectively.
+    They are assumed to act additively on the planet radii and thus on their average $<R_\mathrm{P}>$.
+
+%        \begin{cases}
+%        \end{cases}
+
+\begin{figure}
+    \begin{centering}
+        \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
+        \caption{Average radius predictions of the null hypothesis and magma ocean hypothesis. The sharp boundary of the runaway greenhouse regime causes a discontinuity at the threshold instellation $S_\mathrm{thresh}$, which we set to \SI{280}{\watt\per\meter\squared} in the fiducial case.}
+        \label{fig:HnullHmo}
+    \end{centering}
+\end{figure}
+    Figure~\ref{fig:HnullHmo} shows the null and alternative hypotheses as a function of instellation.
+    The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
+
+\end{note}
 ...
 
 For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
