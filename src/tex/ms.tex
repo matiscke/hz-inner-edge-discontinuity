@@ -123,15 +123,11 @@ Different sample sizes are realized by varying the maximum distance of stars to 
 \todo[inline]{KEVIN: describe stellar population}
 
 \subsubsection{Stellar luminosity tracks}
-\begin{note}
     Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
     Since the emergence of a runaway greenhouse phase on a planet is highly dependent on the level of radiation it receives, and thus on the luminosity of the host star, we assigned age-dependent luminosities to our synthetic stars.
     Stellar ages are notoriously poor-constrained (CITE); we thus drew random ages from a uniform distribution from \SI{0}{\giga\year} to \SI{10}{\giga\year}.
     We then assigned each star a luminosity from the mass-dependent evolutionary models in \citet{Baraffe1998}.
     Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution as a function of stellar mass and age.
-
-\end{note}
-
 \begin{figure}[ht!]
     \script{plot_luminosity_tracks.py}
     \begin{centering}
@@ -144,18 +140,20 @@ Different sample sizes are realized by varying the maximum distance of stars to 
     \end{centering}
 \end{figure}
 
-
 \subsubsection{Orbital and bulk properties of the planet sample}
+Next, we assigned planetary systems to the synthetic stellar sample.
+The orbital parameters and bulk properties of these simulated planets are informed by statistics from the \kepler mission; we adopted the planetary occurrence rates recently derived in \citep{Bergsten2022}.
+Following \citep{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
+\begin{equation}
+    \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
+\end{equation}
+where $F_0$ ...
+\todo[inline]{GALEN: Describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
 
-\todo[inline]{GALEN: Describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions. Probably replace SAG13-based content below.}
-\begin{note}
-    The NASA Exoplanet Program Analysis Group chartered Science Analysis Group 13 (SAG 13)...
-    The inferred occurrence rate density can be expressed as a power law in planet radius and period
-    \begin{equation}
-        \frac{\partial^2n}{\partial \log R \, \partial \log P} = \Gamma R^{\alpha} P^{\beta}
-    \end{equation}
-that is broken in planet radius, resulting in the free parameters $\Gamma$, $\alpha$, $\beta$, and a breakpoint radius $R_\mathrm{break}$.
-\end{note}
+
+
+
+
 
 
 \begin{note}
@@ -171,11 +169,10 @@ that is broken in planet radius, resulting in the free parameters $\Gamma$, $\al
 
 
 \subsubsection{Transit probability}
-\todo[inline]{describe how we model inclinations and transits of synthetic planets}
 \begin{note}
     Not all planets are transiting from our point of view.
     We model the occurrence of transits by assuming random, isotropic orientations of planetary orbits and calculating the transit impact parameter $b = \cos(i)/R_\star$ for each planet.
-    Only planets with $|b| < 1$ are transiting and further considered.
+    Only planets with $|b| < 1$ are potentially observable in transit and further considered.
     For these cases we calculate the transit depth
     \begin{equation}\label{eq:transitdepth}
         \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2
@@ -185,7 +182,7 @@ that is broken in planet radius, resulting in the free parameters $\Gamma$, $\al
         t_{\mathrm{T}} = \frac{R_\star P}{\pi a} \sqrt{1 - b^2},
     \end{equation}
     which are relevant for the detection probability of the respective planet~(see Sect.~\ref{sec:sensitivity}).
-    After excluding all non-transiting planets, the size of our nominal sample of potentially observable planets drops to $N = \Nplanets$.
+    Excluding all non-transiting planets diminishes the sample to \SI{\percentageTransiting}{\percent} of its original size.
 \end{note}
 
 
@@ -363,7 +360,7 @@ We base our assessment of PLATO's diagnostic power to test the magma ocean hypot
 \begin{note}
 Global magma oceans are not the only physical mechanism that may cause a decrease in transit radii for a subset of planets.
 Other causes of shrinking planet sizes have been put forward, the most widely discussed ones being atmospheric loss due to either photoevaporation through high-energy radiation by the host star~\citep[e.g.,][]{Owen2013,Jin2014,Mordasini2020a} or due to residual heat from the planet's interior shortly after formation~\citep{Ginzburg2016b,Ginzburg2018,Gupta2019}.
-    Both processes are being traded as potentially sculpting the observed radius bimodality of small, close-in exoplanets from the \textit{Kepler} mission~\citep{Fulton2017,VanEylen2018}.
+    Both processes are being traded as potentially sculpting the observed radius bimodality of small, close-in exoplanets from the  mission~\citep{Fulton2017,VanEylen2018}.
     Like the magma ocean effect discussed here, these processes reduce the radii of some planets, leading to a decrease in average measured planet radii in a specific region of the planetary parameter space.
     This region is distinct from the one affected by global magma oceans, since... \todo{...elaborate why they cannot be confused}
 
