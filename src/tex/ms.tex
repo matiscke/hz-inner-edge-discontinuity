@@ -51,13 +51,6 @@
     ...current/future observations of planets that are currently in the runaway greenhouse phase may constrain properties of their planetary mantles... make connection between interior and atmospheres.
 \end{note}
 
-\begin{figure*}
-    \begin{centering}
-        \includegraphics[width=\hsize]{figures/flowchart.pdf}
-        \caption{Workflow of our hypothesis testing with Bioverse. In the first block, a stellar sample is generated based on XXX. The stars are then populated with planets from XXX, which may be assigned a magma ocean based on the model described in Sect.~\ref{sec:mo_model}. The planets' respective transit probabilities are computed. The second block simulates the exoplanet survey whereby selection effects and detection biases are introduced. Finally, the third block deals with testing a hypothesis based on the data from the simulated survey. By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
-        \label{fig:flowchart}
-    \end{centering}
-\end{figure*}
 
 
 \section{Global magma oceans and their imprint on exoplanet demographics}
@@ -107,15 +100,26 @@
 
 \section{Testing the magma ocean hypothesis}
 \todo[inline]{Methods and results section of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.}
+The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
+This section describes our approach.
+
+The main task was to determine -- for different survey configurations -- the confidence level with which a magma ocean signal can be detected in simulated exoplanet observations.
+For this purpose we used and expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected magma ocean signals, simulated observations of this sample, and computed Bayesian evidences in favor of the magma ocean hypothesis (see Fig.~\ref{fig:flowchart}).
+\begin{figure*}
+    \begin{centering}
+        \includegraphics[width=\hsize]{figures/flowchart.pdf}
+        \caption{Workflow of our hypothesis testing with Bioverse. In the first block, a stellar sample is generated based on XXX. The stars are then populated with planets from XXX, which may be assigned a magma ocean based on the model described in Sect.~\ref{sec:mo_model}. The planets' respective transit probabilities are computed. The second block simulates the exoplanet survey whereby selection effects and detection biases are introduced. Finally, the third block deals with testing a hypothesis based on the data from the simulated survey. By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
+        \label{fig:flowchart}
+    \end{centering}
+\end{figure*}
+
 
 \subsection{Synthetic star and planet sample}
-\begin{note}
-    The first step in our analysis is to generate a synthetic sample of stars and planets.
-    First, we create a stellar population based on the observed population in the solar neighborhood, to which we then assign planetary systems based on occurrence rates derived from the \kepler mission.
-    In our fiducial model setup, we consider stars with a maximum distance to the solar system of \dmax.
-\end{note}
+The first step in our analysis is to generate a synthetic sample of stars and planets.
+First, we created a stellar population based on the observed population in the solar neighborhood, to which we then assign planetary systems based on occurrence rates derived from the \kepler mission.
 
 \subsubsection{Stellar sample from Gaia DR3}
+Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
 \todo[inline]{KEVIN: describe stellar population}
 
 \subsubsection{Stellar luminosity tracks}
@@ -133,7 +137,8 @@
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/luminosity_tracks.pdf}
         \caption{
-            Bolometric luminosity tracks of stars with different masses.
+            Bolometric luminosity tracks of stars with different masses, computed from stellar evolution models in \citet{Baraffe1998}.
+            Low-mass stars, which make up the majority of stars in the solar neighborhood, undergo an extended early phase of several magnitudes higher luminosity before entering a lifetime of relative faintness.
         }
         \label{fig:luminosity_tracks}
     \end{centering}
