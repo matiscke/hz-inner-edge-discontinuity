@@ -114,9 +114,9 @@ For this purpose we used and expanded the Bioverse framework~\citep{Bixel2020,Bi
 \end{figure*}
 
 
-\subsection{Synthetic star and planet sample}
+\subsection{Synthetic star sample}
 The first step in our analysis is to generate a synthetic sample of stars and planets.
-First, we created a stellar population based on the observed population in the solar neighborhood, to which we then assign planetary systems based on occurrence rates derived from the \kepler mission.
+First, we created a stellar population based on the observed population in the solar neighborhood, to which we then assign planetary systems based on occurrence rates derived from the \kepler\ mission.
 
 \subsubsection{Stellar sample from Gaia DR3}
 Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
@@ -140,9 +140,12 @@ Different sample sizes are realized by varying the maximum distance of stars to 
     \end{centering}
 \end{figure}
 
-\subsubsection{Orbital and bulk properties of the planet sample}
+\subsection{Synthetic planet sample}
 Next, we assigned planetary systems to the synthetic stellar sample.
-The orbital parameters and bulk properties of these simulated planets are informed by statistics from the \kepler mission; we adopted the planetary occurrence rates recently derived in \citep{Bergsten2022}.
+The orbital parameters and bulk properties of these simulated planets are informed by statistics from the \kepler\ mission.
+
+\subsubsection{Planet occurrence rates in orbital period and radius}
+We adopted the planetary occurrence rates recently derived in \citep{Bergsten2022}.
 Following \citep{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
 \begin{equation}
     \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
@@ -151,22 +154,22 @@ where $F_0$ ...
 \todo[inline]{GALEN: Describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
 
 
+\subsubsection{Eccentricities, orbital inclinations, and planet masses}
 
+...
 
+To assign masses to our planets, we use the theoretical mass-radius relationship derived in \citet{Zeng2016}.
+The default relation our planets follow is one assuming a pure $\mathrm{MgSiO_3}$ composition.
+\todo[inline]{JUSTIFY this choice}
+This represents the baseline bulk density before any magma ocean-related effects are applied.
+...
 
-
-
+\subsubsection{Sample selection}
 \begin{note}
     ...
     In this study, we consider only rocky planets with masses \SIrange{0.1}{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
     As we are interested in the effects of runaway greenhouse phases of planets with volatiles and atmosphere, we further excluded lava worlds with extremely high instellation that does not allow long-term preservation of an atmosphere.
     We thus removed all planets with an instellation $S > \SI{2000}{\watt\per\square\meter}$.
-
-    ...
-    To assign masses to our planets, we use the theoretical mass-radius relationship derived in \citet{Zeng2016}.
-    The default relation our planets follow is one assuming a pure $\mathrm{MgSiO_3}$ composition. 
-    \todo[inline]{JUSTIFY this choice}
-    This represents the baseline bulk density before any magma ocean-related effects are applied.
 \end{note}
 
 
