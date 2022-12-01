@@ -99,7 +99,8 @@
 
 
 \section{Testing the magma ocean hypothesis}
-\todo[inline]{Methods and results section of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.}
+\todo[inline]{Methods and results section of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.\\
+Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
 The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 This section describes our approach.
 
@@ -140,7 +141,7 @@ Different sample sizes are realized by varying the maximum distance of stars to 
     \end{centering}
 \end{figure}
 
-\subsection{Synthetic planet sample}
+\subsection{Synthetic planet sample}\label{sec:syn_planets}
 Next, we assigned planetary systems to the synthetic stellar sample.
 The orbital parameters and bulk properties of these simulated planets are informed by statistics from the \kepler\ mission.
 
@@ -200,8 +201,35 @@ This represents the baseline bulk density before any magma ocean-related effects
 \subsubsection{Synthetic planet populations with and without magma oceans}
 \todo{describe the way we inject magma oceans into the synthetic planet population with Bioverse}
 \begin{note}
-
+    Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
+    To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
+    While we search for the magma ocean pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
+    Relevant properties are a planet's mass $M$, its instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
+    We consider three different cases:
+    \begin{itemize}
+   \item[A.] No radius change.
+    This case serves as our null hypothesis, where planetary radii are not affected by the amount of irradiation the planets receive.
+    It also applies outside the runaway greenhouse limit, where we assume a solid planetary surface and no steam atmosphere.
+        A planet that lies \textit{within} the runaway greenhouse limit but that is already completely desiccated will have the same radius. \todo{Mention if this case is considered in the model or not (as of now, no).}
+   \item[B.] Radius inflation due to a steam atmosphere.
+    We assigned planets within the runaway greenhouse limit steam atmospheres, which increase atmospheric scale heights significantly.
+   \item[C.] Radius decrease of inflated planets due to water in the melt.
+    Due to greenhouse forcing, planetary surfaces below steam atmospheres are thought to be molten.
+    Part of the water will then partition into the melt, removing it from the steam atmosphere, which in turn decreases the radius inflation.
+    This effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values.
+    \end{itemize}
 \end{note}
+
+
+In case A, a planet simply retains the radius it was assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
+Case B assumes an inflated radius due to a steam atmosphere for runaway greenhouse planets.
+To quantify this radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
+Their calculations start from the same underlying mass-radius relations that we use for case-A-planets~\citep{Zeng2016}.
+...
+
+
+
+
 
 
 \begin{figure}
@@ -220,6 +248,11 @@ This represents the baseline bulk density before any magma ocean-related effects
         \label{fig:has_magmaocean}
     \end{centering}
 \end{figure*}
+
+
+
+
+
 
 
 
@@ -419,7 +452,7 @@ The key findings of our work are as follows:
 
 %\begin{acknowledgments}
 %The authors thank Yann Fabel, Paul Molliere, and Terry-Ann Suer for insightful discussions.
-%We are grateful to Martin Turbet for providing the mass-radius relationship data.
+%We are grateful to Martin Turbet for providing the mass-radius relationship data for planets harboring steam atmospheres.
 %\end{acknowledgements}
 
 \begin{large}\textit{Author contributions:}\end{large}
