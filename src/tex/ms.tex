@@ -42,6 +42,7 @@
     Due to these similar early formation phases, it was commonly assumed that the divergence of Venus and Earth -- in particular Venus's water loss -- occurred late in their evolution~\citep{Elkins-Tanton2013}.
     \citet{Hamano2013} showed that such a late desiccation process is not needed to explain the stark differences: for a planet rich in volatiles and receiving high enough radiation levels from its host star, a steam atmosphere limits the outgoing radiation from the (molten) planetary surface.
     This runaway greenhouse state prevents the planet's rapid cooling and can extend the magma ocean stage to hundreds of \SI{}{\mega\year}, enough to remove the entire water reservoir from a rocky planet by hydrodynamic escape.
+    \todo[inline]{important for motivating the existence of the pattern: ``the solidification timescale can become comparable to the main-sequence lifetime of the star (Hamano et al. 2013, 2015)'' \citep{Lichtenberg2022} }
     Under the right conditions, different orbital distances alone can thus decide about a planet's water content and ultimately its habitability.
     If received flux makes the difference between our own habitable planet and dry, dead Venus, there is good reason to believe that such patterns exist in exoplanet systems as well.
 
@@ -224,7 +225,12 @@ This represents the baseline bulk density before any magma ocean-related effects
 In case A, a planet simply retains the radius it was assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
 Case B assumes an inflated radius due to a steam atmosphere for runaway greenhouse planets.
 To quantify this radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
-Their calculations start from the same underlying mass-radius relations that we use for case-A-planets~\citep{Zeng2016}.
+\begin{note}
+For the rocky interiors, their calculations rely on the mass-radius relations from ~\citep{Zeng2016} that we use for case-A-planets.
+For each planet receiving higher instellation than the runaway greenhouse threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
+We chose a threshold dayside-averaged instellation of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$, which was found as a limit for the emitted flux in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
+We note that an additional radius change due to potentially molten interiors~\citep{Bower2019} is not taken into account here.
+\end{note}
 ...
 
 
