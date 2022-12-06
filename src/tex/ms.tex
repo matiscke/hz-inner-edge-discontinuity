@@ -31,7 +31,7 @@
 
 % Main body
 \section{Introduction}
-\todo[inline]{papers: \citet{Hamano2013,Hamano2015,Barth2021,Downey2022}. \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,}}
+\todo[inline]{papers: \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021,Downey2022}.}
 
 
 
@@ -223,14 +223,14 @@ This represents the baseline bulk density before any magma ocean-related effects
 
 
 In case A, a planet simply retains the radius it was assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
-Case B assumes an inflated radius due to a steam atmosphere for runaway greenhouse planets.
-To quantify this radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
-\begin{note}
+There is no additional dependency on orbital distance or instellation.
+
+Case B assumes an inflated radius due to a steam atmosphere for all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$.
+This value was found to be a limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
+To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 For the rocky interiors, their calculations rely on the mass-radius relations from ~\citep{Zeng2016} that we use for case-A-planets.
-For each planet receiving higher instellation than the runaway greenhouse threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
-We chose a threshold dayside-averaged instellation of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$, which was found as a limit for the emitted flux in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
+For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
 We note that an additional radius change due to potentially molten interiors~\citep{Bower2019} is not taken into account here.
-\end{note}
 ...
 
 
