@@ -6,22 +6,21 @@ from natsort import natsorted
 from scipy import interpolate
 import numpy as np
 import seaborn as sns
+import cmocean
 
 import paths
+import plotstyle
 
 # sns.set(style="ticks")
 
 # Change color cycle: https://matplotlib.org/3.1.1/users/dflt_style_changes.html#colors-in-default-property-cycle
 # https://seaborn.pydata.org/tutorial/color_palettes.html
 from cycler import cycler
-plt.rcParams['axes.prop_cycle'] = cycler(color=reversed(sns.cubehelix_palette(8)))
+# plt.rcParams['axes.prop_cycle'] = cycler(color=reversed(sns.cubehelix_palette(8)))
+plt.rcParams['axes.prop_cycle'] = cycler(color=reversed(sns.color_palette("cmo.thermal", n_colors=8, desat=None)))
 
 lum_tracks = natsorted(glob.glob(str(paths.data) + "/Lum_m*.txt"))
-print(lum_tracks)
-
-# DEBUG
-# plt.text(0.1, 0.7, 'DEBUGGING', fontsize='small')
-# plt.text(0.1, 0.5, lum_tracks, fontsize='xx-small')
+# print(lum_tracks)
 
 for lum_track in reversed(lum_tracks):
 
@@ -46,11 +45,11 @@ for lum_track in reversed(lum_tracks):
     if star_mass == "1.0":
         # Retrieve last color
         c = p[-1].get_color()
-        plt.plot(4603, interpolate_luminosity([4603]), 'o', color=c)
-        plt.annotate('Current Sun',
+        plt.plot(4603, interpolate_luminosity([4603]), 'o', color=c, ms=8)
+        plt.annotate('current Sun',
             xy=(4603, interpolate_luminosity([4603])), xycoords='data',
-            xytext=(0, -10), textcoords='offset pixels',
-            horizontalalignment='center',
+            xytext=(-9, +12), textcoords='offset pixels',
+            horizontalalignment='right',
             verticalalignment='top', color=c)
         
         # Moon-forming impact
@@ -62,7 +61,10 @@ plt.ylabel("Bolometric luminosity ($L/L_{\odot}$)")
 plt.xlabel("Time (Myr)")
 
 sns.despine()
-plt.legend(ncol=1)
+# plt.legend(loc='lower left', ncol=4, bbox_to_anchor=(0.0, 1.),
+#                               frameon=False, columnspacing=1.6)
+plt.legend(loc='upper left', ncol=1, bbox_to_anchor=(1.0, 1.),
+           frameon=False, labelspacing=1.8)
 plt.tight_layout(pad=0.2, w_pad=0.5, h_pad=0.5) # https://matplotlib.org/users/tight_layout_guide.html
 
 plt.savefig(paths.figures / "luminosity_tracks.pdf")
