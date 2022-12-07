@@ -200,7 +200,6 @@ This represents the baseline bulk density before any magma ocean-related effects
 
 
 \subsubsection{Synthetic planet populations with and without magma oceans}
-\todo{describe the way we inject magma oceans into the synthetic planet population with Bioverse}
 \begin{note}
     Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
     To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
@@ -214,7 +213,7 @@ This represents the baseline bulk density before any magma ocean-related effects
         A planet that lies \textit{within} the runaway greenhouse limit but that is already completely desiccated will have the same radius. \todo{Mention if this case is considered in the model or not (as of now, no).}
    \item[B.] Radius inflation due to a steam atmosphere.
     We assigned planets within the runaway greenhouse limit steam atmospheres, which increase atmospheric scale heights significantly.
-   \item[C.] Radius decrease of inflated planets due to water in the melt.
+   \item[C.] As B, but including radius decrease of inflated planets due to water in the melt.
     Due to greenhouse forcing, planetary surfaces below steam atmospheres are thought to be molten.
     Part of the water will then partition into the melt, removing it from the steam atmosphere, which in turn decreases the radius inflation.
     This effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values.
@@ -222,27 +221,30 @@ This represents the baseline bulk density before any magma ocean-related effects
 \end{note}
 
 
-In case A, a planet simply retains the radius it was assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
+In case~A, a planet simply retains the radius it was assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
 There is no additional dependency on orbital distance or instellation.
 
-Case B assumes an inflated radius due to a steam atmosphere for all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$.
+Case~B assumes an inflated radius due to a steam atmosphere for all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$.
 This value was found to be a limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
-For the rocky interiors, their calculations rely on the mass-radius relations from ~\citep{Zeng2016} that we use for case-A-planets.
+For the rocky interiors, their calculations rely on the same mass-radius relations from ~\citep{Zeng2016} that we applied for case~A-planets.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
 We note that an additional radius change due to potentially molten interiors~\citep{Bower2019} is not taken into account here.
-...
 
+Case~C contains case~B, but also includes a radius decrease due to water partitioning in the melt.
+The magnitude of this effect is again dependent on the planet mass and on the water mass fraction.
+We follow \citet{Dorn2021} and use their computed radius deviations between a wet magma ocean and a solid mantle for a tropopause pressure~$P_\mathrm{iso}=\SI{0.1}{\bar}$.
+We then add the (in almost all cases negative) radius deviations to the planet radii computed for case~B.
 
 \begin{figure}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/radiuscomparison.pdf}
-        \caption{Mass-radius relationships for a water mass fraction of \wrr\ and different planet states: A) fully solid planets without magma oceans. B) planets with steam atmospheres. C) As B), but including the effect of water incorporation in the melt.}
+        \caption{Mass-radius relationships for a water mass fraction $x_{H_2O}= \wrr$ and different planet states: A) fully solid planets without magma oceans. B) planets with steam atmospheres. C) As B), but including the effect of water incorporation in the melt.}
         \label{fig:radiuscomparison}
     \end{centering}
 \end{figure}
 
-Figure~\ref{fig:radiuscomparison} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of \wrr.
+Figure~\ref{fig:radiuscomparison} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of $x_{H_2O}= \wrr$.
 In general, steam atmospheres (case B) cause a significant radius increase, which is slightly reduced when water incorporation in the melt is allowed (case C).
 
 
