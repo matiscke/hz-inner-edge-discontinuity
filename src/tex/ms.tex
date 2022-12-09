@@ -105,7 +105,7 @@ Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
 The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 This section describes our approach.
 
-The main task was to determine -- for different survey configurations -- the confidence level with which a magma ocean signal can be detected in simulated exoplanet observations.
+The main task is to determine -- for different survey configurations -- the confidence level with which a magma ocean signal can be detected in simulated exoplanet observations.
 For this purpose we used and expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected magma ocean signals, simulated observations of this sample, and computed Bayesian evidences in favor of the magma ocean hypothesis (see Fig.~\ref{fig:flowchart}).
 \begin{figure*}
     \begin{centering}
@@ -254,16 +254,21 @@ In the following, we test if and under what conditions this trend is large enoug
 
 \subsection{Testing the magma ocean hypothesis with current and planned exoplanet missions}
 \todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
-\begin{note}
 In previous steps, we generated a population of synthetic planets that orbit synthetic stars, and we have injected the statistical trend expected from the presence of magma oceans on a fraction of the planets.
 Only a subset of these planets would be detectable by a transit survey, and their properties can be probed only with a finite precision.
 To test the detectability of a magma ocean signature, we simulated several transit surveys with different designs and strategies and explored their capability to recover the magma ocean trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
-...
 
-    We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
-
-\end{note}
+%We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
+We identify the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a given transit survey:
+\begin{itemize}
+    \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is highly sensitive on water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern.
+    \item Sample size: Since we are looking for a population-level trend, the statistical significance will increase with a larger sample size.
+    \item Radius measurement precision: The more precise individual planet radii can be determined, the less smeared out the pattern will be. Good \textit{accuracy} is less important, as long as it does not have a systematic error scaling with stellar irradiance.
+    \item Availability and precision of mass measurements: For simple geometric reasons ($\rho \propto R^{-3}$), the expected trend is stronger when measured in bulk density than it is in planet radius space. If transiting planets can be followed up to obtain mass measurements, the statistical significance increases.
+\end{itemize}
+Besides these main factors, uncertainties in the measured instellations can influence the result, although they are typically small due to the very precise orbital period measurements available for transiting planets.
+    This can be different for young host stars when their ages can not be well constrained; in particular the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Fig.~\ref{fig:luminosity_tracks}).
 
 
 
@@ -311,6 +316,7 @@ We assessed this capability based on two determinants: the likelihood that the m
     The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
 
 \end{note}
+
 ...
 
 For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
@@ -398,9 +404,12 @@ Other causes of shrinking planet sizes have been put forward, the most widely di
     Like the magma ocean effect discussed here, these processes reduce the radii of some planets, leading to a decrease in average measured planet radii in a specific region of the planetary parameter space.
     This region is distinct from the one affected by global magma oceans, since... \todo{...elaborate why they cannot be confused}
 
-    Another potential false positive contribution comes from the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
+    Another false positive contribution may come from potential unknown variations in the occurrence rate gradients in radius-instellation space.
+    They can impact the statistical inference of the transitions, especially if these variations are similar to the expected pattern.
+    Although an abrupt pattern at the expected runaway greenhouse transition seems unlikely, examples of steep occurrence rate density changes exist.
+    An example is the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
     The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the instellation dependency of the magma ocean probability.
-    \todo{explore if this can cause confusion}
+    However, the Neptune desert occurs at smaller orbital periods and its location depends on a planet's size~\citep{Szabo2011}, which is not expected for the runaway greenhouse transition.
     \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022b}?}
 \end{note}
 
