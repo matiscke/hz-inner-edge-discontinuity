@@ -170,15 +170,6 @@ The default relation our planets follow is one assuming a pure $\mathrm{MgSiO_3}
 This represents the baseline bulk density before any magma ocean-related effects are applied.
 
 
-\subsubsection{Sample selection}
-\begin{note}
-    \todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
-    The runaway greenhouse effect becomes obsolete where no atmosphere can be maintained due to proximity to the host star and resulting atmospheric erosion.
-    We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with an instellation $S > \SI{2000}{\watt\per\square\meter}$.
-    We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
-\end{note}
-
-
 \subsubsection{Transit probability}
 \begin{note}
     Not all planets are transiting from our point of view.
@@ -256,7 +247,7 @@ In the following, we test if and under what conditions this trend is large enoug
 \todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 In previous steps, we generated a population of synthetic planets that orbit synthetic stars, and we have injected the statistical trend expected from the presence of magma oceans on a fraction of the planets.
 Only a subset of these planets would be detectable by a transit survey, and their properties can be probed only with a finite precision.
-To test the detectability of a magma ocean signature, we simulated several transit surveys with different designs and strategies and explored their capability to recover the magma ocean trend and constrain its parameters.
+To test the detectability of a runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and explored their capability to recover the magma ocean trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
 %We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
@@ -269,6 +260,36 @@ We identify the following drivers of the diagnostic power for detecting the runa
 \end{itemize}
 Besides these main factors, uncertainties in the measured instellations can influence the result, although they are typically small due to the very precise orbital period measurements available for transiting planets.
     This can be different for young host stars when their ages can not be well constrained; in particular the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Fig.~\ref{fig:luminosity_tracks}).
+
+
+\subsubsection{Survey simulations}
+\begin{note}
+The survey module of Bioverse converts the synthetic planet sample into a set of uncertainty-laden measurements of some parameters of a subset of that sample.
+   This task includes selection of the targets, application of any detection biases, and conducting simulated measurements.
+   All of the above are specific to the particular survey.
+
+Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
+    We thus chose a broad selection function centered on general detectability of transits with state-of-the-art technology.
+
+
+
+
+\end{note}
+
+
+
+\subsubsection{Sample selection}
+\begin{note}
+    \todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
+    The runaway greenhouse effect becomes obsolete where no atmosphere can be maintained due to proximity to the host star and resulting atmospheric erosion.
+    We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with an instellation $S > \SI{2000}{\watt\per\square\meter}$.
+    We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
+\end{note}
+
+
+
+
+
 
 
 
