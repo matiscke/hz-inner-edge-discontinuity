@@ -299,16 +299,15 @@ To represent these photometric limits, we chose a minimum transit depth of \SI{7
 \end{note}
 
 
+\subsubsection{Definition of the runaway greenhouse hypothesis}
+We now turn to assessing the simulated surveys in terms of their ability to detect the runaway greenhouse transition and their constraining power on parameters of this trend.
+To do this, we rely on a Bayesian hypothesis testing approach where we quantify the evidence of a hypothesis over another based on the (simulated) data.
+For our specific problem, this implies comparing evidences for a demographic imprint of the runaway greenhouse effect to its absence.
 
+\begin{note}
+%    Bayesian model comparison requires that an alternative mode be specified against which the comparison is made.
+\end{note}
 
-
-
-
-
-
-
-\subsubsection{Definition of the magma ocean hypothesis and null hypothesis}
-\todo{Define the null and alternative hypotheses}
 \begin{note}
     As a null hypothesis, we consider the case where the planetary radius distribution is independent of the instellation,
     \begin{equation}
@@ -319,7 +318,7 @@ To represent these photometric limits, we chose a minimum transit depth of \SI{7
     As motivated above, this hypothesis takes the form of a step function in instellation $S$, where the step occurs at the outer edge of the runaway greenhouse region.
     Our main observable shall be the average planet radius in the planet population inside and outside this threshold.
     The magma ocean hypothesis is then defined as
-\begin{equation}
+\begin{equation}\label{eq:mo_hypo}
     h_{\mathrm{MO}}(\theta, S) =
 %        \begin{cases}
 %        1 & \text{if } x \in \mathbb{Q}\\
@@ -354,10 +353,10 @@ To represent these photometric limits, we chose a minimum transit depth of \SI{7
 
 For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
 \begin{equation}
-    \mathcal{L}(R_\mathrm{P} \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{R_\mathrm{P}, i}^{2}}} \exp \left(-\frac{\left(R_{\mathrm{P}, i}-h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)\right)^{2}}{2 \sigma_{R_\mathrm{P}, i}^{2}}\right).
+    \mathcal{L}(R_\mathrm{P} \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{R_\mathrm{P}, i}^{2}}} \exp \left(-\frac{\left(R_{\mathrm{P}, i}-h\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{R_\mathrm{P}, i}^{2}}\right).
 \end{equation}
-Here, $h\left(\boldsymbol{\theta}, a_{\mathrm{eff}, i}\right)$ corresponds to the functional form of the magma ocean hypothesis\todo{link to eqn defining the hypothesis} .
-We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, R_\mathrm{P}) = \theta$, which states that there is no relationship between the measured planet radii and (scaled) semi-major axes.
+Here, $h\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the magma ocean hypothesis~(Eqn.~\ref{eq:mo_hypo}).
+We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, R_\mathrm{P}) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
 
 \subsection{Signature and testability of the magma ocean hypothesis with the PLATO transit survey}
 PLATO (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
@@ -485,7 +484,7 @@ The key findings of our work are as follows:
 \end{enumerate}
 
 %\begin{acknowledgments}
-%The authors thank Yann Fabel, Paul Molliere, and Terry-Ann Suer for insightful discussions.
+%The authors thank Yann Fabel, Paul Molliere, Matthew Murphy, and Terry-Ann Suer for insightful discussions.
 %We are grateful to Martin Turbet for providing the mass-radius relationship data for planets harboring steam atmospheres.
 %\end{acknowledgements}
 
