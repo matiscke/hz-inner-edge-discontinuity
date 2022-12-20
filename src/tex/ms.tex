@@ -31,7 +31,7 @@
 
 % Main body
 \section{Introduction}
-\todo[inline]{papers: \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021,Downey2022}.}
+\todo[inline]{papers: \citep[][introduce runaway GH]{} \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021,Downey2022}.}
 
 
 
@@ -331,10 +331,6 @@ For our specific problem, this implies comparing evidences for a demographic imp
 \end{equation}
     Here, $f_\mathrm{steam}$ and $f_\mathrm{water}$ are predictions from the steam atmosphere and water incorporation models, respectively.
     They are assumed to act additively on the planet radii and thus on their average $<R_\mathrm{P}>$.
-
-%        \begin{cases}
-%        \end{cases}
-
 \begin{figure}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
@@ -346,14 +342,19 @@ For our specific problem, this implies comparing evidences for a demographic imp
 \end{figure}
     Figure~\ref{fig:HnullHmo} shows the null and alternative hypotheses as a function of instellation.
     The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
-
 \end{note}
 
-...
 
-For the likelihood function, we assumed that the planet radii $R_{\mathrm{P}, i}$ are measured with a normally distributed uncertainty $\sigma_{R_\mathrm{P}, i}$ and adopted a normal distribution
+\begin{note}
+The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
+$h_{\mathrm{MO}}$ and $h_{\mathrm{null}}$ should thus be tested against a statistical estimator that represents the population mean.
+To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.
+We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. \todo[inline]{specify error propagation}
+
+As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a dataset given the model parameters, i.e., a likelihood function.
+We assumed here that the individual moving averages $SMA_i$ are measured with a normally distributed uncertainty $\sigma_{SMA_i}$ and adopted a normal distribution
 \begin{equation}
-    \mathcal{L}(R_\mathrm{P} \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{R_\mathrm{P}, i}^{2}}} \exp \left(-\frac{\left(R_{\mathrm{P}, i}-h\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{R_\mathrm{P}, i}^{2}}\right).
+    \mathcal{L}(SMA \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \exp \left(-\frac{\left(SMA_i - h\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
 \end{equation}
 Here, $h\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the magma ocean hypothesis~(Eqn.~\ref{eq:mo_hypo}).
 We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, R_\mathrm{P}) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
