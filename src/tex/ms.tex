@@ -363,9 +363,47 @@ We assumed here that the individual moving averages $SMA_i$ are measured with a 
     \mathcal{L}(SMA \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \exp \left(-\frac{\left(SMA_i - h\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
 \end{equation}
 Here, $h\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the magma ocean hypothesis~(Eqn.~\ref{eq:mo_hypo}).
-We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, R_\mathrm{P}) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
+We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, S) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
+\end{note}
 
-\subsection{Signature and testability of the magma ocean hypothesis with the PLATO transit survey}
+
+
+\subsubsection{Hypothesis tests}
+We are now ready to assess the relative plausibility of $h_{\mathrm{MO}}$ and $h_{\mathrm{null}}$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
+This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimate with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
+Our criterion to reject the null hypothesis is
+\begin{equation}
+\Delta \ln \mathcal{Z}  = \ln \mathcal{Z} - \ln \mathcal{Z}_\mathrm{null}  > 3.
+\end{equation}
+The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statistical significance popular in frequentist approaches.\todo{CITATION}
+
+A sensible choice of priors is central for evidence estimation via nested sampling.
+As the parameters we are interested in recovering, $S_\mathrm{thresh}$ and $x_{H_2O}$, are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
+For $S_\mathrm{thresh}$, we chose a log-uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
+Similarly, we sample $x_{H_2O}$ from a log-uniform distribution.
+Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:mo_model}).
+Finally, we adopt a broad, uniform prior for $<R_\mathrm{P}>$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
+We then ran the nested sampler to compute the log-evidence and sample the posterior distributions.
+
+
+
+\subsection{Signature of the magma ocean hypothesis}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Testability of the magma ocean hypothesis with the PLATO transit survey}
 PLATO (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
 The PLATO team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
 In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
@@ -387,7 +425,7 @@ We base our assessment of PLATO's diagnostic power to test the magma ocean hypot
 \begin{note}
    The fidelity of a future detection or falsification of a magma ocean signature will depend on the significance with which the null hypothesis can be excluded.
    As a consequence, instrumentation and survey strategy aiming at testing the hypothesis should aim at maximizing the probability of a true positive detection given the existence of the effect.
-   This is called the statistical power of the test.
+   This is called the \textit{statistical power}: the probability of correctly rejecting a false null hypothesis.
    Before turning to mission design trades that influence the statistical power in Sect.~\ref{sec:mission-design-trades}, we explore its behavior as a function of various free parameters of the magma ocean model.
     ...
 \begin{figure*}[ht!]
