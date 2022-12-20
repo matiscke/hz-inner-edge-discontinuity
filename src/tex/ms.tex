@@ -191,7 +191,6 @@ This represents the baseline bulk density before any magma ocean-related effects
 
 
 \subsubsection{Synthetic planet populations with and without magma oceans}
-\begin{note}
     Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
     To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
     While we search for the magma ocean pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
@@ -209,7 +208,6 @@ This represents the baseline bulk density before any magma ocean-related effects
     Part of the water will then partition into the melt, removing it from the steam atmosphere, which in turn decreases the radius inflation.
     This effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values.
     \end{itemize}
-\end{note}
 
 
 In case~A, a planet simply retains the radius it was assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
@@ -308,7 +306,6 @@ For our specific problem, this implies comparing evidences for a demographic imp
 %    Bayesian model comparison requires that an alternative mode be specified against which the comparison is made.
 \end{note}
 
-\begin{note}
     As a null hypothesis, we consider the case where the planetary radius distribution is independent of the instellation,
     \begin{equation}
         h_{\mathrm{null}}(\theta, S) = \theta,
@@ -326,11 +323,11 @@ For our specific problem, this implies comparing evidences for a demographic imp
 %    \end{cases}
         \begin{cases}
         h_{\mathrm{null}} & \text{for } S \leq S_\mathrm{thresh}\\
-        <R_\mathrm{P}> (f_\mathrm{steam}, f_\mathrm{water}) & \text{for } S > S_\mathrm{thresh}.
+        \langle R_\mathrm{P}\rangle (f_\mathrm{steam}, f_\mathrm{water}) & \text{for } S > S_\mathrm{thresh}.
     \end{cases}
 \end{equation}
     Here, $f_\mathrm{steam}$ and $f_\mathrm{water}$ are predictions from the steam atmosphere and water incorporation models, respectively.
-    They are assumed to act additively on the planet radii and thus on their average $<R_\mathrm{P}>$.
+    They are assumed to act additively on the planet radii and thus on their average $\langle R_\mathrm{P}\rangle $.
 \begin{figure}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
@@ -342,11 +339,10 @@ For our specific problem, this implies comparing evidences for a demographic imp
 \end{figure}
     Figure~\ref{fig:HnullHmo} shows the null and alternative hypotheses as a function of instellation.
     The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
-\end{note}
 
 \begin{note}
-    The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $<R_\mathrm{P}>$.
-    The functional form of the magma ocean hypothesis is more complex: Besides the mean radius of planets outside the runaway greenhouse threshold $<R_\mathrm{P}>_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$.
+    The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
+    The functional form of the magma ocean hypothesis is more complex: Besides the mean radius of planets outside the runaway greenhouse threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$.
     Further, the parameter encoding the amount of radius change is the planetary water mass fraction~$x_{H_2O}$.
 \end{note}
 
@@ -382,8 +378,8 @@ As the parameters we are interested in recovering, $S_\mathrm{thresh}$ and $x_{H
 For $S_\mathrm{thresh}$, we chose a log-uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
 Similarly, we sample $x_{H_2O}$ from a log-uniform distribution.
 Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:mo_model}).
-Finally, we adopt a broad, uniform prior for $<R_\mathrm{P}>$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
-We then ran the nested sampler to compute the log-evidence and sample the posterior distributions.
+Finally, we adopt a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
+We then ran the nested sampler to compute the evidence and sample the posterior distributions.
 
 
 
