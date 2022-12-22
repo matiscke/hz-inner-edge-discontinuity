@@ -71,13 +71,8 @@ For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\
 
 
 
-
-
-
-
-\subsection{Synthetic star sample}
-The first step in our analysis is to generate a synthetic sample of stars and planets.
-First, we created a stellar population based on the observed population in the solar neighborhood, to which we then assign planetary systems based on occurrence rates derived from the \kepler\ mission.
+\subsection{Synthetic star and planet sample}
+The first step in our analysis is to generate a sample of stars that host synthetic planets.
 
 \subsubsection{Stellar sample from Gaia DR3}
 Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
@@ -101,18 +96,17 @@ Different sample sizes are realized by varying the maximum distance of stars to 
     \end{centering}
 \end{figure}
 
-\subsection{Synthetic planet sample}\label{sec:syn_planets}
-Next, we assigned planetary systems to the synthetic stellar sample.
-The orbital parameters and bulk properties of these simulated planets are informed by statistics from the \kepler\ mission.
 
-\subsubsection{Planet occurrence rates in orbital period and radius}
-We adopted the planetary occurrence rates recently derived in \citep{Bergsten2022}.
+\subsubsection{Synthetic planet sample}\label{sec:syn_planets}
+Next, we assigned to the stellar sample planetary systems with frequencies, orbital parameters, and bulk properties derived from the \kepler\ mission.
+We adopted the planetary occurrence rates in orbital period and radius recently derived in~\citep{Bergsten2022}.
 Following \citep{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
 \begin{equation}
     \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
 \end{equation}
-where $F_0$ ...
-\todo[inline]{GALEN: Describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
+where $F_0$
+...
+\todo[inline]{GALEN: Briefly describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
 
 
 \subsubsection{Eccentricities, orbital inclinations, and planet masses}
@@ -149,7 +143,7 @@ This represents the baseline bulk density before any magma ocean-related effects
 
 
 
-\subsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
+\subsubsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
 \todo[inline]{"Methods Section" for the geophysical models. Describe specific parametrization, dependency on bulk planet/orbit params\\
 ~\\
 \textbf{Main assumptions:}\\
@@ -161,7 +155,6 @@ This represents the baseline bulk density before any magma ocean-related effects
 ...
 
 
-
 \begin{note}
     The power from the host star per unit area at the position of a planet or instellation $S$ in units of Earth's insolation is given by
     \begin{equation}
@@ -171,8 +164,6 @@ This represents the baseline bulk density before any magma ocean-related effects
     The absolute value of $S_\oplus$, by which all synthetic planets are scaled, is then \SI{238}{\watt\per\square\meter}.
     We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
 \end{note}
-
-
 
 
 
@@ -240,14 +231,9 @@ The survey module of Bioverse converts the synthetic planet sample into a set of
 Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
     We thus chose a broad selection function centered on general detectability of transits with state-of-the-art technology.
 
-
-
-
 \end{note}
 
-
-
-\subsection{Detection bias and sample selection}\label{sec:sensitivity}
+\subsubsection{Detection bias and sample selection}\label{sec:sensitivity}
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
 A detailed characterization of the detection biases of individual missions would not be justifiable given the uncertainties of the theoretical predictions.
 Instead, we derived generic observing limits that reflect the limitations of state-of-the-art transit surveys.
@@ -268,15 +254,14 @@ To represent these photometric limits, we chose a minimum transit depth of \SI{7
 \end{note}
 
 
-\subsection{Definition of the runaway greenhouse hypothesis}
+\subsection{Hypothesis tests}
 We now turn to assessing the simulated surveys in terms of their ability to detect the runaway greenhouse transition and their constraining power on parameters of this trend.
 To do this, we rely on a Bayesian hypothesis testing approach where we quantify the evidence of a hypothesis over another based on the (simulated) data.
 For our specific problem, this implies comparing evidences for a demographic imprint of the runaway greenhouse effect to its absence.
-
+\subsubsection{Definition of the runaway greenhouse hypothesis}
 \begin{note}
 %    Bayesian model comparison requires that an alternative mode be specified against which the comparison is made.
 \end{note}
-
     As a null hypothesis, we consider the case where the planetary radius distribution is independent of the instellation,
     \begin{equation}
         h_{\mathrm{null}}(\theta, S) = \theta,
@@ -335,7 +320,7 @@ We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, 
 
 
 
-\subsection{Hypothesis tests}
+\subsubsection{Bayesian model comparison}
 We are now ready to assess the relative plausibility of $h_{\mathrm{MO}}$ and $h_{\mathrm{null}}$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
 This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimate with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
 Our criterion to reject the null hypothesis is
