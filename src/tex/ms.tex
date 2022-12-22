@@ -57,8 +57,8 @@
 \todo[inline]{Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
 %The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 
-The main task is to determine -- for different survey configurations -- the confidence level with which a magma ocean signal can be detected in simulated exoplanet observations.
-For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected magma ocean signals, simulated observations of this sample, and computed Bayesian evidences in favor of the magma ocean hypothesis (see Fig.~\ref{fig:flowchart}).
+We determined -- for different survey configurations -- the confidence level with which the runaway greenhouse threshold can be detected in simulated exoplanet observations.
+For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected the runaway greenhouse signal, simulated observations of this sample, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
@@ -164,7 +164,7 @@ This represents the baseline bulk density before any climate-related effects are
 
     Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
     To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
-    While we search for the magma ocean pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
+    While we search for the runaway greenhouse pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
     Relevant properties are a planet's mass $M$, its instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
     We consider three different cases:
     \begin{itemize}
@@ -261,13 +261,9 @@ For our specific problem, this implies comparing evidences for a demographic imp
     We further define an alternative hypothesis that describes radius changes due to steam atmospheres and water in the melt.
     As motivated above, this hypothesis takes the form of a step function in instellation $S$, where the step occurs at the outer edge of the runaway greenhouse region.
     Our main observable shall be the average planet radius in the planet population inside and outside this threshold.
-    The magma ocean hypothesis is then defined as
-\begin{equation}\label{eq:mo_hypo}
-    h_{\mathrm{MO}}(\theta, S) =
-%        \begin{cases}
-%        1 & \text{if } x \in \mathbb{Q}\\
-%        0 & \text{if } x \in \mathbb{R}\setminus\mathbb{Q}
-%    \end{cases}
+    The runaway greenhouse hypothesis is then defined as
+\begin{equation}\label{eq:rgh_hypo}
+    h_{\mathrm{rgh}}(\theta, S) =
         \begin{cases}
             h_{\mathrm{null}} & \text{for } S \leq S_\mathrm{thresh}\\
             \langle R_\mathrm{P}\rangle (f_\mathrm{steam}, f_\mathrm{water}) & \text{for } S > S_\mathrm{thresh}.
@@ -280,7 +276,7 @@ For our specific problem, this implies comparing evidences for a demographic imp
         \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
         \caption{Planets above and below the runaway greenhouse threshold.
         \textit{Top}: Planet state as a function of orbital period. Planets with and without a runaway greenhouse climate mix and are not distinguishable in period space.
-        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, radii are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This magma ocean hypothesis can be tested against the null hypothesis $H_0$ (green), where average radii are independent of instellation.}
+        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, radii are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This runaway greenhouse hypothesis can be tested against the null hypothesis $h_\mathrm{null}$ (green), where average radii are independent of instellation.}
         \label{fig:HnullHmo}
     \end{centering}
 \end{figure}
@@ -289,14 +285,14 @@ For our specific problem, this implies comparing evidences for a demographic imp
 
 \begin{note}
     The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
-    The functional form of the magma ocean hypothesis is more complex: Besides the mean radius of planets outside the runaway greenhouse threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$.
+    The functional form of the runaway greenhouse hypothesis is more complex: Besides the mean radius of planets outside the threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$.
     Further, the parameter encoding the amount of radius change is the planetary water mass fraction~$x_{H_2O}$.
 \end{note}
 
 
 \begin{note}
 The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
-$h_{\mathrm{MO}}$ and $h_{\mathrm{null}}$ should thus be tested against a statistical estimator that represents the population mean.
+$h_{\mathrm{rgh}}$ and $h_{\mathrm{null}}$ should thus be tested against a statistical estimator that represents the population mean.
 To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.
 We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. \todo[inline]{specify error propagation}
 
@@ -305,14 +301,14 @@ We assumed here that the individual moving averages $SMA_i$ are measured with a 
 \begin{equation}
     \mathcal{L}(SMA \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \exp \left(-\frac{\left(SMA_i - h\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
 \end{equation}
-Here, $h\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the magma ocean hypothesis~(Eqn.~\ref{eq:mo_hypo}).
+Here, $h\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the runaway greenhouse hypothesis~(Eqn.~\ref{eq:rgh_hypo}).
 We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, S) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
 \end{note}
 
 
 
 \subsubsection{Bayesian model comparison}
-We are now ready to assess the relative plausibility of $h_{\mathrm{MO}}$ and $h_{\mathrm{null}}$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
+We are now ready to assess the relative plausibility of $h_{\mathrm{rgh}}$ and $h_{\mathrm{null}}$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
 This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimate with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
 Our criterion to reject the null hypothesis is
 \begin{equation}
@@ -331,7 +327,7 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
 
 
 \section{Results}
-\subsection{Signature of the magma ocean hypothesis}
+\subsection{Signature of the runaway greenhouse hypothesis}
 \todo[inline]{show general detectability}
 
 
@@ -342,7 +338,7 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
         \includegraphics[width=\linewidth]{figures/optimistic_R-S.pdf}
         \caption{
         Detection of the runaway greenhouse threshold in the optimistic case.
-        From simulated radius and instellation measurements of a large ($N = \Nplanets$) survey, we compute the moving average (blue confidence intervals) and fit the runaway greenhouse hypothesis to it (Eqn.~\ref{eq:mo_hypo}, random draws from the posterior in red).
+        From simulated radius and instellation measurements of a large ($N = \Nplanets$) survey, we compute the moving average (blue confidence intervals) and fit the runaway greenhouse hypothesis to it (Eqn.~\ref{eq:rgh_hypo}, random draws from the posterior in red).
             The pattern is detected with high significance.
         }
         \label{fig:optimistic_R-S}
@@ -381,7 +377,7 @@ This can be different for young host stars when their ages can not be well const
 PLATO (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
 The PLATO team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
 In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
-We base our assessment of PLATO's diagnostic power to test the magma ocean hypothesis on these estimates.
+We base our assessment of PLATO's diagnostic power to test the runaway greenhouse hypothesis on these estimates.
 
 \begin{figure}[ht!]
 %    \script{figurescript.py}
@@ -407,7 +403,7 @@ We base our assessment of PLATO's diagnostic power to test the magma ocean hypot
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/example_statistical_power.pdf}
         \caption{
-        Statistical power of a magma ocean hypothesis test as a function of model parameters.
+        Statistical power of the runaway greenhouse hypothesis test as a function of model parameters.
         }
         \label{fig:statistical_power}
     \end{centering}
@@ -416,7 +412,7 @@ We base our assessment of PLATO's diagnostic power to test the magma ocean hypot
 \end{note}
 
 \subsection{Statistical power of different mission designs}\label{sec:statpower_missions}
-\todo[inline]{show detectability of the magma ocean signature for different mission designs}
+\todo[inline]{show detectability of the runaway greenhouse signature for different mission designs}
 
 \begin{figure}[ht!]
 %    \script{figurescript.py}
@@ -497,7 +493,7 @@ We base our assessment of PLATO's diagnostic power to test the magma ocean hypot
 The key findings of our work are as follows:
 \begin{enumerate}
     \item The demographic imprint of the runaway greenhouse threshold should be detectable with transit measurements of a large enough sample and sufficient precision.
-    \item We find that the planned PLATO transit survey will provide a sufficient sample to test the magma ocean hypothesis.
+    \item We find that the planned PLATO transit survey will provide a sufficient sample to test the runaway greenhouse hypothesis.
     \item The diagnostic power of transit missions in testing this hypothesis can be maximized by ...
     \item A detection of the feature will constrain the water inventory of rocky exoplanets, providing important context in the assessment of their habitability.
 \end{enumerate}
