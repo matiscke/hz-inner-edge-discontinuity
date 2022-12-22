@@ -54,10 +54,8 @@
 
 
 \section{Methods}\label{sec:methods}
-\todo[inline]{Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.\\
-Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
-The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
-This section describes our approach.
+\todo[inline]{Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
+%The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 
 The main task is to determine -- for different survey configurations -- the confidence level with which a magma ocean signal can be detected in simulated exoplanet observations.
 For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected magma ocean signals, simulated observations of this sample, and computed Bayesian evidences in favor of the magma ocean hypothesis (see Fig.~\ref{fig:flowchart}).
@@ -77,6 +75,7 @@ The first step in our analysis is to generate a sample of stars that host synthe
 \subsubsection{Stellar sample from Gaia DR3}
 Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
 \todo[inline]{KEVIN: describe stellar population}
+...
 
 \subsubsection{Stellar luminosity tracks}
     Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
@@ -120,27 +119,19 @@ Assuming isotropic alignments of orbits, we assigned each planet an inclination 
 To assign masses to our planets, we use the semi-empirical mass-radius relationship derived in \citet{Zeng2016}.
 The default relation our planets follow is one assuming a pure $\mathrm{MgSiO_3}$ composition.
 \todo[inline]{JUSTIFY this choice (TIM?)}
-This represents the baseline bulk density before any magma ocean-related effects are applied.
+This represents the baseline bulk density before any climate-related effects are applied.
 
 
 \subsubsection{Transit probability}
 \begin{note}
-    Not all planets are transiting from our point of view.
-    We model the occurrence of transits by assuming random, isotropic orientations of planetary orbits and calculating the transit impact parameter $b = \cos(i)/R_\star$ for each planet.
-    Only planets with $|b| < 1$ are potentially observable in transit and further considered.
+    We model the occurrence of transits by assuming isotropic orientations of planetary orbits, calculating the impact parameters $b = \cos(i)/R_\star$ and considering only observable planets with $|b| < 1$.
     For these cases we calculate the transit depth
     \begin{equation}\label{eq:transitdepth}
-        \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2
-    \end{equation}\todo[inline]{check if transit depth or duration are actually used further down}
-    and transit duration
-    \begin{equation}\label{eq:transitduration}
-        t_{\mathrm{T}} = \frac{R_\star P}{\pi a} \sqrt{1 - b^2},
+        \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2,
     \end{equation}
-    which are relevant for the detection probability of the respective planet~(see Sect.~\ref{sec:sensitivity}).
+    which is relevant for the detection probability of the respective planet~(see Sect.~\ref{sec:sensitivity}).
     Excluding all non-transiting planets diminishes the sample to \SI{\percentageTransiting}{\percent} of its original size.
 \end{note}
-
-
 
 
 \subsubsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
@@ -162,7 +153,7 @@ This represents the baseline bulk density before any magma ocean-related effects
     \end{equation}
     Here, we assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's [CITE].
     The absolute value of $S_\oplus$, by which all synthetic planets are scaled, is then \SI{238}{\watt\per\square\meter}.
-    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
+%    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
 \end{note}
 
 
@@ -225,15 +216,12 @@ In the following, we test if and under what conditions this trend is large enoug
 \subsection{Survey simulations}
 \begin{note}
 The survey module of Bioverse converts the synthetic planet sample into a set of uncertainty-laden measurements of some parameters of a subset of that sample.
-   This task includes selection of the targets, application of any detection biases, and conducting simulated measurements.
+   This task includes selection of the targets, application of detection biases, and conducting simulated measurements.
    All of the above are specific to the particular survey.
-
-Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
-    We thus chose a broad selection function centered on general detectability of transits with state-of-the-art technology.
 
 \end{note}
 
-\subsubsection{Detection bias and sample selection}\label{sec:sensitivity}
+\subsubsection{Detection bias and sample selection}\label{sec:sensitivity} % Turbet2019 lists precision for CHEOPS, PLATO?, TESS?
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
 A detailed characterization of the detection biases of individual missions would not be justifiable given the uncertainties of the theoretical predictions.
 Instead, we derived generic observing limits that reflect the limitations of state-of-the-art transit surveys.
@@ -244,10 +232,13 @@ This S/N is sensitive on the photometric precision that can be achieved~\citep[e
 In its in-orbit commissioning phase, the \cheops\ mission demonstrated a photometric precision of \SI{75}{\ppm} for faint ($V\approx 12$) stars~\citep{Benz2021}.
 In comparison, \plato's expected precision for similar stars was estimated to be \SI{\sim 50}{\ppm}~\citep[][Matuszewski et al., in prep.]{plato2017}.
 To represent these photometric limits, we chose a minimum transit depth of \SI{75}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
+We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagnitude$.
 
 \begin{note}
     \todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
-    Another selection concerns the climate regime of interest.
+%    Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
+%    We thus chose a broad selection function centered on general detectability of transits with state-of-the-art technology.
+
     The runaway greenhouse effect becomes obsolete where no atmosphere can be maintained due to proximity to the host star and resulting atmospheric erosion.
     We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with an instellation $S > \SI{2000}{\watt\per\square\meter}$.
     We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
@@ -278,9 +269,9 @@ For our specific problem, this implies comparing evidences for a demographic imp
 %        0 & \text{if } x \in \mathbb{R}\setminus\mathbb{Q}
 %    \end{cases}
         \begin{cases}
-        h_{\mathrm{null}} & \text{for } S \leq S_\mathrm{thresh}\\
-        \langle R_\mathrm{P}\rangle (f_\mathrm{steam}, f_\mathrm{water}) & \text{for } S > S_\mathrm{thresh}.
-    \end{cases}
+            h_{\mathrm{null}} & \text{for } S \leq S_\mathrm{thresh}\\
+            \langle R_\mathrm{P}\rangle (f_\mathrm{steam}, f_\mathrm{water}) & \text{for } S > S_\mathrm{thresh}.
+        \end{cases}
 \end{equation}
     Here, $f_\mathrm{steam}$ and $f_\mathrm{water}$ are predictions from the steam atmosphere and water incorporation models, respectively.
     They are assumed to act additively on the planet radii and thus on their average $\langle R_\mathrm{P}\rangle $.
@@ -359,7 +350,7 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
 \end{figure}
 Figure~\ref{fig:optimistic_R-S} shows a prototypical detection of the runaway greenhouse threshold.
 For the sake of clarity, we chose an optimistic scenario where the sample is large ($N = \Nplanets$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
-We assumed a water mass fractions of \wrr\ for each planet.
+We assumed a water mass fraction of \wrr\ for each planet.
 In this case, the pattern was detected with high significance ($\ln \mathcal{Z} \approx 100$).
 
 
@@ -370,7 +361,7 @@ In this case, the pattern was detected with high significance ($\ln \mathcal{Z} 
 \todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 In previous steps, we generated a population of synthetic planets that orbit synthetic stars, and we have injected the statistical trend expected from the presence of magma oceans on a fraction of the planets.
 Only a subset of these planets would be detectable by a transit survey, and their properties can be probed only with a finite precision.
-To test the detectability of a runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and explored their capability to recover the magma ocean trend and constrain its parameters.
+To test the detectability of a runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and explored their capability to recover the trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
 
@@ -397,7 +388,7 @@ We base our assessment of PLATO's diagnostic power to test the magma ocean hypot
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/example_cornerplot.pdf}
         \caption{
-        Retrieved posterior distribution of magma ocean model. The density maps in each panel show relationships between and marginalized distributions of the model parameters as they would be retrieved with a targeted $<nominal telescope size>$ survey of $<survey duration>$ duration. True values of the injected magma ocean parameters are shown in orange. ...
+        Retrieved posterior distribution of the magma ocean model. The density maps in each panel show relationships between and marginalized distributions of the model parameters as they would be retrieved with a targeted $<nominal telescope size>$ survey of $<survey duration>$ duration. True values of the injected magma ocean parameters are shown in orange. ...
         }
         \label{fig:cornerplot}
     \end{centering}
