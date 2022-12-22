@@ -53,43 +53,8 @@
 \end{note}
 
 
-
-\section{Global magma oceans and their imprint on exoplanet demographics}
-\todo[inline]{"Methods Section" for the geophysical models.\\
-~\\
-\textbf{Main assumptions:}\\
-- Assume that every planet has \textit{some} water. Enough for runaway GH under the right conditions. Baseline water content: 20\% \\
-- Limitation to small planets without significant atmospheric envelopes.\\
-- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
-- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
-}
-
-
-\subsection{Demographic imprint of magma oceans}
-\todo{describe the expected imprint on the exoplanet population. \\Provide parametrizations from \citet{Dorn2021}'s models.}
-
-\subsubsection{Parametrization}
-\label{sec:mo_model}
-\todo{specific parametrization, dependency on bulk planet/orbit params (doesn't have to be its own subsubsection)}
-
-
-
-\begin{note}
-    The power from the host star per unit area at the position of a planet or instellation $S$ in units of Earth's insolation is given by
-    \begin{equation}
-        \frac{S}{S_\oplus} = \left(\frac{L_\star}{L_\odot}\right) \left(\frac{au}{a}\right)^2 .
-    \end{equation}
-    Here, we assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's [CITE].
-    The absolute value of $S_\oplus$, by which all synthetic planets are scaled, is then \SI{238}{\watt\per\square\meter}.
-    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
-\end{note}
-
-
-
-
-
-\section{Observational test of the runaway greenhouse transition}
-\todo[inline]{Methods section of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.\\
+\section{Methods}\label{sec:methods}
+\todo[inline]{Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.\\
 Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
 The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 This section describes our approach.
@@ -103,6 +68,11 @@ For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\
         \label{fig:flowchart}
     \end{centering}
 \end{figure*}
+
+
+
+
+
 
 
 \subsection{Synthetic star sample}
@@ -179,7 +149,37 @@ This represents the baseline bulk density before any magma ocean-related effects
 
 
 
-\subsubsection{Synthetic planet populations with and without magma oceans}
+\subsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
+\todo[inline]{"Methods Section" for the geophysical models. Describe specific parametrization, dependency on bulk planet/orbit params\\
+~\\
+\textbf{Main assumptions:}\\
+- Assume that every planet has \textit{some} water. Enough for runaway GH under the right conditions. Baseline water content: 20\% \\
+- Limitation to small planets without significant atmospheric envelopes.\\
+- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
+- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
+}
+...
+
+
+
+\begin{note}
+    The power from the host star per unit area at the position of a planet or instellation $S$ in units of Earth's insolation is given by
+    \begin{equation}
+        \frac{S}{S_\oplus} = \left(\frac{L_\star}{L_\odot}\right) \left(\frac{au}{a}\right)^2 .
+    \end{equation}
+    Here, we assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's [CITE].
+    The absolute value of $S_\oplus$, by which all synthetic planets are scaled, is then \SI{238}{\watt\per\square\meter}.
+    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
+\end{note}
+
+
+
+
+
+
+
+
+
     Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
     To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
     While we search for the magma ocean pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
