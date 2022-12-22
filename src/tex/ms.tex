@@ -106,11 +106,11 @@ The purpose of this paper is to demonstrate the feasibility of measuring the dem
 This section describes our approach.
 
 The main task is to determine -- for different survey configurations -- the confidence level with which a magma ocean signal can be detected in simulated exoplanet observations.
-For this purpose we used and expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected magma ocean signals, simulated observations of this sample, and computed Bayesian evidences in favor of the magma ocean hypothesis (see Fig.~\ref{fig:flowchart}).
+For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected magma ocean signals, simulated observations of this sample, and computed Bayesian evidences in favor of the magma ocean hypothesis (see Fig.~\ref{fig:flowchart}).
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
-        \caption{Workflow of our hypothesis testing with Bioverse. In the first block, a stellar sample is generated based on XXX. The stars are then populated with planets from XXX, which may be assigned a magma ocean based on the model described in Sect.~\ref{sec:mo_model}. The planets' respective transit probabilities are computed. The second block simulates the exoplanet survey whereby selection effects and detection biases are introduced. Finally, the third block deals with testing a hypothesis based on the data from the simulated survey. By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
+        \caption{Workflow of our hypothesis testing with Bioverse. In the first block, a stellar sample is generated based on the Gaia nearby stars catalog~\citep{Smart2021}\todo[]{KEVIN pls verify}. The stars are then populated with planets based on Kepler demographics, and they may be assigned a magma ocean based on the model described in Sect.~\ref{sec:mo_model}. The planets' respective transit probabilities are computed. The second block simulates the exoplanet survey whereby selection effects and detection biases are introduced. Finally, the third block deals with testing a hypothesis based on the data from the simulated survey. By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
         \label{fig:flowchart}
     \end{centering}
 \end{figure*}
@@ -367,16 +367,26 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
 
 \section{Results}
 \subsection{Signature of the magma ocean hypothesis}
+\todo[inline]{show general detectability}
 
 
 
-
-
-
-
-
-
-
+\begin{figure}[ht!]
+%    \script{figurescript.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/optimistic_R-S.pdf}
+        \caption{
+        Detection of the runaway greenhouse threshold in the optimistic case.
+        From simulated radius and instellation measurements of a large ($N = \Nplanets$) survey, we compute the moving average (blue confidence intervals) and fit the runaway greenhouse hypothesis to it (Eqn.~\ref{eq:mo_hypo}, random draws from the posterior in red).
+            The pattern is detected with high significance.
+        }
+        \label{fig:optimistic_R-S}
+    \end{centering}
+\end{figure}
+Figure~\ref{fig:optimistic_R-S} shows a prototypical detection of the runaway greenhouse threshold.
+For the sake of clarity, we chose an optimistic scenario where the sample is large ($N = \Nplanets$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
+We assumed a water mass fractions of \wrr\ for each planet.
+In this case, the pattern was detected with high significance ($\ln \mathcal{Z} \approx 100$).
 
 
 
