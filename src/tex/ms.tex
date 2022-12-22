@@ -100,7 +100,7 @@
 
 
 \section{Observational test of the runaway greenhouse transition}
-\todo[inline]{Methods and results section of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.\\
+\todo[inline]{Methods section of the hypothesis testing part. Introduce the idea of constraining magma ocean frequencies and/or physics with Bayesian stats on exoplanet population; introduce Bioverse; report methods of the hypothesis tests.\\
 Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
 The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 This section describes our approach.
@@ -241,26 +241,8 @@ In the following, we test if and under what conditions this trend is large enoug
 
 
 
-\subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
-\todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
-In previous steps, we generated a population of synthetic planets that orbit synthetic stars, and we have injected the statistical trend expected from the presence of magma oceans on a fraction of the planets.
-Only a subset of these planets would be detectable by a transit survey, and their properties can be probed only with a finite precision.
-To test the detectability of a runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and explored their capability to recover the magma ocean trend and constrain its parameters.
-We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
-%We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
-We identify the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a given transit survey:
-\begin{itemize}
-    \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is highly sensitive on water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern.
-    \item Sample size: Since we are looking for a population-level trend, the statistical significance will increase with a larger sample size.
-    \item Radius measurement precision: The more precise individual planet radii can be determined, the less smeared out the pattern will be. Good \textit{accuracy} is less important, as long as it does not have a systematic error scaling with stellar irradiance.
-    \item Availability and precision of mass measurements: For simple geometric reasons ($\rho \propto R^{-3}$), the expected trend is stronger when measured in bulk density than it is in planet radius space. If transiting planets can be followed up to obtain mass measurements, the statistical significance increases.
-\end{itemize}
-Besides these main factors, uncertainties in the measured instellations can influence the result, although they are typically small due to the very precise orbital period measurements available for transiting planets.
-    This can be different for young host stars when their ages can not be well constrained; in particular the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Fig.~\ref{fig:luminosity_tracks}).
-
-
-\subsubsection{Survey simulations}
+\subsection{Survey simulations}
 \begin{note}
 The survey module of Bioverse converts the synthetic planet sample into a set of uncertainty-laden measurements of some parameters of a subset of that sample.
    This task includes selection of the targets, application of any detection biases, and conducting simulated measurements.
@@ -276,7 +258,7 @@ Current and near-future missions focusing on Earth-sized planets target several 
 
 
 
-\subsubsection{Detection bias and sample selection}\label{sec:sensitivity}
+\subsection{Detection bias and sample selection}\label{sec:sensitivity}
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
 A detailed characterization of the detection biases of individual missions would not be justifiable given the uncertainties of the theoretical predictions.
 Instead, we derived generic observing limits that reflect the limitations of state-of-the-art transit surveys.
@@ -297,7 +279,7 @@ To represent these photometric limits, we chose a minimum transit depth of \SI{7
 \end{note}
 
 
-\subsubsection{Definition of the runaway greenhouse hypothesis}
+\subsection{Definition of the runaway greenhouse hypothesis}
 We now turn to assessing the simulated surveys in terms of their ability to detect the runaway greenhouse transition and their constraining power on parameters of this trend.
 To do this, we rely on a Bayesian hypothesis testing approach where we quantify the evidence of a hypothesis over another based on the (simulated) data.
 For our specific problem, this implies comparing evidences for a demographic imprint of the runaway greenhouse effect to its absence.
@@ -333,7 +315,7 @@ For our specific problem, this implies comparing evidences for a demographic imp
         \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
         \caption{Planets above and below the runaway greenhouse threshold.
         \textit{Top}: Planet state as a function of orbital period. Planets with and without a runaway greenhouse climate mix and are not distinguishable in period space.
-        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, radii are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This magma ocean hypothesis can be tested agains the null hypothesis $H_0$ (green), where average radii are independent of instellation.}
+        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, radii are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This magma ocean hypothesis can be tested against the null hypothesis $H_0$ (green), where average radii are independent of instellation.}
         \label{fig:HnullHmo}
     \end{centering}
 \end{figure}
@@ -364,7 +346,7 @@ We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, 
 
 
 
-\subsubsection{Hypothesis tests}
+\subsection{Hypothesis tests}
 We are now ready to assess the relative plausibility of $h_{\mathrm{MO}}$ and $h_{\mathrm{null}}$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
 This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimate with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
 Our criterion to reject the null hypothesis is
@@ -383,6 +365,7 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
 
 
 
+\section{Results}
 \subsection{Signature of the magma ocean hypothesis}
 
 
@@ -399,7 +382,27 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
 
 
 
-\subsection{Testability of the magma ocean hypothesis with the PLATO transit survey}
+\subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
+\todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
+In previous steps, we generated a population of synthetic planets that orbit synthetic stars, and we have injected the statistical trend expected from the presence of magma oceans on a fraction of the planets.
+Only a subset of these planets would be detectable by a transit survey, and their properties can be probed only with a finite precision.
+To test the detectability of a runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and explored their capability to recover the magma ocean trend and constrain its parameters.
+We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
+
+
+%We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
+We identified the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a given transit survey:
+\begin{itemize}
+    \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is highly sensitive on water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern.
+    \item Sample size: Since we are looking for a population-level trend, the statistical significance will increase with a larger sample size.
+    \item Radius measurement precision: The more precise individual planet radii can be determined, the less smeared out the pattern will be. Good \textit{accuracy} is less important, as long as it does not have a systematic error scaling with stellar irradiance.
+    \item Availability and precision of mass measurements: For simple geometric reasons ($\rho \propto R^{-3}$), the expected trend is stronger when measured in bulk density than it is in planet radius space. If transiting planets can be followed up to obtain mass measurements, the statistical significance increases.
+\end{itemize}
+Besides these main factors, uncertainties in the measured instellations can influence the result, although they are typically small due to the very precise orbital period measurements available for transiting planets.
+This can be different for young host stars when their ages can not be well constrained; in particular the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Fig.~\ref{fig:luminosity_tracks}).
+
+
+
 PLATO (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
 The PLATO team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
 In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
@@ -454,9 +457,48 @@ We base our assessment of PLATO's diagnostic power to test the magma ocean hypot
 
 \section{Discussion}\label{sec:discussion}
 \todo[inline]{\textbf{Potential discussion points: } what is the fraction of Kepler planets w/ runaway GH.}
-\subsection{Expected imprint of runaway greenhouse phases on exoplanet demographics}
+\subsection{Detectability of the runaway greenhouse threshold}
 
-\subsection{Detectability of the magma ocean demographic feature}
+\subsubsection{False positive scenarios}
+\todo{what other processes could be confused with a magma ocean signal?}
+\begin{note}
+    Global magma oceans are not the only physical mechanism that may cause a decrease in transit radii for a subset of planets.
+    Other causes of shrinking planet sizes have been put forward, the most widely discussed ones being atmospheric loss due to either photoevaporation through high-energy radiation by the host star~\citep[e.g.,][]{Owen2013,Jin2014,Mordasini2020a} or due to residual heat from the planet's interior shortly after formation~\citep{Ginzburg2016b,Ginzburg2018,Gupta2019}.
+    Both processes are being traded as potentially sculpting the observed radius bimodality of small, close-in exoplanets from the  mission~\citep{Fulton2017,VanEylen2018}.
+    Like the magma ocean effect discussed here, these processes reduce the radii of some planets, leading to a decrease in average measured planet radii in a specific region of the planetary parameter space.
+    This region is distinct from the one affected by global magma oceans, since... \todo{...elaborate why they cannot be confused}
+
+    Another false positive contribution may come from potential unknown variations in the occurrence rate gradients in radius-instellation space.
+    They can impact the statistical inference of the transitions, especially if these variations are similar to the expected pattern.
+    Although an abrupt pattern at the expected runaway greenhouse transition seems unlikely, examples of steep occurrence rate density changes exist.
+    An example is the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
+    The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the instellation dependency of the magma ocean probability.
+    However, the Neptune desert occurs at smaller orbital periods and its location depends on a planet's size~\citep{Szabo2011}, which is not expected for the runaway greenhouse transition.
+    \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022b}?}
+\end{note}
+
+\todo[inline]{Maps to Sect. \ref{sec:statpower_missions}.}
+
+\begin{note}
+    \citet{Penny2019} mention that a significant increase in planet yield could be achieved if the telescope's slew speed was increased.
+\end{note}
+
+\begin{figure}[ht!]
+%    \script{figurescript.py}
+    \begin{centering}
+
+        \includegraphics[width=\linewidth]{figures/example_posterior_surveys.pdf}
+        \caption{
+            Retrieved posterior distribution of the $<key parameter>$ for different survey realizations.
+            The orange line corresponds to the true value of the injected signal.
+        }
+        \label{fig:posterior_surveys}
+    \end{centering}
+\end{figure}
+
+\subsubsection{OPTIONAL...: Atmospheric signatures}
+\todo[inline]{discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (Tim's talk)}
+
 
 \subsection{Diagnostic power of upcoming exoplanet missions}\todo[inline]{PLATO: needed sample size, precision}
 
