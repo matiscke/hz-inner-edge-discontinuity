@@ -278,17 +278,6 @@ For our specific problem, this implies comparing evidences for a demographic imp
 \end{equation}
     Here, $f_\mathrm{steam}$ and $f_\mathrm{water}$ are predictions from the steam atmosphere and water incorporation models, respectively.
     They are assumed to act additively on the planet radii and thus on their average $\langle R_\mathrm{P}\rangle $.
-\begin{figure}
-    \begin{centering}
-        \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
-        \caption{Planets above and below the runaway greenhouse threshold.
-        \textit{Top}: Planet state as a function of orbital period. Planets with and without a runaway greenhouse climate mix and are not distinguishable in period space.
-        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, radii are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This runaway greenhouse hypothesis can be tested against the null hypothesis $h_\mathrm{null}$ (green), where average radii are independent of instellation.}
-        \label{fig:HnullHmo}
-    \end{centering}
-\end{figure}
-    Figure~\ref{fig:HnullHmo} shows the null and alternative hypotheses as a function of instellation.
-    The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
 
 \begin{note}
     The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
@@ -335,6 +324,23 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
 
 \section{Results}
 \subsection{Statistical signature of the runaway greenhouse threshold}
+To characterize the population-level imprint of individual radius changes, we generated a generic planet population with an injected runaway greenhouse effect assuming a water fraction $x_\mathrm{H_2O} = \wrr$.
+\begin{figure}
+    \begin{centering}
+        \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
+        \caption{Planets above and below the runaway greenhouse threshold.
+        \textit{Top}: Planet state as a function of orbital period. Planets with and without a runaway greenhouse climate mix and are not distinguishable in period space.
+        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, radii are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This runaway greenhouse hypothesis can be tested against the null hypothesis $H_0$ (green), where average radii are independent of instellation.}
+        \label{fig:HnullHmo}
+    \end{centering}
+\end{figure}
+Figure~\ref{fig:HnullHmo} shows the resulting planetary radii.
+When ordered in orbital period space, the different planet types overlap, diluting the demographic imprint.
+With net instellation as an independent variable, planets above and below the runaway greenhouse threshold separate.
+We also show the predictions of observable average planet radii from the statistical hypotheses defined above.
+%The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
+Within the runaway greenhouse limit, an average radius change of \avgRadiusChange\ occurs.
+
 
 \subsection{Testability of the runaway greenhouse hypothesis}
 \todo[inline]{show general detectability. Fiducial (optimistic) scenario.}
