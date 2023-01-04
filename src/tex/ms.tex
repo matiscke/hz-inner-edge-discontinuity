@@ -156,6 +156,7 @@ This represents the baseline bulk density before any climate-related effects are
 ...
 
 
+\todo[inline]{ARNAUD: revise definition of $S$ following our discussion on 2022-12-22. Introduce net instellation and clarify what is meant by it.}
 \begin{note}
     The power from the host star per unit area at the position of a planet or instellation $S$ in units of Earth's insolation is given by
     \begin{equation}
@@ -225,7 +226,7 @@ In the following, we test if and under what conditions this trend is large enoug
 
 \subsection{Survey simulations}
 \begin{note}
-The survey module of Bioverse converts the synthetic planet sample into a set of uncertainty-laden measurements of some parameters of a subset of that sample.
+The survey module of Bioverse converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
    This task includes selection of the targets, application of detection biases, and conducting simulated measurements.
    All of the above are specific to the particular survey.
 
@@ -301,7 +302,7 @@ We assumed here that the individual moving averages $SMA_i$ are measured with a 
     \mathcal{L}(SMA \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \exp \left(-\frac{\left(SMA_i - h\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
 \end{equation}
 Here, $h\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the runaway greenhouse hypothesis~(Eqn.~\ref{eq:rgh_hypo}).
-We tested this hypothesis against the null hypothesis $h_\mathrm{null} (\theta, S) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
+We tested this hypothesis against the null hypothesis $H_0 (\theta, S) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
 \end{note}
 
 
@@ -311,7 +312,7 @@ We are now ready to assess the relative plausibility of $H_{\mathrm{rgh}}$ and $
 This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimate with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
 Our criterion to reject the null hypothesis is
 \begin{equation}
-\Delta \ln \mathcal{Z}  = \ln \mathcal{Z} - \ln \mathcal{Z}_\mathrm{null}  > 3.
+\Delta \ln \mathcal{Z}  = \ln \mathcal{Z}_\mathrm{rgh} - \ln \mathcal{Z}_0  > 3.
 \end{equation}
 The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statistical significance popular in frequentist approaches.\todo{CITATION}
 
@@ -447,13 +448,14 @@ We base our assessment of PLATO's diagnostic power to test the runaway greenhous
 % Additional \subsection for habitability? To reflect structure in Discussion, Conclusions?
 
 \section{Discussion}\label{sec:discussion}
-\todo[inline]{\textbf{Potential discussion points: } what is the fraction of Kepler planets w/ runaway GH.}
+\todo[inline]{\textbf{Potential discussion points: } what is the fraction of \kepler\ planets w/ runaway GH.}
 
 \subsection{Statistical imprint of exoplanet climates}
 \todo[inline]{the predicted climate tipping point causes a demographic imprint.}
 
 \subsection{Detectability of the runaway greenhouse threshold}
-\todo[inline]{the demographic imprint is detectable. Under what conditions?}
+\todo[inline]{the demographic imprint is detectable. Under what conditions?\\
+Mention multiplanet systems.}
 
 \subsubsection{False positive scenarios}
 \todo{what other processes could be confused with a magma ocean signal?}
@@ -515,7 +517,7 @@ We base our assessment of PLATO's diagnostic power to test the runaway greenhous
 The key findings of our work are as follows:
 \begin{enumerate}
     \item The predicted tipping point in planetary climates causes a discontinuity in the radius and density distribution of small (DEFINITION) exoplanets.
-    \item Its demographic imprint of the runaway greenhouse threshold should be detectable with transit measurements of a large enough sample and sufficient precision.
+    \item The demographic imprint of the runaway greenhouse threshold should be detectable with transit measurements of a large enough sample and sufficient precision.
     \item We find that the planned PLATO transit survey will provide a sufficient sample to test the runaway greenhouse hypothesis.
     \item The diagnostic power of transit missions in testing this hypothesis can be maximized by ...
     \item A detection of the feature will constrain the water inventory of rocky exoplanets, providing important context in the assessment of their habitability.
