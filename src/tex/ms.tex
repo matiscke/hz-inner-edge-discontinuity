@@ -69,7 +69,10 @@ For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
-        \caption{Workflow of our hypothesis testing with Bioverse. In the first block, a stellar sample is generated based on the Gaia nearby stars catalog~\citep{Smart2021}\todo[]{KEVIN pls verify}. The stars are then populated with planets based on Kepler demographics, and they may be assigned a magma ocean based on the model described in Sect.~\ref{sec:mo_model}. The planets' respective transit probabilities are computed. The second block simulates the exoplanet survey whereby selection effects and detection biases are introduced. Finally, the third block deals with testing a hypothesis based on the data from the simulated survey. By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
+        \caption{Workflow of our hypothesis testing with Bioverse. In the first block, we generate a sample of stars and populate them with planets based on \kepler\ demographics.
+            A fraction of them are then assigned a runaway greenhouse climate based on the model described in Sect.~\ref{sec:mo_model}.
+        The second block simulates an exoplanet survey, whereby selection effects and detection biases are introduced. Finally, the third block deals with testing the runaway greenhouse hypothesis based on data from the survey simulation.
+        By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
         \label{fig:flowchart}
     \end{centering}
 \end{figure*}
