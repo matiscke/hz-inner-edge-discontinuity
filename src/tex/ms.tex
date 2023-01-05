@@ -366,11 +366,24 @@ Within the runaway greenhouse limit, an average radius change of \avgRadiusChang
 \end{figure}
 Figure~\ref{fig:optimistic_R-S} shows a prototypical detection of the runaway greenhouse threshold.
 For the sake of clarity, we chose an optimistic scenario where the sample is large ($N = \Nplanets$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
-The fraction of planets with runaway greenhouse climates was \frgh, and we assumed a water mass fraction of \wrr\ for each planet.
+We assumed that the fraction of those planets irradiated stronger than $S_\mathrm{thresh}$ that have runaway greenhouse climates is \frgh, and we chose a water mass fraction of \wrr\ for each planet.
 In this case, the pattern was detected with high significance ($\Delta \ln \mathcal{Z} \approx 100$).
 
 
-
+\begin{figure}[ht!]
+%    \script{figurescript.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/corner.pdf}
+        \caption{
+            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the model parameters as they could be retrieved with a high-precision transit survey and a sample of \Nplanets\ planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be well constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
+        }
+        \label{fig:cornerplot}
+    \end{centering}
+\end{figure}
+With such a strong signal, we can attempt an inference of the parameters defining the injected effect.
+Figure~\ref{fig:cornerplot} shows the posterior distributions of $S_\mathrm{thresh}$, $x_{H_2O}$, and $f_\mathrm{rgh}$ as determined by the nested sampler.
+The threshold instellation can be accurately constrained, $S_\mathrm{thresh}$ = \retrSthresh.
+Both a higher water mass fraction and a higher fraction of planets in a runaway greenhouse state lead to larger average radii, thus these parameters are strongly correlated and cannot be well constrained without independent measurements.
 
 
 \subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
@@ -388,16 +401,7 @@ The PLATO team has released an estimate on the number of exoplanets that will be
 In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
 We base our assessment of PLATO's diagnostic power to test the runaway greenhouse hypothesis on these estimates.
 
-\begin{figure}[ht!]
-%    \script{figurescript.py}
-    \begin{centering}
-        \includegraphics[width=\linewidth]{figures/example_cornerplot.pdf}
-        \caption{
-        Retrieved posterior distribution of the magma ocean model. The density maps in each panel show relationships between and marginalized distributions of the model parameters as they would be retrieved with a targeted $<nominal telescope size>$ survey of $<survey duration>$ duration. True values of the injected magma ocean parameters are shown in orange. ...
-        }
-        \label{fig:cornerplot}
-    \end{centering}
-\end{figure}
+
 
 
 
