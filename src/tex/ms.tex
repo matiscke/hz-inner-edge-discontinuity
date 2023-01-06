@@ -333,7 +333,7 @@ To characterize the population-level imprint of individual radius changes, we ge
 \begin{figure}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
-        \caption{Planets above and below the runaway greenhouse threshold.
+        \caption{Synthetic planets above and below the runaway greenhouse threshold.
         \textit{Top}: Planet state as a function of orbital period. Planets with and without a runaway greenhouse climate mix and are not distinguishable in period space.
         \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, the radii of a fraction of planets are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This runaway greenhouse hypothesis can be tested against the null hypothesis $H_0$ (green), where average radii are independent of instellation.}
         \label{fig:HnullHmo}
@@ -384,6 +384,27 @@ With such a strong signal, we can attempt an inference of the parameters definin
 Figure~\ref{fig:cornerplot} shows the posterior distributions of $S_\mathrm{thresh}$, $x_{H_2O}$, and $f_\mathrm{rgh}$ as determined by the nested sampler.
 The threshold instellation can be accurately constrained, $S_\mathrm{thresh}$ = \retrSthresh.
 Both a higher water mass fraction and a higher fraction of planets in a runaway greenhouse state lead to larger average radii, thus these parameters are strongly correlated and cannot be well constrained without independent measurements.
+
+
+\begin{note}
+    Given an optimistic survey design, what influences the probability of correctly rejecting a false null hypothesis?
+    \begin{figure}[ht!]
+%    \script{figurescript.py}
+        \begin{centering}
+            \includegraphics[width=\linewidth]{figures/optimistic_statpwr_H2O-f.pdf}
+            \caption{
+                Statistical power of the runaway greenhouse hypothesis test as a function of model parameters.
+                For a sample size $N = \Nplanets$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of water mass fraction and fraction of greenhouse climate planets.
+                Higher values in either parameter result in a more reliable detection.
+            }
+            \label{fig:statpwr_H2O-f}
+        \end{centering}
+    \end{figure}
+    Figure~\ref{fig:statpwr_H2O-f} explores the statistical power achieved in the above scenario for different combinations of the poorly constrained parameters $x_{H_2O}$ and $f_\mathrm{rgh}$.
+    The higher the water content and thus the radius change, and the higher the fraction of planets in runaway greenhouse climates, the greater the prospect of a statistically sound detection.
+    As long as this fraction is larger than $\sim 0.1$, a sample size of \Nplanets\ is sufficient for a $\SI{50}{\percent}$ detection rate even for water ratios as low as $x_{H_2O} = 0.001$.
+\end{note}
+
 
 
 \subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
