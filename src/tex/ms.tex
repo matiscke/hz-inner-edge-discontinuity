@@ -129,6 +129,7 @@ Assuming isotropic alignments of orbits, we assigned each planet an inclination 
 To assign masses to our planets, we use the semi-empirical mass-radius relationship derived in \citet{Zeng2016}.
 The default relation our planets follow is one assuming a pure $\mathrm{MgSiO_3}$ composition.
 \todo[inline]{JUSTIFY this choice (TIM?)}
+\todo[inline]{run a test: do we expect that the choice of M-R relation impacts the results? Perhaps have an appendix section.}
 This represents the baseline bulk density before any climate-related effects are applied.
 
 
@@ -219,7 +220,8 @@ Figure~\ref{fig:radiuscomparison} shows the different mass-radius relations of t
 In general, steam atmospheres (case~B) cause a significant radius increase, which is slightly reduced when water incorporation in the melt is allowed (case~C).
 
 Our simulation setup is such that all planets receiving an instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
-This introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
+The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
+This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
 In the following, we test if and under what conditions this trend is large enough to be detected with high significance.
 
 
@@ -246,15 +248,12 @@ In comparison, \plato's expected precision for similar stars was estimated to be
 To represent these photometric limits, we chose a minimum transit depth of \SI{75}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
 We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagnitude$.
 
-\begin{note}
-    \todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
 %    Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
 %    We thus chose a broad selection function centered on general detectability of transits with state-of-the-art technology.
-
-    The runaway greenhouse effect becomes obsolete where no atmosphere can be maintained due to proximity to the host star and resulting atmospheric erosion.
-    We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with an instellation $S > \SI{2000}{\watt\per\square\meter}$.
-    We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
-\end{note}
+The runaway greenhouse effect becomes obsolete where no atmosphere can be maintained due to proximity to the host star and resulting atmospheric erosion.
+We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with an instellation $S > \SI{2000}{\watt\per\square\meter}$.
+\todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
+We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
 
 
 \subsection{Hypothesis tests}
@@ -285,13 +284,9 @@ For our specific problem, this implies comparing evidences for a demographic imp
     $\Delta R_\mathrm{stm}$ and $\Delta R_\mathrm{wtr}$ are predicted radius changes from the steam atmosphere and water incorporation models, respectively.
     They are assumed to act additively on the planet radii and thus on their average $\langle R_\mathrm{P}\rangle $.
 
-\begin{note}
-    The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
-    The functional form of the runaway greenhouse hypothesis is more complex: Besides the mean radius of planets outside the threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$, the planetary water mass fraction~$x_{H_2O}$ encoding the amount of radius change, and the fraction of planets above the threshold instellation that are in a runaway greenhouse climate $f_\mathrm{rgh}$.
-\end{note}
+The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
+The functional form of the runaway greenhouse hypothesis is more complex: Besides the mean radius of planets outside the threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$, the planetary water mass fraction~$x_{H_2O}$ encoding the amount of radius change, and the fraction of planets above the threshold instellation that are in a runaway greenhouse climate $f_\mathrm{rgh}$.
 
-
-\begin{note}
 The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
 $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimator that represents the population mean.
 To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.
@@ -300,11 +295,9 @@ We further computed the uncertainty of this moving average by propagating the in
 As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a dataset given the model parameters, i.e., a likelihood function.
 We assumed here that the individual moving averages $SMA_i$ are measured with a normally distributed uncertainty $\sigma_{SMA_i}$ and adopted a normal distribution
 \begin{equation}
-    \mathcal{L}(SMA \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \exp \left(-\frac{\left(SMA_i - h\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
+    \mathcal{L}(SMA \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \exp \left(-\frac{\left(SMA_i - H\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
 \end{equation}
-Here, $h\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the runaway greenhouse hypothesis~(Eqn.~\ref{eq:rgh_hypo}).
-We tested this hypothesis against the null hypothesis $H_0 (\theta, S) = \theta$, which states that there is no relationship between the measured planet radii and received instellation.
-\end{note}
+Here, $H\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the runaway greenhouse or null hypothesis.
 
 
 
@@ -320,7 +313,7 @@ The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statist
 A sensible choice of priors is central for evidence estimation via nested sampling.
 As the parameters we are interested in recovering, $S_\mathrm{thresh}$ and $x_{H_2O}$, are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
 For $S_\mathrm{thresh}$, we chose a log-uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
-Similarly, we sample $x_{H_2O}$ from a log-uniform distribution.
+Similarly, we sample $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
 Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:mo_model}).
 Finally, we adopt a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
 We then ran the nested sampler to compute the evidence and sample the posterior distributions.
@@ -348,10 +341,6 @@ Within the runaway greenhouse limit, an average radius change of \avgRadiusChang
 
 
 \subsection{Testability of the runaway greenhouse hypothesis}
-\todo[inline]{show general detectability. Fiducial (optimistic) scenario.}
-
-
-
 \begin{figure}[ht!]
 %    \script{figurescript.py}
     \begin{centering}
@@ -409,15 +398,11 @@ Both a higher water mass fraction and a higher fraction of planets in a runaway 
 
 \subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
 \todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
-In previous steps, we generated a population of synthetic planets that orbit synthetic stars, and we have injected the statistical trend expected from the presence of magma oceans on a fraction of the planets.
-Only a subset of these planets would be detectable by a transit survey, and their properties can be probed only with a finite precision.
+
+The planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
 To test the detectability of a runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and explored their capability to recover the trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
-
-
-
-
-PLATO (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
+\plato\~(PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
 The PLATO team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
 In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
 We base our assessment of PLATO's diagnostic power to test the runaway greenhouse hypothesis on these estimates.
