@@ -23,7 +23,7 @@
     Here, we assess the ability of space and ground-based telescopes to test this hypothesis using Bioverse, a simulation framework that leverages contextual information from the overall planet population.
     $\ldots$
 
-%    We argue that in the near future, ESA's PLATO mission and NASA's Roman Space Telescope will be the most promising endeavors to constrain this demographic feature.
+%    We argue that in the near future, ESA's \plato\ mission and NASA's Roman Space Telescope will be the most promising endeavors to constrain this demographic feature.
 %    For each of these missions, we identify the key mission design drivers that enable a statistically sound detection.
 %    We also show the unique synergy of these missions in answering this question, and what survey strategy optimizes the statistical power of the combined dataset.
 %    $\ldots$ its measurement will also provide insights into which stars harbor the nearest habitable worlds.
@@ -228,12 +228,9 @@ In the following, we test if and under what conditions this trend is large enoug
 
 
 \subsection{Survey simulations}
-\begin{note}
 The survey module of Bioverse converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
    This task includes selection of the targets, application of detection biases, and conducting simulated measurements.
    All of the above are specific to the particular survey.
-
-\end{note}
 
 \subsubsection{Detection bias and sample selection}\label{sec:sensitivity} % Turbet2019 lists precision for CHEOPS, PLATO?, TESS?
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
@@ -397,15 +394,20 @@ Both a higher water mass fraction and a higher fraction of planets in a runaway 
 
 
 \subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
-\todo{Introduce survey simulation(s). PLATO, Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
+\todo{Introduce survey simulation(s). , Cheops, Ariel, LIFE (reach out to team; Hendrik Linz produced a LIFE Technology Overview document)?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 
 The planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
 To test the detectability of a runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and explored their capability to recover the trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
-\plato\~(PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
-The PLATO team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
+
+
+\subsubsection{PLATO}
+\plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
+The \plato\ team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
 In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
-We base our assessment of PLATO's diagnostic power to test the runaway greenhouse hypothesis on these estimates.
+\plato's definition study report~\citep{plato2017} further states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
+We base our assessment of \plato's diagnostic power on these estimates.
+
 
 
 
@@ -494,7 +496,7 @@ This can be different for young host stars when their ages can not be well const
 \todo[inline]{discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (Tim's talk)}
 
 
-\subsection{Diagnostic power of upcoming exoplanet missions}\todo[inline]{PLATO: needed sample size, precision}
+\subsection{Diagnostic power of upcoming exoplanet missions}\todo[inline]{\plato: needed sample size, precision}
 The fidelity of a future detection or falsification of a magma ocean signature will depend on the significance with which the null hypothesis can be excluded.
 As a consequence, instrumentation and survey strategy aiming at testing the hypothesis should aim at maximizing the probability of a true positive detection given the existence of the effect.
 ...
@@ -519,7 +521,7 @@ The key findings of our work are as follows:
 \begin{enumerate}
     \item The predicted tipping point in planetary climates causes a discontinuity in the radius and density distribution of small (DEFINITION) exoplanets.
     \item The demographic imprint of the runaway greenhouse threshold should be detectable with transit measurements of a large enough sample and sufficient precision.
-    \item We find that the planned PLATO transit survey will provide a sufficient sample to test the runaway greenhouse hypothesis.
+    \item We find that the planned \plato\ transit survey will provide a sufficient sample to test the runaway greenhouse hypothesis.
     \item The diagnostic power of transit missions in testing this hypothesis can be maximized by ...
     \item A detection of the feature will constrain the water inventory of rocky exoplanets, providing important context in the assessment of their habitability.
 \end{enumerate}
