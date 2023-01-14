@@ -10,6 +10,14 @@
 \usepackage{blindtext}          % Filler text
 \usepackage{xcolor}
 
+% package to open file containing variables
+\usepackage{datatool, filecontents}
+\DTLsetseparator{,}% Set the separator between the columns.
+% import data
+\DTLloaddb[noheader, keys={thekey,thevalue}]{variables}{variables.dat}
+% Loads variables.dat with column headers 'thekey' and 'thevalue'
+\newcommand{\var}[1]{\DTLfetch{variables}{thekey}{#1}{thevalue}}
+
 % paper comments
 \usepackage{comment}						 % comments that can be switched visible/invisible
 \includecomment{comment}
@@ -49,8 +57,7 @@
 \newcommand{\sigmaS}{\SI{5}{\percent}}
 \newcommand{\avgRadiusChange}{\SI{15}{\percent}}
 
-\newcommand{\retrSthresh}{$277^{+70}_{-219}$}
-
+%\newcommand{\retrSthresh}{$277^{+70}_{-219}$}
 
 
 % ---------------------------------
