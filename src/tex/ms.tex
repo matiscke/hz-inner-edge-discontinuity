@@ -434,7 +434,22 @@ For much smaller samples, even an optimistically strong signal can no longer be 
 
 
 \subsection{Statistical power of different mission designs}\label{sec:statpower_missions}
-\todo[inline]{show detectability of the runaway greenhouse signature for different mission designs}
+\subsubsection{Additional planet mass measurements}
+The situation differs when additional information beyond planet radii is available for the characterized planet population.
+Since the planet bulk density $\rho \propto R^{-3}$, the signal is stronger when measured in bulk density instead of radius:
+With an optimistic choice of geophysical parameters (see above), the average measured radius change is \SI{+15}{\percent} whereas the average density change is \SI{-33}{\percent}.
+Constraining bulk densities requires planetary mass measurements.
+We now examine the value of a follow-up campaign to constrain planet masses with respect to the detectability of the runaway greenhouse threshold.
+
+For uncertainties in density measurements, we propagate normally distributed errors of mass measurements assuming $\sigma_\mathrm{M_\mathrm{P}} = \SI{10}{\percent}$, as expected for \plato.
+As can be seen in Fig.~\ref{fig:plato_fgrid}, the detectability is enhanced when radius constraints can be augmented with mass measurements: At unchanged sample size, the difference in Bayesian evidence can be up to an order of magnitude larger.
+Consequently, we achieve a statistically significant detection with smaller samples or lower fractions $f_\mathrm{rgh}$.
+A density-based survey of 100 targets is roughly equivalent to a radius-based survey of 500 targets.
+At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim 0.5$ whereas bulk density measurements enable a detection from $f_\mathrm{rgh} \gtrsim 0.2$.
+
+
+\subsubsection{Spectral type of target stars}
+
 
 
 
