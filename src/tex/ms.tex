@@ -408,27 +408,27 @@ In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.
 \plato's definition study report~\citep{plato2017} further states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
 We base our assessment of \plato's diagnostic power on these estimates.
 
-    \begin{figure}[ht!]
+    \begin{figure*}[ht!]
 %    \script{figurescript.py}
         \begin{centering}
             \includegraphics[width=\linewidth]{figures/plato_fgrid.pdf}
             \caption{
             Expected evidences as a function of the fraction of planets harboring runaway greenhouse climates for different versions of the \plato\ survey.
             $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
-            For a large planet yield of $N = \var{Nplato}$, even small planet fractions $\gtrsim \var{platoMinfrgh}$ allow a detection.
+            \textit{Left:} For a large planet yield of $N = \var{Nplato}$, even small planet fractions $\gtrsim \var{platoMinfrgh}$ allow a detection.
                 A much smaller sample of 100 planets is sufficient if their masses are constrained to within \SI{10}{\percent} (dashed green line).
                 Without such follow-up measurements, sufficient diagnostic power can only be achieved with this sample if $f_\mathrm{rgh} \gtrsim \var{platoMinfrghHundred}$.
                Even smaller samples are unlikely to yield a significant detection.
+            \textit{Right:} Evidences when only FGK or only M~dwarfs are considered.
+                Only M~dwarfs host enough planets on both sides of the threshold instellation to allow a detection of the runaway greenhouse signal.
             }
             \label{fig:plato_fgrid}
         \end{centering}
-    \end{figure}
+    \end{figure*}
 
 For a volume-limited sample of \var{Nplato} planets, considering all host star spectral types, we find that \plato\ is able to obtain a significant detection if the fraction of runaway greenhouse planets is larger than $\sim \var{platoMinfrgh}$ (see Fig.~\ref{fig:plato_fgrid}).
 The minimum needed fraction rises to \var{platoMinfrghHundred} for $N = 100$.
 For much smaller samples, even an optimistically strong signal can no longer be detected.
-
-
 
 
 
@@ -523,6 +523,11 @@ As a consequence, instrumentation and survey strategy aiming at testing the hypo
 \subsection{Mission design trades}\label{sec:mission-design-trades}
 We now turn to mission design trades that influence the statistical power for testing the runaway greenhouse hypothesis.
 ...
+\begin{note}
+...FOLLOW-UP...
+
+The advantage of mass measurements for the planet sample can be enhanced with a wise selection of follow-up targets, i.e. favoring those planets residing close to $S_\mathrm{thresh}$.
+\end{note}
 
 \subsection{Implications for planetary habitability}\label{sec:habitability}
 \todo[inline]{Magma oceans influence the amount of water available at the surface and atmosphere, which is 1. commonly used as environmental marker to assess habitability, and 2. influences the planet's climate (greenhouse effect).}
