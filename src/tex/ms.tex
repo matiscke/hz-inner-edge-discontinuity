@@ -413,14 +413,14 @@ We base our assessment of \plato's diagnostic power on these estimates.
         \begin{centering}
             \includegraphics[width=\linewidth]{figures/plato_fgrid.pdf}
             \caption{
-            Expected evidences as a function of the fraction of planets harboring runaway greenhouse climates for different versions of the \plato\ survey.
-            $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
-            \textit{Left:} For a large planet yield of $N = \var{Nplato}$, even small planet fractions $\gtrsim \var{platoMinfrgh}$ allow a detection.
-                A much smaller sample of 100 planets is sufficient if their masses are constrained to within \SI{10}{\percent} (dashed green line).
+            Expected delta-evidences as a function of the fraction of planets harboring runaway greenhouse climates for different versions of the \plato\ survey.
+            Median and $[16\mathrm{th}, 84\mathrm{th}]$ percentiles of randomized survey simulations are shown; $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
+            \textit{Left:} For a large planet yield of $N = \var{Nplato}$, even small planet fractions $\sim \var{platoMinfrgh}$ allow a detection.
+                A sample of 100 planets is sufficient if their masses are constrained to within \SI{10}{\percent} (dotted green line).
                 Without such follow-up measurements, sufficient diagnostic power can only be achieved with this sample if $f_\mathrm{rgh} \gtrsim \var{platoMinfrghHundred}$.
                Even smaller samples are unlikely to yield a significant detection.
             \textit{Right:} Evidences when only FGK or only M~dwarfs are considered.
-                Only M~dwarfs host enough planets on both sides of the threshold instellation to allow a detection of the runaway greenhouse signal.
+                Only M~dwarfs host enough planets on both sides of the threshold instellation to allow a reliable detection of the runaway greenhouse signal.
             }
             \label{fig:plato_fgrid}
         \end{centering}
@@ -455,14 +455,14 @@ For uncertainties in density measurements, we propagate normally distributed err
 As can be seen in Fig.~\ref{fig:plato_fgrid}, the detectability is enhanced when radius constraints can be augmented with mass measurements: At unchanged sample size, the difference in Bayesian evidence can be up to an order of magnitude larger.
 Consequently, we achieve a statistically significant detection with smaller samples or lower fractions $f_\mathrm{rgh}$.
 A density-based survey of 100 targets is roughly equivalent to a radius-based survey of 500 targets.
-At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim 0.5$ whereas bulk density measurements enable a detection from $f_\mathrm{rgh} \gtrsim 0.2$.
+At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim 0.4$ whereas bulk density measurements enable a detection from $f_\mathrm{rgh} \gtrsim 0.1$.
 
 \subsubsection{Spectral type of target stars}\label{sec:results_FGK_M}
 Since receiving radiation is sensitive on the spectral type of the host star, the share of planets on either side of $S_\mathrm{thresh}$ is different for FGK and M~dwarfs.
 We tested the detectability of the runaway greenhouse signal when only FGK or only M~dwarfs are considered (see Fig.~\ref{fig:plato_fgrid}).
 The samples are volume and magnitude-limited ($d_\mathrm{max} = \SI{55}{\parsec}, M_\mathrm{G} < 11$), which makes the M~dwarf sample significantly larger with \var{N_M} planets compared to \var{N_FGK} planets in the FGK sample.
 No significant detection is possible in the pure FGK sample, independent of the assumed geophysical parameters.
-In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} \sim 0.5$, similar to the case above where all spectral types are considered.
+In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} \sim 0.2$, similar to the case above where all spectral types are considered.
 
 \subsubsection{Constraining the threshold instellation}
 \todo[inline]{for different survey modes, compare the constraints on  $S_{thresh}$.
