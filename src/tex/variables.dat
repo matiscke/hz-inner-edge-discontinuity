@@ -1,6 +1,10 @@
-Nplato,500
 platoMinfrgh,0.1
 platoMinfrghHundred,0.5
 retrSthresh,277^{+70}_{-219}\SI{}{\watt\per\meter\squared}
-N_FGK,20
-N_M,92
+N_stars_FGK,15699
+N_stars_M,33528
+N_FGK,40
+N_M,219
+N_FGK_err,6
+N_M_err,13
+N_plato,268
