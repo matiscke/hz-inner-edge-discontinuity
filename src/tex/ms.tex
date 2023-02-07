@@ -1,6 +1,7 @@
 % Define document class
-%\documentclass[twocolumn]{aastex631}
-\documentclass[modern]{aastex631}
+\documentclass[twocolumn]{aastex631}
+\usepackage{amssymb}
+%\documentclass[modern]{aastex631}
 
 \input{preamble.tex}
 
@@ -394,12 +395,12 @@ Both a higher water mass fraction and a higher fraction of planets in a runaway 
 
 
 \subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
-\todo{Introduce survey simulation(s). PLATO, (Ariel, LIFE(reach out to team; Hendrik Linz produced a LIFE Technology Overview document)) ?, Nautilus\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
+\todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, Nautilus)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
 %\subsubsection{PLATO}
 \plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
 The \plato\ team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
-In the FGK sample of the mission, a minimum of 500 Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
+In the FGK sample of the mission, several hundred Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
 \plato's definition study report~\citep{plato2017} further states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
 We base our assessment of \plato's diagnostic power on these estimates.
 
@@ -410,7 +411,7 @@ We base our assessment of \plato's diagnostic power on these estimates.
             \caption{
             Expected delta-evidences as a function of the fraction of planets harboring runaway greenhouse climates for different versions of the \plato\ survey.
             Median and $[16\mathrm{th}, 84\mathrm{th}]$ percentiles of randomized survey simulations are shown; $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
-            \textit{Left:} For a large planet yield of $N = \var{Nplato}$, even small planet fractions $\sim \var{platoMinfrgh}$ allow a detection.
+            \textit{Left:} For a large planet yield of $N = \var{N_plato}$, even small planet fractions $\sim \var{platoMinfrgh}$ allow a detection.
                 A sample of 100 planets is sufficient if their masses are constrained to within \SI{10}{\percent} (dotted green line).
                 Without such follow-up measurements, sufficient diagnostic power can only be achieved with this sample if $f_\mathrm{rgh} \gtrsim \var{platoMinfrghHundred}$.
                Even smaller samples are unlikely to yield a significant detection.
@@ -421,7 +422,7 @@ We base our assessment of \plato's diagnostic power on these estimates.
         \end{centering}
     \end{figure*}
 
-For a volume-limited sample of \var{Nplato} planets, considering all host star spectral types, we find that \plato\ is able to obtain a significant detection if the fraction of runaway greenhouse planets is larger than $\sim \var{platoMinfrgh}$ (see Fig.~\ref{fig:plato_fgrid}).
+For a volume-limited sample, considering all host star spectral types, we find that a yield of \var{N_plato} planets enables a significant detection if the fraction of runaway greenhouse planets is larger than $\sim \var{platoMinfrgh}$ (see Fig.~\ref{fig:plato_fgrid}).
 The minimum needed fraction rises to \var{platoMinfrghHundred} for $N = 100$.
 For much smaller samples, even an optimistically strong signal can no longer be detected.
 
@@ -464,7 +465,9 @@ In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} 
 \subsubsection{Constraining the threshold instellation}
 \todo[inline]{for different survey modes, compare the constraints on  $S_{thresh}$.
 Plot posteriors from random draws of simulations.}
-
+A key constraint resulting from a successful detection is a measurement of $S_{thresh}$.
+Here, we assess the ability of different mission concepts explored above to constrain this parameter.
+...
 
 
 
@@ -512,11 +515,10 @@ This can be different for young host stars when their ages can not be well const
     \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022b}?}
 \end{note}
 
-\todo[inline]{Maps to Sect. \ref{sec:statpower_missions}.}
-
-\begin{note}
-    \citet{Penny2019} mention that a significant increase in planet yield could be achieved if the telescope's slew speed was increased.
-\end{note}
+%\todo[inline]{Maps to Sect. \ref{sec:statpower_missions}.:}
+%\begin{note}
+%    \citet{Penny2019} mention that a significant increase in planet yield could be achieved if the telescope's slew speed was increased.
+%\end{note}
 
 \begin{figure}[ht!]
 %    \script{figurescript.py}
@@ -543,12 +545,14 @@ As a consequence, instrumentation and survey strategy aiming at testing the hypo
 \subsection{Mission design trades}\label{sec:mission-design-trades}
 We now turn to mission design trades that influence the statistical power for testing the runaway greenhouse hypothesis.
 ...
+\subsubsection{The value of follow-up campaigns}
 \begin{note}
-...FOLLOW-UP...
+...FOLLOW-UP...radial velocity follow-up measurements...
 
 The advantage of mass measurements for the planet sample can be enhanced with a wise selection of follow-up targets, i.e. favoring those planets residing close to $S_\mathrm{thresh}$.
 \end{note}
 
+\subsubsection{Target star spectral types}
 \begin{note}
     ...FGK vs. M...:
 
