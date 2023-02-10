@@ -1,6 +1,7 @@
+N_optimistic,481
 platoMinfrgh,0.1
 platoMinfrghHundred,0.5
-retrSthresh,277^{+70}_{-219}\SI{}{\watt\per\meter\squared}
+retrSthresh,\SI{276}{\watt\per\meter\squared}
 N_stars_FGK,15699
 N_stars_M,33528
 N_FGK,40
