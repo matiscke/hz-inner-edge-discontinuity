@@ -394,7 +394,7 @@ Both a higher water mass fraction and a higher fraction of planets in a runaway 
 
 
 
-\subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}
+\subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}\label{sec:res_samplesize}
 \todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, Nautilus)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
 %\subsubsection{PLATO}
@@ -464,12 +464,31 @@ In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} 
 
 
 \subsubsection{Constraining the threshold instellation}
-\todo[inline]{for different survey modes, compare the constraints on  $S_{thresh}$.
-Plot posteriors from random draws of simulations.}
+\begin{figure}[ht!]
+%    \script{figurescript.py}
+    \begin{centering}
+
+        \includegraphics[width=\linewidth]{figures/S_thresh_posteriors.pdf}
+        \caption{
+            Retrieved posterior distributions of the threshold instellation for different survey realizations.
+            All cases assume $x_{H_2O}$ and a planet sample size $N=100\pm10$; The fraction of planets with runaway greenhouse climates varies across rows.
+            Orange lines show the true value of the injected signal.
+            Accuracy and precision of the constraint on $S_\mathrm{thresh}$ generally improve with higher $f_\mathrm{rgh}$.
+            Bulk density-based inferences improve the constraints.
+        }
+        \label{fig:posterior_surveys}
+    \end{centering}
+\end{figure}
 A key constraint resulting from a successful detection is a measurement of $S_{thresh}$.
 Here, we assess the ability of different mission concepts explored above to constrain this parameter.
-...
+Figure~\ref{fig:posterior_surveys} shows posterior distributions from a grid of inferences together with the true values of the injected signal for different fractions $f_\mathrm{rgh}$.
+We consider three cases: only radius measurements, radius and mass measurements, and radius and mass measurements of only planets orbiting M~dwarfs.
+The simulations otherwise represent the simulated PLATO example described above.
+We chose a planetary sample size of $N=100\pm10$, as this was found to be a threshold case in Sect.~\ref{sec:res_samplesize}.
 
+Accurate retrievals from radius measurements alone require high fractions of greenhouse climate-bearing planets to achieve an accurate constraint on $S_\mathrm{thresh}$.
+If, on the other hand, a follow-up campaign adds planetary mass estimates and we fit the signal in bulk density space, useful constraints are possible under more pessimistic conditions.
+A sample containing only planets around M~dwarf yields a comparable performance as the overall sample.
 
 
 % Additional \subsection for habitability? To reflect structure in Discussion, Conclusions?
@@ -521,18 +540,7 @@ This can be different for young host stars when their ages can not be well const
 %    \citet{Penny2019} mention that a significant increase in planet yield could be achieved if the telescope's slew speed was increased.
 %\end{note}
 
-\begin{figure}[ht!]
-%    \script{figurescript.py}
-    \begin{centering}
 
-        \includegraphics[width=\linewidth]{figures/example_posterior_surveys.pdf}
-        \caption{
-            Retrieved posterior distribution of the $<key parameter>$ for different survey realizations.
-            The orange line corresponds to the true value of the injected signal.
-        }
-        \label{fig:posterior_surveys}
-    \end{centering}
-\end{figure}
 
 \subsubsection{OPTIONAL...: Atmospheric signatures}
 \todo[inline]{discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (Tim's talk)}
