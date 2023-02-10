@@ -372,25 +372,24 @@ Figure~\ref{fig:cornerplot} shows the posterior distributions of $S_\mathrm{thre
 The threshold instellation can be accurately constrained with a median $\hat{S}_\mathrm{thresh} = \var{retrSthresh}$.
 Both a higher water mass fraction and a higher fraction of planets in a runaway greenhouse state lead to larger average radii, thus these parameters are strongly correlated and cannot be well constrained without independent measurements.
 
-\begin{note}
-    Given an optimistic survey design, what influences the probability of correctly rejecting a false null hypothesis?
-    \begin{figure}[ht!]
+Given an optimistic survey design, what influences the probability of correctly rejecting a false null hypothesis?
+\begin{figure}[ht!]
 %    \script{figurescript.py}
-        \begin{centering}
-            \includegraphics[width=\linewidth]{figures/optimistic_statpwr_H2O-f.pdf}
-            \caption{
-                Statistical power of the runaway greenhouse hypothesis test as a function of model parameters.
-                For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of water mass fraction and fraction of greenhouse climate planets.
-                Higher values in either parameter result in a more reliable detection.
-            }
-            \label{fig:statpwr_H2O-f}
-        \end{centering}
-    \end{figure}
-    Figure~\ref{fig:statpwr_H2O-f} explores the statistical power achieved in the above scenario for different combinations of the poorly constrained parameters $x_{H_2O}$ and $f_\mathrm{rgh}$.
-    The higher the water content and thus the radius change, and the higher the fraction of planets in runaway greenhouse climates, the greater the prospect of a statistically sound detection.
-     $f_\mathrm{rgh}$ dominates this trend: It enters linearly into the average planet radius, whereas the contribution of $x_{H_2O}$ - as predicted by the geophysical models - is sublinear with a power-law exponent of $\sim 0.3$.
-    As long as $f_\mathrm{rgh}$ is larger than $\sim 0.1$, a sample size of \var{N_optimistic} is sufficient for a $\SI{50}{\percent}$ detection rate even for water ratios as low as $x_{H_2O} = 0.001$.
-\end{note}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/optimistic_statpwr_H2O-f.pdf}
+        \caption{
+            Statistical power of the runaway greenhouse hypothesis test as a function of model parameters.
+            For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of water mass fraction and fraction of greenhouse climate planets.
+            Higher values in either parameter result in a more reliable detection.
+            For water mass fractions $\gtrsim 10^{-4}$, the statistical power largely depends on the fraction of greenhouse climate planets in the sample.
+        }
+        \label{fig:statpwr_H2O-f}
+    \end{centering}
+\end{figure}
+Figure~\ref{fig:statpwr_H2O-f} explores the statistical power achieved in the above scenario for different combinations of the poorly constrained parameters $x_{H_2O}$ and $f_\mathrm{rgh}$.
+The higher the water content and thus the radius change, and the higher the fraction of planets in runaway greenhouse climates, the greater the prospect of a statistically sound detection.
+ For all but very low water fractions, $f_\mathrm{rgh}$ dominates this trend: It enters linearly into the average planet radius, whereas the contribution of $x_{H_2O}$ - as predicted by the geophysical models - is sublinear with a power-law exponent of $\sim 0.3$.
+As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_optimistic} is sufficient for a $\SI{50}{\percent}$ detection rate even for water ratios as low as $10^{-3}$.
 
 
 
