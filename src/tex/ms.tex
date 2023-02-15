@@ -183,14 +183,10 @@ This represents the baseline bulk density before any climate-related effects are
     \begin{itemize}
    \item[A.] No radius change.
     This case serves as our null hypothesis, where planetary radii are not affected by the amount of irradiation the planets receive.
-    It also applies outside the runaway greenhouse limit, where we assume a solid planetary surface and no steam atmosphere.
-        A planet that lies \textit{within} the runaway greenhouse limit but that is already completely desiccated will have the same radius. \todo{Mention if this case is considered in the model or not (as of now, no).}
+    A solid planetary surface is assumed and no steam atmosphere is present.
    \item[B.] Radius inflation due to a steam atmosphere.
-    We assigned planets within the runaway greenhouse limit steam atmospheres, which increase atmospheric scale heights significantly.
-   \item[C.] As B, but including radius decrease of inflated planets due to water in the melt.
-    Due to greenhouse forcing, planetary surfaces below steam atmospheres are thought to be molten.
-    Part of the water will then partition into the melt, removing it from the steam atmosphere, which in turn decreases the radius inflation.
-    This effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values.
+    Atmospheric scale heights are significantly increased.
+   \item[C.] As B, but including radius decrease of inflated planets due to water partitioning in the molten mantle.
     \end{itemize}
 
 
@@ -205,6 +201,9 @@ For each planet above the instellation threshold, we assigned the predicted radi
 We note that an additional radius change due to potentially molten interiors~\citep{Bower2019} is not taken into account here.
 
 Case~C contains case~B, but also includes a radius decrease due to water partitioning in the melt.
+Due to greenhouse forcing, planetary surfaces below steam atmospheres are expected to be molten.
+Part of the water will then partition into the melt, removing it from the steam atmosphere, which in turn decreases the radius inflation.
+This effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values~\citep{Dorn2021}.
 The magnitude of this effect is again dependent on the planet mass and on the water mass fraction.
 We follow \citet{Dorn2021} and use their computed radius deviations between a wet magma ocean and a solid mantle for a tropopause pressure~$P_\mathrm{iso}=\SI{0.1}{\bar}$.
 We then add the (in almost all cases negative) radius deviations to the planet radii computed for case~B.
@@ -230,7 +229,7 @@ For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial
 Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to category~A~\citep[e.g.,][]{Hamano2013}.
 To account for these effects, we introduce a free parameter $f_\mathrm{rgh}$ representing the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving an instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
-The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
+%The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
 This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
 In the following, we test if and under what conditions this trend is large enough to be detected with high significance.
 
