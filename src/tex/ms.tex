@@ -157,7 +157,7 @@ This represents the baseline bulk density before any climate-related effects are
 
 \todo[inline]{ARNAUD: revise definition of $S$ following our discussion on 2022-12-22. Introduce net instellation and clarify what is meant by it.}
 \begin{note}
-    The power from the host star per unit area at the position of a planet or instellation $S$ in units of Earth's insolation is given by
+    The power from the host star per unit area at the position of a planet or net instellation $S$ in units of Earth's insolation is given by
     \begin{equation}
         \frac{S}{S_\oplus} = \left(\frac{L_\star}{L_\odot}\right) \left(\frac{au}{a}\right)^2 .
     \end{equation}
@@ -175,7 +175,7 @@ This represents the baseline bulk density before any climate-related effects are
     Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
     To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
     While we search for the runaway greenhouse pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
-    Relevant properties are a planet's mass $M$, its instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
+    Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
     We consider three different cases:
     \begin{itemize}
    \item[A.] No radius change.
@@ -225,7 +225,7 @@ As illustrated in Fig.~\ref{fig:radiusevolution}~(bottom panel), different proce
 For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a case~C planet, diluting the expected demographic signature.
 Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to category~A~\citep[e.g.,][]{Hamano2013}.
 To account for these effects, we introduce a free parameter $f_\mathrm{rgh}$ representing the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
-Our simulation setup is such that all planets receiving an instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
+Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
 %The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
 This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
 In the following, we test if and under what conditions this trend is large enough to be detected with high significance.
@@ -253,7 +253,7 @@ We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagni
 %    Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
 %    We thus chose a broad selection function centered on general detectability of transits with state-of-the-art technology.
 The runaway greenhouse effect becomes obsolete where no atmosphere can be maintained due to proximity to the host star and resulting atmospheric erosion.
-We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with an instellation $S > \SI{2000}{\watt\per\square\meter}$.
+We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with a net instellation $S > \SI{2000}{\watt\per\square\meter}$.
 \todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
 We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
 
@@ -272,7 +272,7 @@ For our specific problem, this implies comparing evidences for a demographic imp
     \end{equation}
     where $\theta$ is the set of parameters defining the radius distribution.
     We further define an alternative hypothesis that describes radius changes due to steam atmospheres and water in the melt.
-    As motivated above, this hypothesis takes the form of a step function in instellation $S$, where the step occurs at the outer edge of the runaway greenhouse region.
+    As motivated above, this hypothesis takes the form of a step function in net instellation $S$, where the step occurs at the outer edge of the runaway greenhouse region.
     Our main observable shall be the average planet radius in the planet population inside and outside this threshold.
     The runaway greenhouse hypothesis is then defined as
 \begin{equation}\label{eq:rgh_hypo}
@@ -330,7 +330,7 @@ To characterize the population-level imprint of individual radius changes, we ge
         \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
         \caption{Synthetic planets above and below the runaway greenhouse threshold.
         \textit{Top}: Planet state as a function of orbital period. Planets with and without a runaway greenhouse climate mix and are not distinguishable in period space.
-        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, the radii of a fraction of planets are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This runaway greenhouse hypothesis can be tested against the null hypothesis $H_0$ (green), where average radii are independent of instellation.}
+        \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of net instellation. Only the planets marked as transiting are observable. Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, the radii of a fraction of planets are inflated by the amount indicated with gray lines. The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue). This runaway greenhouse hypothesis can be tested against the null hypothesis $H_0$ (green), where average radii are independent of instellation.}
         \label{fig:HnullHmo}
     \end{centering}
 \end{figure}
@@ -533,7 +533,7 @@ This can be different for young host stars when their ages can not be well const
     They can impact the statistical inference of the transitions, especially if these variations are similar to the expected pattern.
     Although an abrupt pattern at the expected runaway greenhouse transition seems unlikely, examples of steep occurrence rate density changes exist.
     An example is the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
-    The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the instellation dependency of the magma ocean probability.
+    The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the instellation dependency of the runaway greenhouse transition.
     However, the Neptune desert occurs at smaller orbital periods and its location depends on a planet's size~\citep{Szabo2011}, which is not expected for the runaway greenhouse transition.
     \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022}?}
 \end{note}
