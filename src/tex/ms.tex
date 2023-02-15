@@ -314,8 +314,8 @@ The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statist
 
 A sensible choice of priors is central for evidence estimation via nested sampling.
 As the parameters we are interested in recovering, $S_\mathrm{thresh}$ and $x_{H_2O}$, are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
-For $S_\mathrm{thresh}$, we chose a log-uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
-Similarly, we sample $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
+For $S_\mathrm{thresh}$, we chose a uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
+We sample $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
 Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:mo_model}).
 Finally, we adopt a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
 We then ran the nested sampler to compute the evidence and sample the posterior distributions.
