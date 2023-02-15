@@ -1,4 +1,5 @@
 N_optimistic,481
+percentage_transiting,\SI{1.5}{\percent}
 platoMinfrgh,0.1
 platoMinfrghHundred,0.5
 retrSthresh,\SI{276}{\watt\per\meter\squared}

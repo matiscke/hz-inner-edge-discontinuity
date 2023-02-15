@@ -1,6 +1,5 @@
 % Define document class
 \documentclass[twocolumn]{aastex631}
-\usepackage{amssymb}
 %\documentclass[modern]{aastex631}
 
 \input{preamble.tex}
@@ -15,7 +14,6 @@
 \author[0000-0001-8355-2107]{Martin Schlecker}
 \affiliation{Department of Astronomy/Steward Observatory, The University of Arizona, 933 North Cherry Avenue, Tucson, AZ 85721, USA}
 \author{al.}
-
 
 % Abstract
 \begin{abstract}
@@ -142,15 +140,14 @@ This represents the baseline bulk density before any climate-related effects are
         \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2,
     \end{equation}
     which is relevant for the detection probability of the respective planet~(see Sect.~\ref{sec:sensitivity}).
-    Excluding all non-transiting planets diminishes the sample to \SI{\percentageTransiting}{\percent} of its original size.
+    Excluding all non-transiting planets diminishes the sample to \var{percentage_transiting} of its original size.
 \end{note}
 
 
 \subsubsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
-\todo[inline]{"Methods Section" for the geophysical models. Describe specific parametrization, dependency on bulk planet/orbit params\\
-~\\
+\todo[inline]{
 \textbf{Main assumptions:}\\
-- Assume that every planet has \textit{some} water. Enough for runaway GH under the right conditions. Baseline water content: 20\% \\
+- Assume that every planet has \textit{some} water. Enough for runaway GH under the right conditions.  \\
 - Limitation to small planets without significant atmospheric envelopes.\\
 - we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
 - we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
@@ -232,7 +229,6 @@ Our simulation setup is such that all planets receiving an instellation $S < S_\
 %The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
 This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
 In the following, we test if and under what conditions this trend is large enough to be detected with high significance.
-
 
 
 
@@ -539,7 +535,7 @@ This can be different for young host stars when their ages can not be well const
     An example is the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
     The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the instellation dependency of the magma ocean probability.
     However, the Neptune desert occurs at smaller orbital periods and its location depends on a planet's size~\citep{Szabo2011}, which is not expected for the runaway greenhouse transition.
-    \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022b}?}
+    \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022}?}
 \end{note}
 
 %\todo[inline]{Maps to Sect. \ref{sec:statpower_missions}.:}
