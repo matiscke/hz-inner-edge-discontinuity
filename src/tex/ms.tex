@@ -212,14 +212,23 @@ We then add the (in almost all cases negative) radius deviations to the planet r
 \begin{figure}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/radiuscomparison.pdf}
-        \caption{Mass-radius relationships for a water mass fraction $x_{H_2O}= \wrr$ and different planet states: A) fully solid planets without magma oceans. B) planets with steam atmospheres. C) As B), but including the effect of water incorporation in the melt.}
-        \label{fig:radiuscomparison}
+    \end{centering}
+    \begin{centering}
+        \includegraphics[width=\hsize]{figures/radiusevolution.pdf}
+        \caption{
+            \textit{Top}: Mass-radius relationships for a water mass fraction $x_{H_2O}= \wrr$ and different planet states: A) planets with a solid mantle and no steam atmosphere. B) planets with steam atmospheres. C) as B), but including the effect of water incorporation in the melt.
+            \textit{Bottom}: Radius evolution of different planet types, illustrating degeneracies among planet classes. Shown is a schematic time evolution of the transit radius normalized to the atmosphere-free radius $R_\mathrm{0}$ for different scenarios. Planets can move between planet classes through processes such as atmospheric loss and desiccation, which ultimately ends a runaway greenhouse phase on a timescale dependent on a planet's water content.}
+        \label{fig:radiusevolution}
     \end{centering}
 \end{figure}
+Figure~\ref{fig:radiusevolution} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of $x_{H_2O}= \wrr$.
+Steam atmospheres (case~B) cause a significant radius increase, which is slightly reduced when water incorporation in the melt is allowed (case~C).
+In the following, we only distinguish between cases~A and~C.
 
-Figure~\ref{fig:radiuscomparison} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of $x_{H_2O}= \wrr$.
-In general, steam atmospheres (case~B) cause a significant radius increase, which is slightly reduced when water incorporation in the melt is allowed (case~C).
-
+As illustrated in Fig.~\ref{fig:radiusevolution}~(bottom panel), different processes can lead to the classification of a planet into either of these categories.
+For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a case~C planet, diluting the expected demographic signature.
+Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to category~A~\citep[e.g.,][]{Hamano2013}.
+To account for these effects, we introduce a free parameter $f_\mathrm{rgh}$ representing the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving an instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
 The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
 This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
