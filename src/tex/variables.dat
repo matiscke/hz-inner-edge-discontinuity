@@ -1,7 +1,7 @@
 N_optimistic,481
 percentage_transiting,\SI{1.5}{\percent}
 platoMinfrgh,0.1
-platoMinfrghHundred,0.5
+platoMinfrghHundred,0.3
 retrSthresh,\SI{276}{\watt\per\meter\squared}
 N_stars_FGK,15699
 N_stars_M,33528

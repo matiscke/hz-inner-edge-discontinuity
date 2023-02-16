@@ -147,7 +147,7 @@ This represents the baseline bulk density before any climate-related effects are
 \subsubsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
 \todo[inline]{
 \textbf{Main assumptions:}\\
-- Assume that every planet has \textit{some} water. Enough for runaway GH under the right conditions.  \\
+- every planet (modulo $f_\mathrm{rgh}$) has \textit{some} water. Enough for runaway GH under the right conditions.  \\
 - Limitation to small planets without significant atmospheric envelopes.\\
 - we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
 - we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
@@ -164,8 +164,8 @@ This represents the baseline bulk density before any climate-related effects are
     Here, we assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's [CITE].
     The absolute value of $S_\oplus$, by which all synthetic planets are scaled, is then \SI{238}{\watt\per\square\meter}.
 %    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
+   We do not take into account additional heating sources such as tidal effects~\citep[e.g.][]{Barnes2013}.
 \end{note}
-
 
 
 
@@ -253,8 +253,8 @@ We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagni
 %    Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
 %    We thus chose a broad selection function centered on general detectability of transits with state-of-the-art technology.
 The runaway greenhouse effect becomes obsolete where no atmosphere can be maintained due to proximity to the host star and resulting atmospheric erosion.
-We thus excluded planets with extremely high instellation that does not allow long-term preservation of an atmosphere and clear our sample from all planets with a net instellation $S > \SI{2000}{\watt\per\square\meter}$.
-\todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
+Ensuring to stay well clear of such regions, we clear our sample from all planets with a net instellation $S > \SI{2000}{\watt\per\square\meter}$.
+%\todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
 We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
 
 
@@ -310,7 +310,7 @@ Our criterion to reject the null hypothesis is
 \begin{equation}
 \Delta \ln \mathcal{Z}  = \ln \mathcal{Z}_\mathrm{rgh} - \ln \mathcal{Z}_0  > 3.
 \end{equation}
-The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statistical significance popular in frequentist approaches.\todo{CITATION}
+%The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statistical significance popular in frequentist approaches.\todo{CITATION}
 
 A sensible choice of priors is central for evidence estimation via nested sampling.
 As the parameters we are interested in recovering, $S_\mathrm{thresh}$ and $x_{H_2O}$, are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
@@ -413,7 +413,7 @@ We base our assessment of \plato's diagnostic power on these estimates.
             \includegraphics[width=\linewidth]{figures/plato_fgrid.pdf}
             \caption{
             Expected delta-evidences as a function of the fraction of planets harboring runaway greenhouse climates for different versions of the \plato\ survey.
-            Median and $[16\mathrm{th}, 84\mathrm{th}]$ percentiles of randomized survey simulations are shown; $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
+            The median values of randomized survey simulations are shown; $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
             \textit{Left:} For a large planet yield of $N = \var{N_plato}$, even small planet fractions $\sim \var{platoMinfrgh}$ allow a detection.
                 A sample of 100 planets is sufficient if their masses are constrained to within \SI{10}{\percent} (dotted green line).
                 Without such follow-up measurements, sufficient diagnostic power can only be achieved with this sample if $f_\mathrm{rgh} \gtrsim \var{platoMinfrghHundred}$.
@@ -501,6 +501,7 @@ A sample containing only planets around M~dwarf yields a comparable performance 
 
 \subsection{Statistical imprint of exoplanet climates}
 \todo[inline]{the predicted climate tipping point causes a demographic imprint.\\
+...detection would provide an empirical confirmation of the inner edge of the HZ.\\
 Discuss our ignorance on $f_\mathrm{rgh}$ and its impact on the imprint.}
 
 \subsection{Detectability of the runaway greenhouse threshold}
@@ -594,7 +595,9 @@ Our key findings are as follows:
     \item The demographic imprint of the runaway greenhouse threshold should be detectable with high-precision transit measurements. For a large sample $\gtrsim 100$, a detection is likely if radius inflation occurs on at least \SI{10}{\percent} of planets and if typical water mass fractions are above $\sim 10^{-3}$.
     \item We find that the planned \plato\ transit survey will provide a sufficient sample and the required precision to detect the predicted trend. Assuming the projected photometric precision, \plato\ will be able to test the runaway greenhouse hypothesis for planet yields $\gtrsim 100$.
     \item The diagnostic power of transit missions in testing this hypothesis can be increased through a follow-up campaign providing planet mass measurements. This can reduce the required planet yield by up to a factor of five. An optimized survey will further focus on M~dwarfs to ensure sufficient targets on both sides of the expected threshold instellation.
-    \item A detection of the feature will constrain the water inventory of rocky exoplanets, providing important context in the assessment of their habitability.
+    \item Testing the runaway greenhouse hypothesis will constrain the water inventory of rocky exoplanets, providing important context in the assessment of their habitability.
+         A detection will provide an empirical confirmation of the habitable zone concept and localize its inner edge.
+
 \end{enumerate}
 
 
