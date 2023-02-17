@@ -191,7 +191,7 @@ In case~A, a planet simply retains the radius it was assigned based on exoplanet
 There is no additional dependency on orbital distance or instellation.
 
 Case~B assumes an inflated radius due to a steam atmosphere for all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$.
-This value was found to be a limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
+While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 For the rocky interiors, their calculations rely on the same mass-radius relations from ~\citep{Zeng2016} that we applied for case~A-planets.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
@@ -223,7 +223,7 @@ In the following, we only distinguish between cases~A and~C.
 
 As illustrated in Fig.~\ref{fig:radiusevolution}~(bottom panel), different processes can lead to the classification of a planet into either of these categories.
 For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a case~C planet, diluting the expected demographic signature.
-Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to category~A~\citep[e.g.,][]{Hamano2013}.
+Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to category~A on a timescale of $10^8\SI{}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
 To account for these effects, we introduce a free parameter $f_\mathrm{rgh}$ representing the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
 %The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
@@ -497,12 +497,39 @@ A sample containing only planets around M~dwarf yields a comparable performance 
 % Additional \subsection for habitability? To reflect structure in Discussion, Conclusions?
 
 \section{Discussion}\label{sec:discussion}
-\todo[inline]{\textbf{Potential discussion points: } what is the fraction of \kepler\ planets w/ runaway GH.}
+\todo[inline]{\textbf{Potential discussion points: }\\
+How close is Earth to runaway? Could anthropogenic climate change push us over the edge? (-> \citet{Goldblatt2012}; what is the max. expected change in Earth's albedo due to deglaciation?}
 
 \subsection{Statistical imprint of exoplanet climates}
-\todo[inline]{the predicted climate tipping point causes a demographic imprint.\\
-...detection would provide an empirical confirmation of the inner edge of the HZ.\\
-Discuss our ignorance on $f_\mathrm{rgh}$ and its impact on the imprint.}
+\todo[inline]{what is the fraction of Kepler planets w/ run-
+away GH?}
+\begin{note}
+The runaway greenhouse transition is a robust prediction from climate models, and its impact on planetary bulk properties has been shown to be in the detectable range of current astronomical instrumentation~\citep{Goldblatt2015}.
+Measuring these impacts would indeed provide the first empirical evidence of the habitable zone concept.
+On the planetary level, however, such undertaking is hindered by degeneracies: From internal composition to atmospheric loss to volatile content, many factors influence a planet's size.
+It is therefore prudent to shift the focus to the planet population as a whole and search for a statistical effect in exoplanet demographics~\citep{Turbet2019}.
+Using Bioverse to combine the predictions from geophysical models of steam atmospheres with a synthesis of planets informed by observed demographics, we showed that the population of greenhouse-inflated planets create a signature in the radius and density distribution that is well in the detectable range.
+
+However, the idealized step-function central to our hypothesis tests is blurred by several factors.
+Its amplitude is affected by ``sub-Neptunes'' with significant Hydrogen/Helium envelopes, which can disguise as inflated rocky planets.
+They might not contribute to the demographic signal we are looking for, although a similar transition was suggested for water-dominated sub-Neptunes~\citep{Pierrehumbert2022}.
+A subset of such gas-rich planets will experience atmospheric loss via photoevaporation~\citep{Owen2013} or core-powered mass loss~\citep{Ginzburg2018}, turning them from planets appearing inflated into much smaller \mbox{(super-)Earths}.
+Further dilution comes from the population of planets that lack an atmosphere or sufficient volatiles that can create a steam atmosphere.
+There is also a time dependence, both because stellar luminosities change with age and because runaway greenhouse planets with limited water reservoirs ultimately desiccate, ending their steam atmosphere phase.
+Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, or surface gravity~\citep{Pierrehumbert2022}.
+
+All of the above mechanisms dilute the demographic imprint of the runaway greenhouse transition with contributions that are challenging to quantify.
+The ``dilution factor" we introduced embodies our ignorance of these contributions.
+Importantly, while this may offset our estimates of the signal's amplitude, its shape remains the same.
+
+Our finding that the expected trend is strong except for extremely low water mass fractions not only gives reason for optimism regarding its detection, it also presents a potential for constraints on the water inventory of terrestrial planets in the case of a non-detection.
+Should a detection be possible, the time dependencies discussed above should be taken into account when using this population-level information to constrain exoplanet climates.
+
+\end{note}
+
+
+
+
 
 \subsection{Detectability of the runaway greenhouse threshold}
 \todo[inline]{the demographic imprint is detectable. Under what conditions?\\
@@ -575,6 +602,9 @@ To date, the majority of planets with radius measurements orbit FGK~dwarfs and l
     Our tests with different spectral types (Sect.~\ref{sec:results_FGK_M}) show that the information content of M~dwarfs in a sample dominates the hypothesis tests.
 The reason is, besides their large number in a volume/magnitude-limited sample, that many detected M~dwarf planets are located near the threshold instellation.
 As in the cases above, an M~dwarf survey profits from follow-up measurements of planetary masses with an order of magnitude increase in evidence.
+
+    \todo[inline]{transit depth difference is larger in M dwarfs \citep{Turbet2019}}
+
 
     An additional advantage of targeting M~dwarfs are their extended runaway greenhouse phases, whose duration can reach the order of \SI{100}{\mega\year}~CITE.
     This increases the probability of observing any given planet in the sample during the runaway greenhouse phase, essentially driving $f_\mathrm{rgh}$ to higher values.
