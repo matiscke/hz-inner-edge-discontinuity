@@ -224,7 +224,7 @@ In the following, we only distinguish between cases~A and~C.
 As illustrated in Fig.~\ref{fig:radiusevolution}~(bottom panel), different processes can lead to the classification of a planet into either of these categories.
 For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a case~C planet, diluting the expected demographic signature.
 Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to category~A on a timescale of $10^8\SI{}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
-To account for these effects, we introduce a free parameter $f_\mathrm{rgh}$ representing the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
+To account for these effects we introduce a dilution parameter $f_\mathrm{rgh}$, which represents the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
 %The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
 This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
@@ -287,7 +287,7 @@ For our specific problem, this implies comparing evidences for a demographic imp
     They are assumed to act additively on the planet radii and thus on their average $\langle R_\mathrm{P}\rangle $.
 
 The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
-The functional form of the runaway greenhouse hypothesis is more complex: Besides the mean radius of planets outside the threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$, the planetary water mass fraction~$x_{H_2O}$ encoding the amount of radius change, and the fraction of planets above the threshold instellation that are in a runaway greenhouse climate $f_\mathrm{rgh}$.
+The functional form of the runaway greenhouse hypothesis is more complex: Besides the mean radius of planets outside the threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$, the planetary water mass fraction~$x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$.
 
 The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
 $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimator that represents the population mean.
@@ -374,7 +374,7 @@ In this case, the pattern was detected with high significance ($\Delta \ln \math
 With such a strong signal, we can attempt an inference of the parameters defining the injected effect.
 Figure~\ref{fig:cornerplot} shows the posterior distributions of $S_\mathrm{thresh}$, $x_{H_2O}$, and $f_\mathrm{rgh}$ as determined by the nested sampler.
 The threshold instellation can be accurately constrained with a median $\hat{S}_\mathrm{thresh} = \var{retrSthresh}$.
-Both a higher water mass fraction and a higher fraction of planets in a runaway greenhouse state lead to larger average radii, thus these parameters are strongly correlated and cannot be well constrained without independent measurements.
+Both a higher water mass fraction and a higher dilution factor lead to larger average radii, thus these parameters are strongly correlated and cannot be well constrained without independent measurements.
 
 Given an optimistic survey design, what influences the probability of correctly rejecting a false null hypothesis?
 \begin{figure}[ht!]
@@ -383,7 +383,7 @@ Given an optimistic survey design, what influences the probability of correctly 
         \includegraphics[width=\linewidth]{figures/optimistic_statpwr_H2O-f.pdf}
         \caption{
             Statistical power of the runaway greenhouse hypothesis test as a function of model parameters.
-            For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of water mass fraction and fraction of greenhouse climate planets.
+            For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of water mass fraction and dilution factor.
             Higher values in either parameter result in a more reliable detection.
             For water mass fractions $\gtrsim 10^{-4}$, the statistical power largely depends on the fraction of greenhouse climate planets in the sample.
         }
@@ -414,7 +414,7 @@ We base our assessment of \plato's diagnostic power on these estimates.
             \caption{
             Expected delta-evidences as a function of the fraction of planets harboring runaway greenhouse climates for different versions of the \plato\ survey.
             The median values of randomized survey simulations are shown; $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
-            \textit{Left:} For a large planet yield of $N = \var{N_plato}$, even small planet fractions $\sim \var{platoMinfrgh}$ allow a detection.
+            \textit{Left:} For a large planet yield of $N = \var{N_plato}$, even small dilution factors $\sim \var{platoMinfrgh}$ allow a detection.
                 A sample of 100 planets is sufficient if their masses are constrained to within \SI{10}{\percent} (dotted green line).
                 Without such follow-up measurements, sufficient diagnostic power can only be achieved with this sample if $f_\mathrm{rgh} \gtrsim \var{platoMinfrghHundred}$.
                Even smaller samples are unlikely to yield a significant detection.
@@ -452,7 +452,7 @@ We now examine the value of a follow-up campaign to constrain planet masses with
 
 For uncertainties in density measurements, we propagate normally distributed errors of mass measurements assuming $\sigma_\mathrm{M_\mathrm{P}} = \SI{10}{\percent}$, as expected for \plato.
 As can be seen in Fig.~\ref{fig:plato_fgrid}, the detectability is enhanced when radius constraints can be augmented with mass measurements: At unchanged sample size, the difference in Bayesian evidence can be up to an order of magnitude larger.
-Consequently, we achieve a statistically significant detection with smaller samples or lower fractions $f_\mathrm{rgh}$.
+Consequently, we achieve a statistically significant detection with smaller samples or lower dilution factors $f_\mathrm{rgh}$.
 A density-based survey of 100 targets is roughly equivalent to a radius-based survey of \var{N_plato} targets.
 At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim 0.4$ whereas bulk density measurements enable a detection from $f_\mathrm{rgh} \gtrsim 0.1$.
 
@@ -470,7 +470,6 @@ In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} 
 \begin{figure}[ht!]
 %    \script{figurescript.py}
     \begin{centering}
-
         \includegraphics[width=\linewidth]{figures/S_thresh_posteriors.pdf}
         \caption{
             Retrieved posterior distributions of the threshold instellation for different survey realizations.
@@ -492,7 +491,6 @@ We chose a planetary sample size of $N=100\pm10$, as this was found to be a thre
 Accurate retrievals from radius measurements alone require high fractions of greenhouse climate-bearing planets to achieve an accurate constraint on $S_\mathrm{thresh}$.
 If, on the other hand, a follow-up campaign adds planetary mass estimates and we fit the signal in bulk density space, useful constraints are possible under more pessimistic conditions.
 A sample containing only planets around M~dwarf yields a comparable performance as the overall sample.
-
 
 % Additional \subsection for habitability? To reflect structure in Discussion, Conclusions?
 
