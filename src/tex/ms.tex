@@ -60,7 +60,7 @@ Studies of the geophysical state and evolution of hot exoplanets can thus contri
 
 
 \section{Methods}\label{sec:methods}
-\todo[inline]{Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}}
+\todo[inline]{Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}. Mention we only consider instellation-induced rgh.}
 %The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 
 We determined -- for different survey configurations -- the confidence level with which the runaway greenhouse threshold can be detected in simulated exoplanet observations.
@@ -342,7 +342,7 @@ We also show the predictions of observable average planet radii from the statist
 Within the runaway greenhouse limit, an average radius change of \avgRadiusChange\ occurs.
 
 
-\subsection{Testability of the runaway greenhouse hypothesis}
+\subsection{Testability of the runaway greenhouse hypothesis}\label{sec:res_testability}
 \begin{figure}[ht!]
 %    \script{figurescript.py}
     \begin{centering}
@@ -521,7 +521,7 @@ The ``dilution factor" we introduced embodies our ignorance of these contributio
 Importantly, while this may offset our estimates of the signal's amplitude, its shape remains the same.
 
 Our finding that the expected trend is strong except for extremely low water mass fractions not only gives reason for optimism regarding its detection, it also presents a potential for constraints on the water inventory of terrestrial planets in the case of a non-detection.
-Should a detection be possible, the time dependencies discussed above should be taken into account when using this population-level information to constrain exoplanet climates.
+Should a successful detection occur, the time dependencies discussed above should be taken into account when using this population-level information to constrain exoplanet climates.
 
 \end{note}
 
@@ -529,15 +529,20 @@ Should a detection be possible, the time dependencies discussed above should be 
 
 
 
-\subsection{Detectability of the runaway greenhouse threshold}
+\subsection{Detectability of the runaway greenhouse transition}
 \todo[inline]{the demographic imprint is detectable. Under what conditions?\\
 Mention multiplanet systems.}
+We showed in Sect.~\ref{sec:res_testability} that under favorable conditions, a sufficiently large (\var{N_optimistic} planets) photometric survey is likely to detect the demographic imprint of the runaway greenhouse transition and accurately constrain the associated threshold instellation.
+However, even assuming capable instrumentation and an optimal survey design, geophysical and demographic unknowns may jeopardize this undertaking.
+The detectability of the runaway greenhouse threshold is thus a function of both survey design and astrophysical circumstances.
 
 %We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
-We identified the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a given transit survey:
+We identified the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a transit survey:
 \begin{itemize}
+    \item Occurrence rate of planets forming steam atmospheres: The runaway greenhouse climate relies on the production of large amounts of water vapor that then acts as a greenhouse gas. This process works only on planets with an atmosphere and of sufficiently volatile-rich composition\todo[inline]{how much?}. The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
+    \item Planetary evolution and duration of the steam atmosphere phase: An inflated steam atmosphere can only be sustained until the planet has lost its water. Depending on host star spectral type and planetary composition, planets spend from a few Myr to hundreds of Myr in runaway greenhouse climates~\citep[e.g.,][]{Luger2015}, and only planets observed during this phase will contribute to the signal.
     \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is highly sensitive on water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern.
-    \item Sample size: Since we are looking for a population-level trend, the statistical significance will increase with a larger sample size.
+    \item Sample size: Since we are looking for a population-level trend, the statistical significance increases with a larger sample size.
     \item Radius measurement precision: The more precise individual planet radii can be determined, the less smeared out the pattern will be. Good \textit{accuracy} is less important, as long as it does not have a systematic error scaling with stellar irradiance.
     \item Availability and precision of mass measurements: For simple geometric reasons ($\rho \propto R^{-3}$), the expected trend is stronger when measured in bulk density than it is in planet radius space. If transiting planets can be followed up to obtain mass measurements, the statistical significance increases.
 \end{itemize}
@@ -547,7 +552,8 @@ This can be different for young host stars when their ages can not be well const
 
 
 \subsubsection{False positive scenarios}
-\todo{what other processes could be confused with a magma ocean signal?}
+\todo{what other processes could be confused with a magma ocean signal?\\
+If there's no other subsubsection here, make this a (the final?) subsection in ``Discussion''.}
 \begin{note}
     Global magma oceans are not the only physical mechanism that may cause a decrease in transit radii for a subset of planets.
     Other causes of shrinking planet sizes have been put forward, the most widely discussed ones being atmospheric loss due to either photoevaporation through high-energy radiation by the host star~\citep[e.g.,][]{Owen2013,Jin2014,Mordasini2020a} or due to residual heat from the planet's interior shortly after formation~\citep{Ginzburg2016b,Ginzburg2018,Gupta2019}.
@@ -579,6 +585,12 @@ This can be different for young host stars when their ages can not be well const
 The fidelity of a future detection or falsification of a magma ocean signature will depend on the significance with which the null hypothesis can be excluded.
 As a consequence, instrumentation and survey strategy aiming at testing the hypothesis should aim at maximizing the probability of a true positive detection given the existence of the effect.
 ...
+
+
+The required sample size and precision are well in reach of near-future exoplanet missions such as PLATO.
+...
+
+
 
 \subsection{Mission design trades}\label{sec:mission-design-trades}
 We now turn to mission design trades that influence the statistical power for testing the runaway greenhouse hypothesis.
@@ -638,6 +650,12 @@ This will be a key contribution to the search for extraterrestrial life in the U
 %\end{acknowledgments}
 
 \begin{large}\textit{Author contributions:}\end{large}
+%M.S., D.A., and T.L. conceived the project.
+%M.S. wrote the manuscript and carried out the hypothesis tests and statistical analyses.
+%...
+%K.H.-U. provided the star generator based on the Gaia catalog.
+%G.B. implemented the planet generator in the Bioverse framework.
+%All authors provided comments and suggestions on the manuscript.
 
 \section*{Data Availability}
 All data sets and software required to reproduce our results and this article are available through GitHub and Zenodo.
