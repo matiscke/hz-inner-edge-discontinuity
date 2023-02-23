@@ -86,12 +86,14 @@ Different sample sizes are realized by varying the maximum distance of stars to 
 \todo[inline]{KEVIN: describe stellar population}
 ...
 
-\subsubsection{Stellar luminosity tracks}
-    Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
-    Since the emergence of a runaway greenhouse phase on a planet is highly dependent on the level of radiation it receives, and thus on the luminosity of the host star, we assigned age-dependent luminosities to our synthetic stars.
-    Stellar ages are notoriously poor-constrained (CITE); we thus drew random ages from a uniform distribution from \SI{0}{\giga\year} to \SI{10}{\giga\year}.
-    We then assigned each star a luminosity from the mass-dependent evolutionary models in \citet{Baraffe1998}.
-    Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution as a function of stellar mass and age.
+\subsubsection{Stellar luminosity evolution}
+Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
+Since the emergence of a runaway greenhouse phase on a planet is highly dependent on the level of radiation it receives, and thus on the luminosity of the host star, we assigned age-dependent luminosities to our synthetic stars.
+
+While stellar ages are notoriously poor-constrained~\cite[e.g.,][]{Adams2005}, the age distribution of planet host stars in the Solar neighborhood was shown to be broadly consistent with uniform~\citep{Reid2007,Gaidos2023}.
+For our synthetic stars, we thus drew random ages from a uniform distribution from \SI{0}{\giga\year} to \SI{10}{\giga\year}.
+We then assigned each star a luminosity from the mass-dependent evolutionary models in \citet{Baraffe1998}.
+Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution as a function of stellar mass and age.
 \begin{figure}[ht!]
     \script{plot_luminosity_tracks.py}
     \begin{centering}
