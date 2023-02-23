@@ -170,41 +170,39 @@ This represents the baseline bulk density before any climate-related effects are
 
 
 
+Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
+To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
+While we search for the runaway greenhouse pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
+Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
+We consider the following cases (see Fig.~\ref{fig:radiusevolution}):
+%\begin{itemize}
+%\item[A.] No radius change.
+%This case serves as our null hypothesis, where planetary radii are not affected by the amount of irradiation the planets receive.
+%A solid planetary surface is assumed and no steam atmosphere is present.
+%\item[B.] Radius inflation due to a steam atmosphere.
+%Atmospheric scale heights are significantly increased.
+%\item[C.] As B, but including radius decrease of inflated planets due to water partitioning in the molten mantle.
+%\end{itemize}
 
 
+\textit{Non-runaway} planets retain the radius assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
+This case serves as our null hypothesis.
 
-    Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
-    To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
-    While we search for the runaway greenhouse pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
-    Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
-    We consider three different cases:
-    \begin{itemize}
-   \item[A.] No radius change.
-    This case serves as our null hypothesis, where planetary radii are not affected by the amount of irradiation the planets receive.
-    A solid planetary surface is assumed and no steam atmosphere is present.
-   \item[B.] Radius inflation due to a steam atmosphere.
-    Atmospheric scale heights are significantly increased.
-   \item[C.] As B, but including radius decrease of inflated planets due to water partitioning in the molten mantle.
-    \end{itemize}
-
-
-In case~A, a planet simply retains the radius it was assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
-There is no additional dependency on orbital distance or instellation.
-
-Case~B assumes an inflated radius due to a steam atmosphere for all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$.
+For all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$, we assume an inflated radius due to a steam atmosphere.
 While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
-For the rocky interiors, their calculations rely on the same mass-radius relations from ~\citep{Zeng2016} that we applied for case~A-planets.
+Their calculations rely on the same mass-radius relations from ~\citep{Zeng2016} for rocky interiors that we apply for our non-runaway planets.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
-We note that an additional radius change due to potentially molten interiors~\citep{Bower2019} is not taken into account here.
+This scenario does not take into account the expected additional radius change due to interiors that are molten due to greenhouse forcing~\citep{Bower2019}.
+It further assumes a \textit{dry melt} without dissolved volatiles.
 
-Case~C contains case~B, but also includes a radius decrease due to water partitioning in the melt.
-Due to greenhouse forcing, planetary surfaces below steam atmospheres are expected to be molten.
-Part of the water will then partition into the melt, removing it from the steam atmosphere, which in turn decreases the radius inflation.
-This effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values~\citep{Dorn2021}.
+\textit{Wet melt} planets follow the rules above, but we take into account a radius decrease from water partitioning in the melt:
+In the situation of a magma ocean below a steam atmosphere, part of the water will partition into the melt.
+This removes it from the steam atmosphere, which in turn decreases the radius inflation.
+The effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values~\citep{Dorn2021}.
 The magnitude of this effect is again dependent on the planet mass and on the water mass fraction.
 We follow \citet{Dorn2021} and use their computed radius deviations between a wet magma ocean and a solid mantle for a tropopause pressure~$P_\mathrm{iso}=\SI{0.1}{\bar}$.
-We then add the (in almost all cases negative) radius deviations to the planet radii computed for case~B.
+We then add the (in almost all cases negative) radius deviations to the planet radii computed for the dry melt case.
 
 \begin{figure}
     \begin{centering}
@@ -214,19 +212,19 @@ We then add the (in almost all cases negative) radius deviations to the planet r
         \includegraphics[width=\hsize]{figures/radiusevolution.pdf}
         \caption{
             \textit{Top}: Mass-radius relationships for a water mass fraction $x_{H_2O}= \wrr$ and different planet states. Green: planets with a solid mantle and no steam atmosphere. Dashed: planets with steam atmospheres. Blue: planets with steam atmospheres and including the effect of water incorporation in the melt.
-            \textit{Bottom}: Radius evolution of different planet types, illustrating degeneracies among planet classes. Shown is a schematic time evolution of the transit radius normalized to the atmosphere-free radius $R_\mathrm{0}$ for different scenarios. Planets can move between planet classes through processes such as atmospheric loss and desiccation, which ultimately ends a runaway greenhouse phase on a timescale dependent on a planet's water content.}
+            \textit{Bottom}: Radius evolution of different planet types, illustrating degeneracies and potential for confusion among planet classes. Shown is a schematic time evolution of the transit radius normalized to the atmosphere-free radius $R_\mathrm{0}$ for different scenarios. Planets can move between planet classes through processes such as atmospheric loss and desiccation, which ultimately ends a runaway greenhouse phase on a timescale dependent on a planet's water content.}
         \label{fig:radiusevolution}
     \end{centering}
 \end{figure}
 Figure~\ref{fig:radiusevolution} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of $x_{H_2O}= \wrr$.
-Steam atmospheres (case~B) cause a significant radius increase, which is slightly reduced when water incorporation in the melt is allowed (case~C).
-In the following, we only distinguish between cases~A and~C.
+Steam atmospheres cause a significant radius increase, which is slightly reduced when water incorporation in the melt is considered.
+In the following, we only distinguish between the non-runaway greenhouse and wet melt scenarios.
 
 As illustrated in Fig.~\ref{fig:radiusevolution}~(bottom panel), different processes can lead to the classification of a planet into either of these categories.
-For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a case~C planet, diluting the expected demographic signature.
-Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to category~A on a timescale of $10^8\SI{}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
-To account for these effects we introduce a dilution parameter $f_\mathrm{rgh}$, which represents the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
-Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow relation~A, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow relation~C.
+For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a planet in our runaway greenhouse category, diluting the expected demographic signature.
+Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to the non-runaway greenhouse category on a timescale of $10^8\SI{}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
+To account for these effects, we introduce a dilution parameter $f_\mathrm{rgh}$, which represents the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
+Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow the non-runaway greenhouse relation, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow the wet melt relation.
 %The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
 This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
 In the following, we test if and under what conditions this trend is large enough to be detected with high significance.
