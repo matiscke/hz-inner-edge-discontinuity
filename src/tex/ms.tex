@@ -47,7 +47,9 @@ Studies of the geophysical state and evolution of hot exoplanets can thus contri
     \citet{Hamano2013} showed that such a late desiccation process is not needed to explain the stark differences: for a planet rich in volatiles and receiving high enough radiation levels from its host star, a steam atmosphere limits the outgoing radiation from the (molten) planetary surface.
     This runaway greenhouse state prevents the planet's rapid cooling and can extend the magma ocean stage to hundreds of \SI{}{\mega\year}, enough to remove the entire water reservoir from a rocky planet by hydrodynamic escape.
     \todo[inline]{important for motivating the existence of the pattern: ``the solidification timescale can become comparable to the main-sequence lifetime of the star (Hamano et al. 2013, 2015)'' \citep{Lichtenberg2022} }
-    Under the right conditions, different orbital distances alone can thus decide about a planet's water content and ultimately its habitability.
+    Consequently, it is aptly considered to be the inner boundary of the habitable zone~\citep{Kasting1993,Kopparapu2013}.
+
+    (Under the right conditions, different orbital distances alone can thus decide about a planet's water content and ultimately its habitability.)
     If received flux makes the difference between our own habitable planet and dry, dead Venus, there is good reason to believe that such patterns exist in exoplanet systems as well.
 
     ...long-term goal/overarching objective: derive the geophysical history of rocky extrasolar planets. More concrete: Constrain the limits of runaway greenhouse transitions, and thus the inner edges of the habitable zone. Also: How close is Earth from this runaway greenhouse irradiation limit?
@@ -109,8 +111,8 @@ Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution 
 
 \subsubsection{Synthetic planet sample}\label{sec:syn_planets}
 Next, we assigned to the stellar sample planetary systems with frequencies, orbital parameters, and bulk properties derived from the \kepler\ mission.
-We adopted the planetary occurrence rates in orbital period and radius recently derived in~\citep{Bergsten2022}.
-Following \citep{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
+We adopted the planetary occurrence rates in orbital period and radius recently derived in \citet{Bergsten2022}.
+Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
 \begin{equation}
     \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
 \end{equation}
@@ -153,8 +155,9 @@ This represents the baseline bulk density before any climate-related effects are
 - we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
 - we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
 }
+Extreme climates have a direct influence on planetary sizes as measured by transit photometry~\citep{Turbet2019}.
+Here, we use predictions on atmospheric thickness from geophysical models to derive the transit radii of planets with temperate climates and those with instellation-induced runaway greenhouse climates, respectively.
 ...
-
 
 \todo[inline]{ARNAUD: revise definition of $S$ following our discussion on 2022-12-22. Introduce net instellation and clarify what is meant by it.}
 \begin{note}
@@ -189,9 +192,9 @@ We consider the following cases (see Fig.~\ref{fig:radiusevolution}):
 This case serves as our null hypothesis.
 
 For all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$, we assume an inflated radius due to a steam atmosphere.
-While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Leconte2013}.
+While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Abe1988,Kasting1988,Nakajima1992,Goldblatt2013,Leconte2013}.
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
-Their calculations rely on the same mass-radius relations from ~\citep{Zeng2016} for rocky interiors that we apply for our non-runaway planets.
+Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our non-runaway planets~\citep{Zeng2016}.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
 This scenario does not take into account the expected additional radius change due to interiors that are molten due to greenhouse forcing~\citep{Bower2019}.
 It further assumes a \textit{dry melt} without dissolved volatiles.
@@ -538,8 +541,8 @@ The detectability of the runaway greenhouse threshold is thus a function of both
 %We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
 We identified the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a transit survey:
 \begin{itemize}
-    \item Occurrence rate of planets forming steam atmospheres: The runaway greenhouse climate relies on the production of large amounts of water vapor that then acts as a greenhouse gas. This process works only on planets with an atmosphere and of sufficiently volatile-rich composition\todo[inline]{how much?}. The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
-    \item Planetary evolution and duration of the steam atmosphere phase: An inflated steam atmosphere can only be sustained until the planet has lost its water. Depending on host star spectral type and planetary composition, planets spend from a few Myr to hundreds of Myr in runaway greenhouse climates~\citep[e.g.,][]{Luger2015}, and only planets observed during this phase will contribute to the signal.
+    \item Occurrence rate of planets forming steam atmospheres: The runaway greenhouse climate relies on the production of large amounts of water vapor that then acts as a greenhouse gas. This process works only on planets with an atmosphere and of sufficiently volatile-rich composition\todo[inline]{TIM: how much?}. The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
+    \item Planetary evolution and duration of the steam atmosphere phase: An inflated steam atmosphere can only be sustained until the planet has lost its water. Depending on host star spectral type, planetary mass, and composition, planets can spend from a few Myr to several Gyr in runaway greenhouse climates~\citep[][]{Hamano2015,Luger2015}, and only planets observed during this phase will contribute to the signal.
     \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is highly sensitive on water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern.
     \item Sample size: Since we are looking for a population-level trend, the statistical significance increases with a larger sample size.
     \item Radius measurement precision: The more precise individual planet radii can be determined, the less smeared out the pattern will be. Good \textit{accuracy} is less important, as long as it does not have a systematic error scaling with stellar irradiance.
