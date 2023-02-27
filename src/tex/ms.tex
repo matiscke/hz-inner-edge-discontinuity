@@ -165,7 +165,7 @@ Here, we use predictions on atmospheric thickness from geophysical models to der
     \begin{equation}
         \frac{S}{S_\oplus} = \left(\frac{L_\star}{L_\odot}\right) \left(\frac{au}{a}\right)^2 .
     \end{equation}
-    Here, we assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's [CITE].
+    Here, we assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's~\citep{Haar1971}.
     The absolute value of $S_\oplus$, by which all synthetic planets are scaled, is then \SI{238}{\watt\per\square\meter}.
 %    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
    We do not take into account additional heating sources such as tidal effects~\citep[e.g.][]{Barnes2013}.
@@ -357,7 +357,7 @@ Within the runaway greenhouse limit, an average radius change of \avgRadiusChang
         \label{fig:optimistic_R-S}
     \end{centering}
 \end{figure}
-Figure~\ref{fig:optimistic_R-S} shows a prototypical detection of the runaway greenhouse threshold.
+Figure~\ref{fig:optimistic_R-S} shows a prototypical statistical detection of the runaway greenhouse transition.
 For the sake of clarity, we chose an optimistic scenario where the sample is large ($N = \var{N_optimistic}$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
 We assumed that the fraction of those planets irradiated stronger than $S_\mathrm{thresh}$ that have runaway greenhouse climates is \frgh, and we chose a water mass fraction of \wrr\ for each planet.
 In this case, the pattern was detected with high significance ($\Delta \ln \mathcal{Z} \approx 100$).
@@ -538,7 +538,7 @@ We showed in Sect.~\ref{sec:res_testability} that under favorable conditions, a 
 However, even assuming capable instrumentation and an optimal survey design, geophysical and demographic unknowns may jeopardize this undertaking.
 The detectability of the runaway greenhouse threshold is thus a function of both survey design and astrophysical circumstances.
 
-%We consider a number of key parameters of transit surveys: The telescope's mirror diameter (or effective diameter for a telescope array) $D$, the total time budget of the survey for observations $t_\mathrm{total}$, the maximum number of observed transits for each target $N_\mathrm{obs, max}$, the slew time between observations $t_\mathrm{slew}$, ... \todo[]{double-check which survey params are needed}
+\subsubsection{Key factors influencing tests of the runaway greenhouse hypothesis}
 We identified the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a transit survey:
 \begin{itemize}
     \item Occurrence rate of planets forming steam atmospheres: The runaway greenhouse climate relies on the production of large amounts of water vapor that then acts as a greenhouse gas. This process works only on planets with an atmosphere and of sufficiently volatile-rich composition\todo[inline]{TIM: how much?}. The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
@@ -550,7 +550,6 @@ We identified the following drivers of the diagnostic power for detecting the ru
 \end{itemize}
 Besides these main factors, uncertainties in the measured instellations can influence the result, although they are typically small due to the very precise orbital period measurements available for transiting planets.
 This can be different for young host stars when their ages can not be well constrained; in particular the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Fig.~\ref{fig:luminosity_tracks}).
-
 
 
 \subsubsection{False positive scenarios}
@@ -583,14 +582,22 @@ If there's no other subsubsection here, make this a (the final?) subsection in `
 \todo[inline]{discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (Tim's talk)}
 
 
-\subsection{Diagnostic power of upcoming exoplanet missions}\todo[inline]{\plato: needed sample size, precision}
-The fidelity of a future detection or falsification of a magma ocean signature will depend on the significance with which the null hypothesis can be excluded.
-As a consequence, instrumentation and survey strategy aiming at testing the hypothesis should aim at maximizing the probability of a true positive detection given the existence of the effect.
-...
+\subsection{Diagnostic power of near-future exoplanet missions}\label{sec:dis_samplesize}
+The fidelity of a future detection or falsification of a runaway greenhouse signature will depend on the significance with which the null hypothesis can be excluded.
+As a consequence, instrumentation and survey strategy aiming at testing the hypothesis should aim at maximizing the probability of a true positive detection.
+\begin{note}
+In Sect.~\ref{sec:res_samplesize} we explore the diagnostic power of space missions that are currently flying or in the planning stage.
+We focus here on transit survey missions, as they provide the most direct radius measurements of a practical planet sample.
 
+As discussed above, the key drivers from a mission design perspective are sample size and photometric precision.
+We found that along these axes, \plato\ will be the most favorable among the upcoming transit missions.
+%The required sample size and precision are well in reach of near-future exoplanet missions such as PLATO.
+With an expected transit radius precision of \SI{3}{\percent}~\citep{plato2017} and a yield of $> 100$ planets characterized with such high precision~\citep{Rauer2021}, \plato\ is comparable to the optimistic survey we introduced in Sect.~\ref{sec:res_testability}.
+If successful, it should readily detect the predicted statistical imprint or, in case of a non-detection, provide strong upper limits on the occurrence rate of runaway greenhouse planets.
 
-The required sample size and precision are well in reach of near-future exoplanet missions such as PLATO.
-...
+The latter depends on the lifetimes of runaway greenhouse phases, which are a function of the initial water inventory of the planets~\citep{Hamano2015}.
+It seems thus feasible to derive the typical water content of rocky planets from these occurrence estimates.
+\end{note}
 
 
 
@@ -647,7 +654,7 @@ As we have demonstrated, it appears realistic that an empirical confirmation of 
 This will be a key contribution to the search for extraterrestrial life in the Universe.
 
 %\begin{acknowledgments}
-%The authors thank Yann Fabel, Paul Molliere, Gijs Mulders, Matthew Murphy, and Terry-Ann Suer for insightful discussions.
+%The authors thank Gabriele Cugno, Yann Fabel, Paul Molliere, Gijs Mulders, Matthew Murphy, and Terry-Ann Suer for insightful discussions.
 %We are grateful to Martin Turbet for providing the mass-radius relationship data for planets harboring steam atmospheres.
 %\end{acknowledgments}
 
