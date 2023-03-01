@@ -406,7 +406,7 @@ Under real-world conditions, the planetary properties in question can only be pr
 \plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
 The \plato\ team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
 In the FGK sample of the mission, several hundred Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
-\plato's definition study report~\citep{plato2017} further states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
+\plato's definition study report~\citep{plato2017} further states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity~(RV) follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
 We base our assessment of \plato's diagnostic power on these estimates.
 
     \begin{figure*}[ht!]
@@ -445,7 +445,7 @@ We thus do not expect a significant contribution to exploring the inner edge of 
 To explore the impact of mission trade-offs on the detectability of the runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and measured their capability to recover the trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
-\subsubsection{Additional planet mass measurements}
+\subsubsection{Additional planet mass measurements}\label{sec:res_followup}
 The dependencies of a detection change when additional information beyond planet radii is available for the characterized planet population.
 Since the planet bulk density $\rho \propto R^{-3}$, the signal is stronger when measured in bulk density instead of radius:
 With an optimistic choice of geophysical parameters (see above), the average measured radius change is \SI{+15}{\percent} whereas the average density change is \SI{-33}{\percent}.
@@ -602,13 +602,16 @@ It seems thus feasible to derive the typical water content of rocky planets from
 
 
 \subsection{Mission design trades}\label{sec:mission-design-trades}
+\todo[inline]{not sure if subsubsections needed}
 We now turn to mission design trades that influence the statistical power for testing the runaway greenhouse hypothesis.
-...
+
 \subsubsection{The value of follow-up campaigns}
 \begin{note}
-...FOLLOW-UP...radial velocity follow-up measurements...
-
-The advantage of mass measurements for the planet sample can be enhanced with a wise selection of follow-up targets, i.e. favoring those planets residing close to $S_\mathrm{thresh}$.
+As runaway greenhouse phases leave a stronger imprint in bulk density than in planet radius (see Sect.~\ref{sec:res_followup}), it would be beneficial to obtain constraints on planetary masses and test the runaway greenhouse hypothesis in density space instead of radius space.
+Precise ground-based radial velocity measurements are expensive, and therefore such follow-up efforts may only be available for a subsample of a mission's targets.
+For a mission design similar to PLATO, a density-based test on about a third of the overall sample is equivalent to a pure radius-based analysis.
+The diagnostic power of such a test may be improved by simultaneously fitting for the trend in radius space in the subsample without RV follow-up.
+An optimized mission in search for the inner edge of the habitable zone will further enhance its information content via a wise selection of follow-up targets, i.e., favoring those planets residing close to the expected instellation threshold $S_\mathrm{thresh}$.
 \end{note}
 
 \subsubsection{Target star spectral types}
