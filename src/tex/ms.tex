@@ -22,9 +22,9 @@
     Here, we assess the ability of space and ground-based telescopes to test this hypothesis using Bioverse, a simulation framework that leverages contextual information from the overall planet population.
     $\ldots$
 
-%    We argue that in the near future, ESA's \plato\ mission and NASA's Roman Space Telescope will be the most promising endeavors to constrain this demographic feature.
-%    For each of these missions, we identify the key mission design drivers that enable a statistically sound detection.
-%    We also show the unique synergy of these missions in answering this question, and what survey strategy optimizes the statistical power of the combined dataset.
+%    We argue that in the near future, ESA's \plato\ mission will be the most promising endeavors to constrain this demographic feature.
+%    We identify the key mission design drivers that enable a statistically sound detection.
+%    We also show what survey strategy optimizes the statistical power of the combined dataset.
 %    $\ldots$ its measurement will also provide insights into which stars harbor the nearest habitable worlds.
 \end{abstract}
 
@@ -192,7 +192,7 @@ We consider the following cases (see Fig.~\ref{fig:radiusevolution}):
 This case serves as our null hypothesis.
 
 For all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$, we assume an inflated radius due to a steam atmosphere.
-While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Abe1988,Kasting1988,Nakajima1992,Goldblatt2013,Leconte2013}.
+While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Abe1988,Kasting1988,Nakajima1992,Goldblatt2013,Leconte2013,Boukrouche2021}.
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our non-runaway planets~\citep{Zeng2016}.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
@@ -439,6 +439,11 @@ This largely limits \cheops' coverage to planets within the runaway greenhouse r
 As \cheops, \ariel~\citep{Puig2016} will be a follow-up mission that is not designed to provide a large number of new radius measurements.
 \ariel's primary targets are larger planets in the range of sub-Neptune to Jupiter-like planets.
 We thus do not expect a significant contribution to exploring the inner edge of the habitable zone for Earth-sized planets.
+
+While not primarily designed to detect transiting planets, the \rst~\citep{Spergel2015} is expected to yield $\sim 10^5$ transiting planets on short orbits in the course of its mission~\citep{Montet2017}.
+In a fraction of the cases, planets as small as \SI{2}{\Rearth} will be detected.
+About 200 planets smaller than Neptune are expected to be found around M~dwarfs and thus may reach into the habitable zone.
+The \rst\ could thus provide a useful sample to explore the runaway greenhouse transition, albeit with a predominant focus on water-rich (sub-)Neptunes~\citep[e.g.,][]{Pierrehumbert2022}.
 
 
 \subsection{Statistical power of different mission designs}\label{sec:statpower_missions}
