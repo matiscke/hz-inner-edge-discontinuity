@@ -349,7 +349,7 @@ When ordered in orbital period space, the different planet types overlap, diluti
 With net instellation as an independent variable, planets above and below the runaway greenhouse threshold separate.
 We also show the predictions of observable average planet radii from the statistical hypotheses defined above.
 %The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
-Within the runaway greenhouse limit, an average radius change of \avgRadiusChange\ occurs.
+Within the runaway greenhouse regime, an average radius change of \avgRadiusChange\ occurs.
 
 
 \subsection{Testability of the runaway greenhouse hypothesis}\label{sec:res_testability}
@@ -366,7 +366,7 @@ Within the runaway greenhouse limit, an average radius change of \avgRadiusChang
     \end{centering}
 \end{figure}
 Figure~\ref{fig:optimistic_R-S} shows a prototypical statistical detection of the runaway greenhouse transition.
-For the sake of clarity, we chose an optimistic scenario where the sample is large ($N = \var{N_optimistic}$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
+For the sake of clarity, we chose an optimistic scenario where the sample of characterized planets is large ($N = \var{N_optimistic}$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
 We assumed that the fraction of those planets irradiated stronger than $S_\mathrm{thresh}$ that have runaway greenhouse climates is \frgh, and we chose a water mass fraction of \var{wrr} for each planet.
 In this case, the pattern was detected with high significance ($\Delta \ln \mathcal{Z} \approx 100$).
 
@@ -376,7 +376,7 @@ In this case, the pattern was detected with high significance ($\Delta \ln \math
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/corner.pdf}
         \caption{
-            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the model parameters as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be well constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
+            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the model parameters as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be reasonably constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
         }
         \label{fig:cornerplot}
     \end{centering}
@@ -384,9 +384,8 @@ In this case, the pattern was detected with high significance ($\Delta \ln \math
 With such a strong signal, we can attempt an inference of the parameters defining the injected effect.
 Figure~\ref{fig:cornerplot} shows the posterior distributions of $S_\mathrm{thresh}$, $x_{H_2O}$, and $f_\mathrm{rgh}$ as determined by the nested sampler.
 The threshold instellation can be accurately constrained with a median $\hat{S}_\mathrm{thresh} = \var{retrSthresh}$.
-Both a higher water mass fraction and a higher dilution factor lead to larger average radii, thus these parameters are strongly correlated and cannot be well constrained without independent measurements.
+Both a higher water mass fraction and a higher dilution factor lead to larger average radii, thus these parameters are strongly correlated.
 
-Given an optimistic survey design, what influences the probability of correctly rejecting a false null hypothesis?
 \begin{figure}[ht!]
 %    \script{figurescript.py}
     \begin{centering}
@@ -401,7 +400,7 @@ Given an optimistic survey design, what influences the probability of correctly 
     \end{centering}
 \end{figure}
 Figure~\ref{fig:statpwr_H2O-f} explores the statistical power achieved in the above scenario for different combinations of the poorly constrained parameters $x_{H_2O}$ and $f_\mathrm{rgh}$.
-The higher the water content and thus the radius change, and the higher the fraction of planets in runaway greenhouse climates, the greater the prospect of a statistically sound detection.
+It is highest for large water inventories and large dilution factors.
  For all but very low water fractions, $f_\mathrm{rgh}$ dominates this trend: It enters linearly into the average planet radius, whereas the contribution of $x_{H_2O}$ - as predicted by the geophysical models - is sublinear with a power-law exponent of $\sim 0.3$.
 As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_optimistic} is sufficient for a $\SI{50}{\percent}$ detection rate even for water ratios as low as $10^{-3}$.
 
@@ -481,7 +480,7 @@ No significant detection is possible in the pure FGK sample, independent of the 
 In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} \sim 0.2$, similar to the case above where all spectral types are considered.
 
 
-\subsubsection{Constraining the threshold instellation}
+\subsubsection{Constraining the threshold instellation}\label{sec:res_constrain-S_thresh}
 \begin{figure}[ht!]
 %    \script{figurescript.py}
     \begin{centering}
@@ -555,12 +554,14 @@ However, even assuming capable instrumentation and an optimal survey design, geo
 The detectability of the runaway greenhouse threshold is thus a function of both survey design and astrophysical circumstances.
 
 \subsubsection{Key factors influencing tests of the runaway greenhouse hypothesis}
+What influences the probability of correctly rejecting a false null hypothesis?
 We identified the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a transit survey:
 \todo[inline]{avoid bullet points within sub-subsections}
 \begin{itemize}
     \item Occurrence rate of planets forming steam atmospheres: The runaway greenhouse climate relies on the production of large amounts of water vapor that then acts as a greenhouse gas. This process works only on planets with an atmosphere and of sufficiently volatile-rich composition\todo[inline]{TIM: how much?}. The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
     \item Planetary evolution and duration of the steam atmosphere phase: An inflated steam atmosphere can only be sustained until the planet has lost its water. Depending on host star spectral type, planetary mass, and composition, planets can spend from a few Myr to several Gyr in runaway greenhouse climates~\citep[][]{Hamano2015,Luger2015}, and only planets observed during this phase will contribute to the signal.
-    \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is highly sensitive on water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern.
+    \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is sensitive on the water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern:
+        The higher the water content and the higher the fraction of planets in runaway greenhouse climates, the greater the prospect of a statistically sound detection.
     \item Sample size: Since we are looking for a population-level trend, the statistical significance increases with a larger sample size.
     \item Radius measurement precision: The more precise individual planet radii can be determined, the less smeared out the pattern will be. Good \textit{accuracy} is less important, as long as it does not have a systematic error scaling with stellar irradiance.
     \item Availability and precision of mass measurements: For simple geometric reasons ($\rho \propto R^{-3}$), the expected trend is stronger when measured in bulk density than it is in planet radius space. If transiting planets can be followed up to obtain mass measurements, the statistical significance increases.
@@ -604,7 +605,7 @@ If there's no other subsubsection here, make this a (the final?) subsection in `
 The fidelity of a future detection or falsification of a runaway greenhouse signature will depend on the significance with which the null hypothesis can be excluded.
 As a consequence, instrumentation and survey strategy aiming at testing the hypothesis should aim at maximizing the probability of a true positive detection.
 \begin{note}
-In Sect.~\ref{sec:res_samplesize} we explore the diagnostic power of space missions that are currently flying or in the planning stage.
+In Sect.~\ref{sec:res_samplesize} we explore the diagnostic power of space missions that are currently operating or are in the planning stage.
 We focus here on transit survey missions, as they provide the most direct radius measurements of a practical planet sample.
 
 As discussed above, the key drivers from a mission design perspective are sample size and photometric precision.
@@ -648,8 +649,18 @@ Therefore, in addition to the high scientific value of boosted detections of pot
 As with a pure volume-limited sample, a targeted M~dwarf survey, too, profits from follow-up measurements of planetary masses with an order of magnitude increase in evidence.
 
 
-\subsection{Implications for planetary habitability}\label{sec:habitability}
+\subsection{Constraining planetary habitability}\label{sec:habitability}
 \todo[inline]{Magma oceans influence the amount of water available at the surface and atmosphere, which is 1. commonly used as environmental marker to assess habitability, and 2. influences the planet's climate (greenhouse effect).}
+A potential for liquid water on the surface of a planet is commonly used as an environmental marker to assess its habitability. REF
+The runaway greenhouse transition represents an upper bound on received irradiation for this condition.
+Its detection would thus not only empirically confirm the habitable zone concept but also help to locate it in the observationally available planetary parameter space.
+In Sect.~\ref{sec:res_constrain-S_thresh}, we show that the threshold instellation at which the runaway greenhouse transition occurs can be reasonably constrained without imposing overly optimistic conditions on the underlying planet population, instrumentation, or survey strategy.
+\todo[inline]{elaborate based on Sect.~\ref{sec:res_constrain-S_thresh}}
+
+The situation is different for the planetary water inventory and the fraction of planets with runaway greenhouse climates:
+Since these parameters are degenerate, they cannot be well constrained without independent measurements.
+\todo[inline]{discuss additional measurements that could lift the degeneracy. e.g., adding atmospheric compositional information i.e., PLATO + ARIEL or similar}
+
 
 \subsection{Impact of assumptions on our findings}
 \subsubsection{Baseline mass-radius relationship}
