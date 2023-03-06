@@ -32,7 +32,17 @@
 \section{Introduction}
 ...just dropping material and references for now...
 \todo[inline]{papers: \citep[][introduce runaway GH]{} \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021,Downey2022}.}
-
+\todo[inline]{``Points for the intro:
+Bioverse\\
+Transit survey to measure mass/radius of planets\\
+Does the HZ have an inner edge?\\
+Run-away GH\\
+Magma oceans\\
+Mention missions that are NOT statistical and therefore not considered here: CHEOPS, ARIEL, Roman. Other missions/concepts do not directly measure radii and not considered here: Habitable Worlds Observatory, LIFE.\\
+~\\
+In contrast, PLATO and Nautilus are \\
+Possibility of follow-up to measureme masses
+''}
 
 
 \begin{note}
@@ -62,11 +72,12 @@ Studies of the geophysical state and evolution of hot exoplanets can thus contri
 
 
 \section{Methods}\label{sec:methods}
-\todo[inline]{Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}. Mention we only consider instellation-induced rgh.}
 %The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
-
+\todo[inline]{Start methods description with brief statement of goal and overview of the steps. The first sentence is similar, but would be good to separate goal from method here.
+}
 We determined -- for different survey configurations -- the confidence level with which the runaway greenhouse threshold can be detected in simulated exoplanet observations.
 For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected the runaway greenhouse signal, simulated observations of this sample, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).
+\todo[inline]{Bioverse will need a short introduction before the modifications are mentioned. Probably should get a paragraph in the intro}
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
@@ -148,16 +159,16 @@ This represents the baseline bulk density before any climate-related effects are
 
 
 \subsubsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
-\todo[inline]{
-\textbf{Main assumptions:}\\
-- every planet (modulo $f_\mathrm{rgh}$) has \textit{some} water. Enough for runaway GH under the right conditions.  \\
-- Limitation to small planets without significant atmospheric envelopes.\\
-- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
-- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
-}
-Extreme climates have a direct influence on planetary sizes as measured by transit photometry~\citep{Turbet2019}.
-Here, we use predictions on atmospheric thickness from geophysical models to derive the transit radii of planets with temperate climates and those with instellation-induced runaway greenhouse climates, respectively.
-...
+%\todo[inline]{
+%\textbf{Main assumptions:}\\
+%- every planet (modulo $f_\mathrm{rgh}$) has \textit{some} water. Enough for runaway GH under the right conditions.  \\
+%- Limitation to small planets without significant atmospheric envelopes.\\
+%- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
+%- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
+%}
+%Extreme climates have a direct influence on planetary sizes as measured by transit photometry~\citep{Turbet2019}.
+%Here, we use predictions on atmospheric thickness from geophysical models to derive the transit radii of planets with temperate climates and those with instellation-induced runaway greenhouse climates, respectively.
+%...
 
 \todo[inline]{ARNAUD: revise definition of $S$ following our discussion on 2022-12-22. Introduce net instellation and clarify what is meant by it.}
 \begin{note}
@@ -400,7 +411,7 @@ As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_o
 
 
 \subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}\label{sec:res_samplesize}
-\todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, Nautilus)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
+%\todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, Nautilus)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
 %\subsubsection{PLATO}
 \plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
@@ -504,6 +515,11 @@ A sample containing only planets around M~dwarf yields a comparable performance 
 \section{Discussion}\label{sec:discussion}
 \todo[inline]{\textbf{Potential discussion points: }\\
 (How close is Earth to runaway? (-> \citet{Goldblatt2012,Popp2016}; what is the max. expected change in Earth's albedo due to deglaciation?)}
+\todo[inline]{Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}. Mention we only consider instellation-induced rgh.\\
+- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
+- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
+- assumption of a single albedo. ``if there is a range of albedos, will that wash away the signal?''
+- Impact of assumptions on findings, e.g. M-R relation. ``We should have a discussion section dedicated to the impact of assumptions on the findings - including mass-radius. A good way to go about this is to present bracketing cases; or to discuss why the discountinuity in the results would not be affected by changes that led to continuous offsets in the results. Or both. But it should not be in the methods section.''}
 
 \subsection{Statistical imprint of exoplanet climates}
 \begin{note}
@@ -543,6 +559,7 @@ The detectability of the runaway greenhouse threshold is thus a function of both
 
 \subsubsection{Key factors influencing tests of the runaway greenhouse hypothesis}
 We identified the following drivers of the diagnostic power for detecting the runaway greenhouse transition with a transit survey:
+\todo[inline]{avoid bullet points within sub-subsections}
 \begin{itemize}
     \item Occurrence rate of planets forming steam atmospheres: The runaway greenhouse climate relies on the production of large amounts of water vapor that then acts as a greenhouse gas. This process works only on planets with an atmosphere and of sufficiently volatile-rich composition\todo[inline]{TIM: how much?}. The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
     \item Planetary evolution and duration of the steam atmosphere phase: An inflated steam atmosphere can only be sustained until the planet has lost its water. Depending on host star spectral type, planetary mass, and composition, planets can spend from a few Myr to several Gyr in runaway greenhouse climates~\citep[][]{Hamano2015,Luger2015}, and only planets observed during this phase will contribute to the signal.
@@ -583,6 +600,7 @@ If there's no other subsubsection here, make this a (the final?) subsection in `
 
 \subsubsection{OPTIONAL...: Atmospheric signatures}
 \todo[inline]{discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (Tim's talk)}
+\todo[inline]{``Can a smaller sample size's diagnostic value be increased if atmospheric compositional information can be added, i.e., PLATO + ARIEL (or similar combo)?''}
 
 
 \subsection{Diagnostic power of near-future exoplanet missions}\label{sec:dis_samplesize}
