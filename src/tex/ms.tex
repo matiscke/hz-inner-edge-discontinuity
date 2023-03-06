@@ -222,12 +222,12 @@ We then add the (in almost all cases negative) radius deviations to the planet r
     \begin{centering}
         \includegraphics[width=\hsize]{figures/radiusevolution.pdf}
         \caption{
-            \textit{Top}: Mass-radius relationships for a water mass fraction $x_{H_2O}= \wrr$ and different planet states. Green: planets with a solid mantle and no steam atmosphere. Dashed: planets with steam atmospheres. Blue: planets with steam atmospheres and including the effect of water incorporation in the melt.
+            \textit{Top}: Mass-radius relationships for a water mass fraction $x_{H_2O}= \var{wrr}$ and different planet states. Green: planets with a solid mantle and no steam atmosphere. Dashed: planets with steam atmospheres. Blue: planets with steam atmospheres and including the effect of water incorporation in the melt.
             \textit{Bottom}: Radius evolution of different planet types, illustrating degeneracies and potential for confusion among planet classes. Shown is a schematic time evolution of the transit radius normalized to the atmosphere-free radius $R_\mathrm{0}$ for different scenarios. Planets can move between planet classes through processes such as atmospheric loss and desiccation, which ultimately ends a runaway greenhouse phase on a timescale dependent on a planet's water content.}
         \label{fig:radiusevolution}
     \end{centering}
 \end{figure}
-Figure~\ref{fig:radiusevolution} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of $x_{H_2O}= \wrr$.
+Figure~\ref{fig:radiusevolution} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of $x_{H_2O}= \var{wrr}$.
 Steam atmospheres cause a significant radius increase, which is slightly reduced when water incorporation in the melt is considered.
 In the following, we only distinguish between the non-runaway greenhouse and wet melt scenarios.
 
@@ -334,7 +334,7 @@ We then ran the nested sampler to compute the evidence and sample the posterior 
 
 \section{Results}
 \subsection{Statistical signature of the runaway greenhouse threshold}
-To characterize the population-level imprint of individual radius changes, we generated a generic planet population with an injected runaway greenhouse effect assuming a water fraction $x_\mathrm{H_2O} = \wrr$.
+To characterize the population-level imprint of individual radius changes, we generated a generic planet population with an injected runaway greenhouse effect assuming a water fraction $x_\mathrm{H_2O} = \var{wrr}$.
 \begin{figure}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/HnullHmo.pdf}
@@ -367,7 +367,7 @@ Within the runaway greenhouse limit, an average radius change of \avgRadiusChang
 \end{figure}
 Figure~\ref{fig:optimistic_R-S} shows a prototypical statistical detection of the runaway greenhouse transition.
 For the sake of clarity, we chose an optimistic scenario where the sample is large ($N = \var{N_optimistic}$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
-We assumed that the fraction of those planets irradiated stronger than $S_\mathrm{thresh}$ that have runaway greenhouse climates is \frgh, and we chose a water mass fraction of \wrr\ for each planet.
+We assumed that the fraction of those planets irradiated stronger than $S_\mathrm{thresh}$ that have runaway greenhouse climates is \frgh, and we chose a water mass fraction of \var{wrr} for each planet.
 In this case, the pattern was detected with high significance ($\Delta \ln \mathcal{Z} \approx 100$).
 
 
@@ -488,7 +488,7 @@ In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} 
         \includegraphics[width=\linewidth]{figures/S_thresh_posteriors.pdf}
         \caption{
             Retrieved posterior distributions of the threshold instellation for different survey realizations.
-            All cases assume $x_{H_2O} = \wrr$ and a planet sample size $N=100\pm10$; The fraction of planets with runaway greenhouse climates varies across rows.
+            All cases assume $x_{H_2O} = \var{wrr}$ and a planet sample size $N=100\pm10$; The fraction of planets with runaway greenhouse climates varies across rows.
             Orange lines show the true value of the injected signal.
             Accuracy and precision of the constraint on $S_\mathrm{thresh}$ generally improve with higher $f_\mathrm{rgh}$.
             Bulk density-based inferences improve the constraints, and M~dwarf samples yield the highest accuracy.
@@ -658,6 +658,14 @@ However, while interior composition may change the magnitude of radius inflation
 The magnitude of the radius inflation effect is in fact expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure.\todo[inline]{TIM: do you have a reference for this statement?}
 We thus consider our mass-radius relationship a conservative case and do not expect a negative impact on the detectability of the runaway greenhouse transition due to deviations from it.
 \todo[inline]{if feasible: run a test with a different M-R relation. do we expect that the choice of M-R relation impacts the results? Perhaps have an appendix section.}
+
+\subsubsection{Water mass fraction}
+The predominant mass fractions of water, which sensitively controls the atmospheric state of a rocky exoplanet, is poorly constrained.
+Inferred water contents in the literature range from upper limits on the order $10^{-5}$ to ``water worlds'' with tens of percent weight fraction~\citep[e.g.,][]{Rogers2010,Unterborn2018,Mousis2020,Agol2021,Luque2022}, all of which are within the realm of theoretical predictions~\citep{Mulders2015b,Sato2016,Jin2018,Bitsch2019b,Venturini2020,Emsenhuber2021b,Schlecker2021}.
+Our nominal case assumes a water mass fraction of $x_\mathrm{H_2O} = \var{wrr}$.
+This can be considered a conservative choice that is unlikely to introduce a systematic overestimation of the statistical radius inflation trend, also since the hypothesis tests are only marginally sensitive on $x_\mathrm{H_2O}$ as long as it is $\gtrsim 10^{-4}$ (see Sect.~\ref{sec:res_testability}).
+Cases of pure rocky composition and very low volatile contants can be considered absorbed by the dilution factor $f_\mathrm{rgh}$.
+Assuming a distribution of water mass fractions instead of a fixed value would thus not significantly change our results.
 
 
 \section{Conclusions}
