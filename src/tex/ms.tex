@@ -1,6 +1,6 @@
 % Define document class
-\documentclass[twocolumn]{aastex631}
-%\documentclass[modern]{aastex631}
+%\documentclass[twocolumn]{aastex631}
+\documentclass[modern]{aastex631}
 
 \input{preamble.tex}
 
@@ -139,10 +139,7 @@ Following~\citet{Kipping2013b}, we used a Beta distribution with parameters $a=0
 Another parameter with an even higher impact on transit probabilities is the orbital inclination toward the observer $i$.
 Assuming isotropic alignments of orbits, we assigned each planet an inclination drawn from a distribution uniform in $\cos(i)$.
 
-To assign masses to our planets, we use the semi-empirical mass-radius relationship derived in \citet{Zeng2016}.
-The default relation our planets follow is one assuming a pure $\mathrm{MgSiO_3}$ composition.
-While interior composition may change the magnitude of radius inflation and could introduce an offset to its demographic imprint, we do not expect a change of its structure and detectability.
-\todo[inline]{run a test: do we expect that the choice of M-R relation impacts the results? Perhaps have an appendix section.}
+To assign masses to our planets, we use the semi-empirical mass-radius relationship assuming a pure $\mathrm{MgSiO_3}$ composition from \citet{Zeng2016}.
 This represents the baseline bulk density before any climate-related effects are applied.
 
 
@@ -654,6 +651,13 @@ As with a pure volume-limited sample, a targeted M~dwarf survey, too, profits fr
 \subsection{Implications for planetary habitability}\label{sec:habitability}
 \todo[inline]{Magma oceans influence the amount of water available at the surface and atmosphere, which is 1. commonly used as environmental marker to assess habitability, and 2. influences the planet's climate (greenhouse effect).}
 
+\subsection{Impact of assumptions on our findings}
+\subsubsection{Baseline mass-radius relationship}
+Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors~\citep{Zeng2016} might not be representative of the rocky planet population.
+However, while interior composition may change the magnitude of radius inflation and could introduce an offset to its demographic imprint, we do not expect a change of its structure.
+The magnitude of the radius inflation effect is in fact expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure.\todo[inline]{TIM: do you have a reference for this statement?}
+We thus consider our mass-radius relationship a conservative case and do not expect a negative impact on the detectability of the runaway greenhouse transition due to deviations from it.
+\todo[inline]{if feasible: run a test with a different M-R relation. do we expect that the choice of M-R relation impacts the results? Perhaps have an appendix section.}
 
 
 \section{Conclusions}
