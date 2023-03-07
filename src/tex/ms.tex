@@ -240,9 +240,10 @@ In the following, we test if and under what conditions this trend is large enoug
 
 
 \subsection{Survey simulations}
-The survey module of Bioverse converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
-   This task includes selection of the targets, application of detection biases, and conducting simulated measurements.
-   All of the above are specific to the particular survey.
+The survey module of \bioverse\ converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
+This task includes selection of the targets, application of detection biases, and conducting simulated measurements, all of which are specific to the particular survey.
+For each planet-level measurement such as radius or instellation, we draw the measured value from a normal distribution centered on the true value with a standard deviation set by the survey's precision.
+
 
 \subsubsection{Detection bias and sample selection}\label{sec:sensitivity} % Turbet2019 lists precision for CHEOPS, PLATO?, TESS?
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
