@@ -92,10 +92,10 @@ For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\
 
 
 \subsection{Synthetic star and planet sample}
-The first step in our analysis is to generate a sample of stars that host synthetic planets.
+In the following, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, as well as the orbital parameters of the planets.
 
 \subsubsection{Stellar sample from Gaia DR3}
-Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
+%Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
 \todo[inline]{KEVIN: describe stellar population}
 ...
 
@@ -103,7 +103,7 @@ Different sample sizes are realized by varying the maximum distance of stars to 
 Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
 Since the emergence of a runaway greenhouse phase on a planet is highly dependent on the level of radiation it receives, and thus on the luminosity of the host star, we assigned age-dependent luminosities to our synthetic stars.
 
-While stellar ages are notoriously poor-constrained~\cite[e.g.,][]{Adams2005}, the age distribution of planet host stars in the Solar neighborhood was shown to be broadly consistent with uniform~\citep{Reid2007,Gaidos2023}.
+While stellar ages are notoriously poorly constrained~\cite[e.g.,][]{Adams2005}, the age distribution of planet host stars in the Solar neighborhood was shown to be broadly consistent with uniform~\citep{Reid2007,Gaidos2023}.
 For our synthetic stars, we thus drew random ages from a uniform distribution from \SI{0}{\giga\year} to \SI{10}{\giga\year}.
 We then assigned each star a luminosity from the mass-dependent evolutionary models in \citet{Baraffe1998}.
 Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution as a function of stellar mass and age.
@@ -131,28 +131,25 @@ where $F_0$
 ...
 \todo[inline]{GALEN: Briefly describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
 
-\subsubsection{Eccentricities, orbital inclinations, and planet masses}
+\subsubsection{Orbit parameters and planet masses}
 Eccentric orbits alter the probability of a planet to transit \citep[e.g.,][]{Barnes2007a}.
 The distribution of eccentricities $e$ of exoplanets has been found to resemble a Beta function \citep{Kipping2013b}, which we chose to draw synthetic eccentricities from.
 Following~\citet{Kipping2013b}, we used a Beta distribution with parameters $a=0.867$ and $b=3.03$, and truncated the distribution at $e = 0.8$.
-
-Another parameter with an even higher impact on transit probabilities is the orbital inclination toward the observer $i$.
+%Another parameter with an even higher impact on transit probabilities is the orbital inclination toward the observer $i$.
 Assuming isotropic alignments of orbits, we assigned each planet an inclination drawn from a distribution uniform in $\cos(i)$.
 
-To assign masses to our planets, we use the semi-empirical mass-radius relationship assuming a pure $\mathrm{MgSiO_3}$ composition from \citet{Zeng2016}.
+To assign masses to our planets, we use the semi-empirical mass-radius relationship assuming a pure $\mathrm{MgSiO_3}$ composition from \citet{Zeng2016} (see green line in Fig.~\ref{fig:radiusevolution}).
 This represents the baseline bulk density before any climate-related effects are applied.
 
 
 \subsubsection{Transit probability}
-\begin{note}
-    We model the occurrence of transits by assuming isotropic orientations of planetary orbits, calculating the impact parameters $b = \cos(i)/R_\star$ and considering only observable planets with $|b| < 1$.
-    For these cases we calculate the transit depth
-    \begin{equation}\label{eq:transitdepth}
-        \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2,
-    \end{equation}
-    which is relevant for the detection probability of the respective planet~(see Sect.~\ref{sec:sensitivity}).
-    Excluding all non-transiting planets diminishes the sample to \var{percentage_transiting} of its original size.
-\end{note}
+We model the occurrence of transits by assuming isotropic orientations of planetary orbits, calculating the impact parameters $b = \cos(i)/R_\star$ and considering only observable planets with $|b| < 1$.
+For these cases we calculate the transit depth
+\begin{equation}\label{eq:transitdepth}
+    \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2,
+\end{equation}
+which is relevant for the detection probability of the respective planet~(see Sect.~\ref{sec:sensitivity}).
+Excluding all non-transiting planets diminishes the sample to \var{percentage_transiting} of its original size.
 
 
 \subsubsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
@@ -163,9 +160,9 @@ This represents the baseline bulk density before any climate-related effects are
 %- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
 %- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
 %}
-%Extreme climates have a direct influence on planetary sizes as measured by transit photometry~\citep{Turbet2019}.
-%Here, we use predictions on atmospheric thickness from geophysical models to derive the transit radii of planets with temperate climates and those with instellation-induced runaway greenhouse climates, respectively.
-%...
+The climate state of a planet has a direct influence on its size as measured by transit photometry~\citep{Turbet2019}.
+Here, we use predictions on transit atmospheric thickness from geophysical models to derive the transit radii of planets with temperate climates and those with instellation-induced runaway greenhouse climates, respectively.
+...
 
 \todo[inline]{ARNAUD: revise definition of $S$ following our discussion on 2022-12-22. Introduce net instellation and clarify what is meant by it.}
 \begin{note}
@@ -447,7 +444,7 @@ As \cheops, \ariel~\citep{Puig2016} will be a follow-up mission that is not desi
 \ariel's primary targets are larger planets in the range of sub-Neptune to Jupiter-like planets.
 We thus do not expect a significant contribution to exploring the inner edge of the habitable zone for Earth-sized planets.
 
-While not primarily designed to detect transiting planets, the \rst~\citep{Spergel2015} is expected to yield $\sim 10^5$ transiting planets on short orbits in the course of its mission~\citep{Montet2017}.
+While not primarily designed to detect transiting planets, the \rst~\citep{Spergel2015} is expected to yield $\sim 10^5$ transiting planets on short orbits and constrain their radii in the course of its mission~\citep{Montet2017}.
 In a fraction of the cases, planets as small as \SI{2}{\Rearth} will be detected.
 About 200 planets smaller than Neptune are expected to be found around M~dwarfs and thus may reach into the habitable zone.
 The \rst\ could thus provide a useful sample to explore the runaway greenhouse transition, albeit with a predominant focus on water-rich (sub-)Neptunes~\citep[e.g.,][]{Pierrehumbert2022}.
