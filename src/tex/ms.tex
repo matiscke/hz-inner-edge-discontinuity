@@ -374,7 +374,7 @@ In this case, the pattern was detected with high significance ($\Delta \ln \math
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/corner.pdf}
         \caption{
-            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the model parameters as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be reasonably constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
+            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the threshold instellation $S_\mathrm{thresh}$, the water mass fraction $x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$ as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be reasonably constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
         }
         \label{fig:cornerplot}
     \end{centering}
@@ -397,14 +397,14 @@ Both a higher water mass fraction and a higher dilution factor lead to larger av
         \label{fig:statpwr_H2O-f}
     \end{centering}
 \end{figure}
-Figure~\ref{fig:statpwr_H2O-f} explores the statistical power achieved in the above scenario for different combinations of the poorly constrained parameters $x_{H_2O}$ and $f_\mathrm{rgh}$.
+Figure~\ref{fig:statpwr_H2O-f} explores the statistical power of the hypothesis test achieved in the above scenario for different combinations of the poorly constrained parameters $x_{H_2O}$ and $f_\mathrm{rgh}$.
 It is highest for large water inventories and large dilution factors.
  For all but very low water fractions, $f_\mathrm{rgh}$ dominates this trend: It enters linearly into the average planet radius, whereas the contribution of $x_{H_2O}$ - as predicted by the geophysical models - is sublinear with a power-law exponent of $\sim 0.3$.
 As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_optimistic} is sufficient for a $\SI{50}{\percent}$ detection rate even for water ratios as low as $10^{-3}$.
 
 
 
-\subsection{Detecting the runaway greenhouse transition with current and planned exoplanet missions}\label{sec:res_samplesize}
+\subsection{Detecting the runaway greenhouse transition with \plato}\label{sec:res_samplesize}
 %\todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, Nautilus)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
 %\subsubsection{PLATO}
@@ -419,7 +419,7 @@ We base our assessment of \plato's diagnostic power on these estimates.
         \begin{centering}
             \includegraphics[width=\linewidth]{figures/plato_fgrid.pdf}
             \caption{
-            Expected delta-evidences as a function of the fraction of planets having runaway greenhouse climates for different versions of the \plato\ survey.
+            Expected delta-evidences as a function of the fraction of planets with runaway greenhouse climates for different versions of the \plato\ survey.
             The median values of randomized survey simulations are shown; $\Delta \ln Z > 3$ (gray horizontal line) is considered sufficient evidence to reject the null hypothesis.
             \textit{Left:} For a large planet yield of $N = \var{N_plato}$, even small dilution factors $\sim \var{platoMinfrgh}$ allow a detection.
                 A sample of 100 planets is sufficient if their masses are constrained to within \SI{10}{\percent} (dotted green line).
@@ -452,7 +452,7 @@ The \rst\ could thus provide a useful sample to explore the runaway greenhouse t
 
 
 \subsection{Statistical power of different mission designs}\label{sec:statpower_missions}
-To explore the impact of mission trade-offs on the detectability of the runaway greenhouse transition, we simulated several transit surveys with different designs and strategies and measured their capability to recover the trend and constrain its parameters.
+To explore the impact of mission trade-offs on the detectability of the runaway greenhouse transition, we simulated different survey designs and strategies and measured their capability to recover the trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
 \subsubsection{Additional planet mass measurements}\label{sec:res_followup}
@@ -469,7 +469,7 @@ A density-based survey of 100 targets is roughly equivalent to a radius-based su
 At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim 0.4$ whereas bulk density measurements enable a detection from $f_\mathrm{rgh} \gtrsim 0.1$.
 
 \subsubsection{Spectral type of target stars}\label{sec:results_FGK_M}
-Since receiving radiation is sensitive on the spectral type of the host star, the share of planets on either side of $S_\mathrm{thresh}$ is different for FGK and M~dwarfs.
+Since the receiving radiation is sensitive on the spectral type of the host star, the share of planets on either side of $S_\mathrm{thresh}$ is different for FGK and M~dwarfs.
 We tested the detectability of the runaway greenhouse signal when only FGK or only M~dwarfs are considered (see Fig.~\ref{fig:plato_fgrid}).
 %($d_\mathrm{max} = \SI{75}{\parsec}, M_\mathrm{G} < 11$)
 The samples are volume and magnitude-limited to reflect the target counts of \plato's provisional Long-duration Observation Phase fields~\citep[$15996$ FGK stars in the P1 and P2 samples, $33948$ M~stars in the P4 sample, ][]{Nascimbeni2022}.
@@ -502,7 +502,7 @@ We chose a planetary sample size of $N=100\pm10$, as this was found to be a thre
 
 Accurate retrievals from radius measurements alone require high fractions of greenhouse climate-bearing planets to achieve an accurate constraint on $S_\mathrm{thresh}$.
 If, on the other hand, a follow-up campaign adds planetary mass estimates and we fit the signal in bulk density space, useful constraints are possible under more pessimistic conditions.
-A sample containing only planets around M~dwarf yields a comparable performance as the overall sample.
+A sample containing only planets around M~dwarf yields a performance comparable to that of the overall sample.
 
 % Additional \subsection for habitability? To reflect structure in Discussion, Conclusions?
 
@@ -639,8 +639,9 @@ It was, among other reasons, the sharp drop in transit probability with orbital 
 
 M~dwarf systems are also key for detecting the runaway greenhouse transition:
 Our calculations with different spectral types (Sect.~\ref{sec:results_FGK_M}) show that the information content of M~dwarfs in a sample dominates the hypothesis tests.
-Besides their large number in a volume/magnitude-limited sample, transiting M~dwarf planets are more likely to be located near the threshold instellation and in particular beyond it, i.e., in the optimistic habitable zone.
-The transit depth difference at the transition is expected to be larger for M~dwarfs~\citep[$\sim \SI{100}{\ppm}$ for early, $\sim \SI{1000}{\ppm}$ for late M~stars][]{Turbet2019}, enhancing the demographic signal it leaves.
+Besides their large number in a volume/magnitude-limited sample, transiting M~dwarf planets are more likely to be located near the threshold instellation and in particular on orbits further out, i.e., in the optimistic habitable zone.
+In fact, we showed that the FGK part of the planet sample barely contributes to the statistical power.
+Furthermore, the transit depth difference at the transition is expected to be larger for M~dwarfs~\citep[$\sim \SI{100}{\ppm}$ for early, $\sim \SI{1000}{\ppm}$ for late M~stars][]{Turbet2019}, enhancing the demographic signal it leaves.
 An additional advantage of targeting M~dwarfs are their extended runaway greenhouse phases, whose duration can reach the order of \SI{100}{\mega\year}~\citep{Luger2015}.
 This increases the probability of observing any given planet in the sample during the runaway greenhouse phase, essentially driving $f_\mathrm{rgh}$ to higher values.
 Therefore, in addition to the high scientific value of boosted detections of potentially habitable planets, M dwarfs are also indispensable for the discovery and characterization of the runaway greenhouse transition.
