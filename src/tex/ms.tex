@@ -19,7 +19,7 @@
 \begin{abstract}
     $\ldots$ magma oceans $\ldots$
 
-    Here, we assess the ability of space and ground-based telescopes to test this hypothesis using Bioverse, a simulation framework that leverages contextual information from the overall planet population.
+    Here, we assess the ability of space and ground-based telescopes to test this hypothesis using \bioverse, a simulation framework that leverages contextual information from the overall planet population.
     $\ldots$
 
 %    We argue that in the near future, ESA's \plato\ mission will be the most promising endeavors to constrain this demographic feature.
@@ -33,7 +33,7 @@
 ...just dropping material and references for now...
 \todo[inline]{papers: \citep[][introduce runaway GH]{} \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021,Downey2022}.}
 \todo[inline]{``Points for the intro:
-Bioverse\\
+\bioverse\\
 Transit survey to measure mass/radius of planets\\
 Does the HZ have an inner edge?\\
 Run-away GH\\
@@ -76,12 +76,12 @@ Studies of the geophysical state and evolution of hot exoplanets can thus contri
 \todo[inline]{Start methods description with brief statement of goal and overview of the steps. The first sentence is similar, but would be good to separate goal from method here.
 }
 We determined -- for different survey configurations -- the confidence level with which the runaway greenhouse threshold can be detected in simulated exoplanet observations.
-For this purpose we expanded the Bioverse framework~\citep{Bixel2020,Bixel2021}\footnote{Bioverse is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected the runaway greenhouse signal, simulated observations of this sample, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).
-\todo[inline]{Bioverse will need a short introduction before the modifications are mentioned. Probably should get a paragraph in the intro}
+For this purpose we expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021}\footnote{\bioverse\ is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected the runaway greenhouse signal, simulated observations of this sample, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).
+\todo[inline]{\bioverse\ will need a short introduction before the modifications are mentioned. Probably should get a paragraph in the intro}
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
-        \caption{Workflow of our hypothesis testing with Bioverse. In the first block, we generate a sample of stars and populate them with planets based on \kepler\ demographics.
+        \caption{Workflow of our hypothesis testing with \bioverse. In the first block, we generate a sample of stars and populate them with planets based on \kepler\ demographics.
             A fraction of them are then assigned a runaway greenhouse climate based on the model described in Sect.~\ref{sec:mo_model}.
         The second block simulates an exoplanet survey, whereby selection effects and detection biases are introduced. Finally, the third block deals with testing the runaway greenhouse hypothesis based on data from the survey simulation.
         By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
@@ -520,7 +520,7 @@ The runaway greenhouse transition is a robust prediction from climate models, an
 Measuring these impacts would indeed provide the first empirical evidence of the habitable zone concept.
 On the planetary level, however, such undertaking is hindered by degeneracies: From internal composition to atmospheric loss to volatile content, many factors influence a planet's size.
 It is therefore prudent to shift the focus to the planet population as a whole and search for a statistical effect in exoplanet demographics~\citep{Turbet2019}.
-Using Bioverse to combine the predictions from geophysical models of steam atmospheres with a synthesis of planets informed by observed demographics, we showed that the population of greenhouse-inflated planets create a signature in the radius and density distribution that is well in the detectable range.
+Using \bioverse\ to combine the predictions from geophysical models of steam atmospheres with a synthesis of planets informed by observed demographics, we showed that the population of greenhouse-inflated planets create a signature in the radius and density distribution that is well in the detectable range.
 
 However, the idealized step-function central to our hypothesis tests is blurred by several factors.
 Its amplitude is affected by ``sub-Neptunes'' with significant Hydrogen/Helium envelopes, which can disguise as inflated rocky planets.
@@ -672,14 +672,14 @@ The predominant mass fractions of water, which sensitively controls the atmosphe
 Inferred water contents in the literature range from upper limits on the order $10^{-5}$ to ``water worlds'' with tens of percent weight fraction~\citep[e.g.,][]{Rogers2010,Unterborn2018,Mousis2020,Agol2021,Luque2022}, all of which are within the realm of theoretical predictions~\citep{Mulders2015b,Sato2016,Jin2018,Bitsch2019b,Venturini2020,Emsenhuber2021b,Schlecker2021}.
 Our nominal case assumes a water mass fraction of $x_\mathrm{H_2O} = \var{wrr}$.
 This can be considered a conservative choice that is unlikely to introduce a systematic overestimation of the statistical radius inflation trend, also since the hypothesis tests are only marginally sensitive on $x_\mathrm{H_2O}$ as long as it is $\gtrsim 10^{-4}$ (see Sect.~\ref{sec:res_testability}).
-Cases of pure rocky composition and very low volatile contants can be considered absorbed by the dilution factor $f_\mathrm{rgh}$.
+Cases of pure rocky composition and very low volatile contents can be considered absorbed by the dilution factor $f_\mathrm{rgh}$.
 Assuming a distribution of water mass fractions instead of a fixed value would thus not significantly change our results.
 
 
 \section{Conclusions}
 
 Runaway greenhouse climates on rocky planets cause significant inflation of their radii.
-Using Bioverse, a quantitative hypothesis testing framework, we have explored the potential of contemporary exoplanet missions to statistically detect a radius discontinuity resulting from this inflation in the exoplanet population.
+Using \bioverse, a quantitative hypothesis testing framework, we have explored the potential of contemporary exoplanet missions to statistically detect a radius discontinuity resulting from this inflation in the exoplanet population.
 Our key findings are as follows:
 \begin{enumerate}
     \item The predicted tipping point in planetary climates causes a discontinuity in the radius and density distribution of small exoplanets with respect to the incident host star irradiation.
@@ -705,7 +705,7 @@ This will be a key contribution to the search for extraterrestrial life in the U
 %M.S. wrote the manuscript and carried out the hypothesis tests and statistical analyses.
 %...
 %K.H.-U. provided the star generator based on the Gaia catalog.
-%G.B. implemented the planet generator in the Bioverse framework.
+%G.B. implemented the planet generator in the \bioverse\ framework.
 %All authors provided comments and suggestions on the manuscript.
 
 \section*{Data Availability}
@@ -714,7 +714,7 @@ The code to reproduce the figures can be accessed via the icon links associated 
 
 
 \software{
-Bioverse~\citep{Bixel2021},
+\bioverse ~\citep{Bixel2021},
 Astropy~\citep[][]{AstropyCollaboration2018},
 NumPy~\citep[][]{Harris2020},
 SciPy~\citep[][]{Virtanen2020},
