@@ -71,7 +71,7 @@ Studies of the geophysical state and evolution of hot exoplanets can thus contri
 \end{note}
 
 
-\section{Methods}\label{sec:methods}
+\section{Baseline Model}\label{sec:met_baseline}
 %The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
 \todo[inline]{Start methods description with brief statement of goal and overview of the steps. The first sentence is similar, but would be good to separate goal from method here.
 }
@@ -82,19 +82,15 @@ For this purpose we expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
         \caption{Workflow of our hypothesis testing with \bioverse. In the first block, we generate a sample of stars and populate them with planets based on \kepler\ demographics.
-            A fraction of them are then assigned a runaway greenhouse climate based on the model described in Sect.~\ref{sec:mo_model}.
+            A fraction of them are then assigned a runaway greenhouse climate based on the model described in Sect.~\ref{sec:met_rghmodel}.
         The second block simulates an exoplanet survey, whereby selection effects and detection biases are introduced. Finally, the third block deals with testing the runaway greenhouse hypothesis based on data from the survey simulation.
         By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
         \label{fig:flowchart}
     \end{centering}
 \end{figure*}
-
-
-
-\subsection{Synthetic star and planet sample}
 In the following, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, as well as the orbital parameters of the planets.
 
-\subsubsection{Stellar sample from Gaia DR3}
+\subsection{Stellar sample from Gaia DR3}
 %Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
 %\todo[inline]{KEVIN: describe stellar population}
 \todo[inline]{KEVIN: update reference to my paper once accepted}
@@ -111,7 +107,7 @@ The derived stellar parameters from Hardegree-Ullman et al. (submitted) were com
 From this catalog, \bioverse\ samples stars within an isotropic distance from the Solar System as required by the sample size.
 
 
-\subsubsection{Stellar luminosity evolution}
+\subsection{Stellar luminosity evolution}
 Planetary systems are hosted by stars of a wide range of ages, and stellar luminosities evolve with time.
 Since the emergence of a runaway greenhouse phase on a planet is highly dependent on the level of radiation it receives, and thus on the luminosity of the host star, we assigned age-dependent luminosities to our synthetic stars.
 
@@ -132,7 +128,7 @@ Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution 
 \end{figure}
 
 
-\subsubsection{Synthetic planet sample}\label{sec:syn_planets}
+\subsection{Synthetic planet sample}\label{sec:syn_planets}
 Next, we assigned to the stellar sample planetary systems with frequencies, orbital parameters, and bulk properties derived from the \kepler\ mission.
 We adopted the planetary occurrence rates in orbital period and radius recently derived in \citet{Bergsten2022}.
 Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
@@ -143,7 +139,7 @@ where $F_0$
 ...
 \todo[inline]{GALEN: Briefly describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
 
-\subsubsection{Orbit parameters and planet masses}
+\subsection{Orbit parameters and planet masses}
 Eccentric orbits alter the probability of a planet to transit \citep[e.g.,][]{Barnes2007a}.
 The distribution of eccentricities $e$ of exoplanets has been found to resemble a Beta function \citep{Kipping2013b}, which we chose to draw synthetic eccentricities from.
 Following~\citet{Kipping2013b}, we used a Beta distribution with parameters $a=0.867$ and $b=3.03$, and truncated the distribution at $e = 0.8$.
@@ -154,7 +150,7 @@ To assign masses to our planets, we use the semi-empirical mass-radius relations
 This represents the baseline bulk density before any climate-related effects are applied.
 
 
-\subsubsection{Transit probability}
+\subsection{Transit probability}
 We model the occurrence of transits by assuming isotropic orientations of planetary orbits, calculating the impact parameters $b = \cos(i)/R_\star$ and considering only observable planets with $|b| < 1$.
 For these cases we calculate the transit depth
 \begin{equation}\label{eq:transitdepth}
@@ -164,7 +160,7 @@ which is relevant for the detection probability of the respective planet~(see Se
 Excluding all non-transiting planets diminishes the sample to \var{percentage_transiting} of its original size.
 
 
-\subsubsection{Planet radius changes due to runaway greenhouse climates}\label{sec:mo_model}
+\section{Runaway Greenhouse Model}\label{sec:met_rghmodel}
 %\todo[inline]{
 %\textbf{Main assumptions:}\\
 %- every planet (modulo $f_\mathrm{rgh}$) has \textit{some} water. Enough for runaway GH under the right conditions.  \\
@@ -251,13 +247,13 @@ In the following, we test if and under what conditions this trend is large enoug
 
 
 
-\subsection{Survey simulations}
+\section{Exoplanet Survey Simulations and Hypothesis Testing}
 The survey module of \bioverse\ converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
 This task includes selection of the targets, application of detection biases, and conducting simulated measurements, all of which are specific to the particular survey.
 For each planet-level measurement such as radius or instellation, we draw the measured value from a normal distribution centered on the true value with a standard deviation set by the survey's precision.
 
 
-\subsubsection{Detection bias and sample selection}\label{sec:sensitivity} % Turbet2019 lists precision for CHEOPS, PLATO?, TESS?
+\subsection{Detection bias, sample selection, and sensitivity}\label{sec:sensitivity} % Turbet2019 lists precision for CHEOPS, PLATO?, TESS?
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
 A detailed characterization of the detection biases of individual missions would not be justifiable given the uncertainties of the theoretical predictions.
 Instead, we derived generic observing limits that reflect the limitations of state-of-the-art transit surveys.
@@ -279,11 +275,10 @@ Ensuring to stay well clear of such regions, we clear our sample from all planet
 We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
 
 
-\subsection{Hypothesis tests}
+\subsection{The runaway greenhouse hypothesis}
 We now turn to assessing the simulated surveys in terms of their ability to detect the runaway greenhouse transition and their constraining power on parameters of this trend.
 To do this, we rely on a Bayesian hypothesis testing approach where we quantify the evidence of a hypothesis over another based on the (simulated) data.
 For our specific problem, this implies comparing evidences for a demographic imprint of the runaway greenhouse effect to its absence.
-\subsubsection{Definition of the runaway greenhouse hypothesis}
 \begin{note}
 %    Bayesian model comparison requires that an alternative mode be specified against which the comparison is made.
 \end{note}
@@ -324,7 +319,7 @@ Here, $H\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional for
 
 
 
-\subsubsection{Bayesian model comparison}
+\subsection{Bayesian model comparison}
 We are now ready to assess the relative plausibility of $H_{\mathrm{rgh}}$ and $H_0$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
 This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimate with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
 Our criterion to reject the null hypothesis is
@@ -337,7 +332,7 @@ A sensible choice of priors is central for evidence estimation via nested sampli
 As the parameters we are interested in recovering, $S_\mathrm{thresh}$ and $x_{H_2O}$, are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
 For $S_\mathrm{thresh}$, we chose a uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
 We sample $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
-Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:mo_model}).
+Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:met_rghmodel}).
 Finally, we adopt a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
 We then ran the nested sampler to compute the evidence and sample the posterior distributions.
 
