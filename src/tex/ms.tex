@@ -161,6 +161,7 @@ Excluding all non-transiting planets diminishes the sample to \var{percentage_tr
 
 
 \section{Runaway Greenhouse Model}\label{sec:met_rghmodel}
+\todo[inline]{TIM: please review}
 %\todo[inline]{
 %\textbf{Main assumptions:}\\
 %- every planet (modulo $f_\mathrm{rgh}$) has \textit{some} water. Enough for runaway GH under the right conditions.  \\
@@ -169,7 +170,7 @@ Excluding all non-transiting planets diminishes the sample to \var{percentage_tr
 %- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
 %}
 The climate state of a planet has a direct influence on its size as measured by transit photometry~\citep{Turbet2019}.
-Here, we use predictions on transit atmospheric thickness from geophysical models to derive the transit radii of planets with temperate climates and those with instellation-induced runaway greenhouse climates, respectively.
+We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius that planets with instellation-induced runaway greenhouse climates experience.
 ...
 
 \todo[inline]{ARNAUD: revise definition of $S$ following our discussion on 2022-12-22. Introduce net instellation and clarify what is meant by it.}
@@ -178,7 +179,7 @@ Here, we use predictions on transit atmospheric thickness from geophysical model
     \begin{equation}
         \frac{S}{S_\oplus} = \left(\frac{L_\star}{L_\odot}\right) \left(\frac{au}{a}\right)^2 .
     \end{equation}
-    Here, we assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's~\citep{Haar1971}.
+    We assume global redistribution of incoming flux and a fixed albedo of $0.3$, comparable to Earth's~\citep{Haar1971}.
     The absolute value of $S_\oplus$, by which all synthetic planets are scaled, is then \SI{238}{\watt\per\square\meter}.
 %    We further define the solar-equivalent semi-major axis $a_{eff} = a (L_\star/L_\odot)^{-1/2}$, at which a planet experiences the same instellation as a Solar System planet at an orbital distance~$a$.
    We do not take into account additional heating sources such as tidal effects~\citep[e.g.][]{Barnes2013}.
@@ -242,8 +243,7 @@ Further, a planet in a runaway greenhouse state will eventually lose its steam a
 To account for these effects, we introduce a dilution parameter $f_\mathrm{rgh}$, which represents the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow the non-runaway greenhouse relation, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow the wet melt relation.
 %The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
-This parametrization introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
-In the following, we test if and under what conditions this trend is large enough to be detected with high significance.
+In the following, we test if and under what conditions this parametrization causes a demographic trend that is large enough to be detected with high significance.
 
 
 
@@ -259,8 +259,7 @@ A detailed characterization of the detection biases of individual missions would
 Instead, we derived generic observing limits that reflect the limitations of state-of-the-art transit surveys.
 
 The runaway greenhouse transition is expected to occur at orbits sufficiently close to let mission duration not be a limiting factor: $S_\mathrm{thresh}$ occurs close to Earth's orbital period for \mbox{G-type} stars and on significantly shorter periods for the more prevalent M~dwarf hosts~\citep{Goldblatt2012}.
-However, for a transit signal to be detected in a transit survey, it must reach a sufficient signal-to-noise ratio (S/N).
-This S/N is sensitive on the photometric precision that can be achieved~\citep[e.g.,][]{Burke2015,Hardegree-Ullman2019}.
+However, for a transit signal to be detected in a transit survey, it must reach a sufficient signal-to-noise ratio (S/N) that is sensitive on the achieved photometric precision~\citep[e.g.,][]{Burke2015,Hardegree-Ullman2019}.
 In its in-orbit commissioning phase, the \cheops\ mission demonstrated a photometric precision of \SI{75}{\ppm} for faint ($V\approx 12$) stars~\citep{Benz2021}.
 In comparison, \plato's expected precision for similar stars was estimated to be \SI{\sim 50}{\ppm}~\citep[][Matuszewski et al., in prep.]{plato2017}.
 To represent these photometric limits, we chose a minimum transit depth of \SI{75}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
@@ -352,7 +351,7 @@ To characterize the population-level imprint of individual radius changes, we ge
 \end{figure}
 Figure~\ref{fig:HnullHmo} shows the resulting planetary radii.
 When ordered in orbital period space, the different planet types overlap, diluting the demographic imprint.
-With net instellation as an independent variable, planets above and below the runaway greenhouse threshold separate.
+With net instellation as an independent variable, planets above and below the runaway greenhouse threshold separate: The runaway greenhouse-induced radius inflation introduces a discontinuity of average planet radii and bulk densities as a function of stellar irradiation.
 We also show the predictions of observable average planet radii from the statistical hypotheses defined above.
 %The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
 Within the runaway greenhouse regime, an average radius change of \avgRadiusChange\ occurs.
@@ -500,16 +499,10 @@ A sample containing only planets around M~dwarf yields a performance comparable 
 % Additional \subsection for habitability? To reflect structure in Discussion, Conclusions?
 
 \section{Discussion}\label{sec:discussion}
-\todo[inline]{\textbf{Potential discussion points: }\\
+\todo[inline]{\textbf{Potential additional discussion points: }\\
 (How close is Earth to runaway? (-> \citet{Goldblatt2012,Popp2016}; what is the max. expected change in Earth's albedo due to deglaciation?)}
-\todo[inline]{Caveats: see \citet{Turbet2019} Sect. 3, \citet{Bower2019}. Mention we only consider instellation-induced rgh.\\
-- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
-- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
-- assumption of a single albedo. ``if there is a range of albedos, will that wash away the signal?''
-- Impact of assumptions on findings, e.g. M-R relation. ``We should have a discussion section dedicated to the impact of assumptions on the findings - including mass-radius. A good way to go about this is to present bracketing cases; or to discuss why the discountinuity in the results would not be affected by changes that led to continuous offsets in the results. Or both. But it should not be in the methods section.''}
 
 \subsection{Statistical imprint of exoplanet climates}
-\begin{note}
 The runaway greenhouse transition is a robust prediction from climate models, and its impact on planetary bulk properties has been shown to be in the detectable range of current astronomical instrumentation~\citep{Goldblatt2015}.
 Measuring these impacts would indeed provide the first empirical evidence of the habitable zone concept.
 On the planetary level, however, such undertaking is hindered by degeneracies: From internal composition to atmospheric loss to volatile content, many factors influence a planet's size.
@@ -530,16 +523,12 @@ Importantly, while this may offset our estimates of the signal's amplitude, its 
 
 Our finding that the expected trend is strong except for extremely low water mass fractions not only gives reason for optimism regarding its detection, it also presents a potential for constraints on the water inventory of terrestrial planets in the case of a non-detection.
 Should a successful detection occur, the time dependencies discussed above should be taken into account when using this population-level information to constrain exoplanet climates.
-
-\end{note}
-
-
+Overall, searching for the runaway greenhouse discontinuity appears to be the most promising approach toward a first empirical test of the habitable zone concept.
 
 
 
 \subsection{Detectability of the runaway greenhouse transition}
-\todo[inline]{the demographic imprint is detectable. Under what conditions?\\
-Mention multiplanet systems.}
+\todo[inline]{Mention multiplanet systems.}
 We showed in Sect.~\ref{sec:res_testability} that under favorable conditions, a sufficiently large (\var{N_optimistic} planets) photometric survey is likely to detect the demographic imprint of the runaway greenhouse transition and accurately constrain the associated threshold instellation.
 However, even assuming capable instrumentation and an optimal survey design, geophysical and demographic unknowns may jeopardize this undertaking.
 The detectability of the runaway greenhouse threshold is thus a function of both survey design and astrophysical circumstances.
@@ -588,7 +577,8 @@ If there's no other subsubsection here, make this a (the final?) subsection in `
 
 
 \subsubsection{OPTIONAL...: Atmospheric signatures}
-\todo[inline]{discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (Tim's talk)}
+\todo[inline]{TIM: Ideas?\\
+discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (e.g. Tim's recent talk)}
 \todo[inline]{``Can a smaller sample size's diagnostic value be increased if atmospheric compositional information can be added, i.e., PLATO + ARIEL (or similar combo)?''}
 
 
@@ -616,6 +606,7 @@ While not primarily designed to detect transiting planets, the \rst~\citep{Sperg
 In a fraction of the cases, planets as small as \SI{2}{\Rearth} will be detected.
 About 200 planets smaller than Neptune are expected to be found around M~dwarfs and thus may reach into the habitable zone.
 The \rst\ could thus provide a useful sample to explore the runaway greenhouse transition, albeit with a predominant focus on water-rich (sub-)Neptunes~\citep[e.g.,][]{Pierrehumbert2022}.
+\todo[inline]{what about TESS?}
 
 Taken together, \plato\ appears to be the most promising exoplanet mission for an empirical confirmation or falsification of the runaway greenhouse transition at this time.
 
@@ -634,9 +625,9 @@ The diagnostic power of such a test may be improved by simultaneously fitting fo
 An optimized mission in search for the inner edge of the habitable zone will further enhance its information content via a wise selection of follow-up targets, i.e., favoring those planets residing close to the expected instellation threshold $S_\mathrm{thresh}$.
 \end{note}
 
-\subsubsection{Target star spectral types}
+\subsubsection{The importance of M~dwarfs in the target list}
 To date, the majority of planets with radius measurements orbit FGK~dwarfs, and, based on the instellation they receive, most of them lie in the runaway greenhouse regime~\citep{Thompson2018}.
-Obviously, a step-function-like signal in the exoplanet demographics like the one illustrated above can not be constrained well if only one side of the discontinuity is being sampled.
+Obviously, a step-function-like signal in the exoplanet demographics like the one investigated above can not be constrained well if only one side of the discontinuity is being sampled.
 This, however, is the situation for planetary systems around Sun-like stars -- their habitable zones are so distant that transiting planets within them are very rare due to pure geometrical reasons.
 It was, among other reasons, the sharp drop in transit probability with orbital distance that has prompted a number of recent transit surveys to specifically target M~dwarfs~\citep[e.g.,][]{Irwin2009,Obermeier2016,Delrez2018,Sebastian2021,Dietrich2023}, but the sample of terrestrial planets orbiting them is still small~\citep[e.g.,][]{Berger2020,Hardegree-Ullman2020a}.
 
@@ -644,7 +635,7 @@ M~dwarf systems are also key for detecting the runaway greenhouse transition:
 Our calculations with different spectral types (Sect.~\ref{sec:results_FGK_M}) show that the information content of M~dwarfs in a sample dominates the hypothesis tests.
 Besides their large number in a volume/magnitude-limited sample, transiting M~dwarf planets are more likely to be located near the threshold instellation and in particular on orbits further out, i.e., in the optimistic habitable zone.
 In fact, we showed that the FGK part of the planet sample barely contributes to the statistical power.
-Furthermore, the transit depth difference at the transition is expected to be larger for M~dwarfs~\citep[$\sim \SI{100}{\ppm}$ for early, $\sim \SI{1000}{\ppm}$ for late M~stars][]{Turbet2019}, enhancing the demographic signal it leaves.
+Furthermore, the transit depth difference at the transition is expected to be larger for M~dwarfs~\citep[$\sim \SI{100}{\ppm}$ for early, $\sim \SI{1000}{\ppm}$ for late M~stars,][]{Turbet2019}, enhancing the demographic signal it leaves.
 An additional advantage of targeting M~dwarfs are their extended runaway greenhouse phases, whose duration can reach the order of \SI{100}{\mega\year}~\citep{Luger2015}.
 This increases the probability of observing any given planet in the sample during the runaway greenhouse phase, essentially driving $f_\mathrm{rgh}$ to higher values.
 Therefore, in addition to the high scientific value of boosted detections of potentially habitable planets, M dwarfs are also indispensable for the discovery and characterization of the runaway greenhouse transition.
@@ -665,12 +656,23 @@ Since these parameters are degenerate, they cannot be well constrained without i
 
 
 \subsection{Impact of assumptions on our findings}
+\todo[inline]{Caveats\\
+context: \citet{Turbet2019} Sect. 3, \citet{Bower2019}.\\
+''present bracketing cases; or to discuss why the discountinuity in the results would not be affected by changes that led to continuous offsets in the results. Or both.''}
 \subsubsection{Baseline mass-radius relationship}
 Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors~\citep{Zeng2016} might not be representative of the rocky planet population.
 However, while interior composition may change the magnitude of radius inflation and could introduce an offset to its demographic imprint, we do not expect a change of its structure.
 The magnitude of the radius inflation effect is in fact expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure.\todo[inline]{TIM: do you have a reference for this statement?}
 We thus consider our mass-radius relationship a conservative case and do not expect a negative impact on the detectability of the runaway greenhouse transition due to deviations from it.
 \todo[inline]{if feasible: run a test with a different M-R relation. do we expect that the choice of M-R relation impacts the results? Perhaps have an appendix section.}
+
+\subsubsection{Simplifications in the atmosphere model}
+\todo[inline]{TIM: your expertise will be valuable here.\\
+Mention we only consider instellation-induced rgh.\\
+- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets within the runaway greenhouse regime~\citep{Lichtenberg2022}.\\
+- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
+- assumption of a single albedo. ``if there is a range of albedos, will that wash away the signal?''
+}
 
 \subsubsection{Water mass fraction}
 The predominant mass fractions of water, which sensitively controls the atmospheric state of a rocky exoplanet, is poorly constrained.
