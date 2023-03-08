@@ -448,20 +448,6 @@ For a volume-limited sample, considering all host star spectral types, we find t
 The minimum needed fraction rises to \var{platoMinfrghHundred} for $N = 100$.
 For much smaller samples, even an optimistically strong signal can no longer be detected.
 
-What other planned missions are suited to test the runaway greenhouse hypothesis?
-The ongoing \cheops\ mission was designed as a follow-up mission to search for transits of planets discovered with other techniques, in particular with radial velocity measurements~\citep{Benz2021}.
-As such, it will provide precise radius constraints on a sample of small planets; however, only a small number of planets with periods \SI{> 50}{\day} are being observed.
-This largely limits \cheops' coverage to planets within the runaway greenhouse regime, preventing a detection of the transition.
-
-As \cheops, \ariel~\citep{Puig2016} will be a follow-up mission that is not designed to provide a large number of new radius measurements.
-\ariel's primary targets are larger planets in the range of sub-Neptune to Jupiter-like planets.
-We thus do not expect a significant contribution to exploring the inner edge of the habitable zone for Earth-sized planets.
-
-While not primarily designed to detect transiting planets, the \rst~\citep{Spergel2015} is expected to yield $\sim 10^5$ transiting planets on short orbits and constrain their radii in the course of its mission~\citep{Montet2017}.
-In a fraction of the cases, planets as small as \SI{2}{\Rearth} will be detected.
-About 200 planets smaller than Neptune are expected to be found around M~dwarfs and thus may reach into the habitable zone.
-The \rst\ could thus provide a useful sample to explore the runaway greenhouse transition, albeit with a predominant focus on water-rich (sub-)Neptunes~\citep[e.g.,][]{Pierrehumbert2022}.
-
 
 \subsection{Statistical power of different mission designs}\label{sec:statpower_missions}
 To explore the impact of mission trade-offs on the detectability of the runaway greenhouse transition, we simulated different survey designs and strategies and measured their capability to recover the trend and constrain its parameters.
@@ -572,7 +558,7 @@ We identified the following drivers of the diagnostic power for detecting the ru
     \item Planetary evolution and duration of the steam atmosphere phase: An inflated steam atmosphere can only be sustained until the planet has lost its water. Depending on host star spectral type, planetary mass, and composition, planets can spend from a few Myr to several Gyr in runaway greenhouse climates~\citep[][]{Hamano2015,Luger2015}, and only planets observed during this phase will contribute to the signal.
     \item Prevalent water inventory: The magnitude of radius change at the runaway greenhouse threshold is sensitive on the water mass fraction. As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern:
         The higher the water content and the higher the fraction of planets in runaway greenhouse climates, the greater the prospect of a statistically sound detection.
-    \item Sample size: Since we are looking for a population-level trend, the statistical significance increases with a larger sample size.
+    \item Size and composition of the planetary sample: Evidently, the significance of a statistical trend increases with a larger sample size. In addition, the sample must include planets on both sides of the instellation threshold, which is only sufficiently given for low-mass host stars.
     \item Radius measurement precision: The more precise individual planet radii can be determined, the less smeared out the pattern will be. Good \textit{accuracy} is less important, as long as it does not have a systematic error scaling with stellar irradiance.
     \item Availability and precision of mass measurements: For simple geometric reasons ($\rho \propto R^{-3}$), the expected trend is stronger when measured in bulk density than it is in planet radius space. If transiting planets can be followed up to obtain mass measurements, the statistical significance increases.
 \end{itemize}
@@ -613,20 +599,30 @@ If there's no other subsubsection here, make this a (the final?) subsection in `
 
 \subsection{Diagnostic power of near-future exoplanet missions}\label{sec:dis_samplesize}
 The fidelity of a future detection or falsification of a runaway greenhouse signature will depend on the significance with which the null hypothesis can be excluded.
-As a consequence, instrumentation and survey strategy aiming at testing the hypothesis should aim at maximizing the probability of a true positive detection.
-\begin{note}
-In Sect.~\ref{sec:res_samplesize} we explore the diagnostic power of space missions that are currently operating or are in the planning stage.
-We focus here on transit survey missions, as they provide the most direct radius measurements of a practical planet sample.
+As a consequence, instrumentation and survey strategy aiming at probing the runaway greenhouse threshold should aim at maximizing the probability of a true positive detection.
 
-As discussed above, the key drivers from a mission design perspective are sample size and photometric precision.
+As discussed above, key drivers from a mission design perspective are sample size, photometric precision, and the availability of planets around low-mass host stars.
 We found that along these axes, \plato\ will be the most favorable among the upcoming transit missions.
-%The required sample size and precision are well in reach of near-future exoplanet missions such as PLATO.
 With an expected transit radius precision of \SI{3}{\percent}~\citep{plato2017} and a yield of $> 100$ planets characterized with such high precision~\citep{Rauer2021}, \plato\ is comparable to the optimistic survey we introduced in Sect.~\ref{sec:res_testability}.
 If successful, it should readily detect the predicted statistical imprint or, in case of a non-detection, provide strong upper limits on the occurrence rate of runaway greenhouse planets.
-
 The latter depends on the lifetimes of runaway greenhouse phases, which are a function of the initial water inventory of the planets~\citep{Hamano2015}.
-It seems thus feasible to derive the typical water content of rocky planets from these occurrence estimates.
-\end{note}
+Overall, it seems feasible to derive the typical water content of rocky planets from these occurrence estimates.
+
+What other planned missions are suited to test the runaway greenhouse hypothesis?
+The ongoing \cheops\ mission was designed as a follow-up mission to search for transits of planets discovered with other techniques, in particular with radial velocity measurements~\citep{Benz2021}.
+As such, it will provide precise radius constraints on a sample of small planets; however, only a small number of planets with periods \SI{> 50}{\day} are being observed.
+This largely limits \cheops' coverage to planets within the runaway greenhouse regime, preventing a detection of the transition.
+
+As \cheops, \ariel~\citep{Puig2016} will be a follow-up mission that is not designed to provide a large number of new radius measurements.
+\ariel's primary targets are larger planets in the range of sub-Neptune to Jupiter-like planets.
+We thus do not expect a significant contribution to exploring the inner edge of the habitable zone for Earth-sized planets.
+
+While not primarily designed to detect transiting planets, the \rst~\citep{Spergel2015} is expected to yield $\sim 10^5$ transiting planets on short orbits and constrain their radii in the course of its mission~\citep{Montet2017}.
+In a fraction of the cases, planets as small as \SI{2}{\Rearth} will be detected.
+About 200 planets smaller than Neptune are expected to be found around M~dwarfs and thus may reach into the habitable zone.
+The \rst\ could thus provide a useful sample to explore the runaway greenhouse transition, albeit with a predominant focus on water-rich (sub-)Neptunes~\citep[e.g.,][]{Pierrehumbert2022}.
+
+Taken together, \plato\ appears to be the most promising exoplanet mission for an empirical confirmation or falsification of the runaway greenhouse transition at this time.
 
 
 
