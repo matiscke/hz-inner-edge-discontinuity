@@ -294,6 +294,14 @@ For our specific problem, this implies comparing evidences for a demographic imp
 The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
 The functional form of the runaway greenhouse hypothesis is more complex: Besides the mean radius of planets outside the threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$, the planetary water mass fraction~$x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$.
 
+A sensible choice of priors is central for evidence estimation via nested sampling.
+As the parameters of interest are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
+For $S_\mathrm{thresh}$, we chose a uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
+We sample $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
+Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:met_rghmodel}).
+For $f_\mathrm{rgh}$, we chose a uniform prior in $[0, 1]$.
+Finally, we adopt a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
+
 The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
 $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimator that represents the population mean.
 To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.
@@ -310,20 +318,13 @@ Here, $H\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional for
 
 \subsection{Bayesian model comparison}
 We are now ready to assess the relative plausibility of $H_{\mathrm{rgh}}$ and $H_0$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
-This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimate with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
+This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimated with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
+We initialized the sampler with the priors defined above to let it estimate the evidence and sample the posterior distributions.
 Our criterion to reject the null hypothesis is
 \begin{equation}
 \Delta \ln \mathcal{Z}  = \ln \mathcal{Z}_\mathrm{rgh} - \ln \mathcal{Z}_0  > 3.
 \end{equation}
 %The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statistical significance popular in frequentist approaches.\todo{CITATION}
-
-A sensible choice of priors is central for evidence estimation via nested sampling.
-As the parameters we are interested in recovering, $S_\mathrm{thresh}$ and $x_{H_2O}$, are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
-For $S_\mathrm{thresh}$, we chose a uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
-We sample $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
-Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:met_rghmodel}).
-Finally, we adopt a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
-We then ran the nested sampler to compute the evidence and sample the posterior distributions.
 
 
 
