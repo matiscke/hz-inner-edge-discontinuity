@@ -208,7 +208,7 @@ It further assumes a \textit{dry melt} without dissolved volatiles.
 \textit{Wet melt} planets follow the rules above, but we take into account a radius decrease from water partitioning in the melt:
 In the situation of a magma ocean below a steam atmosphere, part of the water will partition into the melt.
 This removes it from the steam atmosphere, which in turn decreases the radius inflation.
-The effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes typically reach measurable values~\citep{Dorn2021}.
+The effect is generally small compared to the radius inflation from a steam atmosphere but resulting radius changes are predicted to reach measurable values~\citep{Dorn2021}.
 The magnitude of this effect is again dependent on the planet mass and on the water mass fraction.
 We follow \citet{Dorn2021} and use their computed radius deviations between a wet magma ocean and a solid mantle for a tropopause pressure~$P_\mathrm{iso}=\SI{0.1}{\bar}$.
 We then add the (in almost all cases negative) radius deviations to the planet radii computed for the dry melt case.
@@ -221,18 +221,16 @@ We then add the (in almost all cases negative) radius deviations to the planet r
         \includegraphics[width=\hsize]{figures/radiusevolution.pdf}
         \caption{
             \textit{Top}: Mass-radius relationships for a water mass fraction $x_{H_2O}= \var{wrr}$ and different planet states. Green: planets with a solid mantle and no steam atmosphere. Dashed: planets with steam atmospheres. Blue: planets with steam atmospheres and including the effect of water incorporation in the melt.
+                Steam atmospheres cause a significant radius increase, which is slightly reduced when water incorporation in the melt is considered.
             \textit{Bottom}: Radius evolution of different planet types, illustrating degeneracies and potential for confusion among planet classes. Shown is a schematic time evolution of the transit radius normalized to the atmosphere-free radius $R_\mathrm{0}$ for different scenarios. Planets can move between planet classes through processes such as atmospheric loss and desiccation, which ultimately ends a runaway greenhouse phase on a timescale dependent on a planet's water content.}
         \label{fig:radiusevolution}
     \end{centering}
 \end{figure}
-Figure~\ref{fig:radiusevolution} shows the different mass-radius relations of the three cases for a fiducial water mass fraction of $x_{H_2O}= \var{wrr}$.
-Steam atmospheres cause a significant radius increase, which is slightly reduced when water incorporation in the melt is considered.
+We illustrate the mass-radius relations of the three cases in Figure~\ref{fig:radiusevolution} where a fiducial water mass fraction of $x_{H_2O}= \var{wrr}$ is assumed.
 In the following, we only distinguish between the non-runaway greenhouse and wet melt scenarios.
 
-As illustrated in Fig.~\ref{fig:radiusevolution}~(bottom panel), different processes can lead to the classification of a planet into either of these categories.
-For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a planet in our runaway greenhouse category, diluting the expected demographic signature.
-Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to the non-runaway greenhouse category on a timescale of $10^8\SI{}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
-To account for these effects, we introduce a dilution parameter $f_\mathrm{rgh}$, which represents the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
+To account for planets unable to sustain a steam atmosphere as well as evolutionary effects such as desiccation (see bottem panel of Fig.~\ref{fig:radiusevolution}), we introduce a dilution parameter $f_\mathrm{rgh}$.
+It represents the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow the non-runaway greenhouse relation, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow the wet melt relation.
 %The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
 In the following, we test if and under what conditions this parametrization causes a demographic trend that is large enough to be detected with high significance.
@@ -672,6 +670,11 @@ Mention we only consider instellation-induced rgh.\\
 - we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
 - assumption of a single albedo. ``if there is a range of albedos, will that wash away the signal?''
 }
+As illustrated in Fig.~\ref{fig:radiusevolution}, evolutionary processes and a background population of planets unable to sustain a steam atmosphere complicate the classification of a planet into the runaway or non-runaway category.
+For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a planet in our runaway greenhouse category, diluting the expected demographic signature.
+Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to the non-runaway greenhouse category on a timescale of $\SI{e8}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
+We marginalized over these degeneracies by introducing the dilution factor $f_\mathrm{rgh}$, but in a real survey contextual information about a planet's age or likely formation history could be taken into account.
+
 
 \subsubsection{Water mass fraction}
 The predominant mass fractions of water, which sensitively controls the atmospheric state of a rocky exoplanet, is poorly constrained.
