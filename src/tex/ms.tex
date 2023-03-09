@@ -129,15 +129,17 @@ Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution 
 
 
 \subsection{Synthetic planet sample}\label{sec:syn_planets}
+
 Next, we assigned to the stellar sample planetary systems with frequencies, orbital parameters, and bulk properties derived from the \kepler\ mission.
-We adopted the planetary occurrence rates in orbital period and radius recently derived in \citet{Bergsten2022}.
-Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
+We adopted the planetary occurrence rate model from \citet{Bergsten2022}, which defines the occurrence of small planets in radius and orbital period. Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form:
 \begin{equation}
     \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
 \end{equation}
-where $F_0$
-...
-\todo[inline]{GALEN: Briefly describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
+where $F_0$ represents the average number of planets per star and $C_n$ is a normalization constant. The shape function $g(R,P)$ describing the occurrence distribution is the same as in \citet{Bergsten2022}. The functional form and stellar-mass dependent parameters (including a new fit to the sample of \kepler\ planets with hosts below $0.56\,M_{\odot}$) are included in \bioverse\ as the prominent planet-generation model; the original model based on SAG13 occurrence rates is preserved as a legacy feature.
+
+With this updated distribution function, planets are generated as in the original \bioverse\ paper, but with an additional stellar mass dependence (for a star of a given mass, the relevant model parameters from the bin containing that mass are used). In summary, stars are assigned a number of planets in accordance with $F_0$, with planet parameters randomly drawn in proportion to the occurrence distribution function evaluated over a grid of radii and orbital periods.
+% \todo[inline]{GALEN: Briefly describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
+\todo[inline]{GALEN: The most relevant assumption of using our model is that, at the relevant fluxes (I think), we predict that super-Earths are pretty common. I think the "drop" in our model where super-Earths become less common happens at later fluxes than what is relevant in this paper... Let's double check this, and add a note in the first paragraph about it?.}
 
 \subsection{Orbit parameters and planet masses}
 Eccentric orbits alter the probability of a planet to transit \citep[e.g.,][]{Barnes2007a}.
