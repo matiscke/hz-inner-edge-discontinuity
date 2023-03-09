@@ -248,10 +248,11 @@ Not all transiting planets are detectable with the same likelihood and detection
 A detailed characterization of the detection biases of individual missions would not be justifiable given the uncertainties of the theoretical predictions.
 Instead, we derived generic observing limits that reflect the limitations of state-of-the-art transit surveys.
 
-For a transit signal to be detected in a transit survey, it must reach a sufficient signal-to-noise ratio (S/N) that is sensitive on the achieved photometric precision~\citep[e.g.,][]{Burke2015,Hardegree-Ullman2019}.
-In its in-orbit commissioning phase, the \cheops\ mission demonstrated a photometric precision of \SI{75}{\ppm} for faint ($V\approx 12$) stars~\citep{Benz2021}.
-In comparison, \plato's expected precision for similar stars was estimated to be \SI{\sim 50}{\ppm}~\citep[][Matuszewski et al., in prep.]{plato2017}.
-To represent these photometric limits, we chose a minimum transit depth of \SI{75}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
+A successful transit detection requires a sufficient signal-to-noise ratio (S/N), which is sensitive on the achieved photometric precision. %~\citep[e.g.,][]{Koch2010,Ricker2014,Burke2015,Hardegree-Ullman2019} % Cabrera+ in prep for PLATO
+%In its in-orbit commissioning phase, the \cheops\ mission demonstrated a photometric precision of \SI{75}{\ppm} for faint ($V\approx 12$) stars~\citep{Benz2021}.
+%In comparison, \plato's expected precision for similar stars was estimated to be \SI{\sim 50}{\ppm}~\citep[][Matuszewski et al., in prep.]{plato2017}.
+In line with its requirement to detect Earth-sized planets in a \SI{1}{\year} orbit around Sun-like stars, \plato\ is designed to enable the detection of a \SI{80}{\ppm} transit signal~\citep[][Matuszewski et al., in prep.]{plato2017}.
+To reflect its sensitivity, we chose a minimum transit depth of \SI{80}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
 For uncertainties in bulk density measurements, we propagate normally distributed errors of mass measurements assuming $\sigma_\mathrm{M_\mathrm{P}} = \SI{10}{\percent}$, as expected for \plato. \todo[inline]{20230307 after restructuring, check where the above sentence should go}
 We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagnitude$.
 
