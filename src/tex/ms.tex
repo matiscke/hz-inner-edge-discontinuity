@@ -81,13 +81,15 @@ For this purpose we expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
-        \caption{Workflow of our hypothesis testing with \bioverse. In the first block, we generate a sample of stars and populate them with planets based on \kepler\ demographics.
+        \caption{Workflow of our hypothesis testing with \bioverse. First, we generate a sample of stars and populate them with planets based on \kepler\ demographics.
             A fraction of them are then assigned a runaway greenhouse climate based on the model described in Sect.~\ref{sec:met_rghmodel}.
-        The second block simulates an exoplanet survey, whereby selection effects and detection biases are introduced. Finally, the third block deals with testing the runaway greenhouse hypothesis based on data from the survey simulation.
-        By iterating through these steps, we compute the statistical power of testing the hypothesis given the assumed survey design.}
+        We then simulate an exoplanet survey, whereby selection effects and detection biases are introduced. Finally, we test the runaway greenhouse hypothesis based on data from the survey simulation.
+        By iterating through these steps, we compute the statistical power of testing the hypothesis for different survey designs.}
         \label{fig:flowchart}
     \end{centering}
 \end{figure*}
+Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
+To enable a quantitative assessment of this detectability, we injected the signal into a simulated planet sample before observing it with simulated surveys.
 In the following, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, as well as the orbital parameters of the planets.
 
 \subsection{Stellar sample from Gaia DR3}
@@ -188,21 +190,9 @@ We use predictions on transit atmospheric thickness from geophysical models to d
 \end{note}
 
 
-
-Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
-To enable a quantitative assessment of this detectability, we injected the signal into the simulated planet sample before observing it with simulated surveys.
 While we search for the runaway greenhouse pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
 Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
 We consider the following cases (see Fig.~\ref{fig:radiusevolution}):
-%\begin{itemize}
-%\item[A.] No radius change.
-%This case serves as our null hypothesis, where planetary radii are not affected by the amount of irradiation the planets receive.
-%A solid planetary surface is assumed and no steam atmosphere is present.
-%\item[B.] Radius inflation due to a steam atmosphere.
-%Atmospheric scale heights are significantly increased.
-%\item[C.] As B, but including radius decrease of inflated planets due to water partitioning in the molten mantle.
-%\end{itemize}
-
 
 \textit{Non-runaway} planets retain the radius assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
 This case serves as our null hypothesis.
@@ -462,7 +452,7 @@ Consequently, we achieve a statistically significant detection with smaller samp
 A density-based survey of 100 targets is roughly equivalent to a radius-based survey of \var{N_plato} targets.
 At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim 0.4$ whereas bulk density measurements enable a detection from $f_\mathrm{rgh} \gtrsim 0.1$.
 
-\subsubsection{Spectral type of target stars}\label{sec:results_FGK_M}
+\subsubsection{Dependence on host star spectral type}\label{sec:results_FGK_M}
 Since the receiving radiation is sensitive on the spectral type of the host star, the share of planets on either side of $S_\mathrm{thresh}$ is different for FGK and M~dwarfs.
 We tested the detectability of the runaway greenhouse signal when only FGK or only M~dwarfs are considered (see Fig.~\ref{fig:plato_fgrid}).
 %($d_\mathrm{max} = \SI{75}{\parsec}, M_\mathrm{G} < 11$)
