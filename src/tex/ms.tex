@@ -242,6 +242,13 @@ The survey module of \bioverse\ converts the synthetic planet sample into a set 
 This task includes selection of the targets, application of detection biases, and conducting simulated measurements, all of which are specific to the particular survey.
 For each planet-level measurement such as radius or instellation, we draw the measured value from a normal distribution centered on the true value with a standard deviation set by the survey's precision.
 
+\subsection{Measurement uncertainties}
+Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
+%\subsubsection{PLATO}
+\plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
+\plato's definition study report~\citep{plato2017} states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity~(RV) follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
+For uncertainties in bulk density measurements, we propagate the errors of the mass measurements assuming $\sigma_\mathrm{M_\mathrm{P}} = \SI{10}{\percent}$.
+We base our assessment of \plato's diagnostic power on these estimates.
 
 \subsection{Detection bias, sample selection, and sensitivity}\label{sec:sensitivity} % Turbet2019 lists precision for CHEOPS, PLATO?, TESS?
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
@@ -253,7 +260,6 @@ A successful transit detection requires a sufficient signal-to-noise ratio (S/N)
 %In comparison, \plato's expected precision for similar stars was estimated to be \SI{\sim 50}{\ppm}~\citep[][Matuszewski et al., in prep.]{plato2017}.
 In line with its requirement to detect Earth-sized planets in a \SI{1}{\year} orbit around Sun-like stars, \plato\ is designed to enable the detection of a \SI{80}{\ppm} transit signal~\citep[][Matuszewski et al., in prep.]{plato2017}.
 To reflect its sensitivity, we chose a minimum transit depth of \SI{80}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
-For uncertainties in bulk density measurements, we propagate normally distributed errors of mass measurements assuming $\sigma_\mathrm{M_\mathrm{P}} = \SI{10}{\percent}$, as expected for \plato. \todo[inline]{20230307 after restructuring, check where the above sentence should go}
 We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagnitude$.
 
 %    Current and near-future missions focusing on Earth-sized planets target several host star spectral types, and their exact sample selection is based on specific mission objectives.
@@ -404,13 +410,6 @@ As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_o
 
 \subsection{Detecting the runaway greenhouse transition with \plato}\label{sec:res_samplesize}
 %\todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, Nautilus)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
-Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
-%\subsubsection{PLATO}
-\plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
-The \plato\ team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
-In the FGK sample of the mission, several hundred Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
-\plato's definition study report~\citep{plato2017} further states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity~(RV) follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
-We base our assessment of \plato's diagnostic power on these estimates.
 
     \begin{figure*}[ht!]
 %    \script{figurescript.py}
@@ -584,7 +583,9 @@ As a consequence, instrumentation and survey strategy aiming at probing the runa
 
 As discussed above, key drivers from a mission design perspective are sample size, photometric precision, and the availability of planets around low-mass host stars.
 We found that along these axes, \plato\ will be the most favorable among the upcoming transit missions.
-With an expected transit radius precision of \SI{3}{\percent}~\citep{plato2017} and a yield of $> 100$ planets characterized with such high precision~\citep{Rauer2021}, \plato\ is comparable to the optimistic survey we introduced in Sect.~\ref{sec:res_testability}.
+The \plato\ team has released an estimate on the number of exoplanets that will be characterized in the course of the main survey mission (Matuszewski, priv. comm.).
+%In the FGK sample of the mission, several hundred Earth-sized (\SIrange{0.8}{1.25}{\rEarth}) planets are expected to be detected.
+With an expected transit radius precision of \SI{3}{\percent}~\citep{plato2017} and a yield of $> 100$ planets studied with such high precision~\citep{Rauer2021}, \plato\ is comparable to the optimistic survey we introduced in Sect.~\ref{sec:res_testability}.
 If successful, it should readily detect the predicted statistical imprint or, in case of a non-detection, provide strong upper limits on the occurrence rate of runaway greenhouse planets.
 The latter depends on the lifetimes of runaway greenhouse phases, which are a function of the initial water inventory of the planets~\citep{Hamano2015}.
 Overall, it seems feasible to derive the typical water content of rocky planets from these occurrence estimates.
