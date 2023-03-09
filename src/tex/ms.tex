@@ -73,10 +73,12 @@ Studies of the geophysical state and evolution of hot exoplanets can thus contri
 
 \section{Baseline Model}\label{sec:met_baseline}
 %The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
-\todo[inline]{Start methods description with brief statement of goal and overview of the steps. The first sentence is similar, but would be good to separate goal from method here.
-}
-We determined -- for different survey configurations -- the confidence level with which the runaway greenhouse threshold can be detected in simulated exoplanet observations.
-For this purpose we expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021}\footnote{\bioverse\ is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic stellar and planetary samples into which we injected the runaway greenhouse signal, simulated observations of this sample, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).
+%Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
+%To enable a quantitative assessment of this detectability, we injected the signal into a simulated planet sample before observing it with simulated surveys.
+The goal of this study is to determine -- for different configurations of near-future exoplanet surveys -- the confidence level with which the runaway greenhouse threshold can be detected statistically. %in simulated exoplanet observations.
+Our basic methodology was as follows:
+We expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021}\footnote{\bioverse\ is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic samples of stars that host planets according to the observed exoplanet demographics.
+We then adapted planetary bulk properties as predicted from models of runaway greenhouse atmospheres, simulated observations of the planets, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).\todo[inline]{make sure rgh hypothesis is mentioned before, or rephrase}
 \todo[inline]{\bioverse\ will need a short introduction before the modifications are mentioned. Probably should get a paragraph in the intro}
 \begin{figure*}
     \begin{centering}
@@ -88,9 +90,7 @@ For this purpose we expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021
         \label{fig:flowchart}
     \end{centering}
 \end{figure*}
-Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
-To enable a quantitative assessment of this detectability, we injected the signal into a simulated planet sample before observing it with simulated surveys.
-In the following, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, as well as the orbital parameters of the planets.
+In this section, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, as well as the orbital parameters of the planets.
 
 \subsection{Stellar sample from Gaia DR3}
 %Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
@@ -655,7 +655,7 @@ Since these parameters are degenerate, they cannot be well constrained without i
 \todo[inline]{Caveats\\
 context: \citet{Turbet2019} Sect. 3, \citet{Bower2019}.\\
 ''present bracketing cases; or to discuss why the discountinuity in the results would not be affected by changes that led to continuous offsets in the results. Or both.''\\
-- not yet explored: how sensitive are we on the assumed planet population? $\exists$ danger of false positive detection on occurrence rate ``ridges'' like the Neptune desert? Currently we have a relatively smooth occurrence rate density in $R_P - S$ space based on the power-law fits in \citet{Bergsten2022}. We could, with relatively moderate effort, run a sanity check on an alternative sample (e.g., the more structured Bern model)}
+- not yet explored: how sensitive are we on the assumed planet population? $\exists$ danger of false positive detection on occurrence rate ``ridges'' like the Neptune desert? Currently we have a relatively smooth occurrence rate density in $R_P - S$ space based on the power-law fits in \citet{Bergsten2022}. We could, with relatively moderate effort, run a sanity check on an alternative sample (e.g., the more structured Bern model populations, or the population in the Genesis database)}
 \subsubsection{Baseline mass-radius relationship}
 Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors~\citep{Zeng2016} might not be representative of the rocky planet population.
 However, while interior composition may change the magnitude of radius inflation and could introduce an offset to its demographic imprint, we do not expect a change of its structure.
