@@ -342,7 +342,7 @@ Our criterion to reject the null hypothesis is
 
 
 \section{Results}
-\subsection{Statistical signature of the runaway greenhouse threshold}
+\subsection{Statistical signature of the runaway greenhouse threshold}\label{sec:res_signature}
 To characterize the population-level imprint of individual radius changes, we generated a generic planet population with an injected runaway greenhouse effect assuming a water fraction $x_\mathrm{H_2O} = \var{wrr}$.
 \begin{figure}
     \begin{centering}
@@ -501,28 +501,14 @@ A sample containing only planets around M~dwarf yields a very similar performanc
 (How close is Earth to runaway? (-> \citet{Goldblatt2012,Popp2016}; what is the max. expected change in Earth's albedo due to deglaciation?)}
 
 \subsection{Statistical imprint of exoplanet climates}
-The runaway greenhouse transition is a robust prediction from climate models, and its impact on planetary bulk properties has been shown to be in the detectable range of current astronomical instrumentation~\citep{Goldblatt2015}.
-Measuring these impacts would indeed provide the first empirical evidence of the habitable zone concept.
-On the planetary level, however, such undertaking is hindered by degeneracies: From internal composition to atmospheric loss to volatile content, many factors influence a planet's size.
-It is therefore prudent to shift the focus to the planet population as a whole and search for a statistical effect in exoplanet demographics~\citep{Turbet2019}.
-Using \bioverse\ to combine the predictions from geophysical models of steam atmospheres with a synthesis of planets informed by observed demographics, we showed that the population of greenhouse-inflated planets create a signature in the radius and density distribution that is well in the detectable range.
-
-However, the idealized step-function central to our hypothesis tests is blurred by several factors.
-Its amplitude is affected by ``sub-Neptunes'' with significant Hydrogen/Helium envelopes, which can disguise as inflated rocky planets.
-They might not contribute to the demographic signal we are looking for, although a similar transition was suggested for water-dominated sub-Neptunes~\citep{Pierrehumbert2022}.
-A subset of such gas-rich planets will experience atmospheric loss via photoevaporation~\citep{Owen2013} or core-powered mass loss~\citep{Ginzburg2018}, turning them from planets appearing inflated into much smaller \mbox{(super-)Earths}.
-Further dilution comes from the population of planets that lack an atmosphere or sufficient volatiles that can create a steam atmosphere.
-There is also a time dependence, both because stellar luminosities change with age and because runaway greenhouse planets with limited water reservoirs ultimately desiccate, ending their steam atmosphere phase.
-Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, or surface gravity~\citep{Pierrehumbert2022}.
-
-All of the above mechanisms dilute the demographic imprint of the runaway greenhouse transition with contributions that are challenging to quantify.
-The ``dilution factor" we introduced embodies our ignorance of these contributions.
-Importantly, while this may offset our estimates of the signal's amplitude, its shape remains the same.
+We showed in Sect.~\ref{sec:res_signature} that injecting the theoretically predicted radius inflation effect into a synthetic planet population following the currently known demographics leaves a distinct pattern in the radius and density distribution as a function of instellation.
+Such a statistical imprints of the runaway greenhouse transition was suggested before~\citep{Turbet2019}, and our simulations show quantitatively how the contributions of the individual radius changes combine to create a significant demographic signal.
+Its strength depends on largely unknown factors such as the planetary volatile content, but turned out to be well in the detectable range under reasonable assumptions of these factors.
 
 Our finding that the expected trend is strong except for extremely low water mass fractions not only gives reason for optimism regarding its detection, it also presents a potential for constraints on the water inventory of terrestrial planets in the case of a non-detection.
-Should a successful detection occur, the time dependencies discussed above should be taken into account when using this population-level information to constrain exoplanet climates.
+%Should a successful detection occur, the time dependencies discussed above should be taken into account when using this population-level information to constrain exoplanet climates.
+%Measuring these impacts would indeed provide the first empirical evidence of the habitable zone concept.
 Overall, searching for the runaway greenhouse discontinuity appears to be the most promising approach toward a first empirical test of the habitable zone concept.
-
 
 
 \subsection{Detectability of the runaway greenhouse transition}
@@ -664,6 +650,7 @@ Since these parameters are degenerate, they cannot be well constrained without i
 context: \citet{Turbet2019} Sect. 3, \citet{Bower2019}.\\
 ''present bracketing cases; or to discuss why the discountinuity in the results would not be affected by changes that led to continuous offsets in the results. Or both.''\\
 - not yet explored: how sensitive are we on the assumed planet population? $\exists$ danger of false positive detection on occurrence rate ``ridges'' like the Neptune desert? Currently we have a relatively smooth occurrence rate density in $R_P - S$ space based on the power-law fits in \citet{Bergsten2022}. We could, with relatively moderate effort, run a sanity check on an alternative sample (e.g., the more structured Bern model populations, or the population in the Genesis database)}
+
 \subsubsection{Baseline mass-radius relationship}
 Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors~\citep{Zeng2016} might not be representative of the rocky planet population.
 However, while interior composition may change the magnitude of radius inflation and could introduce an offset to its demographic imprint, we do not expect a change of its structure.
@@ -683,7 +670,6 @@ For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial
 Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to the non-runaway greenhouse category on a timescale of $\SI{e8}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
 We marginalized over these degeneracies by introducing the dilution factor $f_\mathrm{rgh}$, but in a real survey contextual information about a planet's age or likely formation history could be taken into account.
 
-
 \subsubsection{Water mass fraction}
 The predominant mass fractions of water, which sensitively controls the atmospheric state of a rocky exoplanet, is poorly constrained.
 Inferred water contents in the literature range from upper limits on the order $10^{-5}$ to ``water worlds'' with tens of percent weight fraction~\citep[e.g.,][]{Rogers2010,Unterborn2018,Mousis2020,Agol2021,Luque2022}, all of which are within the realm of theoretical predictions~\citep{Mulders2015b,Sato2016,Jin2018,Bitsch2019b,Venturini2020,Emsenhuber2021b,Schlecker2021}.
@@ -692,9 +678,22 @@ This can be considered a conservative choice that is unlikely to introduce a sys
 Cases of pure rocky composition and very low volatile contents can be considered absorbed by the dilution factor $f_\mathrm{rgh}$.
 Assuming a distribution of water mass fractions instead of a fixed value would thus not significantly change our results.
 
+\subsubsection{``Sharpness'' of the demographic trend}
+The real counterpart to our idealized step-function central to our hypothesis tests could be blurred by several factors.
+Its amplitude is affected by ``sub-Neptunes'' with significant Hydrogen/Helium envelopes, which can disguise as inflated rocky planets.
+They might not contribute to the demographic signal we are looking for, although a similar transition was suggested for water-dominated sub-Neptunes~\citep{Pierrehumbert2022}.
+A subset of such gas-rich planets will experience atmospheric loss via photoevaporation~\citep{Owen2013} or core-powered mass loss~\citep{Ginzburg2018}, turning them from planets appearing inflated into much smaller \mbox{(super-)Earths}.
+Further dilution comes from the population of planets that lack an atmosphere or sufficient volatiles that can create a steam atmosphere.
+There is also a time dependence, both because stellar luminosities change with age and because runaway greenhouse planets with limited water reservoirs ultimately desiccate, ending their steam atmosphere phase.
+Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, or surface gravity~\citep{Pierrehumbert2022}.
+
+All of the above mechanisms dilute the demographic imprint of the runaway greenhouse transition with contributions that are challenging to quantify.
+The ``dilution factor" we introduced embodies our ignorance of these contributions.
+Importantly, while this may offset our estimates of the signal's amplitude, its shape remains the same.
+
+
 
 \section{Conclusions}
-
 Runaway greenhouse climates on rocky planets cause significant inflation of their radii.
 Using \bioverse, a quantitative hypothesis testing framework, we have explored the potential of contemporary exoplanet missions to statistically detect a radius discontinuity resulting from this inflation in the exoplanet population.
 Our key findings are as follows:
