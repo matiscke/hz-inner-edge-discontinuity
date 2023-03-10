@@ -106,7 +106,7 @@ Next, luminosities were computed from absolute $G$-band magnitudes and a derived
 Stellar radii were then computed with the effective temperatures and luminosities using the Stefan-Boltzmann law, or using absolute $K_S$-band magnitudes and an empirical radius-luminosity relation from \citet{Mann2015} for targets within the absolute magnitude range of M dwarfs.
 Finally, masses were derived from the mass-luminosity relation of \citet{Torres2010} for stars with $M_{\star}\gtrsim 0.7\,M_{\odot}$, and from that of \citet{Mann2019} for targets within the absolute magnitude range of M dwarfs.
 The derived stellar parameters from Hardegree-Ullman et al. (submitted) were compared to measured stellar parameters for all known exoplanet hosts from the literature and were found to be consistent within 1\%, 3\%, and 5.5\% for $T_{\mathrm{eff}}$, $R_{\star}$, and $M_{\star}$, respectively, which are all below the typical measurement uncertainties of 3.3\%, 6.8\%, and 7.9\%, respectively.
-From this catalog, \bioverse\ samples stars within an isotropic distance from the Solar System as required by the sample size.
+From this catalog, \bioverse\ samples stars within an isotropic distance from the Solar System as required by the planetary sample size.
 
 
 \subsection{Stellar luminosity evolution}
@@ -155,7 +155,8 @@ This represents the baseline bulk density before any climate-related effects are
 
 
 \subsection{Transit probability}
-We model the occurrence of transits by assuming isotropic orientations of planetary orbits, calculating the impact parameters $b = \cos(i)/R_\star$ and considering only observable planets with $|b| < 1$.
+We model the occurrence of transits by assuming isotropic orientations of planetary orbits and calculating the impact parameters $b = \cos(i)/R_\star$.
+Following the approach in \citet{Bixel2021}, we further consider only planets with $|b| < 1$.
 For these cases we calculate the transit depth
 \begin{equation}\label{eq:transitdepth}
     \delta = \left( \frac{R_\mathrm{P}}{R_\star} \right)^2,
@@ -241,6 +242,7 @@ In the following, we test if and under what conditions this parametrization caus
 The survey module of \bioverse\ converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
 This task includes selection of the targets, application of detection biases, and conducting simulated measurements, all of which are specific to the particular survey.
 For each planet-level measurement such as radius or instellation, we draw the measured value from a normal distribution centered on the true value with a standard deviation set by the survey's precision.
+We then follow a Bayesian hypothesis testing approach to assess various realizations of simulated surveys in terms of their ability to detect and characterize the runaway greenhouse transition.
 
 \subsection{Measurements and their uncertainties}
 Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
@@ -273,8 +275,9 @@ Ensuring to stay well clear of such regions, we clear our sample from all planet
 We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
 
 
-\subsection{The runaway greenhouse hypothesis}
-We now turn to assessing the simulated surveys in terms of their ability to detect the runaway greenhouse transition and their constraining power on parameters of this trend.
+
+\subsection{Hypothesis tests}
+We now turn to quantifying the ability of the simulated surveys to detect the runaway greenhouse transition and to constrain parameters of this trend.
 To do this, we rely on a Bayesian hypothesis testing approach where we quantify the evidence of a hypothesis over another based on the (simulated) data.
 For our specific problem, this implies comparing evidences for a demographic imprint of the runaway greenhouse effect to its absence.
 \begin{note}
@@ -306,10 +309,11 @@ The functional form of the runaway greenhouse hypothesis is more complex: Beside
 A sensible choice of priors is central for evidence estimation via nested sampling.
 As the parameters of interest are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
 For $S_\mathrm{thresh}$, we chose a uniform prior in $[\prSmin,\prSmax]\, \SI{}{\watt\per\meter\squared}$.
-We sample $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
+We sampled $x_{H_2O}$ from a log-uniform distribution to imply scale-invariant ignorance.
 Its boundaries $[\prWRRmin, \prWRRmax]$ are motivated by the water mass fractions covered by the geophysical models~(Sect.~\ref{sec:met_rghmodel}).
 For $f_\mathrm{rgh}$, we chose a uniform prior in $[0, 1]$.
-Finally, we adopt a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
+Finally, we adopted a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
+In the case of measuring bulk densities instead of radii, we drew uniformly from $[1, 6] \, \SI{}{\gram\per\centi\meter\cubed}$.
 
 The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
 $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimator that represents the population mean.
@@ -438,8 +442,6 @@ For much smaller samples, even an optimistically strong signal can no longer be 
 
 
 \subsection{Statistical power of different mission designs}\label{sec:statpower_missions}
-To explore the impact of mission trade-offs on the detectability of the runaway greenhouse transition, we simulated different survey designs and strategies and measured their capability to recover the trend and constrain its parameters.
-We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
 \subsubsection{Additional planet mass measurements}\label{sec:res_followup}
 Comparing a measurement of the signal in radius space with a measurement in density space (which requires planetary mass measurements), a stronger detection occurs in the latter case:
@@ -579,6 +581,7 @@ discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of su
 
 
 \subsection{Diagnostic power of near-future exoplanet missions}\label{sec:dis_samplesize}
+\todo[inline]{discuss Nautilus}
 The fidelity of a future detection or falsification of a runaway greenhouse signature will depend on the significance with which the null hypothesis can be excluded.
 As a consequence, instrumentation and survey strategy aiming at probing the runaway greenhouse threshold should aim at maximizing the probability of a true positive detection.
 
@@ -612,7 +615,8 @@ Taken together, \plato\ appears to be the most promising exoplanet mission for a
 
 \subsection{Mission design trades}\label{sec:mission-design-trades}
 \todo[inline]{not sure if subsubsections needed}
-We now turn to mission design trades that influence the statistical power for testing the runaway greenhouse hypothesis.
+To explore the impact of mission trade-offs on the detectability of the runaway greenhouse transition, we simulated different survey designs and strategies and measured their capability to recover the trend and constrain its parameters.
+We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
 \subsubsection{The value of follow-up campaigns}
 The dependencies of a detection change when additional information beyond planet radii is available for the characterized planet population.
@@ -695,7 +699,7 @@ Runaway greenhouse climates on rocky planets cause significant inflation of thei
 Using \bioverse, a quantitative hypothesis testing framework, we have explored the potential of contemporary exoplanet missions to statistically detect a radius discontinuity resulting from this inflation in the exoplanet population.
 Our key findings are as follows:
 \begin{enumerate}
-    \item The predicted tipping point in planetary climates causes a discontinuity in the radius and density distribution of small exoplanets with respect to the incident host star irradiation.
+    \item The predicted runaway greenhouse transition causes a discontinuity in the radius and density distribution of small exoplanets with respect to the incident host star irradiation.
     \item The demographic imprint of the runaway greenhouse threshold should be detectable with high-precision transit measurements. For a large sample $\gtrsim 100$, a detection is likely if radius inflation occurs on at least \SI{10}{\percent} of the observed planets and if typical water mass fractions are above $\sim 10^{-3}$.
     \item We find that the planned \plato\ transit survey will provide a sufficient sample and the required precision to detect the predicted trend. Assuming the projected photometric precision, \plato\ will be able to test the runaway greenhouse hypothesis for planet yields $\gtrsim 100$.
     \item The diagnostic power of transit missions in testing this hypothesis can be increased through a follow-up campaign providing planet mass measurements.
