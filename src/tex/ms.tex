@@ -255,17 +255,6 @@ This task includes selection of the targets, application of detection biases, an
 For each planet-level measurement such as radius or instellation, we draw the measured value from a normal distribution centered on the true value with a standard deviation set by the survey's precision.
 We then follow a Bayesian hypothesis testing approach to assess various realizations of simulated surveys in terms of their ability to detect and characterize the runaway greenhouse transition.
 
-\subsection{Measurements and their uncertainties}
-Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
-%\subsubsection{PLATO}
-\plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
-\plato's definition study report~\citep{plato2017} states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity~(RV) follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
-We adopted these estimates and assumed a \SI{10}{\percent} error on instellation measurements.
-
-Since planetary bulk density $\rho \propto R_\mathrm{P}^{-3}$, we expect a stronger runaway greenhouse signal when measured through bulk density instead of radius.
-We thus simulated measurements of planetary densities assuming the mass-radius relation defined above.
-For uncertainties in bulk density measurements, we propagated the errors of the mass measurements assuming $\sigma_\mathrm{M_\mathrm{P}} = \SI{10}{\percent}$.
-
 \subsection{Detection bias, target selection, and sensitivity}\label{sec:sensitivity} % Turbet2019 lists precision for CHEOPS, PLATO?, TESS?
 Not all transiting planets are detectable with the same likelihood and detection biases have an impact on the demographic measurements we are interested in.
 A detailed characterization of the detection biases of individual missions would not be justifiable given the uncertainties of the theoretical predictions.
@@ -274,7 +263,8 @@ Instead, we derived generic observing limits that reflect the limitations of sta
 A successful transit detection requires a sufficient signal-to-noise ratio (S/N), which is sensitive on the achieved photometric precision. %~\citep[e.g.,][]{Koch2010,Ricker2014,Burke2015,Hardegree-Ullman2019} % Cabrera+ in prep for PLATO
 %In its in-orbit commissioning phase, the \cheops\ mission demonstrated a photometric precision of \SI{75}{\ppm} for faint ($V\approx 12$) stars~\citep{Benz2021}.
 %In comparison, \plato's expected precision for similar stars was estimated to be \SI{\sim 50}{\ppm}~\citep[][Matuszewski et al., in prep.]{plato2017}.
-In line with its requirement to detect Earth-sized planets in a \SI{1}{\year} orbit around Sun-like stars, \plato\ is designed to enable the detection of a \SI{80}{\ppm} transit signal~\citep[][Matuszewski et al., in prep.]{plato2017}.
+\plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars, a goal to be achieved via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
+In line with this requirement, \plato\ is designed to enable the detection of a \SI{80}{\ppm} transit signal~\citep[][Matuszewski et al., in prep.]{plato2017}.
 To reflect its sensitivity, we chose a minimum transit depth of \SI{80}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
 We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagnitude$.
 
@@ -284,6 +274,17 @@ The runaway greenhouse effect becomes obsolete where no atmosphere can be mainta
 Ensuring to stay well clear of such regions, we clear our sample from all planets with a net instellation $S > \SI{2000}{\watt\per\square\meter}$.
 %\todo[inline]{use criterion of Zahnle \& Caitling 2017 instead? $0.8 S^{0.25} < R$}
 We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Turbet+2020 covers only 0.1 to 2 Mearth)
+
+\subsection{Measurements and their uncertainties}
+Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
+%\subsubsection{PLATO}
+\plato's definition study report~\citep{plato2017} states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity~(RV) follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
+We adopted these estimates and assumed a \SI{10}{\percent} error on instellation measurements.
+
+Since planetary bulk density $\rho \propto R_\mathrm{P}^{-3}$, we expect a stronger runaway greenhouse signal when measured through bulk density instead of radius.
+We thus simulated measurements of planetary densities assuming the mass-radius relation defined above.
+For uncertainties in bulk density measurements, we propagated the errors of the mass measurements assuming $\sigma_\mathrm{M_\mathrm{P}} = \SI{10}{\percent}$.
+
 
 
 
