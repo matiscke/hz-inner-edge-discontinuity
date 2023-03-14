@@ -150,7 +150,6 @@ We adopted the planetary occurrence rate model from~\citet{Bergsten2022}, which 
 where $F_0$ represents the average number of planets per star and $C_n$ is a normalization constant. The shape function $g(R,P)$ describing the occurrence distribution is the same as in \citet{Bergsten2022}. The functional form and stellar-mass dependent parameters (including a new fit to the sample of \kepler\ planets with hosts below $0.56\,M_{\odot}$) are included in \bioverse\ as the prominent planet-generation model; the original model based on SAG13 occurrence rates is preserved as a legacy feature.
 
 With this updated distribution function, planets are generated as in the original \bioverse\ paper, but with an additional stellar mass dependence (for a star of a given mass, the relevant model parameters from the bin containing that mass are used). In summary, stars are assigned a number of planets in accordance with $F_0$, with planet parameters randomly drawn in proportion to the occurrence distribution function evaluated over a grid of radii and orbital periods.
-% \todo[inline]{GALEN: Briefly describe underlying planet occurrence rates of synthetic population, its Mstar dependency, any caveats or assumptions.}
 \todo[inline]{GALEN: The most relevant assumption of using our model is that, at the relevant fluxes (I think), we predict that super-Earths are pretty common. I think the "drop" in our model where super-Earths become less common happens at later fluxes than what is relevant in this paper... Let's double check this, and add a note in the first paragraph about it?.}
 
 \subsection{Orbit parameters and planet masses}
@@ -558,7 +557,7 @@ If there's no other subsubsection here, make this a (the final?) subsection in `
     Another false positive contribution may come from potential unknown variations in the occurrence rate gradients in radius-instellation space.
     They can impact the statistical inference of the transitions, especially if these variations are similar to the expected pattern.
     Although an abrupt pattern at the expected runaway greenhouse transition seems unlikely, examples of steep occurrence rate density changes exist.
-    An example is the "Neptune desert``, a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
+    An example is the ``Neptune desert'', a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
     The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the instellation dependency of the runaway greenhouse transition.
     However, the Neptune desert occurs at smaller orbital periods and its location depends on a planet's size~\citep{Szabo2011}, which is not expected for the runaway greenhouse transition.
     \todo{is there overlap/confusion with the radius/density trend in \citet{Luque2022}?}
@@ -593,13 +592,13 @@ Overall, it seems feasible to derive the typical water content of rocky planets 
 What other planned missions are suited to test the runaway greenhouse hypothesis?
 \kepler\ and \ktwo\ have contributed a large number of discovered terrestrial-sized planets, but few of them are in the habitable zone and their host stars are typically too faint for RV follow-up~\citep{Dressing2015}.
 
-Similarly, the \tess\ planet sample lacks temperate, small planets around bright host stars~\citep{Ment2023}, as was expected from planet yield calculations~\citep{Barclay2018}.
+Similarly, the Transiting Exoplanet Survey Satellite~\citep[\tess,][]{Ricker2014a} planet sample lacks temperate, small planets around bright host stars~\citep{Ment2023}, as was expected from planet yield calculations~\citep{Barclay2018}.
 
 The ongoing \cheops\ mission was designed as a follow-up mission to search for transits of planets discovered with other techniques, in particular with radial velocity measurements~\citep{Benz2021}.
 As such, it will provide precise radius constraints on a sample of small planets; however, only a small number of planets with periods \SI{> 50}{\day} are being observed.
 This largely limits \cheops' coverage to planets within the runaway greenhouse regime, preventing a detection of the transition.
 
-As \cheops, \ariel~\citep{Puig2016} will be a follow-up mission that is not designed to provide a large number of new radius measurements.
+As \cheops, the Atmospheric Remote sensing Infrared Exoplanet Large survey~\citep[\ariel,][]{Puig2016} will be a follow-up mission that is not designed to provide a large number of new radius measurements.
 \ariel's primary targets are larger planets in the range of sub-Neptune to Jupiter-like planets.
 We thus do not expect a significant contribution to exploring the inner edge of the habitable zone for Earth-sized planets.
 
@@ -613,6 +612,9 @@ It employs a swarm of large telescopes using ultralight diffractive-refractive o
 Operating in an array mode, \nautilus\ would achieve the equivalent light-collecting area of a \SI{50}{\meter} telescope.
 Its expected \SI{1}{\ppm} photometric precision~\citep{Apai2022} would enable precise radius measurements of a large sample, also through a low number of required visits per object.
 If realized, \nautilus\ will be a valuable instrument for characterizing the runaway greenhouse transition.
+
+Other mission concepts exist that focus on characterizing exoplanet habitability, most notably the \hwo~\citep{Gaudi2020c,LUVOIR2019} and the Large Interferometer For Exoplanets~\citep[\life,][]{Quanz2021}.
+Such direct imaging surveys, however, do not directly measure planetary radii and are therefore most useful for providing context through atmospheric measurements of individual planets. \todo[inline]{TIM: feel free to add something about LIFE if you see fit}
 
 As for exoplanets missions in their implementation phase, \plato\ overall remains to be the most promising mission for an empirical confirmation or falsification of the runaway greenhouse transition at this time.
 
