@@ -570,7 +570,7 @@ If there's no other subsubsection here, make this a (the final?) subsection in `
 
 
 
-\subsubsection{OPTIONAL...: Atmospheric signatures}
+\subsubsection{OPTIONAL...: Atmospheric signatures}\label{sec:dis_atmospheres}
 \todo[inline]{TIM: Ideas?\\
 discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (e.g. Tim's recent talk)}
 \todo[inline]{``Can a smaller sample size's diagnostic value be increased if atmospheric compositional information can be added, i.e., PLATO + ARIEL (or similar combo)?''}
@@ -600,7 +600,7 @@ This largely limits \cheops' coverage to planets within the runaway greenhouse r
 
 As \cheops, the Atmospheric Remote sensing Infrared Exoplanet Large survey~\citep[\ariel,][]{Puig2016} will be a follow-up mission that is not designed to provide a large number of new radius measurements.
 \ariel's primary targets are larger planets in the range of sub-Neptune to Jupiter-like planets.
-We thus do not expect a significant contribution to exploring the inner edge of the habitable zone for Earth-sized planets.
+We thus do not expect a significant contribution to statistically exploring the inner edge of the habitable zone for Earth-sized planets.
 
 While not primarily designed to detect transiting planets, the \rst~\citep{Spergel2015} is expected to yield $\sim 10^5$ transiting planets on short orbits and constrain their radii in the course of its mission~\citep{Montet2017}.
 In a fraction of the cases, planets as small as \SI{2}{\Rearth} will be detected.
@@ -632,7 +632,7 @@ For a mission design similar to PLATO, a density-based hypothesis test on about 
 At a fixed sample size, key parameters of the runaway greenhouse models can be more narrowly constrained when additional mass measurements are available.
 
 Precise ground-based radial velocity measurements will be needed to provide these data, and a number of instruments are already successfully employed in characterizing terrestrial-sized exoplanets~\citep[e.g.,][]{Queloz2001a,Pepe2010,Johnson2010b,Ribas2023}.
-Recently, the National Aeronautics and Space Administration (NASA) and the National Science Foundation (NSF) commissioned an ``Extreme Precision Radial Velocity (EPRV) Initiative''~\citep{Crass2001} to develop methods and facilities for precise mass measurements of temperate terrestrial planets.
+Recently, the National Aeronautics and Space Administration (NASA) and the National Science Foundation (NSF) commissioned an ``Extreme Precision Radial Velocity (EPRV) Initiative''~\citep{Crass2021} to develop methods and facilities for precise mass measurements of temperate terrestrial planets.
 Their findings highlight that such measurements are costly, and therefore follow-up efforts may only be available for a subsample of the targets of a mission of \plato's scale.
 The diagnostic power of the hypothesis tests we demonstrated here may be improved by simultaneously fitting for the trend in radius space in the subsample without RV follow-up.
 An optimized mission in search for the inner edge of the habitable zone will further enhance its information content via a wise selection of follow-up targets, i.e., balancing objects located on either side of the expected instellation threshold $S_\mathrm{thresh}$.
@@ -656,15 +656,20 @@ As with a pure volume-limited sample, a targeted M~dwarf survey, too, profits fr
 
 \subsection{Constraining planetary habitability}\label{sec:habitability}
 \todo[inline]{Magma oceans influence the amount of water available at the surface and atmosphere, which is 1. commonly used as environmental marker to assess habitability, and 2. influences the planet's climate (greenhouse effect).}
-A potential for liquid water on the surface of a planet is commonly used as an environmental marker to assess its habitability. REF
+A potential for liquid water on the surface of a planet is commonly used as an environmental marker to assess its habitability~\citep{Huang1959,Hart1978,Kasting1993,Kaltenegger2011,Kopparapu2013}.
 The runaway greenhouse transition represents an upper bound on received irradiation for this condition.
 Its detection would thus not only empirically confirm the habitable zone concept but also help to locate it in the observationally available planetary parameter space.
 In Sect.~\ref{sec:res_constrain-S_thresh}, we show that the threshold instellation at which the runaway greenhouse transition occurs can be reasonably constrained without imposing overly optimistic conditions on the underlying planet population, instrumentation, or survey strategy.
-\todo[inline]{elaborate based on Sect.~\ref{sec:res_constrain-S_thresh}}
+A mission like \plato\ is well equipped to perform this measurement; the chances for success are directly proportional to the proportion of characterized planets around M dwarfs and to the number of planets for which masses can be determined.
 
 The situation is different for the planetary water inventory and the fraction of planets with runaway greenhouse climates:
 Since these parameters are degenerate, they cannot be well constrained without independent measurements.
-\todo[inline]{discuss additional measurements that could lift the degeneracy. e.g., adding atmospheric compositional information i.e., PLATO + ARIEL or similar}
+This degeneracy could be lifted if independent measurements of atmospheric compositions can be made.
+For example, detections of water vapor in planets above the threshold instellation, combined with precise radius measurements, would constrain the predominant water content of terrestrial planets.
+A follow-up campaign with the \ariel\ mission of \plato\ planets could be considered to make this contribution.
+
+Once a runaway greenhouse region is identified in the parameter space, the community will will have a tool at hand to discern potentially habitable planets from Venusian worlds on an empirical basis.
+Together with atmospheric measurements (see Sect.~\ref{sec:dis_atmospheres}), we will be able to put a number on the probability of an individual planet to harbor sufficient surface water to sustain life.
 
 
 \subsection{Impact of assumptions on our findings}
@@ -726,7 +731,7 @@ Our key findings are as follows:
     \item The diagnostic power of transit missions in testing this hypothesis can be increased through a follow-up campaign providing planet mass measurements.
           This can reduce the required planet yield by about a factor of three.
           Only an adequate sample of planets orbiting M~dwarfs will ensure sufficient targets on both sides of the expected threshold instellation.
-    \item Testing the runaway greenhouse hypothesis will constrain the water inventory of rocky exoplanets, providing important context in the assessment of their habitability.
+    \item Testing the runaway greenhouse hypothesis on a population level can provide constraints on the water inventory of rocky exoplanets and thus make an important contribution to assessing their habitability.
          A detection will provide an empirical confirmation of the habitable zone concept and localize its inner edge.
 
 \end{enumerate}
