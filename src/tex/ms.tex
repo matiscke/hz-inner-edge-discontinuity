@@ -40,7 +40,7 @@ Run-away GH\\
 Magma oceans\\
 Mention missions that are NOT statistical and therefore not considered here: CHEOPS, ARIEL, Roman. Other missions/concepts do not directly measure radii and not considered here: Habitable Worlds Observatory, LIFE.\\
 ~\\
-In contrast, PLATO and Nautilus are \\
+In contrast, PLATO and \nautilus\ are \\
 Possibility of follow-up to measureme masses
 ''}
 
@@ -142,9 +142,8 @@ Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution 
 
 
 \subsection{Synthetic planet sample}\label{sec:syn_planets}
-
 Next, we assigned to the stellar sample planetary systems with frequencies, orbital parameters, and bulk properties derived from the \kepler\ mission.
-We adopted the planetary occurrence rate model from \citet{Bergsten2022}, which defines the occurrence of small planets in radius and orbital period. Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form:
+We adopted the planetary occurrence rate model from~\citet{Bergsten2022}, which defines the occurrence of small planets in radius and orbital period. Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form:
 \begin{equation}
     \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
 \end{equation}
@@ -428,7 +427,7 @@ As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_o
 
 
 \subsection{Detecting the runaway greenhouse transition with \plato}\label{sec:res_samplesize}
-%\todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, Nautilus)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
+%\todo{Introduce survey simulation(s). PLATO, Cheops, (Ariel, LIFE/LIFE precursor, \nautilus\)\\ What are threshold missions that are able to detect this signal? =>X meter working for Y years, or X' meter working for Y' years => conclusion could be that there is interesting science to do with intermediate size telescope.}
 
     \begin{figure*}[ht!]
 %    \script{figurescript.py}
@@ -546,7 +545,7 @@ Besides these main factors, uncertainties in the measured instellations can infl
 This can be different for young host stars when their ages can not be well constrained; in particular the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Fig.~\ref{fig:luminosity_tracks}).
 
 
-\subsubsection{False positive scenarios}
+\subsubsection{False positive scenarios}\label{sec:dis_falsepositive}
 \todo{what other processes could be confused with a magma ocean signal?\\
 If there's no other subsubsection here, make this a (the final?) subsection in ``Discussion''.}
 \begin{note}
@@ -579,7 +578,6 @@ discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of su
 
 
 \subsection{Diagnostic power of near-future exoplanet missions}\label{sec:dis_samplesize}
-\todo[inline]{discuss Nautilus}
 The fidelity of a future detection or falsification of a runaway greenhouse signature will depend on the significance with which the null hypothesis can be excluded.
 As a consequence, instrumentation and survey strategy aiming at probing the runaway greenhouse threshold should aim at maximizing the probability of a true positive detection.
 
@@ -593,6 +591,10 @@ The latter depends on the lifetimes of runaway greenhouse phases, which are a fu
 Overall, it seems feasible to derive the typical water content of rocky planets from these occurrence estimates.
 
 What other planned missions are suited to test the runaway greenhouse hypothesis?
+\kepler\ and \ktwo\ have contributed a large number of discovered terrestrial-sized planets, but few of them are in the habitable zone and their host stars are typically too faint for RV follow-up~\citep{Dressing2015}.
+
+Similarly, the \tess\ planet sample lacks temperate, small planets around bright host stars~\citep{Ment2023}, as was expected from planet yield calculations~\citep{Barclay2018}.
+
 The ongoing \cheops\ mission was designed as a follow-up mission to search for transits of planets discovered with other techniques, in particular with radial velocity measurements~\citep{Benz2021}.
 As such, it will provide precise radius constraints on a sample of small planets; however, only a small number of planets with periods \SI{> 50}{\day} are being observed.
 This largely limits \cheops' coverage to planets within the runaway greenhouse regime, preventing a detection of the transition.
@@ -605,16 +607,14 @@ While not primarily designed to detect transiting planets, the \rst~\citep{Sperg
 In a fraction of the cases, planets as small as \SI{2}{\Rearth} will be detected.
 About 200 planets smaller than Neptune are expected to be found around M~dwarfs and thus may reach into the habitable zone.
 The \rst\ could thus provide a useful sample to explore the runaway greenhouse transition, albeit with a predominant focus on water-rich (sub-)Neptunes~\citep[e.g.,][]{Pierrehumbert2022}.
-\todo[inline]{what about TESS?}
 
-Looking further ahead, the Nautilus Space Observatory concept~\citep{Apai2019} represents a statistical mission able to provide precise radius measurements of a large sample of small exoplanets.
+Looking further ahead, the \nautilus\ Space Observatory concept~\citep{Apai2019} represents a statistical mission able to provide precise radius measurements of a large sample of small exoplanets.
 It employs a swarm of large telescopes using ultralight diffractive-refractive optical elements~\citep{Milster2020} with the primary goal to study the atmospheres of transiting exoplanets.
-Operating in an array mode, Nautilus would achieve the equivalent light-collecting area of a \SI{50}{\meter} telescope.
+Operating in an array mode, \nautilus\ would achieve the equivalent light-collecting area of a \SI{50}{\meter} telescope.
 Its expected \SI{1}{\ppm} photometric precision~\citep{Apai2022} would enable precise radius measurements of a large sample, also through a low number of required visits per object.
-If realized, Nautilus will be a valuable instrument for characterizing the runaway greenhouse transition.
+If realized, \nautilus\ will be a valuable instrument for characterizing the runaway greenhouse transition.
 
-As for exoplanets missions in their implementation phase, \plato\ overall appears to be the most promising mission for an empirical confirmation or falsification of the runaway greenhouse transition at this time.
-
+As for exoplanets missions in their implementation phase, \plato\ overall remains to be the most promising mission for an empirical confirmation or falsification of the runaway greenhouse transition at this time.
 
 
 \subsection{Mission design trades}\label{sec:mission-design-trades}
