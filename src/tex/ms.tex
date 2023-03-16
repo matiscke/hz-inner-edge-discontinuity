@@ -247,7 +247,7 @@ In the following, we test if and under what conditions this parametrization caus
 
 
 
-\section{Exoplanet Survey Simulations and Hypothesis Testing}
+\section{Exoplanet Survey Simulations and Hypothesis Testing}\label{sec:met_surveys-hypotests}
 The survey module of \bioverse\ converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
 This task includes selection of the targets, application of detection biases, and conducting simulated measurements, all of which are specific to the particular survey.
 For each planet-level measurement such as radius or instellation, we draw the measured value from a normal distribution centered on the true value with a standard deviation set by the survey's precision.
@@ -327,7 +327,7 @@ In the case of measuring bulk densities instead of radii, we drew uniformly from
 
 The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
 $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimator that represents the population mean.
-To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.
+To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.\footnote{See Appendix~\ref{app:binnedstats} for a robustness test using a different estimator.}
 We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. \todo[inline]{specify error propagation}
 
 As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a dataset given the model parameters, i.e., a likelihood function.
@@ -764,6 +764,41 @@ dynesty~\citep{Speagle2020}.
 }
 
 
+\appendix
+\section{Robustness tests}
+\subsection{Alternative statistics for the average radius or bulk density}\label{app:binnedstats}
+The hypothesis tests introduced in Sect.~\ref{sec:met_surveys-hypotests} rely on a statistical estimator for the variation of planetary radii or bulk densities as a function of net instellation, and we chose a moving average for this estimator in our nominal setup.
+Here, we explore how robust our results are against this choice by demonstrating the recovery of the runaway greenhouse signal in the case of the optimistic survey (Sect.~\ref{sec:res_testability}) with an alternative estimator: instead of computing moving averages, we used a binned statistic.
+
+We first binned the data of the simulated survey in instellation space, choosing the number of bins via the rule of \citet{Freedman1981} and using logarithmic binning.
+In each bin, we computed the arithmetic mean of the planet radius and its standard deviation.
+Then, we assigned each planet the mean radius according to the instellation bin it occupies and used this as the measure for testing the runaway greenhouse hypothesis.
+
+\begin{figure}[ht!]
+%    \script{figurescript.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/optimistic_R-S_binned.pdf}
+        \caption{
+            Detection of the runaway greenhouse threshold with a binned statistic.
+            Using simulated data from the optimistic survey case ($N = \var{N_optimistic}$, compare Fig.~\ref{fig:optimistic_R-S}), we tested the runaway greenhouse hypothesis. Instead of using a running mean, we computed a binned statistic (arithmetic mean and standard deviation in blue) to assign planets the average radius or bulk density in their neighborhood in instellation space. Random draws from the posterior of the runaway greenhouse hypothesis (Eqn.~\ref{eq:rgh_hypo}) are shown in red.
+            As in the nominal case, the pattern is detected with high significance.
+        }
+        \label{fig:optimistic_R-S_binned}
+    \end{centering}
+\end{figure}
+Figure~\ref{fig:optimistic_R-S_binned} shows the simulated data together with binned, average planet radii and draws from the posterior of the hypothesis test.
+A clear detection resulted, although with somewhat lower significance ($\Delta \ln \mathcal{Z} \approx 30$) compared to the nominal setup.
+The accuracy of the recovered instellation threshold is comparable.
+This test demonstrates that our results are not sensitive on the choice of statistical estimator to test the hypotheses against.
+
+It is conceivable that with very large sample sizes and a very sharp runaway greenhouse transition a binned solution would perform better.
+For a search with real data, both approaches, and possibly other alternatives, should be considered.
+
+
+
+
+
 \bibliographystyle{aasjournal}
 \bibliography{bib,PhD,coauthors}
+
 \end{document}
