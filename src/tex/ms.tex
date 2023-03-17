@@ -102,6 +102,7 @@ We then adapted planetary bulk properties as predicted from models of runaway gr
     \end{centering}
 \end{figure*}
 In this section, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, as well as the orbital parameters of the planets.
+An overview of our key assumptions and model parameters can be found in Table~\ref{tab:params_table}.
 
 \subsection{Stellar sample from Gaia DR3}
 %Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
@@ -338,7 +339,6 @@ We assumed here that the individual moving averages $SMA_i$ are measured with a 
 Here, $H\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the runaway greenhouse or null hypothesis.
 
 
-
 \subsection{Bayesian model comparison}
 We are now ready to assess the relative plausibility of $H_{\mathrm{rgh}}$ and $H_0$ given the synthetic data we have generated, assigning equal a~priori~ probabilities to these models.
 This is done by comparing the Bayesian evidence $\mathcal{Z}$ of the models, which we estimated with the nested sampling~\citep{Skilling2004} algorithm \emph{dynesty}~\citep{Speagle2020}.
@@ -349,6 +349,8 @@ Our criterion to reject the null hypothesis is
 \end{equation}
 %The chosen threshold roughly corresponds to the $p = 0.05$ threshold for statistical significance popular in frequentist approaches.\todo{CITATION}
 
+% include table with key parameters
+\input{table_parameters}
 
 
 \section{Results}
@@ -798,7 +800,7 @@ This test demonstrates that our results are not sensitive on the choice of stati
 It is conceivable that with very large sample sizes and a very sharp runaway greenhouse transition a binned solution would perform better.
 For a search with real data, both approaches, and possibly other alternatives, should be considered.
 
-\subsection{Influence of different mass-radius relationships on our results}\ref{app:MR_relation}
+\subsection{Influence of different mass-radius relationships on our results}\label{app:MR_relation}
 We assessed how a different choice of baseline mass-radius relation influences our results.
 Focussing on the detectability of the statistical runaway greenhouse signal and the ability to constrain the threshold instellation, we repeated the hypothesis test in Sect.~\ref{sec:res_testability} with alternative mass-radius relationships.
 Instead of assuming a pure $\mathrm{MgSiO_3}$ composition, we assigned planet masses using either the probabilistic relationship in \citet{Wolfgang2016} or a semi-empirical, two-layer relation assuming an Earth-like (\SI{32.5}{\percent} Fe + \SI{67.5}{\percent} MgSiO$_3$) composition~\citep{Zeng2016}.

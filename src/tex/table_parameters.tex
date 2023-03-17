@@ -1,0 +1,29 @@
+\begin{deluxetable*}{lrll}
+\tablecaption{Key assumptions and model parameters used in our simulation setup}
+\tablehead{\colhead{Parameter} & \colhead{Value} & \colhead{Unit} & \colhead{Description}}
+\startdata
+\textbf{Stellar sample} &  &  &  \\
+$G_\mathrm{max}$ & 16 &  & Maximum Gaia magnitude \\
+$M_\mathrm{\star, max}$ & 1.5 & $M_\odot$ & Maximum stellar mass \\
+Luminosity evolution &  &  & \citet{Baraffe1998} \\
+~\\ \textbf{Planetary parameters} &  &  &  \\
+$M_\mathrm{P}$ & 0.1 -- 2.0 & M$_\oplus$ & Planetary mass range \\
+$R_\mathrm{P, min}$ & 0.75 & $R_\oplus$ & Minimum planet radius \\
+Baseline mass-radius relation &  &  & \citet{Zeng2016} \SI{100}{\percent} $\mathrm{MgSiO_3}$\tablenotemark{a} \\
+$\delta_\mathrm{min}$ & 80 & ppm & Minimum transit depth \\
+$P_\mathrm{max}$ & 500 & d & Maximum orbital period [d] \\
+$S$ & 10 -- 2000 & \SI{}{\watt\per\meter\squared} & Net instellation range \\
+$S_\mathrm{thresh}$ & 280 & \SI{}{\watt\per\meter\squared} & Threshold instellation for runaway greenhouse \\
+~\\ \textbf{Runaway greenhouse model} &  &  &  \\
+Runaway greenhouse atmospheric models &  &  & \citet{Turbet2020,Dorn2021} \\
+$x_{H_2O}$ & \SIrange{e-5}{0.1}{} &  & Water mass fraction (fiducial case: 0.005) \\
+$f_\mathrm{rgh}$ & \SIrange{0}{1}{} &  & Dilution factor (fiducial case: 0.8) \\
+~\\ \textbf{Priors} &  &  &  \\
+$\Pi(S_\mathrm{thresh}$) & [10, 1000] & \SI{}{\watt\per\meter\squared} & uniform \\
+$\Pi(x_{H_2O})$ & [\SI{e-5}{}, \SI{0.1}{}] &  & log-uniform \\
+$\Pi(f_\mathrm{rgh})$ & [0, 1] &  & uniform \\
+$\Pi(\langle R_\mathrm{P}\rangle_\mathrm{out})$ & [0, 15] & $R_\oplus$ & Mean radius of non-runaway planets, uniform
+\enddata
+\tablenotetext{a}{For a comparison with alternative interior compositions, see Appendix~\ref{app:MR_relation}.}
+\label{tab:params_table}
+\end{deluxetable*}
