@@ -1,6 +1,6 @@
 % Define document class
-%\documentclass[twocolumn]{aastex631}
-\documentclass[modern]{aastex631}
+\documentclass[twocolumn]{aastex631}
+%\documentclass[modern]{aastex631}
 
 \input{preamble.tex}
 
@@ -152,7 +152,7 @@ where $F_0$ represents the average number of planets per star and $C_n$ is a nor
 With this updated distribution function, planets are generated as in the original \bioverse\ paper, but with an additional stellar mass dependence (for a star of a given mass, the relevant model parameters from the bin containing that mass are used). In summary, stars are assigned a number of planets in accordance with $F_0$, with planet parameters randomly drawn in proportion to the occurrence distribution function evaluated over a grid of radii and orbital periods.
 \todo[inline]{GALEN: The most relevant assumption of using our model is that, at the relevant fluxes (I think), we predict that super-Earths are pretty common. I think the "drop" in our model where super-Earths become less common happens at later fluxes than what is relevant in this paper... Let's double check this, and add a note in the first paragraph about it?.}
 
-\subsection{Orbit parameters and planet masses}
+\subsection{Orbit parameters and planet masses}\label{sec:met-orbits_masses}
 Eccentric orbits alter the probability of a planet to transit \citep[e.g.,][]{Barnes2007a}.
 The distribution of eccentricities $e$ of exoplanets has been found to resemble a Beta function \citep{Kipping2013b}, which we chose to draw synthetic eccentricities from.
 Following~\citet{Kipping2013b}, we used a Beta distribution with parameters $a=0.867$ and $b=3.03$, and truncated the distribution at $e = 0.8$.
@@ -207,7 +207,7 @@ We consider the following cases (see Fig.~\ref{fig:radiusevolution}):
 \textit{Non-runaway} planets retain the radius assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
 This case serves as our null hypothesis.
 
-For all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \SI{280}{\watt\per\meter\squared}$, we assume an inflated radius due to a steam atmosphere.
+For all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated radius due to a steam atmosphere.
 While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Abe1988,Kasting1988,Nakajima1992,Goldblatt2013,Leconte2013,Boukrouche2021}.
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our non-runaway planets~\citep{Zeng2016}.
@@ -360,7 +360,7 @@ To characterize the population-level imprint of individual radius changes, we ge
         \caption{Synthetic planets above and below the runaway greenhouse threshold.
         \textit{Top}: Planet state as a function of orbital period. Planets with and without a runaway greenhouse climate mix and are not distinguishable in period space.
         \textit{Bottom}: Radii of synthetic planets with injected radius deviation as a function of net instellation. Only the planets marked as transiting are observable.
-            Above the runaway greenhouse threshold $S_\mathrm{thresh} =\SI{280}{\watt\per\meter\squared} $, some planets maintain their original radii (green crosses) whereas some have their radii inflated (blue crosses) by the amount indicated with gray lines.
+            Above the runaway greenhouse threshold $S_\mathrm{thresh} = \var{injectedSthresh}$, some planets maintain their original radii (green crosses) whereas some have their radii inflated (blue crosses) by the amount indicated with gray lines.
         The sharp boundary at $S_\mathrm{thresh}$ causes a discontinuity in the average planet radius (blue line).
             This runaway greenhouse hypothesis can be tested against the null hypothesis $H_0$ (green line), where average radii are independent of instellation.}
         \label{fig:HnullHmo}
@@ -679,7 +679,8 @@ Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors
 However, while interior composition may change the magnitude of radius inflation and could introduce an offset to its demographic imprint, we do not expect a change of its structure.
 The magnitude of the radius inflation effect is in fact expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure.\todo[inline]{TIM: do you have a reference for this statement?}
 We thus consider our mass-radius relationship a conservative case and do not expect a negative impact on the detectability of the runaway greenhouse transition due to deviations from it.
-\todo[inline]{if feasible: run a test with a different M-R relation. do we expect that the choice of M-R relation impacts the results? Perhaps have an appendix section.}
+Nevertheless, we performed a sanity check to assess the influence varying our baseline model on our results (see Appendix~\ref{app:MR_relation}), and found general agreement between different interior composition models.
+
 
 \subsubsection{Simplifications in the atmosphere model}
 \todo[inline]{TIM: your expertise will be valuable here.\\
@@ -708,7 +709,10 @@ They might not contribute to the demographic signal we are looking for, although
 A subset of such gas-rich planets will experience atmospheric loss via photoevaporation~\citep{Owen2013} or core-powered mass loss~\citep{Ginzburg2018}, turning them from planets appearing inflated into much smaller \mbox{(super-)Earths}.
 Further dilution comes from the population of planets that lack an atmosphere or sufficient volatiles that can create a steam atmosphere.
 There is also a time dependence, both because stellar luminosities change with age and because runaway greenhouse planets with limited water reservoirs ultimately desiccate, ending their steam atmosphere phase.
+
 Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, or surface gravity~\citep{Pierrehumbert2022}.
+The choice of statistical estimator for the hypothesis tests may further blur the recovered discontinuity.
+We compare our nominal running mean approach with a binned statistic in Appendix~\ref{app:binnedstats}.
 
 All of the above mechanisms dilute the demographic imprint of the runaway greenhouse transition with contributions that are challenging to quantify.
 The ``dilution factor" we introduced embodies our ignorance of these contributions.
@@ -794,8 +798,35 @@ This test demonstrates that our results are not sensitive on the choice of stati
 It is conceivable that with very large sample sizes and a very sharp runaway greenhouse transition a binned solution would perform better.
 For a search with real data, both approaches, and possibly other alternatives, should be considered.
 
+\subsection{Influence of different mass-radius relationships on our results}\ref{app:MR_relation}
+We assessed how a different choice of baseline mass-radius relation influences our results.
+Focussing on the detectability of the statistical runaway greenhouse signal and the ability to constrain the threshold instellation, we repeated the hypothesis test in Sect.~\ref{sec:res_testability} with alternative mass-radius relationships.
+Instead of assuming a pure $\mathrm{MgSiO_3}$ composition, we assigned planet masses using either the probabilistic relationship in \citet{Wolfgang2016} or a semi-empirical, two-layer relation assuming an Earth-like (\SI{32.5}{\percent} Fe + \SI{67.5}{\percent} MgSiO$_3$) composition~\citep{Zeng2016}.
 
+\begin{figure}[ht!]
+%    \script{figurescript.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/MR-violins.pdf}
+        \caption{
+        Posterior threshold instellations as a function of dilution factor for two alternative baseline mass-radius relations.
+        For each grid step in $f_\mathrm{rgh}$, we show kernel density estimates of retrieved posteriors (averaged over 50 iterations) assuming an Earth-like (\SI{32.5}{\percent} Fe + \SI{67.5}{\percent} MgSiO$_3$) composition or the probabilistic relation from \citet{Wolfgang2016} and otherwise following the optimistic scenario in Sect.~\ref{sec:res_testability}.
+        Lines within the violins show quartiles of the distributions, and the gray line indicates the injected threshold instellation of \var{injectedSthresh}.
+        Higher log-evidence differences $\Delta \ln Z$ correspond to more significant rejections of the null hypothesis.
+        In the regime of strong detections, both mass-radius relations lead to similar, accurate constraints on $S_\mathrm{thresh}$.
+        Differences occur at low dilution factors, where the Earth-like relation leads to narrower estimates.
+        }
+        \label{fig:MR-violins}
+    \end{centering}
+\end{figure}
+Figure~\ref{fig:MR-violins} shows how the two alternative baseline mass-radius relations influence the significance of a detection and the ability to constrain the threshold instellation.
+The relation of \citet{Wolfgang2016} includes intrinsic scatter, which impedes a detection at low dilution factors.
+In this regime, a layered, Earth-like composition leads to more significant detections and a narrower, although biased, constraint on $S_\mathrm{thresh}$.
+Both mass-radius relations agree and recover the injected value where the null hypothesis can be rejected with high significance.
+This is consistent with our nominal mass-radius relation (compare Sect.~\ref{sec:met-orbits_masses}).
+We conclude that the underlying core and mantle composition of planets may affect the detectability of the transition if the fraction of planets with runaway greenhouse climates is low; however, the overall trends that our experiments revealed appear robust.
 
+We caution that this analysis may serve only as a sanity check and should not be taken as a result in itself: The atmospheric model from \citet{Turbet2020} we adopted relies on a silicate interior composition for its transit radius prediction.
+Therefore, only our nominal procedure throughout the main body of the paper represents a self-consistent treatment.
 
 
 \bibliographystyle{aasjournal}
