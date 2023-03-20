@@ -1,5 +1,5 @@
 % Define document class
-\documentclass[twocolumn]{aastex631}
+\documentclass[twocolumn,twocolappendix]{aastex631}
 %\documentclass[modern]{aastex631}
 
 \input{preamble.tex}
@@ -30,7 +30,6 @@
 
 % Main body
 \section{Introduction}
-...just dropping material and references for now...
 \todo[inline]{papers: \citep[][introduce runaway GH]{} \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][(initial) water content of terrestrial planets]{Lichtenberg2019} \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021,Downey2022}.}
 \todo[inline]{``Points for the intro:
 \bioverse\\
@@ -151,7 +150,6 @@ We adopted the planetary occurrence rate model from~\citet{Bergsten2022}, which 
 where $F_0$ represents the average number of planets per star and $C_n$ is a normalization constant. The shape function $g(R,P)$ describing the occurrence distribution is the same as in \citet{Bergsten2022}. The functional form and stellar-mass dependent parameters (including a new fit to the sample of \kepler\ planets with hosts below $0.56\,M_{\odot}$) are included in \bioverse\ as the prominent planet-generation model; the original model based on SAG13 occurrence rates is preserved as a legacy feature.
 
 With this updated distribution function, planets are generated as in the original \bioverse\ paper, but with an additional stellar mass dependence (for a star of a given mass, the relevant model parameters from the bin containing that mass are used). In summary, stars are assigned a number of planets in accordance with $F_0$, with planet parameters randomly drawn in proportion to the occurrence distribution function evaluated over a grid of radii and orbital periods.
-\todo[inline]{GALEN: The most relevant assumption of using our model is that, at the relevant fluxes (I think), we predict that super-Earths are pretty common. I think the "drop" in our model where super-Earths become less common happens at later fluxes than what is relevant in this paper... Let's double check this, and add a note in the first paragraph about it?.}
 
 \subsection{Orbit parameters and planet masses}\label{sec:met-orbits_masses}
 Eccentric orbits alter the probability of a planet to transit \citep[e.g.,][]{Barnes2007a}.
@@ -329,7 +327,7 @@ In the case of measuring bulk densities instead of radii, we drew uniformly from
 The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
 $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimator that represents the population mean.
 To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.\footnote{See Appendix~\ref{app:binnedstats} for a robustness test using a different estimator.}
-We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. \todo[inline]{specify error propagation}
+We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. %\todo[inline]{specify error propagation}
 
 As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a dataset given the model parameters, i.e., a likelihood function.
 We assumed here that the individual moving averages $SMA_i$ are measured with a normally distributed uncertainty $\sigma_{SMA_i}$ and adopted a normal distribution
@@ -622,7 +620,6 @@ As for exoplanets missions in their implementation phase, \plato\ overall remain
 
 
 \subsection{Mission design trades}\label{sec:mission-design-trades}
-\todo[inline]{not sure if subsubsections needed}
 To explore the impact of mission trade-offs on the detectability of the runaway greenhouse transition, we simulated different survey designs and strategies and measured their capability to recover the trend and constrain its parameters.
 We assessed this capability based on two determinants: the likelihood that the mission is able to detect the injected trend, and the precision with which it can constrain the parameters of that trend.
 
@@ -657,7 +654,7 @@ As with a pure volume-limited sample, a targeted M~dwarf survey, too, profits fr
 
 
 \subsection{Constraining planetary habitability}\label{sec:habitability}
-\todo[inline]{Magma oceans influence the amount of water available at the surface and atmosphere, which is 1. commonly used as environmental marker to assess habitability, and 2. influences the planet's climate (greenhouse effect).}
+%\todo[inline]{Magma oceans influence the amount of water available at the surface and atmosphere, which is 1. commonly used as environmental marker to assess habitability, and 2. influences the planet's climate (greenhouse effect).}
 A potential for liquid water on the surface of a planet is commonly used as an environmental marker to assess its habitability~\citep{Huang1959,Hart1978,Kasting1993,Kaltenegger2011,Kopparapu2013}.
 The runaway greenhouse transition represents an upper bound on received irradiation for this condition.
 Its detection would thus not only empirically confirm the habitable zone concept but also help to locate it in the observationally available planetary parameter space.
@@ -679,6 +676,8 @@ Together with atmospheric measurements (see Sect.~\ref{sec:dis_atmospheres}), we
 context: \citet{Turbet2019} Sect. 3, \citet{Bower2019}.\\
 ''present bracketing cases; or to discuss why the discountinuity in the results would not be affected by changes that led to continuous offsets in the results. Or both.''\\
 - not yet explored: how sensitive are we on the assumed planet population? $\exists$ danger of false positive detection on occurrence rate ``ridges'' like the Neptune desert? Currently we have a relatively smooth occurrence rate density in $R_P - S$ space based on the power-law fits in \citet{Bergsten2022}. We could, with relatively moderate effort, run a sanity check on an alternative sample (e.g., the more structured Bern model populations, or the population in the Genesis database)}
+The prospects for detecting the runaway greenhouse transition depends on astro- and geophysical factors, as well as on the specific instrumentation and survey strategy of a particular mission.
+We can only approximate all this here, and we therefore seek to assess the sensitivity of our results on the assumptions we have made.
 
 \subsubsection{Structures in the planet occurrence rate density}
 In principle, the baseline occurrence rate density in radius-period space that governs the generation of our synthetic planet sample might influence our findings, especially if it contains any features that coincide with the injected demographic feature.
