@@ -331,9 +331,10 @@ We further computed the uncertainty of this moving average by propagating the in
 
 As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a dataset given the model parameters, i.e., a likelihood function.
 We assumed here that the individual moving averages $SMA_i$ are measured with a normally distributed uncertainty $\sigma_{SMA_i}$ and adopted a normal distribution
-\begin{equation}
-    \mathcal{L}(SMA \mid \boldsymbol{\theta})=\prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \exp \left(-\frac{\left(SMA_i - H\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
-\end{equation}
+\begin{eqnarray}
+    \mathcal{L}(SMA \mid \boldsymbol{\theta})= & \prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \\
+    & \times \exp \left(-\frac{\left(SMA_i - H\left(\boldsymbol{\theta}, S_i\right)\right)^{2}}{2 \sigma_{SMA_i}^{2}}\right).
+\end{eqnarray}
 Here, $H\left(\boldsymbol{\theta}, S_i\right)$ corresponds to the functional form of the runaway greenhouse or null hypothesis.
 
 
