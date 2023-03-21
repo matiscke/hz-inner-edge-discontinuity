@@ -183,7 +183,7 @@ Excluding all non-transiting planets diminishes the sample to \var{percentage_tr
 %- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
 %}
 The climate state of a planet has a direct influence on its size as measured by transit photometry~\citep{Turbet2019}.
-We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius that planets with instellation-induced runaway greenhouse climates experience.
+We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius and bulk density that planets with instellation-induced runaway greenhouse climates experience.
 ...
 
 \todo[inline]{ARNAUD: revise definition of $S$ following our discussion on 2022-12-22. Introduce net instellation and clarify what is meant by it.}
@@ -314,6 +314,7 @@ For our specific problem, this implies comparing evidences for a demographic imp
 
 The only free parameter of the null hypothesis, which assumes the average radius to be independent of instellation, is the predicted mean radius $\langle R_\mathrm{P}\rangle $.
 The functional form of the runaway greenhouse hypothesis is more complex: Besides the mean radius of planets outside the threshold $\langle R_\mathrm{P}\rangle_\mathrm{out}$, which is a nuisance parameter necessary to define the hypothesis, it relies on the threshold instellation for the ``step'' $S_\mathrm{thresh}$, the planetary water mass fraction~$x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$.
+For hypothesis tests based on bulk density instead of radius, we proceeded in the same way and substituted $R_\mathrm{P}$ by the bulk density $\rho$.
 
 A sensible choice of priors is central for evidence estimation via nested sampling.
 As the parameters of interest are poorly constrained by previous data, we used relatively uninformative priors to sample the entire physically plausible parameter space.
@@ -324,7 +325,7 @@ For $f_\mathrm{rgh}$, we chose a uniform prior in $[0, 1]$.
 Finally, we adopted a broad, uniform prior for $\langle R_\mathrm{P}\rangle_\mathrm{out}$ bound by $[\prRmin, \prRmax] \, \mathrm{R_\oplus}$.
 In the case of measuring bulk densities instead of radii, we drew uniformly from $[1, 6] \, \SI{}{\gram\per\centi\meter\cubed}$.
 
-The measured radii $R_\mathrm{P, i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
+The measured radii $R_\mathrm{P, i}$ or bulk densities $\rho_\mathrm{i}$ cannot be directly used for the hypothesis tests as they include intrinsic scatter that is not caused by measurement errors.
 $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimator that represents the population mean.
 To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.\footnote{See Appendix~\ref{app:binnedstats} for a robustness test using a different estimator.}
 We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. %\todo[inline]{specify error propagation}
