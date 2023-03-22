@@ -374,6 +374,7 @@ With net instellation as an independent variable, planets above and below the ru
 We also show the predictions of observable average planet radii from the statistical hypotheses defined above.
 %The value for the average radius \textit{outside} the runaway greenhouse regime was computed from our nominal observed sample, whereas the radius change in the magma ocean case compared to the null hypothesis is a prediction from the magma ocean model, evaluated on the same sample.
 Within the runaway greenhouse regime, an average radius change of \avgRadiusChange\ occurs.
+This pattern is consistent with the injected radius inflation as predicted from the atmospheric models (see Appendix~\ref{app:model-pop_comparison} for an investigation of the interplay between model predictions and our synthetic planet population).
 
 
 \subsection{Testability of the runaway greenhouse hypothesis}\label{sec:res_testability}
@@ -811,6 +812,29 @@ This test demonstrates that our results are not sensitive on the choice of stati
 
 It is conceivable that with very large sample sizes and a very sharp runaway greenhouse transition a binned solution would perform better.
 For a search with real data, both approaches, and possibly other alternatives, should be considered.
+
+\subsection{Statistical imprint of runaway greenhouse atmospheres}\label{app:model-pop_comparison}
+The predicted runaway greenhouse-induced planet radius changes are a function of instellation, planet mass, and water mass fraction~(compare Sect.~\ref{sec:met_rghmodel}).
+In order to better understand the interaction between the planetary populations underlying our simulations and these predictions, we compared the latter to the average radius and bulk density changes we measured in the synthetic population.
+We used the ``optimistic'' scenario with a sample size of \var{N_optimistic}.
+
+\begin{figure*}[ht!]
+%    \script{figurescript.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/model_pop_comparison.pdf}
+        \caption{
+        Comparison of radius and bulk density changes predicted by the atmospheric models to the average changes measured in the synthetic planet population.
+        Model predictions $\Delta R_\mathrm{model}$ and $\Delta \rho_\mathrm{model}$ depend on individual planet masses; $\langle \Delta R_\mathrm{population} \rangle$ and $\langle \Delta \rho_\mathrm{population} \rangle$ are averaged measurements of the overall population.
+        Significant differences are thus expected.
+        }
+        \label{fig:model_pop_comparison.pdf}
+    \end{centering}
+\end{figure*}
+Figure~\ref{fig:model_pop_comparison.pdf} shows this comparison for a range of planetary masses and water mass fractions.
+The complex dependence of the radius inflation on these parameters is evident, but no significant abrupt changes capable of causing spurious signals occur.
+Differences between model prediction and population can be explained by the wide dispersion in planet mass in the population.
+
+
 
 \subsection{Influence of different mass-radius relationships on our results}\label{app:MR_relation}
 We assessed how a different choice of baseline mass-radius relation influences our results.
