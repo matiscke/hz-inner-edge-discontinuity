@@ -9,6 +9,8 @@ arxiv.tar.gz
 
 # Figure output
 src/tex/figures/*
+# LaTeX compilation log
+src/tex/*.log
 
 # Miscellaneous
 __pycache__
