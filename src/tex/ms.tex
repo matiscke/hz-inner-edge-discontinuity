@@ -89,7 +89,6 @@ The goal of this study is to determine -- for different configurations of near-f
 Our basic methodology was as follows:
 We expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021}\footnote{\bioverse\ is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic samples of stars that host planets according to the observed exoplanet demographics.
 We then adapted planetary bulk properties as predicted from models of runaway greenhouse atmospheres, simulated observations of the planets, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).\todo[inline]{make sure rgh hypothesis is mentioned before, or rephrase}
-\todo[inline]{\bioverse\ will need a short introduction before the modifications are mentioned. Probably should get a paragraph in the intro}
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
@@ -531,7 +530,6 @@ Overall, searching for the runaway greenhouse discontinuity appears to be the mo
 
 
 \subsection{Detectability of the runaway greenhouse transition}
-\todo[inline]{Mention multiplanet systems.}
 We showed in Sect.~\ref{sec:res_testability} that under favorable conditions, a sufficiently large (\var{N_optimistic} planets) photometric survey is likely to detect the demographic imprint of the runaway greenhouse transition and accurately constrain the associated threshold instellation.
 However, even assuming capable instrumentation and an optimal survey design, geophysical and demographic unknowns may jeopardize this undertaking.
 The detectability of the runaway greenhouse threshold is thus a function of both survey design and astrophysical circumstances.
@@ -577,6 +575,13 @@ However, the Neptune desert occurs at smaller orbital periods and its location d
 \todo[inline]{TIM: Ideas?\\
 discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (e.g. Tim's recent talk)}
 \todo[inline]{``Can a smaller sample size's diagnostic value be increased if atmospheric compositional information can be added, i.e., PLATO + ARIEL (or similar combo)?''}
+\todo[inline]{also: use atmospheric characterization to identify small planet cores with thick H/He envelopes that contribute to diluting the signal (aka background population). These will be amenable for transmission spec due to large scale heights (Moran2018, \citet{Turbet2019})}
+
+
+\subsubsection{Detection in multi-planet systems}
+As suggested by \citet{Turbet2019}, an alternative approach for detecting the runaway greenhouse-induced radius inflation is to search for its ``local'' imprints in multi-planet systems.
+Systems harboring planets on both sides of the transition, such as \mbox{TRAPPIST-1}~\citep{Gillon2016a,Gillon2017a,Luger2017c,Agol2021}, may show the predicted abrupt radius and density change, provided the initial volatile content was sufficient and complete desiccation has not yet occurred.
+While degeneracies remain in interpreting bulk density fluctuations within individual systems~\citep[e.g.,][]{Turbet2020,Dorn2021}, the detection of a consistent pattern in several such systems could be a convincing statistical evidence of the runaway greenhouse transition.
 
 
 \subsection{Diagnostic power of near-future exoplanet missions}\label{sec:dis_samplesize}
@@ -678,7 +683,6 @@ Together with atmospheric measurements (see Sect.~\ref{sec:dis_atmospheres}), we
 \subsection{Impact of assumptions on our findings}
 \todo[inline]{Caveats\\
 context: \citet{Turbet2019} Sect. 3, \citet{Bower2019}.\\
-''present bracketing cases; or to discuss why the discountinuity in the results would not be affected by changes that led to continuous offsets in the results. Or both.''\\
 - not yet explored: how sensitive are we on the assumed planet population? $\exists$ danger of false positive detection on occurrence rate ``ridges'' like the Neptune desert? Currently we have a relatively smooth occurrence rate density in $R_P - S$ space based on the power-law fits in \citet{Bergsten2022}. We could, with relatively moderate effort, run a sanity check on an alternative sample (e.g., the more structured Bern model populations, or the population in the Genesis database)}
 The prospects for detecting the runaway greenhouse transition depends on astro- and geophysical factors, as well as on the specific instrumentation and survey strategy of a particular mission.
 We can only approximate all this here, and we therefore seek to assess the sensitivity of our results on the assumptions we have made.
