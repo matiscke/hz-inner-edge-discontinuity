@@ -210,7 +210,7 @@ While the actual instellation threshold for a runaway climate depends on planeta
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our non-runaway planets~\citep{Zeng2016}.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
-This scenario does not take into account the expected additional radius change due to interiors that are molten due to greenhouse forcing~\citep{Bower2019}.
+This scenario does not take into account the expected additional radius change due to molten interiors~\citep{Bower2019}.
 It further assumes a \textit{dry melt} without dissolved volatiles.
 
 \textit{Wet melt} planets follow the rules above, but we take into account a radius decrease from water partitioning in the melt:
@@ -234,7 +234,7 @@ We then add the (in almost all cases negative) radius deviations to the planet r
         \label{fig:radiusevolution}
     \end{centering}
 \end{figure}
-We illustrate the mass-radius relations of the three cases in Figure~\ref{fig:radiusevolution} where a fiducial water mass fraction of $x_{H_2O}= \var{wrr}$ is assumed.
+We illustrate the mass-radius relations of the three cases in Figure~\ref{fig:radiusevolution} where a fiducial water mass fraction of $x_{H_2O}= \var{wrr}$ is assumed. % Earth: ~0.0002 PERCENT or 218 ppm by mass (Turbet+2019)
 In the following, we only distinguish between the non-runaway greenhouse and wet melt scenarios.
 
 To account for planets unable to sustain a steam atmosphere as well as evolutionary effects such as desiccation (see bottem panel of Fig.~\ref{fig:radiusevolution}), we introduce a dilution parameter $f_\mathrm{rgh}$.
@@ -578,7 +578,7 @@ If the dichotomy forms primordially through migrated planets that accreted from 
 \todo[inline]{TIM: Ideas?\\
 discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (e.g. Tim's recent talk)}
 \todo[inline]{``Can a smaller sample size's diagnostic value be increased if atmospheric compositional information can be added, i.e., PLATO + ARIEL (or similar combo)?''}
-\todo[inline]{also: use atmospheric characterization to identify small planet cores with thick H/He envelopes that contribute to diluting the signal (aka background population). These will be amenable for transmission spec due to large scale heights (Moran2018, \citet{Turbet2019})}
+\todo[inline]{also: use atmospheric characterization to identify small planet cores with thick H/He envelopes that contribute to diluting the signal (aka background population). These will be amenable for transmission spec due to large scale heights (Moran2018, \citet{Turbet2019}).\\ Spectral water features  $<<$ rgh-induced radius change~\citep[][end of Sect. 4]{Turbet2019}.}
 
 
 \subsubsection{Detection in multi-planet systems}
@@ -686,7 +686,6 @@ Together with atmospheric measurements (see Sect.~\ref{sec:dis_atmospheres}), we
 
 \subsection{Impact of assumptions on our findings}
 \todo[inline]{Caveats\\
-context: \citet{Turbet2019} Sect. 3, \citet{Bower2019}.\\
 - not yet explored: how sensitive are we on the assumed planet population? $\exists$ danger of false positive detection on occurrence rate ``ridges'' like the Neptune desert? Currently we have a relatively smooth occurrence rate density in $R_P - S$ space based on the power-law fits in \citet{Bergsten2022}. We could, with relatively moderate effort, run a sanity check on an alternative sample (e.g., the more structured Bern model populations, or the population in the Genesis database)}
 The prospects for detecting the runaway greenhouse transition depends on astro- and geophysical factors, as well as on the specific instrumentation and survey strategy of a particular mission.
 We can only approximate all this here, and we therefore seek to assess the sensitivity of our results on the assumptions we have made.
@@ -703,6 +702,9 @@ However, while interior composition may change the magnitude of radius inflation
 The magnitude of the radius inflation effect is in fact expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure.\todo[inline]{TIM: do you have a reference for this statement?}
 We thus consider our mass-radius relationship a conservative case and do not expect a negative impact on the detectability of the runaway greenhouse transition due to deviations from it.
 Nevertheless, we performed a sanity check to assess the influence varying our baseline model on our results (see Appendix~\ref{app:MR_relation}), and found general agreement between different interior composition models.
+
+The models in this study do not into account a predicted additional radius increase on the percent level due to a molten interior~\citep{Bower2019}, and we neglect any potential effects stemming from a deviating gas exchange between atmosphere and interior in runaway greenhouse planets~\citep{Ikoma2018}.
+Future theoretical work that self-consistently models interior-atmosphere interactions is needed to take these effects into account~\citep{Turbet2019}.
 
 
 \subsubsection{Simplifications in the atmosphere model}
