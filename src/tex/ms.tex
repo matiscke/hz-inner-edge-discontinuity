@@ -30,18 +30,18 @@
 
 % Main body
 \section{Introduction}
-\todo[inline]{papers: \citep[][introduce runaway GH]{} \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][(initial) water content of terrestrial planets]{Lichtenberg2019} \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021}.}
-\todo[inline]{``Points for the intro:
-\bioverse\\
-Transit survey to measure mass/radius of planets\\
-Does the HZ have an inner edge?\\
-Run-away GH\\
-Magma oceans\\
-Mention missions that are NOT statistical and therefore not considered here: CHEOPS, ARIEL, Roman. Other missions/concepts do not directly measure radii and not considered here: Habitable Worlds Observatory, LIFE.\\
-~\\
-In contrast, PLATO and \nautilus\ are \\
-Possibility of follow-up to measureme masses
-''}
+%\todo[inline]{papers: \citep[][introduce runaway GH]{} \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][(initial) water content of terrestrial planets]{Lichtenberg2019} \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021}.}
+%\todo[inline]{``Points for the intro:
+%\bioverse\\
+%Transit survey to measure mass/radius of planets\\
+%Does the HZ have an inner edge?\\
+%Run-away GH\\
+%Magma oceans\\
+%Mention missions that are NOT statistical and therefore not considered here: CHEOPS, ARIEL, Roman. Other missions/concepts do not directly measure radii and not considered here: Habitable Worlds Observatory, LIFE.\\
+%~\\
+%In contrast, PLATO and \nautilus\ are \\
+%Possibility of follow-up to measureme masses
+%''}
 
 \begin{itemize}
     \item hot/warm planets are best studied
@@ -68,9 +68,9 @@ This runaway greenhouse state can not only extend the magma ocean stage of a roc
 Venus' atmospheric composition is consistent with the planet having gone through this phase, although the past presence of a Venusian water ocean has not been definitely established~\citep{Raymond2006,Raymond2007,Hamano2013,Way2016}.
 A water-dominated atmosphere of a planet in the runaway greenhouse state is significantly inflated~\citep{Turbet2019,Mousis2020}, increasing its transit radius by an amount mainly depending on the surface water content.
 An Earth-like planet experiences a \SI{\sim 500}{\kilo\meter} radius increase upon crossing the threshold instellation, and its transit depth increases by \SI{10}{\ppm} to \SI{1000}{\ppm} depending on the spectral type of the host star~\citep{Turbet2019}.
-... water incorporation...
+It was further found that the redistribution of water between the steam atmosphere and the molten mantle leads to additional, non-negligible deviations in atmospheric scale-heights and transit radii~\citep{Dorn2021}.
 
-The radiation-induced transition between a runaway greenhouse state and a temperate climate has been predicted to be a sharp threshold in instellation~\citep{Hamano2013}. CITE
+Of particular relevance is that the radiation-induced transition between a runaway greenhouse state and a temperate climate is thought to occur at a relatively sharp threshold instellation~\citep{Hamano2013}. CITE
 Consequently, the instellation at which the runaway greenhouse transition occurs is aptly considered to be the inner boundary of the habitable zone, whose prevalent definition refers to the possibility of liquid water on an Earth-like planet with a CO$_2$/H$_2$O/N$_2$ atmosphere~(\citealp[][but other definitions have been put forward, e.g., ]{Kasting1993,Kopparapu2013,Kopparapu2014} \citealp{Hall2023,Spinelli2023}).
 The fundamental concept of a habitable zone dates back centuries~\citep{Newton1687,Whewell1853,Shapley1953,Huang1959}, and its modern form has proven popular in the planetary literature\footnote{At the time of writing, a search of the term ``habitable zone'' in the titles and abstracts of refereed articles in NASA's Astrophysics Data System returned $\sim\num{1700}$ results.}.
 Investigating its boundaries in parameter space has helped improve our understanding of habitability. CITE
@@ -82,19 +82,12 @@ Tests suggested in the literature include determining, for a range of orbital di
 All these tests require surveying a large enough sample of terrestrial-sized planets with next-generation instruments, rendering them out of reach in the immediate future.
 
 Here, we explore the feasibility of a statistical test of the habitable zone hypothesis by surveying planetary bulk properties close to its inner edge, the runaway greenhouse transition.
-Specifically, we assess the ability of near-future transit surveys to test the hypothesis that the runaway greenhouse effect causes an abrupt change of planetary radii and bulk densities when ordered by receiving instellation.
+Our goal is to assess the ability of near-future transit surveys to test the hypothesis that the runaway greenhouse effect causes an abrupt change of planetary radii and bulk densities when ordered by receiving instellation~\citep{Turbet2019}.
 Our main tool for this is \bioverse, a simulation framework for assessing the statistical power of exoplanet surveys~\citep{Bixel2021}.
-It consists of a sample generator that populates stars from the \gaia\ catalog CITE with planetary systems based on state-of-the-art occurrence rates, a flexible survey simulator that allows for a broad range of trade studies, and a hypothesis testing module that quantifies the survey's ability to detect a previously injected trend.
-Trying different instrumentation and survey designs, we try to recover runaway greenhouse-induced effects based on model predictions~\citep{Turbet2020,Dorn2021} that we inject into a baseline planet population.
+It consists of a sample generator that populates stars from the \gaia\ catalog~\citep{Gaia_mission,Gaia_DR3}  with planetary systems based on state-of-the-art occurrence rates, a flexible survey simulator that allows for a broad range of trade studies, and a hypothesis testing module that quantifies the survey's ability to detect a previously injected trend.
+Trying different instrumentation and survey designs, we utilize \bioverse\ to recover runaway greenhouse-induced effects based on model predictions~\citep{Turbet2020,Dorn2021} that we inject into a baseline planet population.
 
-
-
-
-
-
-
-
-Our goal is to...
+In particular, we test the capability of the \plato\ \citep[PLAnetary Transits and Oscillation of stars, ][]{Rauer2016} mission, which will measure the radii of a large number of terrestrial-sized planets, to detect the runaway greenhouse transition and identify the astrophysical unknowns on which this depends.
 We then perform a parameter study to explore which trade-offs in the survey design of a \plato-like mission optimize the chance to detect and characterize the runaway greenhouse transition.
 
 \end{note}
@@ -225,7 +218,7 @@ We consider the following cases (see Fig.~\ref{fig:radiusevolution}):
 This case serves as our null hypothesis.
 
 For all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated radius due to a steam atmosphere.
-While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Abe1988,Kasting1988,Nakajima1992,Goldblatt2013,Leconte2013,Boukrouche2021}.
+While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{Turbet2021,Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Abe1988,Kasting1988,Nakajima1992,Goldblatt2013,Leconte2013,Boukrouche2021}.
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our non-runaway planets~\citep{Zeng2016}.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
@@ -595,7 +588,7 @@ If the dichotomy forms primordially through migrated planets that accreted from 
 
 \subsubsection{OPTIONAL...: Atmospheric signatures}\label{sec:dis_atmospheres}
 \todo[inline]{TIM: Ideas?\\
-discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (e.g. Tim's recent talk)}
+discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (e.g. Tim's recent talk). Or: high O2 abundance during H loss (Wordsworth \& Pierrehumbert 2013b; Luger \& Barnes 2015, Schaefer et al. 2016)}
 \todo[inline]{``Can a smaller sample size's diagnostic value be increased if atmospheric compositional information can be added, i.e., PLATO + ARIEL (or similar combo)?''}
 \todo[inline]{also: use atmospheric characterization to identify small planet cores with thick H/He envelopes that contribute to diluting the signal (aka background population). These will be amenable for transmission spec due to large scale heights (Moran2018, \citet{Turbet2019}).\\ Spectral water features  $<<$ rgh-induced radius change~\citep[][end of Sect. 4]{Turbet2019}.}
 
@@ -753,7 +746,7 @@ A subset of such gas-rich planets will experience atmospheric loss via photoevap
 Further dilution comes from the population of planets that lack an atmosphere or sufficient volatiles that can create a steam atmosphere.
 There is also a time dependence, both because stellar luminosities change with age and because runaway greenhouse planets with limited water reservoirs ultimately desiccate, ending their steam atmosphere phase.
 
-Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, or surface gravity~\citep{Pierrehumbert2022}.
+Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, clouds, or surface gravity~\citep{Turbet2021,Pierrehumbert2022}.
 The choice of statistical estimator for the hypothesis tests may further blur the recovered discontinuity.
 We compare our nominal running mean approach with a binned statistic in Appendix~\ref{app:binnedstats}.
 
@@ -786,6 +779,7 @@ This will be a key contribution to the search for extraterrestrial life in the U
 %\begin{acknowledgments}
 %The authors thank Gabriele Cugno, Yann Fabel, Paul Molliere, Gijs Mulders, Matthew Murphy, and Terry-Ann Suer for insightful discussions.
 %We are grateful to Martin Turbet for providing the mass-radius relationship data for planets harboring steam atmospheres.
+%This work has made use of data from the European Space Agency (ESA) mission {\it Gaia} (\url{https://www.cosmos.esa.int/gaia}), processed by the {\it Gaia} Data Processing and Analysis Consortium (DPAC, \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the {\it Gaia} Multilateral Agreement.
 %\end{acknowledgments}
 
 \begin{large}\textit{Author contributions:}\end{large}
