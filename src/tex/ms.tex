@@ -90,6 +90,12 @@ Trying different instrumentation and survey designs, we utilize \bioverse\ to re
 In particular, we test the capability of the \plato\ \citep[PLAnetary Transits and Oscillation of stars, ][]{Rauer2016} mission, which will measure the radii of a large number of terrestrial-sized planets, to detect the runaway greenhouse transition and identify the astrophysical unknowns on which this depends.
 We then perform a parameter study to explore which trade-offs in the survey design of a \plato-like mission optimize the chance to detect and characterize the runaway greenhouse transition.
 
+We organize the paper as follows:
+Section~\ref{sec:met_baseline} introduces our baseline model produce synthetic star and planet samples.
+    In Sect.~\ref{sec:met_rghmodel}, we describe the model component that produces runaway greenhouse-induced radius changes.
+    Section~\ref{sec:met_surveys-hypotests} explains our survey simulations and hypothesis tests.
+    We present our results in Sect.~\ref{sec:results} before interpreting them in Sect.~\ref{sec:discussion}.
+    Finally, we summarize our findings in Sect.~\ref{sec:conclusions}.
 \end{note}
 
 
@@ -364,7 +370,7 @@ Our criterion to reject the null hypothesis is
 \input{table_parameters}
 
 
-\section{Results}
+\section{Results}\label{sec:results}
 \subsection{Statistical signature of the runaway greenhouse threshold}\label{sec:res_signature}
 To characterize the population-level imprint of individual radius changes, we generated a generic planet population with an injected runaway greenhouse effect assuming a water fraction $x_\mathrm{H_2O} = \var{wrr}$.
 \begin{figure}
@@ -756,7 +762,7 @@ Importantly, while this may offset our estimates of the signal's amplitude, its 
 
 
 
-\section{Conclusions}
+\section{Conclusions}\label{sec:conclusions}
 Runaway greenhouse climates on rocky planets cause significant inflation of their radii.
 Using \bioverse, a quantitative hypothesis testing framework, we have explored the potential of contemporary exoplanet missions to statistically detect a radius discontinuity resulting from this inflation in the exoplanet population.
 Our key findings are as follows:
