@@ -43,6 +43,7 @@ In contrast, PLATO and \nautilus\ are \\
 Possibility of follow-up to measureme masses
 ''}
 
+\todo[inline]{introduce the HZ Inner Edge Discontinuity\textsuperscript{\texttrademark}}
 
 \begin{note}
 For observations of rocky exoplanets, the currently best-probed regime is that of warm, close-in planets.
@@ -389,9 +390,9 @@ This pattern is consistent with the injected radius inflation as predicted from 
         \label{fig:optimistic_R-S}
     \end{centering}
 \end{figure}
-Figure~\ref{fig:optimistic_R-S} shows a prototypical statistical detection of the runaway greenhouse transition.
-For the sake of clarity, we chose an optimistic scenario where the sample of characterized planets is large ($N = \var{N_optimistic}$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
-We assumed that the fraction of those planets irradiated stronger than $S_\mathrm{thresh}$ that have runaway greenhouse climates is \frgh, and we chose a water mass fraction of \var{wrr} for each planet.
+Figure~\ref{fig:optimistic_R-S} shows a prototypical statistical detection of the HZ Inner Edge Discontinuity.
+Before we study limiting cases of such a detection below, we first demonstrate the interpretation process based on an optimistic scenario where the sample of characterized planets is large ($N = \var{N_optimistic}$) and the measurement uncertainties are small ($\sigma_{R} = \sigmaR, \sigma_{S} = \sigmaS$).
+Here, we assumed that the fraction of those planets irradiated stronger than $S_\mathrm{thresh}$ that have runaway greenhouse climates is \frgh, and we chose a water mass fraction of \var{wrr} for each planet.
 In this case, the pattern was detected with high significance ($\Delta \ln \mathcal{Z} \approx 100$).
 
 
@@ -426,7 +427,7 @@ Both a higher water mass fraction and a higher dilution factor lead to larger av
 Figure~\ref{fig:statpwr_H2O-f} explores the statistical power of the hypothesis test achieved in the above scenario for different combinations of the poorly constrained parameters $x_{H_2O}$ and $f_\mathrm{rgh}$.
 It is highest for large water inventories and large dilution factors.
  For all but very low water fractions, $f_\mathrm{rgh}$ dominates this trend: It enters linearly into the average planet radius, whereas the contribution of $x_{H_2O}$ - as predicted by the geophysical models - is sublinear with a power-law exponent of $\sim 0.3$.
-As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_optimistic} is sufficient for a $\SI{50}{\percent}$ detection rate even for water ratios as low as $10^{-3}$.
+Within the framework of our model and as long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_optimistic} is sufficient for a $\SI{50}{\percent}$ detection rate even for water ratios as low as $10^{-3}$.
 
 
 
@@ -450,8 +451,8 @@ As long as $f_\mathrm{rgh}$ is larger than $\sim 0.2$, a sample size of \var{N_o
             \label{fig:plato_fgrid}
         \end{centering}
     \end{figure*}
-
-For a volume-limited sample, considering all host star spectral types, we find that a yield of \var{N_plato} planets enables a significant detection if the fraction of runaway greenhouse planets is larger than $\sim \var{platoMinfrgh}$ (see Fig.~\ref{fig:plato_fgrid}).
+To simulate the transit survey of ESA's \plato\ mission, we considered a volume-limited sample with a size according to projections and including all stellar spectral types.
+Given \plato's expected radius precision, we find that a yield of \var{N_plato} planets enables a significant detection if the fraction of runaway greenhouse planets is larger than $ f_\mathrm{rgh} \sim \var{platoMinfrgh}$ (see Fig.~\ref{fig:plato_fgrid}).
 The minimum needed fraction rises to \var{platoMinfrghHundred} for $N = 100$.
 For much smaller samples, only a very optimistically strong signal is likely to be detected.
 
@@ -460,10 +461,10 @@ For much smaller samples, only a very optimistically strong signal is likely to 
 
 \subsubsection{Additional planet mass measurements}\label{sec:res_followup}
 Comparing a measurement of the signal in radius space with a measurement in density space (which requires planetary mass measurements), a stronger detection occurs in the latter case:
-With an optimistic choice of geophysical parameters (see above), the average measured radius change is \SI{+15}{\percent} whereas the average density change is \SI{-33}{\percent}.
+With an optimistic choice of geophysical parameters (see Sect.~\ref{sec:res_testability}), the average measured radius change is \SI{+15}{\percent} whereas the average density change is \SI{-33}{\percent}.
 
 %We now examine the value of a follow-up campaign to constrain planet masses with respect to the detectability of the runaway greenhouse threshold.
-As can be seen in Fig.~\ref{fig:plato_fgrid}, the detectability is enhanced when radius constraints can be augmented with mass measurements: At unchanged sample size, the difference in Bayesian evidence can be up to an order of magnitude larger.
+Figure~\ref{fig:plato_fgrid} shows that investigating the HZ Inner Edge Discontinuity is more constraining when radius measurements can be augmented with mass measurements: At unchanged sample size, the difference in Bayesian evidence can be up to an order of magnitude larger.
 Consequently, we achieve a statistically significant detection with smaller samples or lower dilution factors $f_\mathrm{rgh}$.
 A density-based survey of 100 targets is roughly equivalent to a radius-based survey of \var{N_plato} targets.
 At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim \var{platoMinfrghHundred}$ whereas bulk density measurements enable a detection from $f_\mathrm{rgh} \gtrsim \var{platoMinfrghHundred_rho}$.
