@@ -13,19 +13,13 @@
 % Author list
 \author[0000-0001-8355-2107]{Martin Schlecker}
 \affiliation{Department of Astronomy/Steward Observatory, The University of Arizona, 933 North Cherry Avenue, Tucson, AZ 85721, USA}
+\author[0000-0002-3286-7683]{Tim Lichtenberg}
+\affiliation{Kapteyn Astronomical Institute, University of Groningen, PO Box 800, 9700 AV Groningen, The Netherlands}
 \author{al.}
 
 % Abstract
 \begin{abstract}
-    $\ldots$ magma oceans $\ldots$
-
-    Here, we assess the ability of space and ground-based telescopes to test this hypothesis using \bioverse, a simulation framework that leverages contextual information from the overall planet population.
-    $\ldots$
-
-%    We argue that in the near future, ESA's \plato\ mission will be the most promising endeavors to constrain this demographic feature.
-%    We identify the key mission design drivers that enable a statistically sound detection.
-%    We also show what survey strategy optimizes the statistical power of the combined dataset.
-%    $\ldots$ its measurement will also provide insights into which stars harbor the nearest habitable worlds.
+    Key atmospheric volatiles are distributed between terrestrial planetary interiors and atmospheres during magma ocean epochs in the course of planetary accretion. Long-term magma ocean regimes on rocky exoplanets inside the orbital runaway greenhouse threshold -- the inner edge of the classical habitable zone -- may thus offer insights into the physical and chemical processes that distinguish potentially habitable worlds from others. Thermal stratification of super-runaway planets is expected to inflate the transit radii relative to sub-runaway planets, potentially rendering the climatic transition observationally accessible. Here, we assess the ability of ground- and space-based telescopes to test this hypothesis using \bioverse, a simulation framework that leverages contextual information from the overall planet population. We find that the demographic imprint of super-runaway climates should be detectable with high-precision transit photometry for planet populations $\gtrsim$ 100 planets if at least 10\% of these planets undergo a super-runaway climate. We argue that in the near future, ESA's \plato\ mission will be the most promising survey to constrain this demographic feature. We identify the key mission design drivers that enable a statistically sound detection, and discuss survey strategies that optimize the statistical power of combined datasets. Observational detection of the runaway climate transition will provide crucial insights into the distribution of atmospheric volatiles among low-mass exoplanets, and inform us about which stars harbor the nearest potentially habitable worlds.
 \end{abstract}
 
 % Main body
@@ -43,42 +37,20 @@ In contrast, PLATO and \nautilus\ are \\
 Possibility of follow-up to measureme masses
 ''}
 
+The currently best-probed regime of rocky exoplanets with a bulk density approaching that of Earth is that of hot ot warm, close-in planets \citep{2019AREPS..47..141J,2021JGRE..12606639B}. These bodies experience climatic conditions that are in some aspects comparable to the environment of the inner Solar System bodies at early stages of their evolution \citep{2018SSRv..214...76I,2021ChEG...81l5735C}, which sensitively affected the distribution of atmospheric volatiles between planetary core, mantle, and atmosphere. Studies of the geophysical state and evolution of hot exoplanets can thus contribute to our understanding of the early formation stages of Earth and other habitable worlds \citep{Lichtenberg2022,2022arXiv220310056K}.
 
-\begin{note}
-For observations of rocky exoplanets, the currently best-probed regime is that of warm, close-in planets.
-These bodies experience climatic conditions that are similar to the environment of the inner Solar System bodies at early stages of their formation.
-Studies of the geophysical state and evolution of hot exoplanets can thus contribute to our understanding of the early formation stages of Earth and other habitable worlds.
+An example from the Solar System for the potential significance of the magma ocean -- or runaway greenhouse phase -- are the different climate states of Venus and Earth \citep{2019JGRE..124.2015K,2021JGRE..12606643K}. While having accreted from the same mass reservoir and despite their similar bulk properties, evolved into planets with very different environmental conditions on their surfaces. At the formation of the Solar System, both planets underwent a giant impact phase \citep{2020NatGe..13..265G} that melted their mantles, leading to a magma ocean stage \citep{2012AREPS..40..113E,2018RSPTA.37680109S}. Due to these similar early formation phases, it was commonly assumed that the divergence of Venus and Earth -- in particular Venus's water loss -- occurred late in their evolution~\citep{Elkins-Tanton2013}. However, \citet{Hamano2013} demonstrated theoretically that such a late desiccation process is not needed to explain the stark differences: for a planet rich in volatiles and receiving high enough radiation levels from its host star, a steam atmosphere limits the outgoing radiation from the (molten) planetary surface \citep{2013NatGe...6..661G,2015ExA....40..449L}. This runaway greenhouse state prevents the planet's rapid cooling and can extend the magma ocean stage to hundreds of \SI{}{\mega\year}, enough to remove the entire water reservoir from a rocky planet by hydrodynamic escape. Because hydrodynamic escape driven by stellar XUV decreases with time, the solidification timescale can become comparable to the main-sequence lifetime of the star with a sufficient water inventory \citep{2013Natur.497..607H,2015ApJ...806..216H,Lichtenberg2022}. Consequently, it is aptly considered to be the inner boundary of the habitable zone~\citep{Kasting1993,Kopparapu2013}. Under the right conditions, different orbital distances alone can thus decide about a planet's water content and ultimately its habitability. If received flux makes the difference between our own habitable planet and dry, dead Venus, there is good reason to believe that such patterns exist in exoplanet systems as well.
 
-...
-    Venus and Earth, while having accreted from the same mass reservoir and despite their similar bulk properties, evolved into planets with very different environmental conditions on their surfaces.
-    At the formation of the Solar System, both planets underwent a giant impact phase [CITE!] that melted their mantles, leading to a magma ocean stage.
-    Due to these similar early formation phases, it was commonly assumed that the divergence of Venus and Earth -- in particular Venus's water loss -- occurred late in their evolution~\citep{Elkins-Tanton2013}.
-    \citet{Hamano2013} showed that such a late desiccation process is not needed to explain the stark differences: for a planet rich in volatiles and receiving high enough radiation levels from its host star, a steam atmosphere limits the outgoing radiation from the (molten) planetary surface.
-    This runaway greenhouse state prevents the planet's rapid cooling and can extend the magma ocean stage to hundreds of \SI{}{\mega\year}, enough to remove the entire water reservoir from a rocky planet by hydrodynamic escape.
-    \todo[inline]{important for motivating the existence of the pattern: ``the solidification timescale can become comparable to the main-sequence lifetime of the star (Hamano et al. 2013, 2015)'' \citep{Lichtenberg2022} }
-    Consequently, it is aptly considered to be the inner boundary of the habitable zone~\citep{Kasting1993,Kopparapu2013}.
+A long-term goal of exoplanet science is to measure the diversity of exoplanets and the distribution of their climate states through assessment of their geophysical history \citep{2021JGRE..12606711L}. This inludes deriving observationally motivated constraints on the limits of the runaway greenhouse transition, and thus the inner edges of the habitable zone. Magma ocean states play a substantial role in establishing the geophysical and climatic regimes of rocky planets, because atmospheric volatiles are highly soluble in magmatic liquids \citep{2021ApJ...909L..22K,Dorn2021}. Planets in a super-runaway climate state (actively undergoing a runaway greenhouse) are expected to be thermally inflated \citep{Turbet2019,Turbet2020,Mousis2020b}, which directly increases their tranit radii. However, dissolution in the magma may decrease this effect \citep{Dorn2021}, and variations in interior chemical exchange between core and mantle manterial may influence the outgassed volatiles that are visible in the atmosphere by transmission spectroscopy \citep{2021ApJ...914L...4L,2022PSJ.....3..127S}. Astronomical observations of planets that are currently in the super-runaway phase may thus constrain properties of their planetary mantles and establish and obversational connection between exoplanetary interior and atmospheres \citep{Lichtenberg2022,Wordsworth2022}.
 
-    (Under the right conditions, different orbital distances alone can thus decide about a planet's water content and ultimately its habitability.)
-    If received flux makes the difference between our own habitable planet and dry, dead Venus, there is good reason to believe that such patterns exist in exoplanet systems as well.
-
-    ...long-term goal/overarching objective: derive the geophysical history of rocky extrasolar planets. More concrete: Constrain the limits of runaway greenhouse transitions, and thus the inner edges of the habitable zone. Also: How close is Earth from this runaway greenhouse irradiation limit?
-   ...
-\todo[inline]{introduce magma oceans and their influence on planetary radii~\citep{Dorn2021}.}
-    ...current/future observations of planets that are currently in the runaway greenhouse phase may constrain properties of their planetary mantles... make connection between interior and atmospheres.
-    ...
-
-    The runaway greenhouse transition is a robust prediction from climate models, and its impact on planetary bulk properties has been shown to be in the detectable range of current astronomical instrumentation~\citep{Goldblatt2015}.
+The runaway greenhouse transition is a robust prediction from climate models \citep{Forget2014,2021ApJ...919..130B,2022A&A...658A..40C}, and its impact on planetary bulk properties has been shown to be in the detectable range of current astronomical instrumentation~\citep{Goldblatt2015}.
 Measuring these impacts would indeed provide the first empirical evidence of the habitable zone concept.
 On the planetary level, however, such undertaking is hindered by degeneracies: From internal composition to atmospheric loss to volatile content, many factors influence a planet's size.
-It is therefore prudent to shift the focus to the planet population as a whole and search for a statistical effect in exoplanet demographics~\citep{Turbet2019}.
- Using \bioverse\ to combine the predictions from geophysical models of steam atmospheres with a synthesis of planets informed by observed demographics, we...
+It is therefore prudent to shift the focus to the planet population as a whole and search for a statistical effect in exoplanet demographics~\citep{Turbet2019,Lichtenberg2019}. 
 
+Using \bioverse\ to combine the predictions from geophysical models of steam atmospheres with a synthesis of planets informed by observed demographics, we...
 
-
-    Planetary radius changes due to the combined effect of steam atmospheres and water dissolved in the molten mantle of planets within the runaway greenhouse threshold is expected to cause a discontinuity in the radius distribution of small (DEFINITION) exoplanets.
-
-
-\end{note}
+Planetary radius changes due to the combined effect of steam atmospheres and water dissolved in the molten mantle of planets within the runaway greenhouse threshold is expected to cause a discontinuity in the radius distribution of small (DEFINITION) exoplanets.
 
 
 \section{Baseline Model}\label{sec:met_baseline}
@@ -878,6 +850,6 @@ Therefore, only our nominal procedure throughout the main body of the paper repr
 
 
 \bibliographystyle{aasjournal}
-\bibliography{bib,PhD,coauthors}
+\bibliography{bib,PhD,coauthors,refs_tim}
 
 \end{document}
