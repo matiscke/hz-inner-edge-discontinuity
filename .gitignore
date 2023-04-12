@@ -15,13 +15,3 @@ src/tex/*.log
 # Miscellaneous
 __pycache__
 .DS_Store
-aastex631.cls
-src/tex/comment.cut
-src/tex/ms.aux
-src/tex/ms.bbl
-src/tex/ms.blg
-src/tex/ms.fdb_latexmk
-src/tex/ms.fls
-src/tex/ms.out
-src/tex/ms.pdf
-src/tex/ms.synctex.gz
