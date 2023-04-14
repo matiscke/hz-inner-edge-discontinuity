@@ -114,7 +114,7 @@ Finally, we summarize our findings in Section~\ref{sec:conclusions}.
 The goal of this study is to determine -- for different configurations of near-future exoplanet surveys -- the confidence level with which the runaway greenhouse threshold can be detected statistically. %in simulated exoplanet observations.
 Our basic methodology was as follows:
 We expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021}\footnote{\bioverse\ is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic samples of stars that host planets according to the observed exoplanet demographics.
-We then adapted planetary bulk properties as predicted from models of runaway greenhouse atmospheres, simulated observations of the planets, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Fig.~\ref{fig:flowchart}).\todo[inline]{make sure rgh hypothesis is mentioned before, or rephrase}
+We then adapted planetary bulk properties as predicted from models of runaway greenhouse atmospheres, simulated observations of the planets, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Figure~\ref{fig:flowchart}).\todo[inline]{make sure rgh hypothesis is mentioned before, or rephrase}
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
@@ -183,7 +183,7 @@ Following~\citet{Kipping2013b}, we used a Beta distribution with parameters $a=0
 %Another parameter with an even higher impact on transit probabilities is the orbital inclination toward the observer $i$.
 Assuming isotropic alignments of orbits, we assigned each planet an inclination drawn from a distribution uniform in $\cos(i)$.
 
-To assign masses to our planets, we use the semi-empirical mass-radius relationship assuming a pure $\mathrm{MgSiO_3}$ composition from \citet{Zeng2016} (see green line in Fig.~\ref{fig:radiusevolution}).
+To assign masses to our planets, we use the semi-empirical mass-radius relationship assuming a pure $\mathrm{MgSiO_3}$ composition from \citet{Zeng2016} (see green line in Figure~\ref{fig:radiusevolution}).
 This represents the baseline bulk density before any climate-related effects are applied.
 
 
@@ -225,7 +225,7 @@ We use predictions on transit atmospheric thickness from geophysical models to d
 
 While we search for the runaway greenhouse pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
 Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
-We consider the following cases (see Fig.~\ref{fig:radiusevolution}):
+We consider the following cases (see Figure~\ref{fig:radiusevolution}):
 
 \textit{Sub-runaway} planets retain the radius assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
 This case serves as our null hypothesis.
@@ -261,7 +261,7 @@ We then add the (in almost all cases negative) radius deviations to the planet r
 We illustrate the mass-radius relations of the three cases in Figure~\ref{fig:radiusevolution} where a fiducial water mass fraction of $x_{H_2O}= \var{wrr}$ is assumed. % Earth: ~0.0002 PERCENT or 218 ppm by mass (Turbet+2019)
 In the following, we only distinguish between the sub-runaway greenhouse and wet melt scenarios.
 
-To account for planets unable to sustain a steam atmosphere over extended time spans, as well as evolutionary effects such as desiccation (see bottem panel of Fig.~\ref{fig:radiusevolution}), we introduce a dilution parameter $f_\mathrm{rgh}$.
+To account for planets unable to sustain a steam atmosphere over extended time spans, as well as evolutionary effects such as desiccation (see bottem panel of Figure~\ref{fig:radiusevolution}), we introduce a dilution parameter $f_\mathrm{rgh}$.
 It represents the fraction of planets above the threshold instellation that are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow the sub-runaway greenhouse relation, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow the wet melt relation.
 The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere, or prior complete desiccation.
@@ -474,7 +474,7 @@ Within the framework of our model and as long as $f_\mathrm{rgh}$ is larger than
         \end{centering}
     \end{figure*}
 To simulate the transit survey of ESA's \plato\ mission, we considered a volume-limited sample with a size according to projections and including all stellar spectral types.
-Given \plato's expected radius precision, we find that a yield of \var{N_plato} planets enables a significant detection if the fraction of runaway greenhouse planets is larger than $ f_\mathrm{rgh} \sim \var{platoMinfrgh}$ (see Fig.~\ref{fig:plato_fgrid}).
+Given \plato's expected radius precision, we find that a yield of \var{N_plato} planets enables a significant detection if the fraction of runaway greenhouse planets is larger than $ f_\mathrm{rgh} \sim \var{platoMinfrgh}$ (see Figure~\ref{fig:plato_fgrid}).
 The minimum needed fraction rises to \var{platoMinfrghHundred} for $N = 100$.
 For much smaller samples, only an optimistically strong signal is likely to be detected.
 
@@ -493,7 +493,7 @@ At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim \var{platoM
 
 \subsubsection{Dependence on host star spectral type}\label{sec:results_FGK_M}
 Since the incident radiation depends on the spectral type of the host star, the relative number of planets on either side of $S_\mathrm{thresh}$ is different for FGK and M~dwarfs.
-We tested the detectability of the habitable zone inner edge discontinuity when only FGK or only M~dwarfs are considered (see Fig.~\ref{fig:plato_fgrid}).
+We tested the detectability of the habitable zone inner edge discontinuity when only FGK or only M~dwarfs are considered (see Figure~\ref{fig:plato_fgrid}).
 %($d_\mathrm{max} = \SI{75}{\parsec}, M_\mathrm{G} < 11$)
 The samples are volume and magnitude-limited to reflect the target counts of \plato's provisional Long-duration Observation Phase fields~\citep[$15996$ FGK stars in the P1 and P2 samples, $33948$ M~stars in the P4 sample, ][]{Nascimbeni2022}.
 The resulting M~dwarf planet sample is significantly larger with $\var{N_M}\pm \var{N_M_err}$ planets compared to $\var{N_FGK}\pm \var{N_FGK_err}$ planets in the FGK sample.
@@ -600,7 +600,7 @@ Good \textit{accuracy} is less important, as long as it does not have a systemat
 If transiting planets can be followed up to obtain mass measurements, the statistical significance increases.
 
 Besides these main factors, uncertainties in the measured instellations can influence the result, although they are typically small due to the very precise orbital period measurements available for transiting planets.
-This can be different for young host stars when their ages cannot be well constrained; in particular, the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Fig.~\ref{fig:luminosity_tracks}).
+This can be different for young host stars when their ages cannot be well constrained; in particular, the long pre-main sequence phase of M~dwarfs shows a large variation in bolometric luminosity~(see Figure~\ref{fig:luminosity_tracks}).
 
 
 \subsubsection{False positive scenarios}\label{sec:dis_falsepositive}
@@ -762,7 +762,8 @@ We can only approximate all this here, and we therefore seek to assess the sensi
 In principle, the baseline occurrence rate density in radius-period space that governs the generation of our synthetic planet sample might influence our findings, especially if it contains any features that coincide with the injected demographic feature.
 This is not the case in the model from \citet{Bergsten2022} that we adopted: Its occurrence rate density varies smoothly in the domain relevant for the runaway greenhouse hypothesis; transitions only occur at smaller instellations ($< \SI{50}{\watt\per\meter\squared}$) and larger radii ($> 1.6\,R_\oplus$).
 We thus do not expect the model underlying our planet sample to affect the investigation of the habitable zone inner edge discontinuity.
-However, it should be kept in mind that any unknown sharp features in the true distribution of terrestrial planets could complicate a detection or lead to a false positive result (see Sect.~\ref{sec:dis_falsepositive}).
+If any currently unknown sharp features in the distribution of terrestrial planets emerge, they should be considered in future studies.
+%However, it should be kept in mind that any unknown sharp features in the true distribution of terrestrial planets could complicate a detection or lead to a false positive result (see Sect.~\ref{sec:dis_falsepositive}).
 
 \subsubsection{Baseline mass-radius relationship}
 Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors~\citep{Zeng2016} might not be representative of the rocky planet population.
@@ -775,7 +776,6 @@ The models in this study do not take into account a predicted additional radius 
 Future theoretical work that self-consistently models interior-atmosphere interactions is needed to take these effects into account~\citep{2022arXiv220310023L,Wordsworth2022}.
 
 \subsubsection{Simplifications in the atmosphere model}
-%\todo[inline]{TIM: your expertise will be valuable here.\\
 %Mention we only consider instellation-induced rgh.\\
 %- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets %within the runaway greenhouse regime~\citep{2022arXiv220310023L}.\\
 %- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
@@ -784,7 +784,7 @@ Future theoretical work that self-consistently models interior-atmosphere intera
 % >>>>>>>>>>
 % TL: I just wrote a review article about this exact problem (magma ocean atmosphere exchange) with Yamila Miguel, hopefully soon on arXiv. Honestly, I think we keep it short here, otherwise the paper will get way too long and diluted. I referenced the latest reviews on this now, and we can cite Lichtenberg & Miguel 23 as soon as it's on arXiv for a much much longer discussion.
 % >>>>>>>>>>
-As illustrated in Fig.~\ref{fig:radiusevolution}, evolutionary processes and a background population of planets unable to sustain a steam atmosphere complicate the classification of a planet into the super- or sub-runaway category.
+As illustrated in Figure~\ref{fig:radiusevolution}, evolutionary processes and a background population of planets unable to sustain a steam atmosphere complicate the classification of a planet into the super- or sub-runaway category.
 For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a planet in our runaway greenhouse category, diluting the expected demographic signature.
 Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to the sub-runaway greenhouse category on a timescale of $\SI{e8}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
 Developing more sophisticated models of the coupled interaction between atmosphere and interior for an arbitrary planetary composition remains a long-term goal of the community~\citep{2021SSRv..217...22G,2022arXiv220310023L,Wordsworth2022}.
@@ -883,7 +883,7 @@ Then, we assigned each planet the mean radius according to the instellation bin 
         \includegraphics[width=\linewidth]{figures/optimistic_R-S_binned.pdf}
         \caption{
             Detection of the runaway greenhouse threshold with a binned statistic.
-            Using simulated data from the optimistic survey case ($N = \var{N_optimistic}$, compare Fig.~\ref{fig:optimistic_R-S}), we tested the runaway greenhouse hypothesis. Instead of using a running mean, we computed a binned statistic (arithmetic mean and standard deviation in blue) to assign planets the average radius or bulk density in their neighborhood in instellation space. Random draws from the posterior of the runaway greenhouse hypothesis (Eqn.~\ref{eq:rgh_hypo}) are shown in red.
+            Using simulated data from the optimistic survey case ($N = \var{N_optimistic}$, compare Figure~\ref{fig:optimistic_R-S}), we tested the runaway greenhouse hypothesis. Instead of using a running mean, we computed a binned statistic (arithmetic mean and standard deviation in blue) to assign planets the average radius or bulk density in their neighborhood in instellation space. Random draws from the posterior of the runaway greenhouse hypothesis (Eqn.~\ref{eq:rgh_hypo}) are shown in red.
             As in the nominal case, the pattern is detected with high significance.
         }
         \label{fig:optimistic_R-S_binned}
