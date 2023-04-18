@@ -595,15 +595,14 @@ This can be different for young host stars when their ages cannot be well constr
 
 \subsubsection{False positive scenarios}\label{sec:dis_falsepositive}
 Runaway greenhouse climates are not the only physical mechanism that may cause a change in transit radius for a subset of planets.
-Some of the most prominent alternative scenarios involve atmospheric loss due to either photoevaporation through high-energy radiation by the host star~\citep[e.g.,][]{2012ApJ...753...66I,Owen2013,Jin2014,Mordasini2020a} or due to residual heat from the planet's interior shortly after formation~\citep{Ginzburg2016b,Ginzburg2018,Gupta2019}.
+Alternatives include atmospheric loss due to either photoevaporation through high-energy radiation by the host star~\citep[e.g.,][]{2012ApJ...753...66I,Owen2013,Jin2014,Mordasini2020a} or due to residual heat from the planet's interior shortly after formation~\citep{Ginzburg2016b,Ginzburg2018,Gupta2019}.
 Both processes are being discussed as potentially sculpting the observed bimodality in the radius distribution of small exoplanets~\citep{Fulton2017,VanEylen2018}.
 %    Like the magma ocean effect discussed here, these processes reduce the radii of some planets, leading to a decrease in average measured planet radii in a specific region of the planetary parameter space.
 Either of them leads to a decrease of planet radius for planets close to their host star~\citep{Pascucci2019,Bergsten2022}, which is distinct from the radius inflation introduced by runaway greenhouse climates.
 For example, the innermost planet in the \mbox{K2-3} system has an increased radius compared to its outer siblings, contrary to what would be expected from atmospheric escape~\citep{2022AJ....164..172D}.
 
-Another false positive contribution may come from potential unknown variations in the occurrence rate gradients in radius-instellation space.
-They can impact the statistical inference of the transitions, especially if these variations are similar to the expected pattern.
-Although an abrupt pattern at the expected runaway greenhouse transition seems unlikely, examples of steep occurrence rate density changes exist.
+Other false positive contributions may stem from potential unknown occurrence rate gradients in radius-instellation space, especially if these variations are similar to the expected habitable zone inner edge discontinuity.
+Although an abrupt pattern at the expected location of the transition seems unlikely, examples of steep occurrence rate density changes exist.
 An example is the ``Neptune desert'', a triangular region of low planet occurrence density of close-in planets in period-radius space~\citep{Szabo2011,Mazeh2016,Dreizler2020b}.
 The shape of this region is such that smaller planets become less frequent the closer to the star they are, which to some degree resembles the pattern introduced by the instellation dependency of the runaway greenhouse transition.
 However, the Neptune desert occurs at smaller orbital periods and its location depends on a planet's size~\citep{Szabo2011}, which is not expected for the runaway greenhouse transition.
@@ -763,23 +762,11 @@ Since the magnitude of the radius inflation effect is expected to be larger for 
 we consider our mass-radius relationship a conservative case.
 We performed a sanity check to assess the impact of varying our baseline model (see Appendix~\ref{app:MR_relation}) and found general agreement between different interior compositions.
 
-The models in this study neglect a predicted additional radius increase on the percent level due to a molten interior~\citep{Bower2019} and any potential effects stemming from a deviating gas exchange between atmosphere and interior in super-runaway greenhouse planets due to different redox conditions~\citep{Ikoma2018,2021JGRE..12606711L,2022PSJ.....3...93B,2021SSRv..217...22G}.
-Future self-consistent modeling of interior-atmosphere interactions may fill these gaps~\citep{2022arXiv220310023L,Wordsworth2022}.
+Future self-consistent modeling of interior-atmosphere interactions may include constraints on additional radius increases due to a molten interior~\citep{Bower2019} and any potential effects stemming from a deviating gas exchange between atmosphere and interior in super-runaway greenhouse planets due to different redox conditions~\citep{Ikoma2018,2021JGRE..12606711L,2022PSJ.....3...93B,2021SSRv..217...22G}.
 
-\subsubsection{Atmosphere model}
-%Mention we only consider instellation-induced rgh.\\
-%- we ignore water loss by H$_2$O photolysis in the upper atmosphere and subsequent H escape, which would eventually cool even planets %within the runaway greenhouse regime~\citep{2022arXiv220310023L}.\\
-%- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
-%- assumption of a single albedo. ``if there is a range of albedos, will that wash away the signal?''
-%}
 % >>>>>>>>>>
 % TL: I just wrote a review article about this exact problem (magma ocean atmosphere exchange) with Yamila Miguel, hopefully soon on arXiv. Honestly, I think we keep it short here, otherwise the paper will get way too long and diluted. I referenced the latest reviews on this now, and we can cite Lichtenberg & Miguel 23 as soon as it's on arXiv for a much much longer discussion.
 % >>>>>>>>>>
-As illustrated in Figure~\ref{fig:radiusevolution}, evolutionary processes and a background population of planets unable to sustain a steam atmosphere complicate the classification of a planet into the super- or sub-runaway category.
-For instance, both a Hydrogen/Helium-dominated ``sub-Neptune'' and a terrestrial planet currently hosting a steam atmosphere will appear as a planet in our runaway greenhouse category, diluting the expected demographic signature.
-Further, a planet in a runaway greenhouse state will eventually lose its steam atmosphere and move to the sub-runaway greenhouse category on a timescale of $\SI{e8}{\year}$ for a planet with one Earth ocean of water~\citep[][]{Watson1981}.
-We marginalized over these degeneracies by introducing the dilution factor $f_\mathrm{rgh}$, but in a real survey contextual information about a planet's age or likely formation history could be taken into account.
-Developing more sophisticated models of the coupled interaction between atmosphere and interior for an arbitrary planetary composition remains a long-term goal of the community~\citep{2021SSRv..217...22G,2022arXiv220310023L,Wordsworth2022}.
 
 \subsubsection{Water mass fraction}
 The predominant mass fractions of water, which sensitively controls the atmospheric state of a rocky exoplanet, is poorly constrained.
@@ -790,18 +777,17 @@ Cases of pure rocky composition and very low volatile contents can be considered
 Assuming a distribution of water mass fractions instead of a fixed value would thus not significantly change our results.
 
 \subsubsection{``Sharpness'' of the habitable zone inner edge discontinuity}
-The real counterpart to the idealized step-function in our hypothesis tests could be blurred by several factors.
-Planets that lack an atmosphere or sufficient volatiles cannot bear a steam atmosphere.
-Those with significant Hydrogen/Helium envelopes can disguise as inflated rocky planets and might not contribute to the demographic signal, although a runaway greenhouse radius inflation effect was recently suggested for water-dominated ``sub-Neptunes''~\citep{Pierrehumbert2022}.
+%Several factors may blur the idealized step-function in our hypothesis tests:
+The habitable zone inner edge discontinuity may be affected by several processes that are challenging to quantify:
+Planets that lack an atmosphere or sufficient volatiles cannot bear steam atmospheres, and those that do eventually move to the sub-runaway greenhouse category due to desiccation~\citep[][]{Watson1981} or evolution of their host star~\citep{Luger2015}.
+Hydrogen/Helium-dominated ``sub-Neptunes'' may disguise as inflated rocky planets and not contribute to the demographic signal, although a runaway greenhouse radius inflation effect was suggested for water-dominated ``sub-Neptunes''~\citep{Pierrehumbert2022}.
 A subset of such gas-rich planets will experience atmospheric loss via photoevaporation~\citep{Owen2013} or core-powered mass loss~\citep{Ginzburg2018}, reducing their transit radius.
-A time dependence is introduced through stellar luminosity evolution and because runaway greenhouse planets with limited water reservoirs ultimately desiccate, ending their steam atmosphere phase.
-
 Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, clouds, or surface gravity~\citep{Turbet2021,Pierrehumbert2022}.
 The choice of a statistical estimator for the hypothesis tests may further influence the recovered discontinuity; we compare our nominal running mean approach with a binned statistic in Appendix~\ref{app:binnedstats}.
 
-All of the above mechanisms may affect the habitable zone inner edge discontinuity, and their contributions are challenging to quantify.
-However, while they may offset the signal's amplitude, they preserve its general shape.
-The ``dilution factor'' we introduced embodies our ignorance of the magnitude of this offset.
+While these factors may offset the signal's amplitude, they preserve its general shape.
+The ``dilution factor'' $f_\mathrm{rgh}$ in our model embodies our ignorance of the magnitude of this offset.
+In a real survey, additional contextual information about planets in the sample may be available.
 
 
 \section{Conclusions}\label{sec:conclusions}
