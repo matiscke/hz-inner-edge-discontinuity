@@ -87,7 +87,7 @@ The question naturally emerges if a planetary habitable zone -- in its common fo
 
 Observational tests being considered include searches for evidence of liquid water conveyed by ocean glint~\citep{Robinson2010,Lustig-Yaeger2018} or water vapor in planetary atmospheres~\citep{Suissa2020}.
 A different approach relies on comparative planetology: By aiming for a statistical detection in a planet population, degeneracies and ambiguousities in making statements about the habitability of individual planets may be overcome~\citep{Checlair2019}.
-Tests suggested in the literature include determining, for a range of orbital distances, atmospheric H$_{2}$O and CO$_2$ abundances, planetary albedos ~\citep{Bean2017,Bixel2021}, or colors~\citep{Crow2011}, or testing the relationship between CO$_2$ partial pressure and incident flux~\citep{Lehmer2020}.
+Tests suggested in the literature include determining, for a range of orbital distances, atmospheric H$_{2}$O and CO$_2$ abundances, planetary albedos~\citep{Bean2017,Bixel2021}, or colors~\citep{Crow2011}, or testing the relationship between CO$_2$ partial pressure and incident flux~\citep{Lehmer2020}.
 All these tests require surveying a large enough sample of terrestrial-sized planets with next-generation instruments, rendering them out of reach in the immediate future.
 
 Here, we explore the feasibility of a statistical test of the habitable zone hypothesis by surveying planetary bulk properties close to its inner edge, the runaway greenhouse transition.
@@ -172,7 +172,7 @@ We adopted the planetary occurrence rate model from~\citet{Bergsten2022}, which 
 \begin{equation}
     \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
 \end{equation}
-where $F_0$ represents the average number of planets per star and $C_n$ is a normalization constant. The shape function $g(R,P)$ describing the occurrence distribution is the same as in \citet{Bergsten2022}. The functional form and stellar-mass dependent parameters (including a new fit to the sample of \kepler\ planets with hosts below $0.56\,M_{\odot}$) are included in \bioverse\ as the prominent planet-generation model; the original model based on SAG13 occurrence rates is preserved as a legacy feature.
+where $F_0$ represents the average number of planets per star and $C_n$ is a normalization constant. The shape function $g(R,P)$ describing the occurrence distribution is the same as in \citet{Bergsten2022}. The functional form and stellar-mass dependent parameters (including a new fit to the sample of \kepler\ planets with hosts below $0.56\,M_{\odot}$) are included in \bioverse\ as the prominent planet-generation model; the original model based on the ExoPAG Study Analysis Group~13's occurrence rates~\citep{Kopparapu2018} is preserved as a legacy feature.
 
 With this updated distribution function, planets are generated as in the original \bioverse\ paper, but with an additional stellar mass dependence (for a star of a given mass, the relevant model parameters from the bin containing that mass are used). In summary, stars are assigned a number of planets in accordance with $F_0$, with planet parameters randomly drawn in proportion to the occurrence distribution function evaluated over a grid of radii and orbital periods.
 
@@ -210,7 +210,7 @@ The climate state of a planet has a direct influence on its apparent size measur
 With even a fraction of the Earth's water inventory, a super-runaway planet will be in a global magma ocean state~\citep{2021JGRE..12606711L,Boukrouche2021}.
 We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius and bulk density that planets with instellation-induced runaway greenhouse climates experience, depending on the thermal stratification of the atmosphere and dissolution of water into the underlying magma ocean~\citep{Dorn2021,2023Icar..39015265S}.
 
-The net absorbed stellar fluxes of planets are sensitive on their albedos, which, however, are generally poorly constrained CITE.
+The net absorbed stellar fluxes of planets are sensitive on their albedos, which are generally poorly constrained for planets outside the Solar System~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019b}\todo[inline]{better/more references available?}
 Here, we assume global redistribution of incoming flux and a fixed Bond albedo of $0.3$, comparable to Earth's~\citep{Haar1971}.
 We do not take into account additional heating sources such as tidal effects~\citep[e.g.,][]{Barnes2013}.
 
@@ -224,6 +224,7 @@ This case serves as our null hypothesis.
 
 For \textit{super-runaway} planets, i.e., all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated transit radius due to a steam atmosphere.
 While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{2019Icar..317..583P,Turbet2021,Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Kopparapu2013,Leconte2013,Hamano2015,2017JGRE..122.1458S,2019ApJ...875...31K,Boukrouche2021,2021JGRE..12606711L}.
+
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our sub-runaway planets~\citep{Zeng2016}.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
@@ -619,13 +620,13 @@ If the dichotomy forms primordially through migrated planets that accreted from 
 We currently see four potential lines of discriminating atmospheric signatures associated with super-runaway climates in the exoplanet population.
 (i) Detecting the atmospheric windows of water vapor in the near- to mid-infrared.
 In a super-runaway state the atmosphere is dominated by the opacity of water vapor, which has two prominent spectral features: one at 3.5--4.5 $\mu$m, and one between 8--20 $\mu$m~\citep[e.g.,][]{Boukrouche2021}.
-This would require an instrument with capabilities in this wavelength regime, for instance ELT~METIS, JWST~MIRI, or future missions such as \life\ ~\citep{2019A&A...621A.125B,2022A&A...664A..21Q,2022A&A...664A..22D}. CITE METIS, MIRI!
+This would require an instrument with capabilities in this wavelength regime, for instance ELT~METIS~\citep{Brandl2021}, JWST~MIRI~\citep{Rieke2015}, or future missions such as \life\ ~\citep{2019A&A...621A.125B,2022A&A...664A..21Q,2022A&A...664A..22D}.
 Potentially the two-band filter capabilities of PLATO may offer insight into particularly pronounced spectral features in this super-runaway regime~\citep{2020SSRv..216...98G}.
 (ii) Post-runaway planets may be detectable by O$_{3}$ absorption due to build-up of abiotic oxygen, left-over from photochemical dissociation, and hydrogen loss~\citep{2014ApJ...785L..20W,Luger2015}.
 (iii) Water loss in runaway greenhouse planets episodes would change the atmosphere's D/H isotopic ratio, akin to the enhancement in Venus' present-day atmosphere~\citep{2019JGRE..124.2015K,2021JGRE..12606643K}.
 This may be detectable in high-resolution observations focusing on isotope-sensitive transitions~\citep{2019AJ....158...26L,2019A&A...622A.139M}.
 (iv) Disequilibrium chemistry in tidally-locked super-runaway planets.
-It has been suggested that the atmospheric depth and the presence or absence of oceans on sub-Neptunes could be probed via the abundance of species that are photochemically destroyed in the upper atmosphere, and replenished from either thermochemical layers~\citep{2021ApJ...914...38Y,2021ApJ...922L..27T} or at an ocean-atmosphere interface~\citep{2019ApJ...887..231L,2021ApJ...921L...8H}.
+It has been suggested that the atmospheric depth and the presence or absence of oceans on ``sub-Neptunes'' could be probed via the abundance of species that are photochemically destroyed in the upper atmosphere, and replenished from either thermochemical layers~\citep{2021ApJ...914...38Y,2021ApJ...922L..27T} or at an ocean-atmosphere interface~\citep{2019ApJ...887..231L,2021ApJ...921L...8H}.
 Atmospheric nitrogen and carbon compounds show strong sensitivity in their partitioning coefficients into magma~\citep{2022E&PSL.59817847G,2022PSJ.....3...93B}.
 Therefore, it may be possible to discern the presence of an underlying magma ocean if the presence of an atmosphere on a rocky exoplanet can be confirmed.
 This has been suggested to be done via (v) eclipse photometry~\citep{2019ApJ...886..141M,2019ApJ...886..140K} through the presence of a high albedo, which is expected to differ from the crystallized rock of a solidified magma ocean~\citep{2020ApJ...898..160E,Fortin2022}.
@@ -678,7 +679,7 @@ Similar science objectives are pursued by the Large Interferometer For Exoplanet
 Direct imaging surveys do not directly measure planetary radii and are primarily useful for providing context through atmospheric measurements of individual planets.
 However, because mid-infrared retrievals do not suffer from the degeneracy between cloud albedo and changes in surface area, the planet radius can be retrieved in mid-infrared wavelengths~\citep{2018ExA....46..543D,2021ExA...tmp..118Q}.
 Mid-infrared direct imaging techniques, in particular, enable to study much deeper atmospheric layers than possible in reflected light~\citep{Wordsworth2022}.
-Hence, the atmospheric structure can be retrieved for a wider variety of thermal and atmospheric scenarios (Konrad+, Alei+). CITE!
+Hence, the atmospheric structure can be retrieved for a wider variety of thermal and atmospheric scenarios.\todo[inline]{ (Konrad+, Alei+). CITE}
 Finally, since the peak thermal emission in super-runaway climates will substantially decrease the star-to-planet flux ratio, mid-infrared wavelengths offer the possibility to probe the diversity of super-runaway climates in systems across different ages~\citep{2014ApJ...784...27L,2019A&A...621A.125B}.
 With a sample size of a few tens of planets crossing the runaway greenhouse transition, direct imaging missions will thus enable key insights into the compositional inventory of atmospheric volatiles and climate states~\citep{2021exbi.book....5H,2022arXiv220505696C}, adding important details to a potential runaway greenhouse detection purely via transit radii.
 
@@ -780,7 +781,7 @@ Assuming a distribution of water mass fractions instead of a fixed value would t
 %Several factors may blur the idealized step-function in our hypothesis tests:
 The habitable zone inner edge discontinuity may be affected by several processes that are challenging to quantify:
 Planets that lack an atmosphere or sufficient volatiles cannot bear steam atmospheres, and those that do eventually move to the sub-runaway greenhouse category due to desiccation~\citep[][]{Watson1981} or evolution of their host star~\citep{Luger2015}.
-Hydrogen/Helium-dominated ``sub-Neptunes'' may disguise as inflated rocky planets and not contribute to the demographic signal, although a runaway greenhouse radius inflation effect was suggested for water-dominated ``sub-Neptunes''~\citep{Pierrehumbert2022}.
+Hydrogen/Helium-dominated planets may disguise as inflated rocky planets and not contribute to the demographic signal, although a runaway greenhouse radius inflation effect was suggested for water-dominated sub-Neptunes~\citep{Pierrehumbert2022}.
 A subset of such gas-rich planets will experience atmospheric loss via photoevaporation~\citep{Owen2013} or core-powered mass loss~\citep{Ginzburg2018}, reducing their transit radius.
 Intrinsic variation in the threshold instellation is caused by differences in planetary features influencing the onset of a runaway climate such as albedo, atmospheric composition, clouds, or surface gravity~\citep{Turbet2021,Pierrehumbert2022}.
 The choice of a statistical estimator for the hypothesis tests may further influence the recovered discontinuity; we compare our nominal running mean approach with a binned statistic in Appendix~\ref{app:binnedstats}.
@@ -813,7 +814,7 @@ As we have demonstrated, it appears realistic that an empirical confirmation of 
 This will be a key contribution to the search for extraterrestrial life in the Universe.
 
 %\begin{acknowledgments}
-%The authors thank Gabriele Cugno, Yann Fabel, Paul Molliere, Gijs Mulders, Matthew Murphy, and Terry-Ann Suer for insightful discussions.
+%The authors thank Gabriele Cugno, Yann Fabel, Megan Mansfield, Paul Molliere, Gijs Mulders, Matthew Murphy, and Terry-Ann Suer for insightful discussions.
 %We are grateful to Martin Turbet for providing the mass-radius relationship data for planets harboring steam atmospheres.
 %This work has made use of data from the European Space Agency (ESA) mission {\it Gaia} (\url{https://www.cosmos.esa.int/gaia}), processed by the {\it Gaia} Data Processing and Analysis Consortium (DPAC, \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the {\it Gaia} Multilateral Agreement.
 %\end{acknowledgments}
