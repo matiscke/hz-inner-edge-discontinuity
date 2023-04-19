@@ -168,13 +168,14 @@ Figure~\ref{fig:luminosity_tracks} shows the corresponding luminosity evolution 
 
 \subsection{Synthetic planet sample}\label{sec:syn_planets}
 Next, we assigned to the stellar sample planetary systems with frequencies, orbital parameters, and bulk properties derived from the \kepler\ mission.
-We adopted the planetary occurrence rate model from~\citet{Bergsten2022}, which defines the occurrence of small planets in radius and orbital period. Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form:
+We adopted the model from~\citet{Bergsten2022}, which defines the occurrence rate of small planets in radius and orbital period.
+Following \citet{Youdin2011a}, their inferred occurrence rate density can be expressed in the form
 \begin{equation}
-    \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P),
+    \frac{\mathrm{d}^2n}{\mathrm{d}R \, \partial P} = F_0 C_n g(R, P, M_\star),
 \end{equation}
-where $F_0$ represents the average number of planets per star and $C_n$ is a normalization constant. The shape function $g(R,P)$ describing the occurrence distribution is the same as in \citet{Bergsten2022}. The functional form and stellar-mass dependent parameters (including a new fit to the sample of \kepler\ planets with hosts below $0.56\,M_{\odot}$) are included in \bioverse\ as the prominent planet-generation model; the original model based on the ExoPAG Study Analysis Group~13's occurrence rates~\citep{Kopparapu2018} is preserved as a legacy feature.
+where $F_0$ represents the average number of planets per star, $C_n$ is a normalization constant, and the shape function $g(R, P, M_\star)$ describes the distribution of planets in radius, orbital period, and stellar host mass.
+\bioverse\ generates planets based on the above occurrence rate density and assigns them to the previously generated stars.
 
-With this updated distribution function, planets are generated as in the original \bioverse\ paper, but with an additional stellar mass dependence (for a star of a given mass, the relevant model parameters from the bin containing that mass are used). In summary, stars are assigned a number of planets in accordance with $F_0$, with planet parameters randomly drawn in proportion to the occurrence distribution function evaluated over a grid of radii and orbital periods.
 
 \subsection{Orbit parameters and planet masses}\label{sec:met-orbits_masses}
 Eccentric orbits alter the probability of a planet to transit~\citep[e.g.,][]{Barnes2007a}.
