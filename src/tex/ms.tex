@@ -60,7 +60,7 @@ Studies of the geophysical state of hot exoplanets can thus inform our understan
 
 
 An example from the Solar System for the potential significance of these early stages are the divergent atmospheric evolutions of Venus and Earth~\citep{2019JGRE..124.2015K,2021JGRE..12606643K}.
-While having accreted from a similar mass reservoir~\citep{2020plas.book..287R,2020SSRv..216...55K,2020SSRv..216...27M,2020plas.book....3Z} and despite their similar bulk properties~\citep{Smrekar2018}, they evolved into planets with very different surface conditions~\citep{1982Sci...216..630D,Kasting1988,Hamano2013,Kane2014,2020JGRE..12506276W,Turbet2021}.
+While having accreted from a similar mass reservoir~\citep{2020plas.book..287R,2020SSRv..216...55K,2020SSRv..216...27M,2020plas.book....3Z} and despite their similar bulk properties~\citep{Smrekar2018}, they evolved into planets with very different surface conditions~\citep{1982Sci...216..630D,Kasting1988,Hamano2013,Kane2014,Way2020,Turbet2021}.
 Both planets underwent a giant impact phase~\citep{2020plas.book..287R,2020NatGe..13..265G,Liu2022} that melted their mantles~\citep{2012AREPS..40..113E,2018RSPTA.37680109S,2022arXiv220310023L}.
 Magma ocean states play a substantial role in establishing the geophysical and climatic regimes of rocky planets~\citep{2020ChEG...80l5594F} because atmospheric volatiles are highly soluble in magmatic liquids~\citep{2021ApJ...909L..22K,Dorn2021}.
 Due to these similar formation sequences, it was commonly assumed that the divergence of Venus and Earth -- in particular Venus's water loss -- occurred late in their evolution~\citep{Way2020}.
@@ -72,7 +72,7 @@ Venus' atmospheric composition is consistent with the planet having gone through
 
 The runaway greenhouse transition is a robust prediction from climate models~\citep{Forget2014,Boukrouche2021,2022A&A...658A..40C}, and its impact on planetary bulk properties has been shown to be in the detectable range of current astronomical instrumentation~\citep{Goldblatt2015}.
 In particular, planets in a super-runaway climate state are expected to be thermally inflated~\citep{Turbet2019,Turbet2020,Mousis2020}, which directly increases their transit radii by an amount that is sensitive on the water content.
-However, dissolution of water~\citep[e.g.,][]{Elkins-Tanton2008,Hier-Majumder2017,Salvador2023} in the magma may decrease this effect~\citep{Dorn2021}, and variations in interior chemical exchange between core and mantle material may influence the outgassed volatiles that are visible in the atmosphere via transmission spectroscopy~\citep{2021ApJ...914L...4L,2022PSJ.....3..127S}.
+However, dissolution of water~\citep[e.g.,][]{Elkins-Tanton2008,Hier-Majumder2017,Salvador2023} in the magma may decrease this effect~\citep{Dorn2021}, and variations in interior chemical exchange between core and mantle material may influence the outgassed volatiles that are visible in the atmosphere via transmission spectroscopy~\citep{2021ApJ...914L...4L,Schlichting2022}.
 Astronomical observations of planets that are currently in the super-runaway phase may thus constrain properties of their planetary mantles and establish an observational connection between exoplanetary interior and atmospheres~\citep{2022arXiv220310023L,Wordsworth2022}.
 
 Of particular relevance is that the radiation-induced transition between a runaway greenhouse state and a temperate climate is thought to occur at a relatively sharp threshold instellation~\citep{2010ppc..book.....P,2013ApJ...765..131K}.
@@ -132,7 +132,7 @@ An overview of our key assumptions and model parameters can be found in Table~\r
 The original \bioverse\ stellar catalog was generated randomly from the \citet{Chabrier2003} stellar mass function. Exquisite parallax and photometric data from the \textit{Gaia} mission made it possible to generate a homogeneous and complete stellar catalog out to about 100~pc, which became the new standard stellar catalog for \bioverse ~(Hardegree-Ullman et al., submitted). Here, we briefly describe how stellar parameters $T_{\mathrm{eff}}$, $L_{\star}$, $R_{\star}$, and $M_{\star}$ were derived.
 
 Hardegree-Ullman et al. (submitted) used the Gaia Catalogue of Nearby Stars~\citep[hereafter GCNS,][]{Smart2021} as the basis for deriving stellar parameters for the \bioverse\ catalog.
-The GCNS identified stars out to 120~pc, and includes \textit{Gaia} DR3 parallaxes and photometry in $G$, $G_{BP}$, and $G_{RP}$ bands~\citep{GaiaCollaboration2021} and $K_S$ band photometry from 2MASS~\citep{Cutri2003}, all of which were used in stellar classification.
+The GCNS identified stars out to 120~pc, and includes \textit{Gaia} DR3 parallaxes and photometry in $G$, $G_{BP}$, and $G_{RP}$ bands~\citep{GaiaCollaboration2022} and $K_S$ band photometry from 2MASS~\citep{Cutri2003}, all of which were used in stellar classification.
 From this information, colors and absolute magnitudes were computed, and initial color-magnitude cuts were made to remove non-main sequence stars.
 Effective temperatures were computed primarily from color-temperature relations derived using the main sequence stellar parameters table from \citet{Pecaut2013}.
 Next, luminosities were computed from absolute $G$-band magnitudes and a derived bolometric correction.
@@ -208,10 +208,9 @@ The climate state of a planet has a direct influence on its apparent size measur
 With even a fraction of the Earth's water inventory, a super-runaway planet will be in a global magma ocean state~\citep{2021JGRE..12606711L,Boukrouche2021}.
 We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius and bulk density that planets with instellation-induced runaway greenhouse climates experience, depending on the thermal stratification of the atmosphere and dissolution of water into the underlying magma ocean~\citep{Dorn2021,Salvador2023}.
 
-The net absorbed stellar fluxes of planets are sensitive on their albedos, which are generally poorly constrained for planets outside the Solar System~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019b}. \todo[inline]{better/more references available?}
+The net absorbed stellar fluxes of planets are sensitive on their albedos, which are generally poorly constrained for planets outside the Solar System~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019b}.
 Here, we assume global redistribution of incoming flux and a fixed Bond albedo of $0.3$, comparable to Earth's~\citep{Haar1971}.
 We do not take into account additional heating sources such as tidal effects~\citep[e.g.,][]{Barnes2013}.
-
 
 While we search for the runaway greenhouse pattern in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's radius based on its individual set of properties and the associated predictions from steam atmosphere and water incorporation models.
 Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
@@ -617,7 +616,7 @@ If the dichotomy forms primordially through migrated planets that accreted from 
 We currently see four potential lines of discriminating atmospheric signatures associated with super-runaway climates in the exoplanet population.
 (i) Detecting the atmospheric windows of water vapor in the near- to mid-infrared.
 In a super-runaway state the atmosphere is dominated by the opacity of water vapor, which has two prominent spectral features: one at 3.5--4.5 $\mu$m, and one between 8--20 $\mu$m~\citep[e.g.,][]{Boukrouche2021}.
-This would require an instrument with capabilities in this wavelength regime, for instance ELT~METIS~\citep{Brandl2021}, JWST~MIRI~\citep{Rieke2015}, or future missions such as \life\ ~\citep{2019A&A...621A.125B,2022A&A...664A..21Q,2022A&A...664A..22D}.
+This would require an instrument with capabilities in this wavelength regime, for instance ELT~METIS~\citep{Brandl2021}, JWST~MIRI~\citep{Rieke2015}, or future missions such as \life\ ~\citep{2019A&A...621A.125B,Quanz2022,2022A&A...664A..22D}.
 Potentially the two-band filter capabilities of PLATO may offer insight into particularly pronounced spectral features in this super-runaway regime~\citep{2020SSRv..216...98G}.
 (ii) Post-runaway planets may be detectable by O$_{3}$ absorption due to build-up of abiotic oxygen, left-over from photochemical dissociation, and hydrogen loss~\citep{2014ApJ...785L..20W,Luger2015}.
 (iii) Water loss in runaway greenhouse planets episodes would change the atmosphere's D/H isotopic ratio, akin to the enhancement in Venus' present-day atmosphere~\citep{2019JGRE..124.2015K,2021JGRE..12606643K}.
@@ -626,7 +625,7 @@ This may be detectable in high-resolution observations focusing on isotope-sensi
 It has been suggested that the atmospheric depth and the presence or absence of oceans on ``sub-Neptunes'' could be probed via the abundance of species that are photochemically destroyed in the upper atmosphere, and replenished from either thermochemical layers~\citep{2021ApJ...914...38Y,2021ApJ...922L..27T} or at an ocean-atmosphere interface~\citep{2019ApJ...887..231L,2021ApJ...921L...8H}.
 Atmospheric nitrogen and carbon compounds show strong sensitivity in their partitioning coefficients into magma~\citep{2022E&PSL.59817847G,2022PSJ.....3...93B}.
 Therefore, it may be possible to discern the presence of an underlying magma ocean if the presence of an atmosphere on a rocky exoplanet can be confirmed.
-This has been suggested to be done via (v) eclipse photometry~\citep{2019ApJ...886..141M,2019ApJ...886..140K} through the presence of a high albedo, which is expected to differ from the crystallized rock of a solidified magma ocean~\citep{2020ApJ...898..160E,Fortin2022}.
+This has been suggested to be done via (v) eclipse photometry~\citep{Mansfield2019,2019ApJ...886..140K} through the presence of a high albedo, which is expected to differ from the crystallized rock of a solidified magma ocean~\citep{2020ApJ...898..160E,Fortin2022}.
 
 \subsubsection{Detection in multi-planet systems}
 As suggested by \citet{Turbet2019}, an alternative approach for detecting the runaway greenhouse-induced radius inflation is to search for its ``local'' imprints in multi-planet systems.
@@ -650,7 +649,7 @@ What other planned missions are suited to probe the habitable zone inner edge di
 \kepler\ and \ktwo\ have contributed a large number of discovered terrestrial-sized planets, but few of them are in the habitable zone and their host stars are typically too faint for RV follow-up with current instrumentation~\citep{Dressing2015}.
 
 Similarly, the Transiting Exoplanet Survey Satellite~\citep[\tess,][]{Ricker2014a} planet sample lacks temperate, small planets around bright host stars~\citep{Ment2023}, as was expected from planet yield calculations~\citep{Barclay2018}.
-As of 2023 March 22, the NASA Exoplanet Archive\footnote{\url{https://exoplanetarchive.ipac.caltech.edu}} lists 40 \tess\ candidate or confirmed planets smaller than \SI{4}{\rEarth} with lower estimated instellation than Earth's.
+As of March 22, 2023, the NASA Exoplanet Archive\footnote{\url{https://exoplanetarchive.ipac.caltech.edu}} lists 40 \tess\ candidate or confirmed planets smaller than \SI{4}{\rEarth} with lower estimated instellation than Earth's.
 
 The ongoing \cheops\ mission was designed as a follow-up mission to search for transits of planets discovered with other techniques, in particular with radial velocity measurements~\citep{Benz2021}.
 As such, it will provide precise radius constraints on a sample of small planets; however, only a small number of planets with periods \SI{> 50}{\day} are being observed.
@@ -672,11 +671,11 @@ Its expected \SI{1}{\ppm} photometric precision~\citep{Apai2022} would enable pr
 If realized, \nautilus\ will be a valuable instrument for characterizing the runaway greenhouse transition.
 
 Other missions have been proposed that focus on characterizing exoplanet habitability, most notably the \hwo\ concept, which will build on the two precursor direct imaging concepts LUVOIR~\citep{LUVOIR2019} and HabEx~\citep{Gaudi2020c}.
-Similar science objectives are pursued by the Large Interferometer For Exoplanets~\citep[\life,][]{Quanz2021}, a mission concept utilizing a space-based mid-infrared nulling interferometer.
+Similar science objectives are pursued by the Large Interferometer For Exoplanets~\citep[\life,][]{Quanz2022}, a mission concept utilizing a space-based mid-infrared nulling interferometer.
 Direct imaging surveys do not directly measure planetary radii and are primarily useful for providing context through atmospheric measurements of individual planets.
 However, because mid-infrared retrievals do not suffer from the degeneracy between cloud albedo and changes in surface area, the planet radius can be retrieved in mid-infrared wavelengths~\citep{2018ExA....46..543D,2021ExA...tmp..118Q}.
 Mid-infrared direct imaging techniques, in particular, enable to study much deeper atmospheric layers than possible in reflected light~\citep{Wordsworth2022}.
-Hence, the atmospheric structure can be retrieved for a wider variety of thermal and atmospheric scenarios.\todo[inline]{TIM: what papers by Konrad+, Alei+ did you want to cite here?}
+Hence, the atmospheric structure can be retrieved for a wider variety of thermal and atmospheric scenarios~\citep{Alei2022,Konrad2022}.
 Finally, since the peak thermal emission in super-runaway climates will substantially decrease the star-to-planet flux ratio, mid-infrared wavelengths offer the possibility to probe the diversity of super-runaway climates in systems across different ages~\citep{2014ApJ...784...27L,2019A&A...621A.125B}.
 With a sample size of a few tens of planets crossing the runaway greenhouse transition, direct imaging missions will thus enable key insights into the compositional inventory of atmospheric volatiles and climate states~\citep{2021exbi.book....5H,2022arXiv220505696C}, adding important details to a potential runaway greenhouse detection purely via transit radii.
 
@@ -694,7 +693,7 @@ This way, useful results can be obtained under more pessimistic conditions, e.g.
 For a mission design similar to PLATO, a density-based hypothesis test on about a third of the overall sample is equivalent to a pure radius-based analysis.
 At a fixed sample size, key parameters of the runaway greenhouse models can be more narrowly constrained when additional mass measurements are available.
 
-Precise ground-based radial velocity measurements will be needed to provide these data, and a number of instruments are already successfully employed in characterizing terrestrial-sized exoplanets~\citep[e.g.,][]{Queloz2001a,Pepe2010,Johnson2010b,Ribas2023}.
+Precise ground-based radial velocity measurements will be needed to provide these data, and a number of instruments are already successfully employed in characterizing terrestrial-sized exoplanets~\citep[e.g.,][]{Queloz2001a,Pepe2010,Johnson2010b,Ribas2023} and confronting these results with planet formation theory~\citep[e.g.,][]{Miguel2020a,Burn2021,Zawadzki2021a,Schlecker2022}.
 A new generation of instruments on extremely large telescopes such as \gclef\ on the \gmt ~\citep{Szentgyorgyi2016}, \andes\ on the \elt ~\citep{Marcantonio2022}, or \modhis\ on the \tmt ~\citep{Mawet2019} will open up the discovery space even further.
 
 Recently, NASA and the National Science Foundation (NSF) commissioned an ``Extreme Precision Radial Velocity Initiative''~\citep{Crass2021} to develop methods and facilities for precise mass measurements of temperate terrestrial planets.
@@ -755,9 +754,7 @@ If any currently unknown sharp features in the distribution of terrestrial plane
 \subsubsection{Baseline mass-radius relationship}
 Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors~\citep{Zeng2016} might not be representative of the rocky planet population.
 However, while interior composition may introduce an offset to the radius habitable zone inner edge discontinuity, we do not expect a change of its structure.
-Since the magnitude of the radius inflation effect is expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure~\citep{Zeng2016,2021JGRE..12606724B},
-\todo[inline]{Tim: add Noack+ paper}
-we consider our mass-radius relationship a conservative case.
+Since the magnitude of the radius inflation effect is expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure~\citep{Zeng2016,Noack2020,2021JGRE..12606724B}, we consider our mass-radius relationship a conservative case.
 We performed a sanity check to assess the impact of varying our baseline model (see Appendix~\ref{app:MR_relation}) and found general agreement between different interior compositions.
 
 Future self-consistent modeling of interior-atmosphere interactions may include constraints on additional radius increases due to a molten interior~\citep{Bower2019} and any potential effects stemming from a deviating gas exchange between atmosphere and interior in super-runaway greenhouse planets due to different redox conditions~\citep{Ikoma2018,2021JGRE..12606711L,2022PSJ.....3...93B,2021SSRv..217...22G}.
