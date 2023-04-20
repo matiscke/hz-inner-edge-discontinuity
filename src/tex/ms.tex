@@ -19,14 +19,14 @@
 
 % Abstract
 \begin{abstract}
-Long-term magma ocean phases on rocky exoplanets orbiting within the runaway greenhouse regime -- the inner edge of the classical habitable zone -- may offer insights into the physical and chemical processes that distinguish potentially habitable worlds from others.
+Long-term magma ocean phases on rocky exoplanets orbiting inside of the runaway greenhouse transition -- the inner edge of the classical habitable zone -- may offer insights into the physical and chemical processes that distinguish potentially habitable worlds from others.
 Thermal stratification of super-runaway planets is expected to significantly inflate their transit radii, potentially providing observational access to the runaway greenhouse transition in the form of a ``habitable zone inner edge discontinuity'' in radius/density space.
 Here, we assess the ability of ground- and space-based telescopes to test this hypothesis using \bioverse, a simulation framework that leverages contextual information from the overall planet population.
 
-We find that the demographic imprint from super-runaway climates is likely detectable with high-precision transit photometry for planet samples of size $\gtrsim$~100 if at least \SI{\sim 10}{\percent} of planets inside of the habitable zone inner edge harbor super-runaway climates.
+We find that the demographic imprint of the runaway greenhouse transition is likely detectable with high-precision transit photometry for planet samples of size $\gtrsim$~100 if at least \SI{\sim 10}{\percent} of planets inside of the habitable zone inner edge harbor super-runaway climates.
 Our survey simulations suggest that in the near future, ESA's \plato\ mission will be the most promising survey to probe the habitable zone inner edge discontinuity.
-We identify the key mission design drivers that enable a statistically sound detection and discuss survey strategies that optimize the statistical power of combined datasets.
-Observational constraints on the runaway climate transition will provide crucial insights into the distribution of atmospheric volatiles among low-mass exoplanets and inform us about which stars harbor the nearest potentially habitable worlds.
+We determine survey strategies that optimize the statistical power of the obtained data, and we identify as key mission design drivers: 1. A follow-up campaign of planetary mass measurements and 2. The fraction of low-mass stars in the target sample.
+Observational constraints on the runaway climate transition will provide crucial insights into the distribution of atmospheric volatiles among rocky exoplanets and inform us about which stars harbor the nearest potentially habitable worlds.
 \end{abstract}
 
 % Main body
@@ -111,7 +111,7 @@ Finally, we summarize our findings in Section~\ref{sec:conclusions}.
 The goal of this study is to determine -- for different configurations of near-future exoplanet surveys -- the confidence level with which the runaway greenhouse threshold can be detected statistically. %in simulated exoplanet observations.
 Our basic methodology was as follows:
 We expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021}\footnote{\bioverse\ is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic samples of stars that host planets according to the observed exoplanet demographics.
-We then adapted planetary bulk properties as predicted from models of runaway greenhouse atmospheres, simulated observations of the planets, and computed Bayesian evidences in favor of the runaway greenhouse hypothesis (see diagram in Figure~\ref{fig:flowchart}).\todo[inline]{make sure rgh hypothesis is mentioned before, or rephrase}
+We then adapted planetary bulk properties as predicted from models of runaway greenhouse atmospheres, simulated observations of the planets, and computed Bayesian evidences in favor of a habitable zone inner edge discontinuity (see diagram in Figure~\ref{fig:flowchart}).
 \begin{figure*}
     \begin{centering}
         \includegraphics[width=\hsize]{figures/flowchart.pdf}
@@ -122,7 +122,7 @@ We then adapted planetary bulk properties as predicted from models of runaway gr
         \label{fig:flowchart}
     \end{centering}
 \end{figure*}
-In this section, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, as well as the orbital parameters of the planets.
+In this section, we review the source of the stellar sample, the modeled luminosity evolution, the generation of a synthetic planet sample, and the orbital parameters of the planets.
 An overview of our key assumptions and model parameters can be found in Table~\ref{tab:params_table}.
 
 \subsection{Stellar sample from Gaia DR3}
@@ -206,9 +206,9 @@ Excluding all non-transiting planets diminishes the sample to \var{percentage_tr
 %}
 The climate state of a planet has a direct influence on its apparent size measured by transit photometry~\citep{Turbet2019,Turbet2020,Mousis2020,2021ApJ...914...84A}.
 With even a fraction of the Earth's water inventory, a super-runaway planet will be in a global magma ocean state~\citep{2021JGRE..12606711L,Boukrouche2021}.
-We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius and bulk density that planets with instellation-induced runaway greenhouse climates experience, depending on the thermal stratification of the atmosphere and dissolution of water into the underlying magma ocean~\citep{Dorn2021,2023Icar..39015265S}.
+We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius and bulk density that planets with instellation-induced runaway greenhouse climates experience, depending on the thermal stratification of the atmosphere and dissolution of water into the underlying magma ocean~\citep{Dorn2021,Salvador2023}.
 
-The net absorbed stellar fluxes of planets are sensitive on their albedos, which are generally poorly constrained for planets outside the Solar System~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019b}\todo[inline]{better/more references available?}
+The net absorbed stellar fluxes of planets are sensitive on their albedos, which are generally poorly constrained for planets outside the Solar System~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019b}. \todo[inline]{better/more references available?}
 Here, we assume global redistribution of incoming flux and a fixed Bond albedo of $0.3$, comparable to Earth's~\citep{Haar1971}.
 We do not take into account additional heating sources such as tidal effects~\citep[e.g.,][]{Barnes2013}.
 
@@ -226,7 +226,6 @@ While the actual instellation threshold for a runaway climate depends on planeta
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our sub-runaway planets~\citep{Zeng2016}.
 For each planet above the instellation threshold, we assigned the predicted radius for the given water mass fraction and planet mass.
-This scenario does not take into account the expected additional radius increase due to the density deficit of molten interiors~\citep{Bower2019}. 
 
 Nominally, the above models assume a \textit{dry melt} without dissolved volatiles.
 Here, however, we consider a \textit{wet melt} magma ocean and take into account a radius decrease from water partitioning in the melt, which is expected in the situation of a magma ocean below a steam atmosphere~\citep{Dorn2021}.
