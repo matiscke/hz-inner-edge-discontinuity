@@ -1,4 +1,5 @@
-# Extrasolar magma oceans 
+# The Habitable Zone Inner Edge Discontinuity
+A _Bioverse_ paper on the imprints of runaway greenhouse climates on exoplanet demographics. 
 
 [//]: # (<p align="left">)
 
@@ -10,6 +11,9 @@
 <a href="https://github.com/matiscke/magmaocean/actions/workflows/build.yml">
 <img src="https://github.com/matiscke/magmaocean/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/>
 </a>
+<a href="mailto:schlecker@arizona.edu">
+      <img src="https://img.shields.io/badge/contact-authors-blueviolet.svg?style=flat" alt="Email the authors"/>
+</a>
 <a href="https://github.com/matiscke/magmaocean/raw/main-pdf/arxiv.tar.gz">
 <img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/>
 </a>
@@ -18,11 +22,12 @@
 </a>
 
 ## Scope
-It was suggested that global magma oceans change the radii of some exoplanets. 
-Using the [Bioverse](https://github.com/abixel/bioverse) framework, we investigate the detectability of such a feature in the exoplanet population, and explore how an exoplanet survey should be designed in order to test the magma ocean hypothesis.
+This repository contains the code necessary to create the results and figures in Schlecker+2023. In this study, we assess the ability of near-future exoplanet missions to detect a demographic imprint of the runaway greenhouse transition – the inner edge of the classical habitable zone.
+Using the [Bioverse](https://github.com/abixel/bioverse) framework, we show that this imprint, the _Habitable Zone Inner Edge Discontinuity_, is likely detectable with a transit survey like PLATO. 
+We also determine survey strategies and design trades that maximize the diagnostic power to test runaway greenhouse climate models.
 
 ## Reproducibility
-This repository contains all code needed to reproduce the paper and its figures. It is autocompiled using the [showyourwork](https://github.com/rodluger/showyourwork) workflow.
+All code needed to reproduce the paper can be found in this repo. The manuscript is autocompiled using the [showyourwork](https://github.com/rodluger/showyourwork) workflow.
 Click [**here**](https://github.com/matiscke/magmaocean/raw/main-pdf/ms.pdf) to read the latest draft of our paper.
 
 ## Related Literature
