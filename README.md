@@ -10,6 +10,9 @@
 <a href="https://github.com/matiscke/magmaocean/actions/workflows/build.yml">
 <img src="https://github.com/matiscke/magmaocean/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/>
 </a>
+<a href="mailto:schlecker@arizona.edu">
+      <img src="https://img.shields.io/badge/contact-authors-blueviolet.svg?style=flat" alt="Email the authors"/>
+</a>
 <a href="https://github.com/matiscke/magmaocean/raw/main-pdf/arxiv.tar.gz">
 <img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/>
 </a>
