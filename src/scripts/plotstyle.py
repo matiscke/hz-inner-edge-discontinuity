@@ -17,7 +17,7 @@ def styleplots():
 
     font = {'family': 'sans',
             'weight': 'normal',
-            'size': 13}  # 9 pt corresponds to caption size of 1-col A&A
+            'size': 14}
     legend = {'handlelength': 0.75,
               'handletextpad': 0.5}
     figure = {'dpi': 100,
