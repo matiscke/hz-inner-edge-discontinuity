@@ -1,14 +1,5 @@
 version: 0.3.0
-dependencies:
-  src/scripts/plot_luminosity_tracks.py:
-    - src/data/Lum_m0.1.txt
-    - src/data/Lum_m0.2.txt
-    - src/data/Lum_m0.4.txt
-    - src/data/Lum_m0.6.txt
-    - src/data/Lum_m0.8.txt
-    - src/data/Lum_m1.0.txt
-    - src/data/Lum_m1.2.txt
-    - src/data/Lum_m1.4.txt
+verbose: true
 datasets:
   10.5281/zenodo.7080391:
     contents:
@@ -20,3 +11,25 @@ datasets:
       Lum_m1.0.txt: src/data/Lum_m1.0.txt
       Lum_m1.2.txt: src/data/Lum_m1.2.txt
       Lum_m1.4.txt: src/data/Lum_m1.4.txt
+
+dependencies:
+  src/scripts/plot_luminosity_tracks.py:
+    - src/data/Lum_m0.1.txt
+    - src/data/Lum_m0.2.txt
+    - src/data/Lum_m0.4.txt
+    - src/data/Lum_m0.6.txt
+    - src/data/Lum_m0.8.txt
+    - src/data/Lum_m1.0.txt
+    - src/data/Lum_m1.2.txt
+    - src/data/Lum_m1.4.txt
+
+  src/scripts/radiusevolution.py:
+    - src/scripts/hzied_pipeline.py
+#    - src/data/sample.pkl
+
+  src/scripts/model_pop_comparison.py:
+    - src/scripts/hzied_pipeline.py
+#    - src/data/sample.pkl
+
+
+
