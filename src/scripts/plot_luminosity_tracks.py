@@ -1,15 +1,14 @@
-import matplotlib as plt
 import pandas as pd
 import matplotlib.pyplot as plt
 import glob
 from natsort import natsorted
 from scipy import interpolate
-import numpy as np
 import seaborn as sns
 import cmocean
 
 import paths
 import plotstyle
+plotstyle.styleplots()
 
 # sns.set(style="ticks")
 
