@@ -16,5 +16,5 @@ dependencies:
 
 # install Bioverse version 1.1.0:
   - pip:
-#    - git+https://github.com/danielapai/bioverse@v1.1.0
-    - -e /Users/schlecker/repos/bioverse
+    - git+https://github.com/danielapai/bioverse@v1.1.0
+#    - -e /Users/schlecker/repos/bioverse
