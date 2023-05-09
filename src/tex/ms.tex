@@ -21,7 +21,7 @@
 \begin{abstract}
 Long-term magma ocean phases on rocky exoplanets orbiting closer to their star than the runaway greenhouse threshold -- the inner edge of the classical habitable zone -- may offer insights into the physical and chemical processes that distinguish potentially habitable worlds from others.
 Thermal stratification of runaway planets is expected to significantly inflate their atmospheres, potentially providing observational access to the runaway greenhouse transition in the form of a ``habitable zone inner edge discontinuity'' in radius--density space.
-Here, we assess the ability of ground- and space-based telescopes to test this hypothesis using \bioverse, a simulation framework that leverages the combination of contextual information from the overall planet population with a survey simulator and a hypothesis testing framework.
+Here, we use \bioverse, a statistical framework combining contextual information from the overall planet population with a survey simulator, to assess the ability of ground- and space-based telescopes to test this hypothesis.
 
 We find that the demographic imprint of the runaway greenhouse transition is likely detectable with high-precision transit photometry for sample sizes $\gtrsim$~100~planets if at least \SI{\sim 10}{\percent} of those orbiting closer than the habitable zone inner edge harbor runaway climates.
 %We find that the demographic imprint of the runaway greenhouse transition is likely detectable with high-precision transit photometry for planet samples of size $\gtrsim$~100 if at least \SI{\sim 10}{\percent} of planets inside of the habitable zone inner edge harbor runaway climates.
@@ -116,8 +116,6 @@ An overview of our key assumptions and model parameters can be found in Table~\r
 
 \subsection{Stellar sample from Gaia DR3}
 %Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
-%\todo[inline]{KEVIN: describe stellar population}
-\todo[inline]{KEVIN: update reference to my paper once accepted}
 The original \bioverse\ stellar catalog was generated randomly from the \citet{Chabrier2003} stellar mass function. Exquisite parallax and photometric data from the \textit{Gaia} mission made it possible to generate a homogeneous and complete stellar catalog out to about 100~pc, which became the new standard stellar catalog for \bioverse ~\citep{Hardegree-Ullman2023}.
 Here, we briefly describe how stellar parameters $T_{\mathrm{eff}}$, $L_{\star}$, $R_{\star}$, and $M_{\star}$ were derived.
 
