@@ -114,18 +114,19 @@ An overview of our key assumptions and model parameters can be found in Table~\r
 % include table with key parameters
 \input{table_parameters}
 
-\subsection{Stellar sample from Gaia DR3}
+\subsection{Stellar sample from \gaia\ DR3}
 %Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
-The original \bioverse\ stellar catalog was generated randomly from the \citet{Chabrier2003} stellar mass function. Exquisite parallax and photometric data from the \textit{Gaia} mission made it possible to generate a homogeneous and complete stellar catalog out to about 100~pc, which became the new standard stellar catalog for \bioverse ~\citep{Hardegree-Ullman2023}.
-Here, we briefly describe how stellar parameters $T_{\mathrm{eff}}$, $L_{\star}$, $R_{\star}$, and $M_{\star}$ were derived.
+The original \bioverse\ stellar catalog was generated randomly from the \citet{Chabrier2003} stellar mass function.
+Improved parallax and photometric data from the \gaia\ mission made it possible to generate a homogeneous and complete stellar catalog out to about 100~pc, which became the new standard stellar catalog for \bioverse ~\citep{Hardegree-Ullman2023}.
+Here, we briefly describe how we derived the stellar effective temperature $T_{\mathrm{eff}}$, luminosity $L_{\star}$, stellar radius $R_{\star}$, and stellar mass $M_{\star}$.
 
-\citet{Hardegree-Ullman2023} used the Gaia Catalogue of Nearby Stars~\citep[hereafter GCNS,][]{Smart2021} as the basis for deriving stellar parameters for the \bioverse\ catalog.
-The GCNS identified stars out to 120~pc, and includes \textit{Gaia} DR3 parallaxes and photometry in $G$, $G_{BP}$, and $G_{RP}$ bands~\citep{GaiaCollaboration2022} and $K_S$ band photometry from 2MASS~\citep{Cutri2003}, all of which were used in stellar classification.
-From this information, colors and absolute magnitudes were computed, and initial color-magnitude cuts were made to remove non-main sequence stars.
-Effective temperatures were computed primarily from color-temperature relations derived using the main sequence stellar parameters table from \citet{Pecaut2013}.
-Next, luminosities were computed from absolute $G$-band magnitudes and a derived bolometric correction.
-Stellar radii were then computed with the effective temperatures and luminosities using the Stefan-Boltzmann law, or using absolute $K_S$-band magnitudes and an empirical radius-luminosity relation from \citet{Mann2015} for targets within the absolute magnitude range of M dwarfs.
-Finally, masses were derived from the mass-luminosity relation of \citet{Torres2010} for stars with $M_{\star}\gtrsim 0.7\,M_{\odot}$, and from that of \citet{Mann2019} for targets within the absolute magnitude range of M dwarfs.
+\citet{Hardegree-Ullman2023} used the \gaia\ Catalogue of Nearby Stars~\citep[hereafter GCNS,][]{Smart2021} as the basis for deriving stellar parameters for the \bioverse\ catalog.
+The GCNS identified stars out to 120~pc and includes \gaia\ DR3 parallaxes and photometry in $G$, $G_{BP}$, and $G_{RP}$ bands~\citep{GaiaCollaboration2022} and $K_S$ band photometry from 2MASS~\citep{Cutri2003}, all of which were used in stellar classification.
+From this information, we computed colors and absolute magnitudes and applied initial color-magnitude cuts to remove non-main sequence stars.
+We derived effective temperatures primarily from color-temperature relations derived using the main sequence stellar parameters table from \citet{Pecaut2013}.
+Luminosities were computed from absolute $G$-band magnitudes and a derived bolometric correction.
+We computed stellar radii with the effective temperatures and luminosities using the Stefan-Boltzmann law or using absolute $K_S$-band magnitudes and an empirical radius-luminosity relation from \citet{Mann2015} for targets within the absolute magnitude range of M~dwarfs.
+Finally, we derived masses from the mass-luminosity relation of \citet{Torres2010} for stars with $M_{\star}\gtrsim 0.7\,M_{\odot}$, and from that of \citet{Mann2019} for targets within the absolute magnitude range of M dwarfs.
 The derived stellar parameters from \citet{Hardegree-Ullman2023} were compared to measured stellar parameters for all known exoplanet hosts from the literature and were found to be consistent within 1\%, 3\%, and 5.5\% for $T_{\mathrm{eff}}$, $R_{\star}$, and $M_{\star}$, respectively, which are all below the typical measurement uncertainties of 3.3\%, 6.8\%, and 7.9\%, respectively.
 From this catalog, \bioverse\ samples stars within an isotropic distance from the solar system as required by the planetary sample size.
 
@@ -795,8 +796,10 @@ The authors thank Gabriele Cugno, Yann Fabel, Brad Foley, Megan Mansfield, Paul 
 We are grateful to Martin Turbet for providing the mass-radius relationship data for planets harboring steam atmospheres.
 This material is based upon work supported by the National Aeronautics and Space Administration under Agreement No. 80NSSC21K0593 for the program ``Alien Earths''.
 The results reported herein benefitted from collaborations and/or information exchange within NASA’s Nexus for Exoplanet System Science (NExSS) research coordination network sponsored by NASA’s Science Mission Directorate.
-This work has made use of data from the European Space Agency (ESA) mission {\it Gaia} (\url{https://www.cosmos.esa.int/gaia}), processed by the {\it Gaia} Data Processing and Analysis Consortium (DPAC, \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the {\it Gaia} Multilateral Agreement.
+This work has made use of data from the European Space Agency (ESA) mission \gaia\ (\url{https://www.cosmos.esa.int/gaia}), processed by the \gaia\ Data Processing and Analysis Consortium (DPAC, \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the \gaia\ Multilateral Agreement.
 T.L. was supported by a grant from the Branco Weiss Foundation.
+G.B. acknowledges support from the NASA Astrophysics Data Analysis Program under Grant No.~80NSSC20K0446.
+A.S. acknowledges support from NASA's Habitable Worlds Program (No.~80NSSC20K0226).
 \end{acknowledgments}
 
 \section*{Author contributions}
