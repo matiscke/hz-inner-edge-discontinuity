@@ -194,7 +194,7 @@ Excluding all non-transiting planets diminishes the sample to \var{percentage_tr
 %- we ignore tidal heating, which could extend the magma ocean phase of close-in planets (and change their orbits via tidal orbital evolution)( Jackson et al., 2008; Barnes et al., 2013 (?)).\\
 %}
 The climate state of a planet has a direct influence on its apparent size measured by transit photometry~\citep{Turbet2019,Turbet2020,Mousis2020,2021ApJ...914...84A}.
-With even a fraction of the Earth's water inventory, a super-runaway planet will be in a global magma ocean state~\citep{Lichtenberg2021c,Boukrouche2021}.
+With even a fraction of the Earth's water inventory, a runaway planet will be in a global magma ocean state~\citep{Lichtenberg2021c,Boukrouche2021}.
 We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius and bulk density that planets with instellation-induced runaway greenhouse climates experience, depending on the thermal stratification of the atmosphere and dissolution of water into the underlying magma ocean~\citep{Dorn2021,Salvador2023}.
 
 The net absorbed stellar fluxes of planets are sensitive on their albedos, which are generally poorly constrained for planets outside the solar system~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019}.
@@ -208,7 +208,7 @@ We consider the following cases (see Figure~\ref{fig:radiusevolution}):
 \textit{Sub-runaway} planets retain the radius assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
 This case serves as our null hypothesis.
 
-For \textit{super-runaway} planets, i.e., all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated transit radius due to a steam atmosphere.
+For \textit{runaway} planets, i.e., all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated transit radius due to a steam atmosphere.
 While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{2019Icar..317..583P,Turbet2021,Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Kopparapu2013,Leconte2013,Hamano2015,2017JGRE..122.1458S,2019ApJ...875...31K,Boukrouche2021,2021JGRE..12606711L}.
 
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
@@ -600,15 +600,15 @@ If the dichotomy forms primordially through migrated planets that accreted from 
 %discuss potential atmospheric signatures of magma oceans. e.g.: H/O ratios of sub-Neptunes could be low (because H is in the melt) (e.g. Tim's recent talk). Or: high O2 abundance during H loss (Wordsworth \& Pierrehumbert 2013b; Luger \& Barnes 2015, Schaefer et al. 2016)}
 %\todo[inline]{also: use atmospheric characterization to identify small planet cores with thick H/He envelopes that contribute to diluting the signal (aka background population). These will be amenable for transmission spec due to large scale heights (Moran2018, \citet{Turbet2019}).\\ Spectral water features  $<<$ rgh-induced radius change~\citep[][end of Sect. 4]{Turbet2019}.}
 
-We currently see four potential lines of discriminating atmospheric signatures associated with super-runaway climates in the exoplanet population.
+We currently see four potential lines of discriminating atmospheric signatures associated with runaway climates in the exoplanet population.
 (i) Detecting the atmospheric windows of water vapor in the near- to mid-infrared.
-In a super-runaway state the atmosphere is dominated by the opacity of water vapor, which has two prominent spectral features: one at 3.5--4.5 $\mu$m, and one between 8--20 $\mu$m~\citep[e.g.,][]{Boukrouche2021}.
+In a runaway state the atmosphere is dominated by the opacity of water vapor, which has two prominent spectral features: one at 3.5--4.5 $\mu$m, and one between 8--20 $\mu$m~\citep[e.g.,][]{Boukrouche2021}.
 This would require an instrument with capabilities in this wavelength regime, for instance ELT~METIS~\citep{Brandl2021}, JWST~MIRI~\citep{Rieke2015}, or future missions such as \life\ ~\citep{2019A&A...621A.125B,Quanz2022,2022A&A...664A..22D}.
-Potentially the two-band filter capabilities of PLATO may offer insight into particularly pronounced spectral features in this super-runaway regime~\citep{2020SSRv..216...98G}.
+Potentially the two-band filter capabilities of PLATO may offer insight into particularly pronounced spectral features in this runaway regime~\citep{2020SSRv..216...98G}.
 (ii) Post-runaway planets may be detectable by O$_{3}$ absorption due to build-up of abiotic oxygen, left-over from photochemical dissociation, and hydrogen loss~\citep{2014ApJ...785L..20W,Luger2015}.
 (iii) Water loss in runaway greenhouse planets episodes would change the atmosphere's D/H isotopic ratio, akin to the enhancement in Venus' present-day atmosphere~\citep{2019JGRE..124.2015K,2021JGRE..12606643K}.
 This may be detectable in high-resolution observations focusing on isotope-sensitive transitions~\citep{2019AJ....158...26L,2019A&A...622A.139M}.
-(iv) Disequilibrium chemistry in tidally-locked super-runaway planets.
+(iv) Disequilibrium chemistry in tidally-locked runaway planets.
 It has been suggested that the atmospheric depth and the presence or absence of oceans on ``sub-Neptunes'' could be probed via the abundance of species that are photochemically destroyed in the upper atmosphere, and replenished from either thermochemical layers~\citep{2021ApJ...914...38Y,2021ApJ...922L..27T} or at an ocean-atmosphere interface~\citep{2019ApJ...887..231L,2021ApJ...921L...8H}.
 Atmospheric nitrogen and carbon compounds show strong sensitivity in their partitioning coefficients into magma~\citep{2022E&PSL.59817847G,2022PSJ.....3...93B}.
 Therefore, it may be possible to discern the presence of an underlying magma ocean if the presence of an atmosphere on a rocky exoplanet can be confirmed.
@@ -663,7 +663,7 @@ Direct imaging surveys do not directly measure planetary radii and are primarily
 However, because mid-infrared retrievals feature reduced degeneracy between cloud albedo and changes in surface area, the planet radius can be constrained in mid-infrared wavelengths~\citep{2018ExA....46..543D,2021ExA...tmp..118Q}.
 Mid-infrared direct imaging techniques, in particular, enable to study much deeper atmospheric layers than possible in reflected light~\citep{Wordsworth2022}.
 Hence, the atmospheric structure can be retrieved for a wider variety of thermal and atmospheric scenarios~\citep{Alei2022,Konrad2022}.
-Since the peak thermal emission in super-runaway climates will substantially decrease the star-to-planet flux ratio, mid-infrared wavelengths offer the possibility to probe the diversity of super-runaway climates in systems across different ages~\citep{2014ApJ...784...27L,2019A&A...621A.125B}.
+Since the peak thermal emission in runaway climates will substantially decrease the star-to-planet flux ratio, mid-infrared wavelengths offer the possibility to probe the diversity of runaway climates in systems across different ages~\citep{2014ApJ...784...27L,2019A&A...621A.125B}.
 Finally, mid-infrared surveys such as \life\ show a preference for M~star planets~\citep{Quanz2022}, which is beneficial for detecting the predicted habitable zone inner edge discontinuity (see Sect.~\ref{sec:results_FGK_M}).
 With a sample size of a few tens of planets crossing the runaway greenhouse transition, direct imaging missions will thus enable key insights into the compositional inventory of atmospheric volatiles and climate states~\citep{2021exbi.book....5H,2022arXiv220505696C}, adding important details to a potential runaway greenhouse detection purely via transit radii.
 
@@ -745,7 +745,7 @@ However, while interior composition may introduce an offset to the radius habita
 Since the magnitude of the radius inflation effect is expected to be larger for an Earth-like interior composition with an iron core-silicate mantle structure~\citep{Zeng2016,Noack2020,2021JGRE..12606724B}, we consider our mass-radius relationship a conservative case.
 We performed a sanity check to assess the impact of varying our baseline model (see Appendix~\ref{app:MR_relation}) and found general agreement between different interior compositions.
 
-Future self-consistent modeling of interior-atmosphere interactions may include constraints on additional radius increases due to a molten interior~\citep{Bower2019} and any potential effects stemming from a deviating gas exchange between atmosphere and interior in super-runaway greenhouse planets due to different redox conditions~\citep{Ikoma2018,Lichtenberg2021c,2022PSJ.....3...93B,2021SSRv..217...22G}.
+Future self-consistent modeling of interior-atmosphere interactions may include constraints on additional radius increases due to a molten interior~\citep{Bower2019} and any potential effects stemming from a deviating gas exchange between atmosphere and interior in runaway greenhouse planets due to different redox conditions~\citep{Ikoma2018,Lichtenberg2021c,2022PSJ.....3...93B,2021SSRv..217...22G}.
 
 \subsubsection{Water mass fraction}
 The predominant mass fractions of water, which sensitively controls the atmospheric state of a rocky exoplanet, is poorly constrained.
