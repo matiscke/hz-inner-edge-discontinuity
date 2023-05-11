@@ -1,4 +1,4 @@
-N_optimistic,497
+N_optimistic,500
 percentage_transiting,\SI{1.5}{\percent}
 platoMinfrgh,0.1
 platoMinfrghHundred,0.2
@@ -11,5 +11,5 @@ N_FGK,40
 N_M,228
 N_FGK_err,6
 N_M_err,14
-N_plato,288
+N_plato,300
 wrr,0.005
