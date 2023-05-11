@@ -41,8 +41,6 @@ Observational constraints on the runaway greenhouse transition will provide cruc
 
 % Main body
 \section{Introduction}
-%\todo[inline]{papers: \citep[][introduce runaway GH]{} \citep[][statistical detection of GH transition]{Turbet2019}, \citep[][(initial) water content of terrestrial planets]{Lichtenberg2019} \citep[][water loss, O2 buildup around M dwarfs]{Luger2015}, \citep[][Solubility of H in magma oceans]{Hirschmann2012,SchlichtingShahar_inreview,} \citet{Hamano2013,Hamano2015,Barth2021}.}
-
 Despite recent advancements in observational techniques, our understanding of terrestrial-sized planets remains woefully limited, with fundamental aspects of their nature, composition, and potential habitability still largely unknown.
 Due to the inherent biases of current exoplanet detection techniques, the best-studied category of rocky exoplanets at present is that of hot or warm, close-in planets~\citep{2019AREPS..47..141J,2021JGRE..12606639B}.
 These experience thermal states that are in some aspects comparable to the ones of the inner solar system bodies at early stages of their evolution~\citep{Ikoma2018,2021ChEG...81l5735C}, which likely profoundly affected the distribution of volatiles between planetary core, mantle, and atmosphere.
@@ -100,9 +98,6 @@ Finally, we summarize our findings in Section~\ref{sec:conclusions}.
 
 
 \section{Baseline Model}\label{sec:met_baseline}
-%The purpose of this paper is to demonstrate the feasibility of measuring the demographic feature introduced above with near-future exoplanet missions.
-%Central to our procedure is to explore the detectability of population-level trends with future exoplanet surveys, and here the trend in question is the proposed radius discontinuity.
-%To enable a quantitative assessment of this detectability, we injected the signal into a simulated planet sample before observing it with simulated surveys.
 The goal of this study is to determine -- for different configurations of near-future exoplanet surveys -- the confidence level with which the runaway greenhouse threshold can be detected statistically. %in simulated exoplanet observations.
 Our basic methodology was as follows:
 We expanded the \bioverse\ framework~\citep{Bixel2020,Bixel2021}\footnote{\bioverse\ is actively maintained and documented open source software written in Python. Its latest version and documentation can be found at \url{https://github.com/danielapai/bioverse}.} to generate synthetic samples of stars that host planets according to the observed exoplanet demographics.
@@ -124,7 +119,6 @@ An overview of our key assumptions and model parameters can be found in Table~\r
 \input{table_parameters}
 
 \subsection{Stellar sample from \gaia\ DR3}
-%Different sample sizes are realized by varying the maximum distance of stars to the solar system $d_\mathrm{max}$.
 The original \bioverse\ stellar catalog was generated randomly from the \citet{Chabrier2003} stellar mass function.
 Improved parallax and photometric data from the \gaia\ mission made it possible to generate a homogeneous and complete stellar catalog out to about 100~pc, which became the new standard stellar catalog for \bioverse ~\citep{Hardegree-Ullman2023}.
 Here, we briefly describe how we derived the stellar effective temperature $T_{\mathrm{eff}}$, luminosity $L_{\star}$, stellar radius $R_{\star}$, and stellar mass $M_{\star}$.
@@ -176,7 +170,6 @@ where $F_0$ represents the average number of planets per star, $C_n$ is a normal
 Eccentric orbits alter the probability of a planet to transit~\citep[e.g.,][]{Barnes2007a}.
 The distribution of eccentricities $e$ of exoplanets has been found to resemble a Beta function~\citep{Kipping2013b}, which we chose to draw synthetic eccentricities from.
 Following~\citet{Kipping2013b}, we used a Beta distribution with parameters $a=0.867$ and $b=3.03$, and truncated the distribution at $e = 0.8$.
-%Another parameter with an even higher impact on transit probabilities is the orbital inclination toward the observer $i$.
 Assuming isotropic alignments of orbits, we assigned each planet an inclination drawn from a distribution uniform in $\cos(i)$.
 
 To assign masses to our planets, we use the semi-empirical mass-radius relationship assuming a pure $\mathrm{MgSiO_3}$ composition from \citet{Zeng2016} (see green line in Figure~\ref{fig:radiusevolution}).
@@ -254,7 +247,6 @@ The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runawa
 In the following, we test if and under what conditions this parametrization causes a demographic trend that is large enough to be detected with high significance.
 
 
-
 \section{Exoplanet Survey Simulations and Hypothesis Testing}\label{sec:met_surveys-hypotests}
 The survey module of \bioverse\ converts the synthetic planet sample into a set of uncertainty-laden measurements on a subset of that sample.
 This task includes selection of the targets, application of detection biases, and conducting simulated measurements, all of which are specific to the particular survey.
@@ -283,7 +275,6 @@ We further consider only rocky planets with masses below \SI{2}{\Mearth}. % (Tur
 
 \subsection{Measurements and their uncertainties}
 Under real-world conditions, the planetary properties in question can only be probed with a finite precision that is specific to each exoplanet mission.
-%\subsubsection{\plato\}
 \plato's definition study report~\citep{plato2017} states precision requirements for planet radii~(\SI{3}{\percent}), planet masses through radial velocity~(RV) follow-up~(\SI{10}{\percent}), and stellar masses, radii, and ages~(\SI{10}{\percent}).
 We adopted these estimates and assumed a \SI{10}{\percent} error on instellation measurements.
 
@@ -518,7 +509,6 @@ The reason is that these planets contribute most to the statistical power of the
 
 
 \section{Discussion}\label{sec:discussion}
-%\todo[inline]{\textbf{Potential additional discussion points: }\\
 %(How close is Earth to runaway? (-> \citet{Goldblatt2012,Popp2016}; what is the max. expected change in Earth's albedo due to deglaciation?)}
 
 \subsection{Statistical imprint of exoplanet climates}
@@ -734,7 +724,6 @@ Together with atmospheric measurements (see Sect.~\ref{sec:dis_atmospheres}), we
 
 
 \subsection{Impact of assumptions on our findings}
-%\todo[inline]{Caveats\\
 %- not yet explored: how sensitive are we on the assumed planet population? $\exists$ danger of false positive detection on occurrence rate ``ridges'' like the Neptune desert? Currently we have a relatively smooth occurrence rate density in $R_P - S$ space based on the power-law fits in \citet{Bergsten2022}. We could, with relatively moderate effort, run a sanity check on an alternative sample (e.g., the more structured Bern model populations, or the population in the Genesis database)}
 The prospects for probing the runaway greenhouse transition depends on astro- and geophysical factors, as well as on the specific instrumentation and survey strategy of a particular mission.
 %We can only approximate all this here, and we therefore seek to assess the sensitivity of our results on the assumptions we have made.
@@ -746,7 +735,6 @@ The baseline occurrence rate density in radius-period space that governs the gen
 This is not the case in the model from \citet{Bergsten2022} that we adopted: Its occurrence rate density varies smoothly in the domain relevant for the runaway greenhouse hypothesis; transitions only occur at smaller instellations ($< \SI{50}{\watt\per\meter\squared}$) and larger radii ($> 1.6\,R_\oplus$).
 We thus do not expect the model underlying our planet sample to affect the investigation of the habitable zone inner edge discontinuity.
 If any currently unknown sharp features in the distribution of terrestrial planets emerge, they should be considered in future studies.
-%However, it should be kept in mind that any unknown sharp features in the true distribution of terrestrial planets could complicate a detection or lead to a false positive result (see Sect.~\ref{sec:dis_falsepositive}).
 
 \subsubsection{Baseline mass-radius relationship}
 Our baseline mass-radius relationship assuming pure $\mathrm{MgSiO_3}$ interiors~\citep{Zeng2016} might not be representative of the rocky planet population.
