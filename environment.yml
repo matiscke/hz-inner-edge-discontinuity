@@ -14,7 +14,11 @@ dependencies:
   - astropy
 #  - pickle=4.0
 
-# install Bioverse version 1.1.0:
+#  Bioverse requires a few packages:
+  - dynesty=1.1
+  - emcee=3.1.1
+
+# install Bioverse:
   - pip:
-    - git+https://github.com/danielapai/bioverse@v1.1.0
+    - git+https://github.com/danielapai/bioverse@v1.1.1
 #    - -e /Users/schlecker/repos/bioverse
