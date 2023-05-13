@@ -25,10 +25,11 @@ dependencies:
 
   src/scripts/radiusevolution.py:
     - src/scripts/hzied_pipeline.py
-#    - src/data/sample.pkl
+    - src/data/sample.pkl
+    - src/data/planets_args.pkl
 
-  src/scripts/model_pop_comparison.py:
-    - src/scripts/hzied_pipeline.py
+#  src/scripts/model_pop_comparison.py:
+#    - src/scripts/hzied_pipeline.py
 #    - src/data/sample.pkl
 
 

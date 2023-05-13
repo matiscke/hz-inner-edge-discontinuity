@@ -7,3 +7,15 @@ rule static_figures:
         "src/tex/figures/*.pdf"
     shell:
         "cp {input} {output}"
+
+# run the pipeline
+rule pipeline:
+    conda:
+        "environment.yml"
+#     cache:
+#         True
+    output:
+        "src/data/planets_args.pkl",
+        "src/data/sample.pkl"
+    script:
+        "src/scripts/hzied_pipeline.py"
