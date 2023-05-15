@@ -6,7 +6,7 @@ A _Bioverse_ paper on the imprints of runaway greenhouse climates on exoplanet d
 [//]: # (<img width = "300" src="src/figures/logo.jpg" alt="logo"/>)
 
 [//]: # (</p>)
-<br>
+
 <br>
 <a href="https://github.com/matiscke/magmaocean/actions/workflows/build.yml">
 <img src="https://github.com/matiscke/magmaocean/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/>
