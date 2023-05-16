@@ -34,5 +34,8 @@ dependencies:
     - src/data/stars_args.pkl
     - src/data/planets_args.pkl
 
-
+  src/scripts/HnullHmo.py:
+    - src/scripts/hzied_pipeline.py
+    - src/data/sample.pkl
+    - src/data/planets_args.pkl
 
