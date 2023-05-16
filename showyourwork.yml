@@ -46,3 +46,9 @@ dependencies:
     - src/data/results_opt.pkl
     - src/data/params.pkl
     - src/data/log.pkl
+
+  src/scripts/optimistic_R-S.py:
+    - src/scripts/hzied_pipeline.py
+    - src/data/planets_args.pkl
+    - src/data/results_opt.pkl
+    - src/data/data.pkl
