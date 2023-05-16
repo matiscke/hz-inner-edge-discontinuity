@@ -87,11 +87,11 @@ def plot_survey(data, results, planets_args, parameter_of_interest='R', show_rol
 
 
 
-with open(paths.data / 'data.pkl', 'rb') as f:
+with open(paths.data / 'pipeline/data.pkl', 'rb') as f:
     data = pickle.load(f)
-with open(paths.data / 'results_opt.pkl', 'rb') as f:
+with open(paths.data / 'pipeline/results_opt.pkl', 'rb') as f:
     results_opt = pickle.load(f)
-with open(paths.data / 'planets_args.pkl', 'rb') as f:
+with open(paths.data / 'pipeline/planets_args.pkl', 'rb') as f:
     planets_args = pickle.load(f)
 
 

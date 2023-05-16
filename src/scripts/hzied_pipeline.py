@@ -3,17 +3,16 @@ This file contains the code to generate the datasets for the paper.
 It heavily relies on Bioverse and its auxiliary functions.
 """
 
+import os
 import scipy
 import paths
 from utils import *
 import pickle
-import corner
 import numpy as np
 import pandas as pd
 import seaborn as sns
 
 from scipy.interpolate import interp1d
-from scipy.signal import savgol_filter
 
 # Import the Generator class
 from bioverse.generator import Generator
@@ -245,27 +244,30 @@ def hypothesis_tests(parameter_of_interest='R'):
 
 stars_args, planets_args = get_generator_args()
 
-with open(paths.data / 'planets_args.pkl', 'wb') as file:
+# Make sure pipeline directory exists
+filename = paths.data / 'pipeline/planets_args.pkl'
+os.makedirs(os.path.dirname(filename), exist_ok=True)
+with open(paths.data / 'pipeline/planets_args.pkl', 'wb') as file:
     pickle.dump(planets_args, file)
-with open(paths.data / 'stars_args.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/stars_args.pkl', 'wb') as file:
     pickle.dump(stars_args, file)
 
 sample = generate_sample()
-with open(paths.data / 'sample.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/sample.pkl', 'wb') as file:
     pickle.dump(sample, file)
 
 detected_opt, data = survey_simulation()
-with open(paths.data / 'data.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/data.pkl', 'wb') as file:
     pickle.dump(data, file)
 
 params, features, log, results_opt, h_magmaocean = hypothesis_tests()
-with open(paths.data / 'params.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/params.pkl', 'wb') as file:
     pickle.dump(params, file)
-with open(paths.data / 'features.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/features.pkl', 'wb') as file:
     pickle.dump(features, file)
-with open(paths.data / 'log.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/log.pkl', 'wb') as file:
     pickle.dump(log, file)
-with open(paths.data / 'results_opt.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/results_opt.pkl', 'wb') as file:
     pickle.dump(results_opt, file)
-with open(paths.data / 'h_magmaocean.pkl', 'wb') as file:
+with open(paths.data / 'pipeline/h_magmaocean.pkl', 'wb') as file:
     pickle.dump(h_magmaocean, file)
