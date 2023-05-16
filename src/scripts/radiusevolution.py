@@ -116,9 +116,9 @@ def plot_planet_evo(N_time=9, v_offset=0.004, interpolate=False, **kwargs):
 
     return fig, ax
 
-with open(paths.data / 'planets_args.pkl', 'rb') as f:
+with open(paths.data / 'pipeline/planets_args.pkl', 'rb') as f:
     planets_args = pickle.load(f)
-with open(paths.data / 'sample.pkl', 'rb') as f:
+with open(paths.data / 'pipeline/sample.pkl', 'rb') as f:
     sample = pickle.load(f)
 
 fig, ax = plot_radiuscomparison(sample, planets_args)

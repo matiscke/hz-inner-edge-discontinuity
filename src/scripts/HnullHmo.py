@@ -229,9 +229,9 @@ def main(sample, planets_args, parameter_of_interest, f_dR=None):
     fig.savefig(paths.figures / "HnullHmo.pdf")
     return fig, (ax, ax2)
 
-with open(paths.data / 'planets_args.pkl', 'rb') as f:
+with open(paths.data / 'pipeline/planets_args.pkl', 'rb') as f:
     planets_args = pickle.load(f)
-with open(paths.data / 'sample.pkl', 'rb') as f:
+with open(paths.data / 'pipeline/sample.pkl', 'rb') as f:
     sample = pickle.load(f)
 
 main(sample, planets_args, parameter_of_interest='R', f_dR=None)
