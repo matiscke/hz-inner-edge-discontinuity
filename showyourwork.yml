@@ -41,3 +41,6 @@ dependencies:
 
   src/scripts/optimistic_R-S.py:
     - src/data/pipeline
+
+  src/scripts/optimistic_statpwr_H2O-f.py:
+    - src/data/pipeline
