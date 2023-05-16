@@ -1,5 +1,9 @@
 version: 0.3.0
 verbose: true
+stamp:
+  enabled: false
+dag:
+  render: true
 datasets:
   10.5281/zenodo.7080391:
     contents:
@@ -24,31 +28,16 @@ dependencies:
     - src/data/Lum_m1.4.txt
 
   src/scripts/radiusevolution.py:
-    - src/scripts/hzied_pipeline.py
-    - src/data/sample.pkl
-    - src/data/planets_args.pkl
+    - src/data/pipeline
 
   src/scripts/model_pop_comparison.py:
-    - src/scripts/hzied_pipeline.py
-    - src/data/sample.pkl
-    - src/data/stars_args.pkl
-    - src/data/planets_args.pkl
+    - src/data/pipeline
 
   src/scripts/HnullHmo.py:
-    - src/scripts/hzied_pipeline.py
-    - src/data/sample.pkl
-    - src/data/planets_args.pkl
+    - src/data/pipeline
 
   src/scripts/corner.py:
-    - src/scripts/hzied_pipeline.py
-    - src/data/sample.pkl
-    - src/data/planets_args.pkl
-    - src/data/results_opt.pkl
-    - src/data/params.pkl
-    - src/data/log.pkl
+    - src/data/pipeline
 
   src/scripts/optimistic_R-S.py:
-    - src/scripts/hzied_pipeline.py
-    - src/data/planets_args.pkl
-    - src/data/results_opt.pkl
-    - src/data/data.pkl
+    - src/data/pipeline

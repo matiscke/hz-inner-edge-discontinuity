@@ -43,9 +43,9 @@ def prepare_data():
 
     # Read radius differences as measured in synthetic population
     # avg_deltaR_deltaRho = get_avg_deltaR_deltaRho()
-    with open(paths.data / 'stars_args.pkl', 'rb') as f:
+    with open(paths.data / 'pipeline/stars_args.pkl', 'rb') as f:
         stars_args = pickle.load(f)
-    with open(paths.data / 'planets_args.pkl', 'rb') as f:
+    with open(paths.data / 'pipeline/planets_args.pkl', 'rb') as f:
         planets_args = pickle.load(f)
 
     try:
