@@ -226,7 +226,7 @@ def hypothesis_tests(parameter_of_interest='R'):
     features = ('a_eff',)
     labels = (parameter_of_interest + '_mean',)
     log = (False, True, False, False)
-    nburn = 100
+
 
     # define PRIORS for the parameters in theta uniform for 'S_thresh', log-uniform for 'wrr', uniform for 'f_rgh', 'R_avg')
     bounds_R = np.array([[10., 1000.0], [1e-5, 0.1], [0.0, 1.0], [.1, 15.]])
