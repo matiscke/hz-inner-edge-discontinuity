@@ -109,6 +109,8 @@ stars_args, planets_args = get_generator_args()
 
 with open(paths.data / 'planets_args.pkl', 'wb') as file:
     pickle.dump(planets_args, file)
+with open(paths.data / 'stars_args.pkl', 'wb') as file:
+    pickle.dump(stars_args, file)
 
 sample = generate_sample()
 with open(paths.data / 'sample.pkl', 'wb') as file:

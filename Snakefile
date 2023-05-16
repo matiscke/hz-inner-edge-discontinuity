@@ -12,9 +12,10 @@ rule static_figures:
 rule pipeline:
     conda:
         "environment.yml"
-#     cache:
+#     cache
 #         True
     output:
+        "src/data/stars_args.pkl",
         "src/data/planets_args.pkl",
         "src/data/sample.pkl"
     script:
