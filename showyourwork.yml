@@ -39,3 +39,10 @@ dependencies:
     - src/data/sample.pkl
     - src/data/planets_args.pkl
 
+  src/scripts/corner.py:
+    - src/scripts/hzied_pipeline.py
+    - src/data/sample.pkl
+    - src/data/planets_args.pkl
+    - src/data/results_opt.pkl
+    - src/data/params.pkl
+    - src/data/log.pkl
