@@ -242,6 +242,8 @@ def hypothesis_tests(parameter_of_interest='R'):
     return params, features, log, results_opt, h_magmaocean
 
 
+
+
 stars_args, planets_args = get_generator_args()
 
 # Make sure pipeline directory exists
@@ -252,17 +254,20 @@ with open(paths.data / 'pipeline/planets_args.pkl', 'wb') as file:
 with open(paths.data / 'pipeline/stars_args.pkl', 'wb') as file:
     pickle.dump(stars_args, file)
 
+
 sample, g_transit = generate_sample()
 with open(paths.data / 'pipeline/sample.pkl', 'wb') as file:
     pickle.dump(sample, file)
 with open(paths.data / 'pipeline/g_transit.pkl', 'wb') as file:
     pickle.dump(g_transit, file)
 
+
 detected_opt, data, survey = survey_simulation()
 with open(paths.data / 'pipeline/data.pkl', 'wb') as file:
     pickle.dump(data, file)
 with open(paths.data / 'pipeline/survey.pkl', 'wb') as file:
     pickle.dump(survey, file)
+
 
 params, features, log, results_opt, h_magmaocean = hypothesis_tests()
 with open(paths.data / 'pipeline/params.pkl', 'wb') as file:
@@ -275,3 +280,5 @@ with open(paths.data / 'pipeline/results_opt.pkl', 'wb') as file:
     pickle.dump(results_opt, file)
 with open(paths.data / 'pipeline/h_magmaocean.pkl', 'wb') as file:
     pickle.dump(h_magmaocean, file)
+
+
