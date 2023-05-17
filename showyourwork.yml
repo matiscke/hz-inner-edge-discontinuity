@@ -15,6 +15,22 @@ datasets:
       Lum_m1.0.txt: src/data/Lum_m1.0.txt
       Lum_m1.2.txt: src/data/Lum_m1.2.txt
       Lum_m1.4.txt: src/data/Lum_m1.4.txt
+  10.5281/zenodo.7946446:
+    contents:
+      optimistic_H2O-f-grid.pkl: src/data/bioverse_objects/optimistic_H2O-f-grid.pkl
+      optimistic_H2O-f-grid_G16.pkl: src/data/bioverse_objects/optimistic_H2O-f-grid_G16.pkl
+      optimistic_H2O-f-grid_N30.pkl: src/data/bioverse_objects/optimistic_H2O-f-grid_N30.pkl
+      optimistic_MR_earthlike.pkl: src/data/bioverse_objects/optimistic_MR_earthlike.pkl
+      optimistic_MR_Wolfgang2016.pkl: src/data/bioverse_objects/optimistic_MR_Wolfgang2016.pkl
+      plato40_f-grid.pkl: src/data/bioverse_objects/plato40_f-grid.pkl
+      plato100_f-grid.pkl: src/data/bioverse_objects/plato100_f-grid.pkl
+      plato_f-grid.pkl: src/data/bioverse_objects/plato_f-grid.pkl
+      plato_FGK_R.pkl: src/data/bioverse_objects/plato_FGK_R.pkl
+      plato_FGK_rho.pkl: src/data/bioverse_objects/plato_FGK_rho.pkl
+      plato_M_R.pkl: src/data/bioverse_objects/plato_M_R.pkl
+      plato_M_rho.pkl: src/data/bioverse_objects/plato_M_rho.pkl
+      plato_M_rho_100.pkl: src/data/bioverse_objects/plato_M_rho_100.pkl
+      plato_rho_f-grid.pkl: src/data/bioverse_objects/plato_rho_f-grid.pkl
 
 dependencies:
   src/scripts/plot_luminosity_tracks.py:
@@ -47,15 +63,26 @@ dependencies:
 
   src/scripts/plato_grids.py:
     - src/data/pipeline
-    - src/data/bioverse_objects
+    - src/data/bioverse_objects/plato_f-grid.pkl
+    - src/data/bioverse_objects/plato100_f-grid.pkl
+    - src/data/bioverse_objects/plato40_f-grid.pkl
+    - src/data/bioverse_objects/plato_rho_f-grid.pkl
+    - src/data/bioverse_objects/plato_FGK_R.pkl
+    - src/data/bioverse_objects/plato_FGK_rho.pkl
+    - src/data/bioverse_objects/plato_M_R.pkl
+    - src/data/bioverse_objects/plato_M_rho.pkl
 
   src/scripts/plato_Sthresh_grid.py:
     - src/data/pipeline
-    - src/data/bioverse_objects
+    - src/data/bioverse_objects/plato100_f-grid.pkl
+    - src/data/bioverse_objects/plato_rho_f-grid.pkl
+    - src/data/bioverse_objects/plato_M_rho_100.pkl
 
   src/scripts/optimistic_RS_binned.py:
     - src/data/pipeline
 
   src/scripts/MR_violins.py:
     - src/data/pipeline
-    - src/data/bioverse_objects
+    - src/data/bioverse_objects/optimistic_MR_Wolfgang2016.pkl
+    - src/data/bioverse_objects/optimistic_MR_earthlike.pkl
+    - src/data/bioverse_objects/optimistic_H2O-f-grid.pkl

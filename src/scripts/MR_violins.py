@@ -70,7 +70,8 @@ with open(paths.data / 'pipeline/planets_args.pkl', 'rb') as f:
     planets_args = pickle.load(f)
 
 # load previously computed hypothesis test grids
-hypothesisgrids = {'res_fg_MR_Wolfgang2016':'optimistic_MR_Wolfgang2016.pkl', 'res_fg_MR_earthlike':'optimistic_MR_earthlike.pkl',
+hypothesisgrids = {'res_fg_MR_Wolfgang2016':'optimistic_MR_Wolfgang2016.pkl',
+                   'res_fg_MR_earthlike':'optimistic_MR_earthlike.pkl',
                    'res_optimistic_H2O_fg':'optimistic_H2O-f-grid.pkl'}
 for varname, path in zip(hypothesisgrids.keys(),
                          [str(paths.data) + '/bioverse_objects/' + fname for fname in hypothesisgrids.values()]):
