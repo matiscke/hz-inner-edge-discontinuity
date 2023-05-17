@@ -44,3 +44,11 @@ dependencies:
 
   src/scripts/optimistic_statpwr_H2O-f.py:
     - src/data/pipeline
+
+  src/scripts/plato_grids.py:
+    - src/data/pipeline
+    - src/data/bioverse_objects
+
+  src/scripts/plato_Sthresh_grid.py:
+    - src/data/pipeline
+    - src/data/bioverse_objects
