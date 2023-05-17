@@ -65,10 +65,14 @@ def plot_plato_grids(f_grid, results, labels, yaxis='dlnZ', interpolate=False, p
 
 
 """load pre-computed hypothesis testing grids."""
-hypothesisgrids = {'res_fg_plato': 'plato_f-grid.pkl', 'res_fg_plato100' : 'plato100_f-grid.pkl',
-                   'res_fg_plato40' : 'plato40_f-grid.pkl', 'res_fg_plato_rho' : 'plato_rho_f-grid.pkl',
-                   'res_fg_plato_FGK_R':'plato_FGK_R.pkl', 'res_fg_plato_FGK_rho':'plato_FGK_rho.pkl', # FGK vs M
-                   'res_fg_plato_M_R':'plato_M_R.pkl', 'res_fg_plato_M_rho':'plato_M_rho.pkl',} # FGK vs M
+hypothesisgrids = {'res_fg_plato': 'plato_f-grid.pkl',
+                   'res_fg_plato100' : 'plato100_f-grid.pkl',
+                   'res_fg_plato40' : 'plato40_f-grid.pkl',
+                   'res_fg_plato_rho' : 'plato_rho_f-grid.pkl',
+                   'res_fg_plato_FGK_R':'plato_FGK_R.pkl',
+                   'res_fg_plato_FGK_rho':'plato_FGK_rho.pkl', # FGK vs M
+                   'res_fg_plato_M_R':'plato_M_R.pkl',
+                   'res_fg_plato_M_rho':'plato_M_rho.pkl',} # FGK vs M
 for varname, path in zip(hypothesisgrids.keys(),
                          [str(paths.data) + '/bioverse_objects/' + fname for fname in hypothesisgrids.values()]):
     with open(path, 'rb') as f:
