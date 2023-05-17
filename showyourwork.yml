@@ -55,3 +55,7 @@ dependencies:
 
   src/scripts/optimistic_RS_binned.py:
     - src/data/pipeline
+
+  src/scripts/MR_violins.py:
+    - src/data/pipeline
+    - src/data/bioverse_objects
