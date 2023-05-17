@@ -19,7 +19,6 @@ datasets:
     contents:
       optimistic_H2O-f-grid.pkl: src/data/bioverse_objects/optimistic_H2O-f-grid.pkl
       optimistic_H2O-f-grid_G16.pkl: src/data/bioverse_objects/optimistic_H2O-f-grid_G16.pkl
-      optimistic_H2O-f-grid_N30.pkl: src/data/bioverse_objects/optimistic_H2O-f-grid_N30.pkl
       optimistic_MR_earthlike.pkl: src/data/bioverse_objects/optimistic_MR_earthlike.pkl
       optimistic_MR_Wolfgang2016.pkl: src/data/bioverse_objects/optimistic_MR_Wolfgang2016.pkl
       plato40_f-grid.pkl: src/data/bioverse_objects/plato40_f-grid.pkl
@@ -60,6 +59,7 @@ dependencies:
 
   src/scripts/optimistic_statpwr_H2O-f.py:
     - src/data/pipeline
+    - src/data/bioverse_objects/optimistic_H2O-f-grid_G16.pkl
 
   src/scripts/plato_grids.py:
     - src/data/pipeline
