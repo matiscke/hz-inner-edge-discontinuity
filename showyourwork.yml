@@ -39,7 +39,7 @@ dependencies:
   src/scripts/cornerplot.py:
     - src/data/pipeline
 
-  src/scripts/optimistic_R-S.py:
+  src/scripts/optimistic_RS.py:
     - src/data/pipeline
 
   src/scripts/optimistic_statpwr_H2O-f.py:
@@ -52,3 +52,6 @@ dependencies:
   src/scripts/plato_Sthresh_grid.py:
     - src/data/pipeline
     - src/data/bioverse_objects
+
+  src/scripts/optimistic_RS_binned.py:
+    - src/data/pipeline
