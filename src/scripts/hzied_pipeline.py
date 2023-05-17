@@ -31,7 +31,7 @@ def get_generator_args():
     """ define generator parameters"""
     # Parameters for star generation
     stars_args = {
-        'd_max' : 90,             # max. dist to stars (pc) ~~(nominal=90, ca. 481 planets)~~
+        'd_max' : 74,             # max. dist to stars (pc)
         'M_st_max': 1.5,  # Maximum stellar mass to consider, in solar units.
         'M_G_max': 16,  # Maximum gaia magnitude of stars
         'seed': 42,  # seed for random number generators
@@ -55,7 +55,7 @@ def get_generator_args():
 
         # detection bias and sample selection: Keep only small planets/low-mass planets, but above 0.1 M_Earth (Turbet+2020 covers only 0.1 to 2 Mearth). Don't consider "lava worlds" with extremely high instellation.
         # Set a generic detection bias: transit depth $\delta > 75$ ppm.
-        'M_min': 0.1,
+        'M_min': 0.32, # use this otherwise non-influental parameter to tune sample size
         'M_max': 2.,
         'S_min': 10.,  # min. instellation in W/m2
         'S_max': 2000.,  # max. instellation in W/m2

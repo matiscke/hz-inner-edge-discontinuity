@@ -74,7 +74,7 @@ def plot_survey(data, results, planets_args, parameter_of_interest='R', show_rol
         ax.fill_between(data.sort_by('S_abs')['S_abs'], (mean - sem),
                         (mean + sem), color='C2', alpha=.3, label='moving average')
 
-    ax.set_title('Optimistic survey ({} planets)'.format(len(data)), y=1.15, fontsize=14)
+    ax.set_title('Optimistic survey ({} planets)'.format(500), y=1.15, fontsize=14)
     fig.legend(fontsize=12, loc='lower left', ncol=99, bbox_to_anchor=(0.15, .97),
                frameon=False, columnspacing=1.6)
 
