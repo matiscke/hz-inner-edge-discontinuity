@@ -15,7 +15,6 @@ rule pipeline:
     output:
         directory("src/data/pipeline")
     cache:
-#         True
-        False
+        True
     script:
         "src/scripts/hzied_pipeline.py"
