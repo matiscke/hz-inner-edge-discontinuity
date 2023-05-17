@@ -36,7 +36,7 @@ dependencies:
   src/scripts/HnullHmo.py:
     - src/data/pipeline
 
-  src/scripts/corner.py:
+  src/scripts/cornerplot.py:
     - src/data/pipeline
 
   src/scripts/optimistic_R-S.py:
