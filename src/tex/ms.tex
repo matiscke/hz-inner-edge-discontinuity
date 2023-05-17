@@ -377,7 +377,7 @@ This pattern is consistent with the injected radius inflation as predicted from 
 
 \subsection{Testability of the runaway greenhouse hypothesis}\label{sec:res_testability}
 \begin{figure}[ht!]
-    \script{optimistic_R-S.py}
+    \script{optimistic_RS.py}
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/optimistic_R-S.pdf}
         \caption{
@@ -406,7 +406,7 @@ In this case, the habitable zone inner edge discontinuity was detected with high
 \end{figure}
 With such a strong signal, we can attempt an inference of the parameters defining the injected effect.
 Figure~\ref{fig:cornerplot} shows the posterior distributions of $S_\mathrm{thresh}$, $x_{H_2O}$, and $f_\mathrm{rgh}$ as determined by the nested sampler.
-The threshold instellation can be accurately constrained with a median $\hat{S}_\mathrm{thresh} = \var{retrSthresh}$.
+The threshold instellation can be accurately constrained. %with a median $\hat{S}_\mathrm{thresh} = \var{retrSthresh}$.
 Both a higher water mass fraction and a higher dilution factor lead to larger average radii, thus these parameters are strongly correlated.
 
 \begin{figure}[ht!]
@@ -838,7 +838,7 @@ In each bin, we computed the arithmetic mean of the planet radius and its standa
 Then, we assigned each planet the mean radius according to the instellation bin it occupies and used this as the measure for testing the runaway greenhouse hypothesis.
 
 \begin{figure}[ht!]
-%    \script{figurescript.py}
+    \script{optimistic_RS_binned.py}
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/optimistic_R-S_binned.pdf}
         \caption{
