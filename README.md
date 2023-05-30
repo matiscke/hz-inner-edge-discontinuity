@@ -30,12 +30,6 @@ We also determine survey strategies and design trades that maximize the diagnost
 All code needed to reproduce the paper can be found in this repo. The manuscript is autocompiled using the [showyourwork](https://github.com/rodluger/showyourwork) workflow.
 Click [**here**](https://github.com/matiscke/magmaocean/raw/main-pdf/ms.pdf) to read the latest draft of our paper.
 
-## Related Literature
-The following ADS libraries are non-exhaustive collections of literature relevant to the project. 
-- [Water content and global magma oceans](https://ui.adsabs.harvard.edu/public-libraries/sLyk1uAZTpisPRyj6ZGuyQ)
-- [PLATO mission papers](https://ui.adsabs.harvard.edu/user/libraries/Qh2RtVhKSFucyRMqKBAQSg)
-- [Roman Space Telescope papers](https://ui.adsabs.harvard.edu/user/libraries/Wl9mTrggRqelrqr62vsUIQ)
-
 
 
 [//]: # (Once paper is out: Explain usage, dependencies, data sets similar to https://github.com/katiebreivik/hush)
