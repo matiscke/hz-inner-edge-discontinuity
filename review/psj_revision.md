@@ -29,6 +29,8 @@ It may be helpful to specify that the water mass fraction stated here and given 
 
 2) Line 381, "For runaway planets, all planets receiving a dayside-averaged instellation exceeding a threshold of Sthresh = 280 W m−2"
 I think S_thresh needs to be more clearly defined in the paper. The ~280 Wm-2 threshold matches (approximately) the value given by Goldblatt et al 2013, and is the amount of stellar flux absorbed by the planet. It is not strictly the amount "received" by the planet. For instance, the Earth receives ~340 Wm-2 which is already beyond the limit as stated. But I think you mean that 1360./4 * (1-A) > 280 Wm-2, where A is the albedo and is fixed at A=0.3. Doing the math, this would put your runaway greenhouse limit for Earth with a fixed 0.3 albedo at ~1.18 S0, which itself is very reasonable compared to existing studies with climate models on when the runaway greenhouse condition is triggered (e.g. Leconte et al. 2013; Wolf & Toon 2015). I think this is all fine, but should be explained a bit better.
+> We agree that our introduction of the threshold instellation does not in a sufficiently clear way convey the nature of this quantity, and we thank the reviewer for pointing out this potential source of confusion. 
+> We now state explicitly that this is the flux *absorbed* by the planet. 
 
 3) Is the transit depth appears to be tabulated as a broadband quantity of the whole planet's eclipsing of the star, and not a spectrally resolved quantity, which may are may not be problematic. A comment on this may be warranted.
 
