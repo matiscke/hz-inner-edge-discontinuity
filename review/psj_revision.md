@@ -12,12 +12,16 @@ The manuscript is very well written, making a clear point and providing valuable
 Minor comments:
 
 L. 83-87: This sentence is not very clear and quite misleading as it seems to suggest the existence of Venusian meteoritic samples. Besides I don't see how petrological evidence from meteorites can suggest anything about Venus, this would need some more explanation.
+> Indeed, in its previous formulation this sentence may suggest that there are meteoritic samples from Venus and can be misleading. We rephrased the sentence to clarify what meteoritic evidence is meant here.
  
 L. 274-275: Do you have a reference for the typical values of uncertainties?
+> We rearranged this part of the text to make clear that these uncertainties were derived in Hardegree-Ullman et al. 2023.
 
 L. 424: bottem <- bottom
+> fixed.
 
 L. 1242-1243: what do you mean by the runaway greenhouse phase of the star? The pre-main sequence phase?
+> This sentence was indeed misleading. We mean the extended runaway greenhouse phases of planets orbiting M dwarfs. => We rephrased the sentence to make this clear.
 
 Reviewer #2:
 1) Line 376 "its bulk water inventory expressed as a water mass fraction xH2O"
