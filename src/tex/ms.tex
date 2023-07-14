@@ -211,8 +211,9 @@ We consider the following cases (see Figure~\ref{fig:radiusevolution}):
 This case serves as our null hypothesis.
 
 \rev{We consider as \textit{runaway} planets those planets that absorb a stellar flux higher than a} dayside-averaged \rev{threshold instellation $S_\mathrm{thresh}$}.
-\rev{For all planets receiving an instellation exceeding} $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated transit radius due to a steam atmosphere.
+\rev{For all planets absorbing an instellation exceeding} $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated transit radius due to a steam atmosphere.
 While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{2019Icar..317..583P,Turbet2021,Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Kopparapu2013,Leconte2013,Hamano2015,2017JGRE..122.1458S,2019ApJ...875...31K,Boukrouche2021,2021JGRE..12606711L}.
+\rev{This choice translates to about 1.18 times the instellation of present-day Earth with a fixed albedo of 0.3, which compares favourably to previous climate simulations~\citep{Leconte2013,Wolf2015}.}
 
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our non-runaway planets~\citep{Zeng2016}.
@@ -550,7 +551,7 @@ We will now briefly explore the above drivers.
 However, already about $\SIrange{\sim 10}{20} \, \mathrm{bar}$ of water vapor -- corresponding to a minor fraction of one Earth ocean and thus the lower limit of water on Earth -- is enough to sustain sufficiently high surface temperatures to keep the planet in a magma ocean stage~\citep{Boukrouche2021,Lichtenberg2021c}.
 The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
 From a planet formation perspective, the incorporation of water into planets in the terrestrial planet zone is a standard expected outcome~\citep[e.g.,][]{2019PNAS..116.9723Z,Venturini2020,Emsenhuber2021b,Schlecker2021,Burn2021}.
-But while commonly considered volatile delivery channels suggest a fraction of planets to be volatile-poor, the incorporation of hydrogen into even the driest planetary materials known in the solar system~\citep{2020Sci...369.1110P,2021PSJ.....2..244J} suggests that hydrogen is present in all rocky planets upon formation.
+But while commonly considered volatile delivery channels suggest a fraction of planets to be volatile-poor, the incorporation of hydrogen into even the driest planetary materials known in the solar system\rev{~\citep{McCubbin2019,2020Sci...369.1110P,2021PSJ.....2..244J}} suggests that hydrogen is present in all rocky planets upon formation.
 Accreted hydrogen in nominally dry planetary materials react with mantle oxygen to form substantial amounts of water inside of the planet during the magma ocean phase~\citep{Ikoma2018,2021ApJ...909L..22K,2020MNRAS.496.3755K,2022NatAs...6.1296K}.
 Enhanced equilibration between the core, mantle, and atmosphere during magma ocean evolution of rocky exoplanets further enhances this process~\citep{2021ApJ...914L...4L,Schlichting2022}.
 Therefore, even nominally dry planets generate substantial amounts of water during formation and early evolution.
@@ -606,6 +607,8 @@ We currently see four potential lines of discriminating atmospheric signatures a
 In a runaway greenhouse atmosphere, absorption is dominated by the opacity of water vapor, which has two prominent spectral features: one at 3.5--4.5 $\mu$m, and one between 8--20 $\mu$m~\citep[e.g.,][]{Boukrouche2021}.
 Probing these features requires an instrument covering these wavelength ranges, for instance ELT~METIS~\citep{Brandl2021}, JWST~MIRI~\citep{Rieke2015}, or future missions such as \life\ ~\citep{2019A&A...621A.125B,Quanz2022,2022A&A...664A..22D}.
 Potentially the two-band filter capabilities of \plato\ may offer insight into particularly pronounced spectral features in this runaway greenhouse regime~\citep{2020SSRv..216...98G}.
+\rev{However, detecting water features in steam atmospheres may be obscured by high-altitude clouds that could potentially mute a transit signal as measured from peak to trough of an observed spectral line~\citep{Suissa2020,Fauchez2019}.
+A better understanding of the role of clouds in this problem may be critical for observational constraints on the runaway climate of individual exoplanets.}
 (ii) Post-runaway planets may be detectable through O$_{3}$ absorption due to build-up of abiotic oxygen, leftover from photochemical dissociation of water, and hydrogen loss~\citep{2014ApJ...785L..20W,Luger2015}.
 (iii) Water loss in runaway greenhouse episodes would increase the atmosphere's D/H isotopic ratio, akin to the enhancement in Venus' present-day atmosphere~\citep{2019JGRE..124.2015K,2021JGRE..12606643K}.
 This may be detectable in high-resolution observations focusing on isotope-sensitive transitions~\citep{2019AJ....158...26L,2019A&A...622A.139M}.
