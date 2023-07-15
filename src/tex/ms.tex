@@ -204,7 +204,7 @@ Here, we assume global redistribution of incoming flux and a fixed Bond albedo o
 We do not take into account additional heating sources such as tidal effects~\citep[e.g.,][]{Barnes2013}.
 
 While we search for the signature of runaway greenhouse climates in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's transit radius based on its individual set of properties and the associated predictions from steam atmosphere and water retention models.
-Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
+Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as \rev{the total planetary} water mass fraction $x_{H_2O}$.
 We consider the following cases (see Figure~\ref{fig:radiusevolution}):
 
 \textit{Non-runaway} planets retain the radius assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
@@ -402,7 +402,7 @@ In this case, the habitable zone inner edge discontinuity was detected with high
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/corner.pdf}
         \caption{
-            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the threshold instellation $S_\mathrm{thresh}$, the water mass fraction $x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$ as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be reasonably constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
+            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the threshold instellation $S_\mathrm{thresh}$, the \rev{bulk} water mass fraction $x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$ as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be reasonably constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
         }
         \label{fig:cornerplot}
     \end{centering}
@@ -418,7 +418,7 @@ Both a higher water mass fraction and a higher dilution factor lead to larger av
         \includegraphics[width=\linewidth]{figures/optimistic_statpwr_H2O-f.pdf}
         \caption{
             Statistical power of the runaway greenhouse hypothesis test as a function of model parameters.
-            For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of water mass fraction and dilution factor.
+            For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of \rev{bulk} water mass fraction and dilution factor.
             Higher values in either parameter result in a more reliable detection.
             For water mass fractions $\gtrsim 10^{-4}$, the statistical power largely depends on the fraction of greenhouse climate planets in the sample.
         }
@@ -870,7 +870,7 @@ It is conceivable that with very large sample sizes and a very sharp runaway gre
 For a search with real data, both approaches, and possibly other alternatives, should be considered.
 
 \subsection{Statistical imprint of runaway greenhouse atmospheres}\label{app:model-pop_comparison}
-The predicted runaway greenhouse-induced planet radius changes are a function of instellation, planet mass, and water mass fraction~(compare Sect.~\ref{sec:met_rghmodel}).
+The predicted runaway greenhouse-induced planet radius changes are a function of instellation, planet mass, and \rev{bulk} water mass fraction~(compare Sect.~\ref{sec:met_rghmodel}).
 In order to better understand the interaction between the planetary populations underlying our simulations and these predictions, we compared the latter to the average radius and bulk density changes we measured in the synthetic population.
 We used the ``optimistic'' scenario with a sample size of \var{N_optimistic}.
 

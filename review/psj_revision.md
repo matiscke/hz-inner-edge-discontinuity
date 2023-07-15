@@ -33,6 +33,8 @@ L. 1242-1243: what do you mean by the runaway greenhouse phase of the star? The 
 Reviewer #2:
 1) Line 376 "its bulk water inventory expressed as a water mass fraction xH2O"
 It may be helpful to specify that the water mass fraction stated here and given in Table 1 is the fraction of water relative to the planet mass, and not an atmospheric water mixing ratio.
+> We thank the referee for their suggestion and agree that it is crucial to provide a clear definition of the water mass fraction. 
+> We now emphasize better that our parameter refers to the *total* planetary mass fraction of water (when the parameter is introduced and at other places xH2O is mentioned).
 
 2) Line 381, "For runaway planets, all planets receiving a dayside-averaged instellation exceeding a threshold of Sthresh = 280 W m−2"
 I think S_thresh needs to be more clearly defined in the paper. The ~280 Wm-2 threshold matches (approximately) the value given by Goldblatt et al 2013, and is the amount of stellar flux absorbed by the planet. It is not strictly the amount "received" by the planet. For instance, the Earth receives ~340 Wm-2 which is already beyond the limit as stated. But I think you mean that 1360./4 * (1-A) > 280 Wm-2, where A is the albedo and is fixed at A=0.3. Doing the math, this would put your runaway greenhouse limit for Earth with a fixed 0.3 albedo at ~1.18 S0, which itself is very reasonable compared to existing studies with climate models on when the runaway greenhouse condition is triggered (e.g. Leconte et al. 2013; Wolf & Toon 2015). I think this is all fine, but should be explained a bit better.
