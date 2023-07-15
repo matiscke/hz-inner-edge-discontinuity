@@ -130,7 +130,7 @@ We derived effective temperatures primarily from color-temperature relations der
 Luminosities were computed from absolute $G$-band magnitudes and a derived bolometric correction.
 We computed stellar radii with the effective temperatures and luminosities using the Stefan-Boltzmann law or using absolute $K_S$-band magnitudes and an empirical radius-luminosity relation from \citet{Mann2015} for targets within the absolute magnitude range of M~dwarfs.
 Finally, we derived masses from the mass-luminosity relation of \citet{Torres2010} for stars with $M_{\star}\gtrsim 0.7\,M_{\odot}$, and from that of \citet{Mann2019} for targets within the absolute magnitude range of M dwarfs.
-The derived stellar \rev{parameters were} compared to measured stellar parameters for all known exoplanet hosts from the literature and were found to be consistent within 1\%, 3\%, and 5.5\% for $T_{\mathrm{eff}}$, $R_{\star}$, and $M_{\star}$, respectively, which are all below the typical measurement uncertainties of 3.3\%, 6.8\%, and 7.9\%, respectively~\rev{\citep{Hardegree-Ullman2023}}.
+The derived stellar \rev{parameters were} compared to \rev{measured parameters} for all known exoplanet hosts from the literature and were found to be consistent within 1\%, 3\%, and 5.5\% for $T_{\mathrm{eff}}$, $R_{\star}$, and $M_{\star}$, respectively, which are all below the typical measurement uncertainties of 3.3\%, 6.8\%, and 7.9\%, respectively~\rev{\citep{Hardegree-Ullman2023}}.
 From this catalog, \bioverse\ samples stars within an isotropic distance from the solar system as required by the planetary sample size.
 
 
@@ -246,7 +246,8 @@ In the following, we only distinguish between the non-runaway greenhouse and wet
 To account for planets unable to sustain a steam atmosphere over extended time spans, as well as evolutionary effects such as desiccation through water photodissociation and H~escape (see \rev{bottom} panel of Figure~\ref{fig:radiusevolution}), we introduce a dilution parameter $f_\mathrm{rgh}$.
 It represents the fraction of planets above the instellation threshold whose atmospheres are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow the non-runaway greenhouse relation, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow the wet melt relation.
-The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere.
+The choice $f_\mathrm{rgh} < 1$ \rev{reflects the fact that planets -- despite a high irradiation --  can evade a runaway greenhouse climate.}
+\rev{This situation may, for instance, arise in} the absence of an atmosphere or of volatiles that could form a steam atmosphere.
 In the following, we test if and under what conditions this parametrization causes a demographic trend that is large enough to be detected with high significance.
 
 
@@ -536,7 +537,8 @@ In the following, we will explore the key factors that may influence the emergin
 
 \subsubsection{Key factors influencing tests of the runaway greenhouse hypothesis}\label{sec:dis_keyfactors}
 What influences the probability of correctly rejecting a false null hypothesis?
-We identified the following six drivers of the diagnostic power for detecting the runaway greenhouse transition with a transit survey:
+We rev{identified six drivers} of the diagnostic power for detecting the runaway greenhouse transition with a transit survey.
+\rev{Many of these factors directly influence the fraction of planets currently in runaway greenhouse states, which in our model is represented by the dilution factor $f_\mathrm{rgh}$.}
 \begin{itemize}
     \item Occurrence rate of planets forming steam atmospheres
     \item Planetary evolution and duration of the steam atmosphere phase
@@ -560,6 +562,7 @@ Reduced heating from short-lived radionuclides in extrasolar planetary systems i
 \textit{Planetary evolution and duration of the steam atmosphere phase}: An inflated steam atmosphere can only be sustained until the planet has lost its water.
 Depending on host star spectral type, planetary mass, and composition, planets can spend from a few Myr to several Gyr in runaway greenhouse climates~\citep[][]{Hamano2015,Luger2015}, and only planets observed during this phase will contribute to the habitable zone inner edge discontinuity.
 However, the delivery uncertainty is much greater than the predicted loss rates of water by atmospheric escape, which typically is limited to in total a few tens of terrestrial oceans per Gyr~\citep{2018AJ....155..195W} on even the most irradiated exoplanets~\citep[see discussion in][]{2022ApJ...938L...3L}.
+\rev{The finite duration of steam atmosphere phases is a main factor for diluting the habitable zone inner edge discontinuity.}
 
 \textit{Prevalent water inventory}: The magnitude of radius change at the runaway greenhouse threshold is sensitive to the water mass fraction.
 As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern:
