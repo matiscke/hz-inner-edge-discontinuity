@@ -10,8 +10,8 @@
 
 
 2) the dilution factor is a convenient parameter where a lot of (most?) processes hide, but its meaning is largely glossed over. I think that the manuscript deserves a dedicated section discussing what the main processes affecting the dilution are, i.e. what leads a highly irradiated planet to escape the runaway greenhouse state. No need to be quantitative, but I think it is important to convey a physical sense of what the dilution factor stands for.
-> Many of the yet unexplored physical processes that govern runaway greenhouse climates have a direct impact on the fraction of planets in these climate states at the time of observation. The resulting effect of this is a dilution of the expected demographic signal, the HZ Inner Edge Discontinuity. This motivates our choice to collect these processes in a single parameter that we let vary agnostically between zero and one. 
-> Nevertheless, the physical processes that are marginalized over in this choice of parametrization deserve some discussion. We thus expand the introduction of the dilution factor in Section 3, and we identify and discuss processes by which planets may evade runaway greenhouse states and their respective expected impact in Section 6.2.1 "Key factors influencing tests of the runaway greenhouse hypothesis". 
+> We thank the referee for pointing out that the dilution factor is not well explained. We addressed this comment by expanding the introduction of the dilution factor in Section 3, as well as identifying and discussing processes by which planets may evade runaway greenhouse states and their respective expected impact in Section 6.2.1 "Key factors influencing tests of the runaway greenhouse hypothesis". These text there motivates the conservative use of a parameter with the full range of probabilities (0...1) to reflect the impact of a number of potentially existing, but yet poorly understood processes.
+
 
 Minor comments:
 
