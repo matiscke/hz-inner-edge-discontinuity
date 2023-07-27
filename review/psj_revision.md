@@ -67,7 +67,7 @@ I think S_thresh needs to be more clearly defined in the paper. The ~280 Wm-2 th
 
 AUTHOR'S RESPONSE:
 > We agree that our introduction of the threshold instellation does not in a sufficiently clear way convey the nature of this quantity, and we thank the reviewer for pointing out this potential source of confusion. 
-> We now state explicitly that this is the flux *absorbed* by the planet. 
+> We now state explicitly that this is the flux *absorbed* by the planet, and we stress that the net absorbed flux is a function of intrinsic atmospheric properties such as the albedo.  
 
 -------
 
