@@ -20,11 +20,13 @@ A _Bioverse_ paper on the imprints of runaway greenhouse climates on exoplanet d
 <a href="https://github.com/matiscke/hz-inner-edge-discontinuity/raw/main-pdf/ms.pdf">
 <img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/>
 </a>
+
 <br/>
 
 <br/>
 <img align="center" width = "550" vspace="80" src="HZIED_teaser.jpg" alt="teaser image"/>
 <br/>
+
 
 
 ## Scope
@@ -35,6 +37,7 @@ We also determine survey strategies and design trades that maximize the diagnost
 ## Reproducibility
 All code needed to reproduce the paper can be found in this repo. The manuscript is autocompiled using the [showyourwork](https://github.com/rodluger/showyourwork) workflow.
 Click [**here**](https://github.com/matiscke/hz-inner-edge-discontinuity/raw/main-pdf/ms.pdf) to read the accepted version of our paper.
+
 
 
 
