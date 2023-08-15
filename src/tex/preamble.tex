@@ -34,6 +34,10 @@
 \xpatchcmd{\@todo}{\setkeys{todonotes}{#1}}{\setkeys{todonotes}{inline,#1}}{}{}
 \makeatother
 
+%% manuscript revision
+%\newcommand{\rev}[1]{{\textbf{#1}}}
+\newcommand{\rev}[1]{{#1}}
+
 % ---------------------------------
 % PAPER VARIABLES
 \newcommand{\windowsize}{25}

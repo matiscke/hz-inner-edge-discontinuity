@@ -58,7 +58,7 @@ If a strongly infrared-absorbing, condensable species such as water was dominant
 This runaway greenhouse state can extend the magma ocean stage to hundreds of \SI{}{\mega\year}~\citep{2016ApJ...829...63S,2021AsBio..21.1325B}, enough to remove the entire water reservoir from a rocky planet by H$_2$O photolysis and subsequent hydrodynamic escape of hydrogen~\citep{2013ApJ...778..154W,2014ApJ...785L..20W,Luger2015}.
 %This scenario requires early water delivery, which for Venus is supported by isotopic and petrological evidence from meteoritic samples~\citep{2018SSRv..214...36A,2022Natur.611..245B}.
 %Where the incident stellar flux exceeds a threshold value, a non-linear transition from a mixture of condensed and volatile states to a pure volatile state occurs, and the resulting massive steam atmosphere limits the outgoing radiation from the (molten) planetary surface~\citep{Ingersoll1969,Kasting1988,2010ppc..book.....P,Goldblatt2013,2015ExA....40..449L,2017JGRE..122.1458S}.
-For Venus, isotopic and petrological evidence from meteoritic samples~\citep{2018SSRv..214...36A,2022Natur.611..245B} and the planet's atmospheric composition suggest that it went through this phase~\citep{2020NatGe..13..265G}.
+For Venus, \rev{the atmospheric composition~\citep{2020NatGe..13..265G} and comprehensive analysis of meteoritic samples across the Solar System~\citep{2018SSRv..214...36A,2022Natur.611..245B}} suggest that it went through this phase.
 Although the past presence or absence of a Venusian water ocean has not been definitely established~\citep{Raymond2006,Raymond2007,Hamano2013,Way2016,2019JGRE..124.2015K,2021JGRE..12606643K,Turbet2021,2023PNAS..12009751W}, a transient habitable phase cannot be conclusively ruled out~\citep[e.g.,][]{Way2016,Salvador2017,Krissansen-Totton2021}.
 
 The runaway greenhouse transition is a robust prediction from climate models~\citep{Kasting1988,Nakajima1992,Goldblatt2012,Forget2014,Boukrouche2021,2022A&A...658A..40C}, and its impact on planetary bulk properties has been shown to be in the detectable range of current astronomical instrumentation~\citep{Goldblatt2015}.
@@ -130,7 +130,7 @@ We derived effective temperatures primarily from color-temperature relations der
 Luminosities were computed from absolute $G$-band magnitudes and a derived bolometric correction.
 We computed stellar radii with the effective temperatures and luminosities using the Stefan-Boltzmann law or using absolute $K_S$-band magnitudes and an empirical radius-luminosity relation from \citet{Mann2015} for targets within the absolute magnitude range of M~dwarfs.
 Finally, we derived masses from the mass-luminosity relation of \citet{Torres2010} for stars with $M_{\star}\gtrsim 0.7\,M_{\odot}$, and from that of \citet{Mann2019} for targets within the absolute magnitude range of M dwarfs.
-The derived stellar parameters from \citet{Hardegree-Ullman2023} were compared to measured stellar parameters for all known exoplanet hosts from the literature and were found to be consistent within 1\%, 3\%, and 5.5\% for $T_{\mathrm{eff}}$, $R_{\star}$, and $M_{\star}$, respectively, which are all below the typical measurement uncertainties of 3.3\%, 6.8\%, and 7.9\%, respectively.
+The derived stellar \rev{parameters were} compared to \rev{measured parameters} for all known exoplanet hosts from the literature and were found to be consistent within 1\%, 3\%, and 5.5\% for $T_{\mathrm{eff}}$, $R_{\star}$, and $M_{\star}$, respectively, which are all below the typical measurement uncertainties of 3.3\%, 6.8\%, and 7.9\%, respectively~\rev{\citep{Hardegree-Ullman2023}}.
 From this catalog, \bioverse\ samples stars within an isotropic distance from the solar system as required by the planetary sample size.
 
 
@@ -199,19 +199,23 @@ The climate state of a planet has a direct influence on its apparent size measur
 With even a fraction of the Earth's water inventory, a planet absorbing more flux than the radiation limit of steam atmospheres will enter a runaway greenhouse state resulting in a global magma ocean~\citep{Lichtenberg2021c,Boukrouche2021}.
 We use predictions on transit atmospheric thickness from geophysical models to derive the change in transit radius and bulk density that planets with instellation-induced runaway greenhouse climates experience, depending on the distribution of water between planetary interior and atmosphere, and on the resulting thermal atmospheric structure~\citep{Dorn2021,Salvador2023}.
 
-The net absorbed stellar fluxes of planets are sensitive to their albedo, which is generally poorly constrained for planets outside the solar system~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019}.
+The net absorbed stellar \rev{fluxes of planets are a function of intrinsic atmospheric properties such as their albedo, which are} generally poorly constrained for planets outside the solar system~\citep[e.g.,][]{Angerhausen2015,Parmentier2018a,Mansfield2019}.
+\rev{For instance, a planet with a high albedo may sustain temperate conditions closer to the star than the same planet with a lower albedo and located further away from the star.}
 Here, we assume global redistribution of incoming flux and a fixed Bond albedo of $0.3$, comparable to Earth's~\citep{Haar1971}.
 We do not take into account additional heating sources such as tidal effects~\citep[e.g.,][]{Barnes2013}.
 
 While we search for the signature of runaway greenhouse climates in demographic quantities such as average planet radii, the injected changes happen on the planetary level: We changed each planet's transit radius based on its individual set of properties and the associated predictions from steam atmosphere and water retention models.
-Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as a water mass fraction $x_{H_2O}$.
+Relevant properties are a planet's mass $M$, its net instellation $S$, and its bulk water inventory expressed as \rev{the total planetary} water mass fraction $x_{H_2O}$.
 We consider the following cases (see Figure~\ref{fig:radiusevolution}):
 
 \textit{Non-runaway} planets retain the radius assigned based on exoplanet occurrence rates (see Sect.~\ref{sec:syn_planets}).
 This case serves as our null hypothesis.
 
-For \textit{runaway} planets, i.e., all planets receiving a dayside-averaged instellation exceeding a threshold of $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated transit radius due to a steam atmosphere.
+\rev{We consider as \textit{runaway} planets those planets that absorb a stellar flux higher than a} dayside-averaged \rev{threshold instellation $S_\mathrm{thresh}$}.
+\rev{For all planets absorbing an instellation exceeding} $S_\mathrm{thresh} = \var{injectedSthresh}$, we assume an inflated transit radius due to a steam atmosphere.
 While the actual instellation threshold for a runaway climate depends on planetary albedo, surface gravity, and clouds~\citep{2019Icar..317..583P,Turbet2021,Pierrehumbert2022}, this value was found to be a typical limit for the flux a planet can emit in a runaway greenhouse situation~\citep{Goldblatt2013,Kopparapu2013,Leconte2013,Hamano2015,2017JGRE..122.1458S,2019ApJ...875...31K,Boukrouche2021,2021JGRE..12606711L}.
+\rev{This choice translates to about 1.18 times the instellation of present-day Earth with a fixed albedo of 0.3, which compares favourably to previous climate simulations~\citep{Leconte2013,Wolf2015}.
+We adopt the same threshold instellation for all host star spectral types.}
 
 To quantify the radius change, we applied the mass-radius relationships derived by \citet{Turbet2020} using a 1D~inverse radiative-convective model~\citep{Turbet2019}.
 Their calculations rely on the same mass-radius relations for rocky interiors that we apply for our non-runaway planets~\citep{Zeng2016}.
@@ -241,10 +245,11 @@ We then added the (in almost all cases negative) radius deviations to the inflat
 We illustrate the mass-radius relations of the three cases in Figure~\ref{fig:radiusevolution} where a fiducial bulk water mass fraction of $x_{H_2O}= \var{wrr}$ is assumed. % Earth: ~0.0002 PERCENT or 218 ppm by mass (Turbet+2019)
 In the following, we only distinguish between the non-runaway greenhouse and wet melt scenarios.
 
-To account for planets unable to sustain a steam atmosphere over extended time spans, as well as evolutionary effects such as desiccation through water photodissociation and H~escape (see bottem panel of Figure~\ref{fig:radiusevolution}), we introduce a dilution parameter $f_\mathrm{rgh}$.
+To account for planets unable to sustain a steam atmosphere over extended time spans, as well as evolutionary effects such as desiccation through water photodissociation and H~escape (see \rev{bottom} panel of Figure~\ref{fig:radiusevolution}), we introduce a dilution parameter $f_\mathrm{rgh}$.
 It represents the fraction of planets above the instellation threshold whose atmospheres are currently inflated due to a runaway greenhouse climate.
 Our simulation setup is such that all planets receiving a net instellation $S < S_\mathrm{thresh}$ follow the non-runaway greenhouse relation, and a fraction $f_\mathrm{rgh}$ of the planets with $S > S_\mathrm{thresh}$ follow the wet melt relation.
-The choice $f_\mathrm{rgh} < 1$ comprises all reasons why a planet has no runaway greenhouse climate despite high instellation, for instance the absence of an atmosphere or of volatiles that could form a steam atmosphere.
+The choice $f_\mathrm{rgh} < 1$ \rev{reflects the fact that planets -- despite a high irradiation --  can evade a runaway greenhouse climate.}
+\rev{This situation may, for instance, arise in} the absence of an atmosphere or of volatiles that could form a steam atmosphere.
 In the following, we test if and under what conditions this parametrization causes a demographic trend that is large enough to be detected with high significance.
 
 
@@ -263,7 +268,7 @@ A successful transit detection requires a sufficient signal-to-noise ratio, whic
 %In its in-orbit commissioning phase, the \cheops\ mission demonstrated a photometric precision of \SI{75}{\ppm} for faint ($V\approx 12$) stars~\citep{Benz2021}.
 %In comparison, \plato's expected precision for similar stars was estimated to be \SI{\sim 50}{\ppm}~\citep[][Matuszewski et al., in prep.]{plato2017}.
 \plato\ (PLAnetary Transits and Oscillation of stars) is an ESA mission designed to characterize terrestrial planets in the habitable zones of Sun-like stars via long-term high-precision photometric monitoring of a sample of bright stars~\citep{Rauer2016}.
-In line with this requirement, \plato\ is designed to enable the detection of a \SI{80}{\ppm} transit signal~\citep[][Matuszewski et al., in prep.]{plato2017}.
+In line with this requirement, \plato\ is designed to enable the detection of a \SI{80}{\ppm} transit signal\rev{~\citep{Matuszewski2023,plato2017}}.
 To reflect its sensitivity, we chose a minimum transit depth of \SI{80}{\ppm} as a detection limit and consider only measurements of planets exceeding this threshold.
 We further exclude target stars with \gaia\ magnitudes $M_\mathrm{G} > \minMagnitude$.
 
@@ -329,7 +334,7 @@ $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimat
 To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.\footnote{See Appendix~\ref{app:binnedstats} for a robustness test using a different estimator.}
 We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. %\todo[inline]{specify error propagation}
 
-As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a dataset given the model parameters, i.e., a likelihood function $\mathcal{L}$.
+As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a data set given the model parameters, i.e., a likelihood function $\mathcal{L}$.
 We assumed here that the individual moving averages $SMA_i$ are measured with a normally distributed uncertainty $\sigma_{SMA_i}$ and adopted a normal distribution
 \begin{eqnarray}
     \mathcal{L}(SMA \mid \boldsymbol{\theta})= & \prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \\
@@ -399,7 +404,7 @@ In this case, the habitable zone inner edge discontinuity was detected with high
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/corner.pdf}
         \caption{
-            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the threshold instellation $S_\mathrm{thresh}$, the water mass fraction $x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$ as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be reasonably constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
+            Retrieved posterior distribution of key parameters in the optimistic scenario. The density maps in each panel show relationships between and marginalized distributions of the threshold instellation $S_\mathrm{thresh}$, the \rev{bulk} water mass fraction $x_{H_2O}$, and the dilution factor $f_\mathrm{rgh}$ as they could be retrieved with a high-precision transit survey and a sample of \var{N_optimistic} planets. True values of the parameters for the injected effect are shown in orange. The threshold instellation can be reasonably constrained; the predominant water fraction and the fraction of planets with runaway greenhouse climates are degenerate.
         }
         \label{fig:cornerplot}
     \end{centering}
@@ -415,7 +420,7 @@ Both a higher water mass fraction and a higher dilution factor lead to larger av
         \includegraphics[width=\linewidth]{figures/optimistic_statpwr_H2O-f.pdf}
         \caption{
             Statistical power of the runaway greenhouse hypothesis test as a function of model parameters.
-            For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of water mass fraction and dilution factor.
+            For a sample size $N = \var{N_optimistic}$, the color code shows the fraction of simulations resulting in a sound detection ($\Delta \ln \mathcal{Z} > 3$) for different combinations of \rev{bulk} water mass fraction and dilution factor.
             Higher values in either parameter result in a more reliable detection.
             For water mass fractions $\gtrsim 10^{-4}$, the statistical power largely depends on the fraction of greenhouse climate planets in the sample.
         }
@@ -471,6 +476,7 @@ At $N=100$, pure radius measurements require $f_\mathrm{rgh} \gtrsim \var{platoM
 Since the incident radiation at a given orbital distance depends on the spectral type of the host star, the relative number of planets on either side of $S_\mathrm{thresh}$ is different for FGK and M~dwarfs.
 We tested the detectability of the habitable zone inner edge discontinuity when only FGK or only M~dwarfs are considered (see Figure~\ref{fig:plato_fgrid}).
 %($d_\mathrm{max} = \SI{75}{\parsec}, M_\mathrm{G} < 11$)
+\rev{All other parameters of the climate models are kept the same.}
 The samples are volume and magnitude-limited to reflect the target counts of \plato's provisional Long-duration Observation Phase fields~\citep[$15996$ FGK stars in the P1 and P2 samples, $33948$ M~stars in the P4 sample, ][]{Nascimbeni2022}.
 The resulting M~dwarf planet sample is significantly larger with $\var{N_M}\pm \var{N_M_err}$ planets compared to $\var{N_FGK}\pm \var{N_FGK_err}$ planets in the FGK sample.
 No significant detection is possible in the pure FGK sample, independent of the assumed geophysical parameters.
@@ -492,7 +498,7 @@ In the M~dwarf sample, the evidence threshold is reached around $f_\mathrm{rgh} 
         \label{fig:posterior_surveys}
     \end{centering}
 \end{figure}
-A key constraint resulting from a detection is a measurement of $S_\mathrm{thresh}$.
+\rev{Although the exact location of the runaway greenhouse transition depends on the stellar energy actually absorbed by the planet, }a measurement of $S_\mathrm{thresh}$ \rev{would be a} key constraint resulting from a detection \rev{of the habitable zone inner edge discontinuity}.
 Here, we assess the ability of different mission concepts explored above to constrain this parameter.
 Figure~\ref{fig:posterior_surveys} shows posterior distributions from a grid of inferences together with the true values of the injected signal for different fractions $f_\mathrm{rgh}$.
 We consider three cases: only radius measurements, radius and mass measurements, and radius and mass measurements of only planets orbiting M~dwarfs.
@@ -534,7 +540,8 @@ In the following, we will explore the key factors that may influence the emergin
 
 \subsubsection{Key factors influencing tests of the runaway greenhouse hypothesis}\label{sec:dis_keyfactors}
 What influences the probability of correctly rejecting a false null hypothesis?
-We identified the following six drivers of the diagnostic power for detecting the runaway greenhouse transition with a transit survey:
+We rev{identified six drivers} of the diagnostic power for detecting the runaway greenhouse transition with a transit survey.
+\rev{Many of these factors directly influence the fraction of planets currently in runaway greenhouse states, which in our model is represented by the dilution factor $f_\mathrm{rgh}$.}
 \begin{itemize}
     \item Occurrence rate of planets forming steam atmospheres
     \item Planetary evolution and duration of the steam atmosphere phase
@@ -549,7 +556,7 @@ We will now briefly explore the above drivers.
 However, already about $\SIrange{\sim 10}{20} \, \mathrm{bar}$ of water vapor -- corresponding to a minor fraction of one Earth ocean and thus the lower limit of water on Earth -- is enough to sustain sufficiently high surface temperatures to keep the planet in a magma ocean stage~\citep{Boukrouche2021,Lichtenberg2021c}.
 The fraction of planets fulfilling these requirements has an impact on the amplitude of the demographic imprint of the runaway greenhouse transition.
 From a planet formation perspective, the incorporation of water into planets in the terrestrial planet zone is a standard expected outcome~\citep[e.g.,][]{2019PNAS..116.9723Z,Venturini2020,Emsenhuber2021b,Schlecker2021,Burn2021}.
-But while commonly considered volatile delivery channels suggest a fraction of planets to be volatile-poor, the incorporation of hydrogen into even the driest planetary materials known in the solar system~\citep{2020Sci...369.1110P,2021PSJ.....2..244J} suggests that hydrogen is present in all rocky planets upon formation.
+But while commonly considered volatile delivery channels suggest a fraction of planets to be volatile-poor, the incorporation of hydrogen into even the driest planetary materials known in the solar system\rev{~\citep{McCubbin2019,2020Sci...369.1110P,2021PSJ.....2..244J}} suggests that hydrogen is present in all rocky planets upon formation.
 Accreted hydrogen in nominally dry planetary materials react with mantle oxygen to form substantial amounts of water inside of the planet during the magma ocean phase~\citep{Ikoma2018,2021ApJ...909L..22K,2020MNRAS.496.3755K,2022NatAs...6.1296K}.
 Enhanced equilibration between the core, mantle, and atmosphere during magma ocean evolution of rocky exoplanets further enhances this process~\citep{2021ApJ...914L...4L,Schlichting2022}.
 Therefore, even nominally dry planets generate substantial amounts of water during formation and early evolution.
@@ -558,11 +565,17 @@ Reduced heating from short-lived radionuclides in extrasolar planetary systems i
 \textit{Planetary evolution and duration of the steam atmosphere phase}: An inflated steam atmosphere can only be sustained until the planet has lost its water.
 Depending on host star spectral type, planetary mass, and composition, planets can spend from a few Myr to several Gyr in runaway greenhouse climates~\citep[][]{Hamano2015,Luger2015}, and only planets observed during this phase will contribute to the habitable zone inner edge discontinuity.
 However, the delivery uncertainty is much greater than the predicted loss rates of water by atmospheric escape, which typically is limited to in total a few tens of terrestrial oceans per Gyr~\citep{2018AJ....155..195W} on even the most irradiated exoplanets~\citep[see discussion in][]{2022ApJ...938L...3L}.
+\rev{The finite duration of steam atmosphere phases is a main factor for diluting the habitable zone inner edge discontinuity, and it leads to an increased likelihood of detecting this imprint for younger planetary systems.
+Preferential selection of younger systems could therefore be of advantage in a targeted survey.}
 
 \textit{Prevalent water inventory}: The magnitude of radius change at the runaway greenhouse threshold is sensitive to the water mass fraction.
 As a result, the statistical abundance of water in terrestrial planets impacts the strength of the demographic pattern:
 The higher the water content and the higher the fraction of planets in runaway greenhouse climates, the greater the likelihood that a discontinuity is detectable.
-However, dissolution into the magma ocean and atmospheric inflation show non-linear coupling; thus, a straightforward trend is difficult to discern.
+However, dissolution into the magma ocean and atmospheric inflation show non-linear coupling\rev{:
+the more water there is in the atmosphere, the more will be dissolved~\citep{Dorn2021}, leading to a convergence in radii until saturation.
+Most important for the present work, however, is the qualitative dichotomy between sub-runaway and runaway planets, which outcompetes radius variations within each of these climate states due to a changing water mass fraction~\citep{Turbet2020}.
+If a planet hosts a significant water inventory that is not easily stripped by atmospheric escape~\citep{Johnstone2020}, then the statistical power of our model is high (see Figure~\ref{fig:statpwr_H2O-f}).
+}
 
 \textit{Size and composition of the planetary sample}: The significance of a statistical trend increases with a larger sample size.
 In addition, the sample must include planets on both sides of the instellation threshold.
@@ -605,6 +618,8 @@ We currently see four potential lines of discriminating atmospheric signatures a
 In a runaway greenhouse atmosphere, absorption is dominated by the opacity of water vapor, which has two prominent spectral features: one at 3.5--4.5 $\mu$m, and one between 8--20 $\mu$m~\citep[e.g.,][]{Boukrouche2021}.
 Probing these features requires an instrument covering these wavelength ranges, for instance ELT~METIS~\citep{Brandl2021}, JWST~MIRI~\citep{Rieke2015}, or future missions such as \life\ ~\citep{2019A&A...621A.125B,Quanz2022,2022A&A...664A..22D}.
 Potentially the two-band filter capabilities of \plato\ may offer insight into particularly pronounced spectral features in this runaway greenhouse regime~\citep{2020SSRv..216...98G}.
+\rev{However, detecting water features in steam atmospheres may be obscured by high-altitude clouds that could potentially mute a transit signal as measured from peak to trough of an observed spectral line~\citep{Suissa2020,Fauchez2019}.
+A better understanding of the role of clouds in this problem may be critical for observational constraints on the runaway climate of individual exoplanets.}
 (ii) Post-runaway planets may be detectable through O$_{3}$ absorption due to build-up of abiotic oxygen, leftover from photochemical dissociation of water, and hydrogen loss~\citep{2014ApJ...785L..20W,Luger2015}.
 (iii) Water loss in runaway greenhouse episodes would increase the atmosphere's D/H isotopic ratio, akin to the enhancement in Venus' present-day atmosphere~\citep{2019JGRE..124.2015K,2021JGRE..12606643K}.
 This may be detectable in high-resolution observations focusing on isotope-sensitive transitions~\citep{2019AJ....158...26L,2019A&A...622A.139M}.
@@ -613,6 +628,7 @@ It has been suggested that the atmospheric depth and the presence or absence of 
 Atmospheric nitrogen and carbon compounds can be partitioned into magma~\citep{2022E&PSL.59817847G,2022PSJ.....3...93B}.
 Therefore, it may be possible to discern the presence of an underlying magma ocean if the presence of an atmosphere on a rocky exoplanet can be confirmed.
 This has been suggested to be done via (v) eclipse photometry~\citep{Mansfield2019,2019ApJ...886..140K} through the presence of a high albedo, which is expected to differ from the crystallized rock of a solidified magma ocean~\citep{2020ApJ...898..160E,Fortin2022}.
+\rev{Spectral information from atmospheres of highly irradiated planets may also help to distinguish classical runaway greenhouse states from other climate regimes, such as a moist bistability~\citep{Leconte2013a}.}
 
 \subsubsection{Detection in multi-planet systems}
 As suggested by \citet{Turbet2019}, an alternative approach for detecting the runaway greenhouse-induced radius inflation is to search for its ``local'' imprints in multi-planet systems.
@@ -700,7 +716,7 @@ Our calculations with different spectral types (Sect.~\ref{sec:results_FGK_M}) s
 Besides their large number in a volume/magnitude-limited sample, transiting M~dwarf planets are more likely to be located near the threshold instellation and in particular on orbits further out, i.e., in the optimistic habitable zone.
 In fact, we showed that the FGK part of the planet sample barely contributes to the statistical power.
 Furthermore, the transit depth difference at the transition is expected to be larger for M~dwarfs~\citep[$\sim \SI{100}{\ppm}$ for early, $\sim \SI{1000}{\ppm}$ for late M~stars,][]{Turbet2019}, enhancing the demographic signal it leaves.
-An additional advantage of targeting M~dwarfs are their extended runaway greenhouse phases, whose duration can reach the order of gigayears~\citep{Luger2015}.
+An additional advantage of targeting M~dwarfs are \rev{the extended runaway greenhouse phases of their planets that can last on} the order of gigayears~\citep{Luger2015}.
 This increases the probability of observing any given planet in the sample during the runaway greenhouse phase, essentially driving $f_\mathrm{rgh}$ to higher values.
 Therefore, in addition to the high scientific value of boosted detections of potentially habitable planets, M dwarfs are also indispensable for the discovery and characterization of the runaway greenhouse transition.
 As with a pure volume-limited sample, a targeted M~dwarf survey, too, profits from follow-up measurements of planetary masses with an order of magnitude increase in evidence.
@@ -747,7 +763,7 @@ Future self-consistent modeling of interior-atmosphere interactions may include 
 
 \subsubsection{Bulk water mass fraction}
 The predominant mass fractions of water, which sensitively controls the atmospheric state of a rocky exoplanet, is poorly constrained.
-Inferred water contents in the literature range from upper limits on the order $10^{-5}$ to ``water worlds'' with tens of percent mass fraction~\citep[e.g.,][]{Rogers2010,Unterborn2018,Mousis2020,Agol2021,Luque2022}, all of which are within the realm of theoretical predictions~\citep{Mulders2015b,Sato2016,Jin2018,Lichtenberg2019,Bitsch2019b,Venturini2020,Emsenhuber2021b,Schlecker2021,2022ApJ...938L...3L,2022ApJ...939L..19I}.
+Inferred water contents in the literature range from upper limits on the order $10^{-5}$ to ``water worlds'' with tens of percent mass fraction~\citep[e.g.,][]{Rogers2010,Unterborn2018,Mousis2020,Agol2021,Luque2022}, all of which are within the realm of theoretical predictions\rev{~\citep{Selsis2007,Mulders2015b,Sato2016,Jin2018,Lichtenberg2019,Bitsch2019b,Venturini2020,Emsenhuber2021b,Schlecker2021,2022ApJ...938L...3L,2022ApJ...939L..19I}}.
 Our nominal case assumes a bulk water mass fraction of $x_\mathrm{H_2O} = \var{wrr}$.
 This can be considered a conservative choice that is unlikely to introduce a systematic overestimation of the habitable zone inner edge discontinuity. %, and the hypothesis tests are only marginally sensitive to $x_\mathrm{H_2O}$ as long as it is $\gtrsim 10^{-4}$ (see Sect.~\ref{sec:res_testability}).
 Cases of pure rocky composition and very low volatile contents can be considered absorbed by the dilution factor $f_\mathrm{rgh}$.
@@ -792,8 +808,9 @@ The confirmation or rejection of the habitable zone inner edge discontinuity wil
 \begin{acknowledgments}
 The authors thank Gabriele Cugno, Yann Fabel, Brad Foley, Lisa Kaltenegger, Ravi Kopparapu, Eric Mamajek, Megan Mansfield, Paul Molliere, Gijs Mulders, Matthew Murphy, Sukrit Ranjan, and Terry-Ann Suer for insightful discussions.
 We are grateful to Martin Turbet for providing the mass-radius relationship data for planets harboring steam atmospheres.
+We thank the anonymous referees for providing insightful reports that helped to improve this manuscript.
 This material is based upon work supported by the National Aeronautics and Space Administration under Agreement No. 80NSSC21K0593 for the program ``Alien Earths''.
-The results reported herein benefitted from collaborations and/or information exchange within NASA’s Nexus for Exoplanet System Science (NExSS) research coordination network sponsored by NASA’s Science Mission Directorate.
+The results reported herein benefited from collaborations and/or information exchange within NASA’s Nexus for Exoplanet System Science (NExSS) research coordination network sponsored by NASA’s Science Mission Directorate.
 This work has made use of data from the European Space Agency (ESA) mission \gaia\ (\url{https://www.cosmos.esa.int/gaia}), processed by the \gaia\ Data Processing and Analysis Consortium (DPAC, \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the \gaia\ Multilateral Agreement.
 T.L. was supported by a grant from the Branco Weiss Foundation.
 G.B. acknowledges support from the NASA Astrophysics Data Analysis Program under Grant No.~80NSSC20K0446.
@@ -815,6 +832,8 @@ All authors provided comments and suggestions on the manuscript.
 This study uses the reproducibility framework ``showyourwork''~\citep{Luger2021}.
 All code required to reproduce our results, figures, and this article itself is available at \url{https://github.com/matiscke/hz-inner-edge-discontinuity}.
 The code to reproduce a figure can be accessed via the icon link next to the respective figure caption.
+\rev{Data sets associated with this work are available at \dataset[doi:10.5281/zenodo.7080391]{\doi{10.5281/zenodo.7080391}}~(stellar luminosity tracks from \citet{Baraffe1998}) and \dataset[doi:10.5281/zenodo.7946446]{\doi{10.5281/zenodo.7946446}} (results from model grid runs of \bioverse).}
+
 
 
 \software{
@@ -858,7 +877,7 @@ It is conceivable that with very large sample sizes and a very sharp runaway gre
 For a search with real data, both approaches, and possibly other alternatives, should be considered.
 
 \subsection{Statistical imprint of runaway greenhouse atmospheres}\label{app:model-pop_comparison}
-The predicted runaway greenhouse-induced planet radius changes are a function of instellation, planet mass, and water mass fraction~(compare Sect.~\ref{sec:met_rghmodel}).
+The predicted runaway greenhouse-induced planet radius changes are a function of instellation, planet mass, and \rev{bulk} water mass fraction~(compare Sect.~\ref{sec:met_rghmodel}).
 In order to better understand the interaction between the planetary populations underlying our simulations and these predictions, we compared the latter to the average radius and bulk density changes we measured in the synthetic population.
 We used the ``optimistic'' scenario with a sample size of \var{N_optimistic}.
 
