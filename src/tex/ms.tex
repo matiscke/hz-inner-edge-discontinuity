@@ -334,7 +334,7 @@ $H_{\mathrm{rgh}}$ and $H_0$ should thus be tested against a statistical estimat
 To avoid binning and the artificial patterns it may introduce, we chose to test our hypotheses against a simple moving average $SMA$ along the instellation axis with a window of size \windowsize\ centered around each measurement.\footnote{See Appendix~\ref{app:binnedstats} for a robustness test using a different estimator.}
 We further computed the uncertainty of this moving average by propagating the individual measurement errors and applying a rolling standard error of the mean. %\todo[inline]{specify error propagation}
 
-As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a dataset given the model parameters, i.e., a likelihood function $\mathcal{L}$.
+As our procedure involves random sampling of the model parameters $\theta$, we need to define the probability of obtaining a data set given the model parameters, i.e., a likelihood function $\mathcal{L}$.
 We assumed here that the individual moving averages $SMA_i$ are measured with a normally distributed uncertainty $\sigma_{SMA_i}$ and adopted a normal distribution
 \begin{eqnarray}
     \mathcal{L}(SMA \mid \boldsymbol{\theta})= & \prod_{i}^{N} \frac{1}{\sqrt{2 \pi \sigma_{SMA_i}^{2}}} \\
@@ -832,6 +832,8 @@ All authors provided comments and suggestions on the manuscript.
 This study uses the reproducibility framework ``showyourwork''~\citep{Luger2021}.
 All code required to reproduce our results, figures, and this article itself is available at \url{https://github.com/matiscke/hz-inner-edge-discontinuity}.
 The code to reproduce a figure can be accessed via the icon link next to the respective figure caption.
+\rev{Data sets associated with this work are available at \dataset[doi:10.5281/zenodo.7080391]{\doi{10.5281/zenodo.7080391}}~(stellar luminosity tracks from \citet{Baraffe1998}) and \dataset[doi:10.5281/zenodo.7946446]{\doi{10.5281/zenodo.7946446}} (results from model grid runs of \bioverse).}
+
 
 
 \software{
