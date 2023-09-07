@@ -33,7 +33,7 @@ Using the [Bioverse](https://github.com/danielapai/bioverse) framework, we show 
 We also determine survey strategies and design trades that maximize the diagnostic power to test runaway greenhouse climate models.
 
 ## Video Abstract
-[![Video abstract on YouTube](https://img.youtube.com/vi/acgKcdTTv9c/0.jpg)](https://www.youtube.com/watch?v=acgKcdTTv9c)
+[![Video abstract on YouTube](https://img.youtube.com/vi/acgKcdTTv9c/sddefault.jpg)](https://www.youtube.com/watch?v=acgKcdTTv9c)
 
 ## Reproducibility
 All code needed to reproduce the paper can be found in this repo. The manuscript is autocompiled using the [showyourwork](https://github.com/rodluger/showyourwork) workflow.
