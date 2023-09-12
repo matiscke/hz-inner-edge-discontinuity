@@ -17,6 +17,11 @@ A _Bioverse_ paper on the imprints of runaway greenhouse climates on exoplanet d
 <a href="https://github.com/matiscke/hz-inner-edge-discontinuity/raw/main-pdf/arxiv.tar.gz">
 <img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/>
 </a>
+
+<a href="https://arxiv.org/abs/2309.04518">
+<img src="https://img.shields.io/badge/arXiv-2309.04518-b31b1b.svg?style=flat" alt="arXiv"/>
+</a>
+
 <a href="https://github.com/matiscke/hz-inner-edge-discontinuity/raw/main-pdf/ms.pdf">
 <img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/>
 </a>
