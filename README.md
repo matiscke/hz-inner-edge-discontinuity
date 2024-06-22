@@ -8,9 +8,9 @@ A _Bioverse_ paper on the imprints of runaway greenhouse climates on exoplanet d
 [//]: # (</p>)
 
 <br>
-<a href="https://github.com/matiscke/hz-inner-edge-discontinuity/actions/workflows/build.yml">
-<img src="https://github.com/matiscke/hz-inner-edge-discontinuity/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/>
-</a>
+<!-- <a href="https://github.com/matiscke/hz-inner-edge-discontinuity/actions/workflows/build.yml"> -->
+<!-- <img src="https://github.com/matiscke/hz-inner-edge-discontinuity/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/> -->
+<!-- </a> -->
 <a href="mailto:schlecker@arizona.edu">
       <img src="https://img.shields.io/badge/contact-authors-blueviolet.svg?style=flat" alt="Email the authors"/>
 </a>
