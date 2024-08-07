@@ -33,7 +33,7 @@ A _Bioverse_ paper on the imprints of runaway greenhouse climates on exoplanet d
 <br/>
 
 ## Scope
-This repository contains the code necessary to create the results and figures in [Schlecker et al. 2023 (accepted to PSJ)](https://github.com/matiscke/hz-inner-edge-discontinuity). In this study, we assess the ability of near-future exoplanet missions to detect a demographic imprint of the runaway greenhouse transition – the inner edge of the classical habitable zone.
+This repository contains the code necessary to create the results and figures in [Schlecker et al. 2023](https://iopscience.iop.org/article/10.3847/PSJ/acf57f). In this study, we assess the ability of near-future exoplanet missions to detect a demographic imprint of the runaway greenhouse transition – the inner edge of the classical habitable zone.
 Using the [Bioverse](https://github.com/danielapai/bioverse) framework, we show that this imprint, the _Habitable Zone Inner Edge Discontinuity_, is likely detectable with a transit survey like PLATO. 
 We also determine survey strategies and design trades that maximize the diagnostic power to test runaway greenhouse climate models.
 
